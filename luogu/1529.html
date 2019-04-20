@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title> P1529 回家 Bessie Come Home - 洛谷</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta name="csrf-token" content="1555852056:Y+82rGM0md1+0knoXis5VR4oXidyF3aZ+96DluwdOMQ=">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/amazeui.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/katex.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/luogu3.css?ver=20190102">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/highlight_tomorrow.css">
+<link rel="stylesheet" href="https://cdn.luogu.org/markdown-palettes/markdown-palettes.css?ver=20190219">
+<script src="https://cdn.luogu.org/js/jquery-2.1.1.min.js"></script>
+<script src="https://cdn.luogu.org/js/luogu3_pre.js?ver=20190101"></script>
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn.luogu.org/images/favicon3.ico" media="screen"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/fe/loader.css?ver=20190417">
+<script>window._feInjection = JSON.parse(decodeURIComponent("%7B%22code%22%3A200%2C%22currentUser%22%3Anull%2C%22currentTemplate%22%3A%22Excited%22%2C%22currentData%22%3A%7B%22shortHeader%22%3Afalse%2C%22pageName%22%3A%22%5Cu9898%5Cu76ee%5Cu8be6%5Cu60c5%22%7D%2C%22currentMeta%22%3A%7B%22title%22%3A%22%20P1529%20%5Cu56de%5Cu5bb6%20Bessie%20Come%20Home%22%7D%7D"));</script>
+<script>window._release = '20190417';</script>
+<script src="https://cdn.luogu.org/fe/loader.js?ver=20190417" charset="utf-8" defer></script>
+</head>
+<body>
+<div id="app-header"></div>
+<nav id="app-sidenav"></nav>
+<div id="app-body"></div>
+<script>
+    function scrollToId (id) {
+        $('html, body').animate({
+            scrollTop: ($('#' + id).offset().top)
+        }, 500);
+    }
+</script>
+<style>
+    .lg-toolbar {
+        display: none;
+    }
+
+    #app-body { /* Unused in fallback FE */
+        display: none;
+    }
+
+    #app-body-new{
+        display: block;
+        margin-bottom: 2em;
+        position: relative;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    @media (min-width: 576px) {
+        #app-body-new {
+            margin-left: 70px;
+        }
+    }
+
+    code {
+        font-family: monospace, "Courier New";
+    }
+
+</style>
+<div id="app-body-new">
+<div class="lg-toolbar" data-am-sticky>
+<h1><a href="/recordnew/lists?uid=&pid=P1529" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a> P1529 回家 Bessie Come Home</h1>
+</div>
+<div class="am-g lg-main-content">
+<div class="am-u-md-4 lg-right" name="problemright">
+<section class="am-panel am-panel-default lg-summary" id="psummary">
+<div class="lg-summary-content">
+<ul class="am-list am-list-static lg-summary-list">
+<li>
+<ul class="am-avg-sm-2"><li><span class="lg-bignum-num">1.7<small>K</small><small></small></span><span class="lg-bignum-text">通过</span></li><li><span class="lg-bignum-num">4.3<small>K</small><small></small></span><span class="lg-bignum-text">提交</span></li></ul>
+</li>
+<li>
+<strong>题目提供者</strong>
+<span class="lg-right"></span>
+</li>
+<li>
+<strong>评测方式</strong>
+<span class="lg-right"><b>云端评测</b></span>
+</li>
+<li><strong>标签</strong>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="6">图论</span>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="160">最短路</span>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="156">邻接矩阵</span>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="157">邻接表</span>
+<span class="lg-tag am-badge am-radius lg-bg-bluelight" data-tagid="46">USACO</span>
+<style>.lg-tag { cursor: pointer; }</style>
+<script>
+                                $(".lg-tag").click(function() {
+                                    window.open("/problemnew/lists?tag=" + $(this).attr('data-tagid'));
+                                })
+                            </script>
+</li>
+<li><strong>难度</strong>
+<span class="lg-right"><span class="am-badge am-radius lg-bg-yellow">普及/提高-</span></span>
+</li>
+<li><strong>时空限制</strong>
+<span class="lg-right">1000ms / 128MB</span>
+</li>
+</ul>
+</div>
+<p>
+<button class="am-btn am-btn-danger am-btn-sm" id="submit" pid="P1529">
+<i class="am-icon-paper-plane"></i> 提交
+</button>
+<a target="_blank" href="/problemnew/solution/P1529" class="am-btn am-btn-primary am-btn-sm">
+<i class="am-icon-book"></i> 题解
+</a>
+<a data-pjax href="/recordnew/lists?pid=P1529" class="am-btn am-btn-primary am-btn-sm" title="查看本题提交记录">
+<i class="am-icon-pie-chart"></i>
+</a>
+<button class="am-btn am-btn-primary am-btn-sm lg-pointer" name="showtag" title="显示算法标签">
+<i class="am-icon-tags"></i>
+</button>
+</p>
+<li>提示：收藏到任务计划后，可在首页查看。</li>
+<p>
+<a class="am-btn am-btn-danger am-btn-sm" href="/fe/problem/P1529" target="_blank">体验新版界面</a>
+</p>
+</section>
+<section class="am-panel am-panel-default lg-summary">
+<h2>最新讨论
+<a onclick="$('#discuss-lists').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看本题讨论">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" style="display: none" id="discuss-lists">
+<li><a data-pjax href="/discuss/show?postid=97071" class="am-padding-0">求助！为什么把SPFA换成dij…</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=96873" class="am-padding-0">最后一个点WA了，但一直找不…</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=39791" class="am-padding-0">大坑</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=36338" class="am-padding-0">usaco过了在洛谷挂了的过来…</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=32900" class="am-padding-0">Floyd的错误</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=31822" class="am-padding-0">没人觉得数据水吗？</a>
+</li>
+<div style="overflow: auto">
+<a data-pjax href="/discuss/lists?forumname=P1529" class="am-btn am-btn-primary am-btn-sm lg-right">进入讨论版</a>
+</div>
+</ul>
+</section>
+<section class="am-panel am-panel-default lg-summary am-hide-sm">
+<h2>推荐的相关题目
+<a onclick="$('#recommendation-list').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看推荐题目">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" id="recommendation-list" style="display: none">
+<li>
+<a class='colored' href="/problemnew/show/P1530" target="_blank"><b>P1530</b> 分数化小数 Fractions to Decimals</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P1546" target="_blank"><b>P1546</b> 最短网络 Agri-Net</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P1339" target="_blank"><b>P1339</b> [USACO09OCT]热浪Heat Wave</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P1828" target="_blank"><b>P1828</b> 香甜的黄油 Sweet Butter</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P2723" target="_blank"><b>P2723</b> 丑数 Humble Numbers</a>
+</li>
+</ul>
+</section>
+</div>
+<div class="am-u-md-8 lg-right" name="problemleft">
+<div class="lg-content-left">
+<div class="lg-article am-g">
+<h2>题目描述</h2>
+<p>现在是晚餐时间,而母牛们在外面分散的牧场中。 农民约翰按响了电铃,所以她们开始向谷仓走去。 你的工作是要指出哪只母牛会最先到达谷仓(在给出的测试数据中,总会有且只有一只最快的母牛)。 在挤奶的时候(晚餐前),每只母牛都在她自己的牧场上,一些牧场上可能没有母牛。 每个牧场由一条条道路和一个或多个牧场连接(可能包括自己)。 有时，两个牧场(可能是字母相同的)之间会有超过一条道路相连。 至少有一个牧场和谷仓之间有道路连接。 因此,所有的母牛最后都能到达谷仓,并且母牛总是走最短的路径。 当然,母牛能向着任意一方向前进,并且她们以相同的速度前进。 牧场被标记为'a'..'z'和'A'..'Y',在用大写字母表示的牧场中有一只母牛,小写字母中则没有。 谷仓的标记是'Z',注意没有母牛在谷仓中。</p>
+<p>注意'm'和'M'不是同一个牧场 否则错误 上面的意思是说：输入数据中可能会同时存在M,m（郁闷ing)(PS:表郁闷…告诉我set of咋用就不郁闷了…)，比如</p>
+<p>M a a m m z</p>
+<h2>输入输出格式</h2>
+<strong>输入格式：</strong><br>
+<p><p>第 1 行: 整数 P(1&lt;= P&lt;=10000),表示连接牧场(谷仓)的道路的数目。</p>
+<p>第 2 ..P+1行: 用空格分开的两个字母和一个整数:</p>
+<p>被道路连接牧场的标记和道路的长度(1&lt;=长度&lt;=1000)。</p></p>
+<strong>输出格式：</strong><br>
+<p><p>单独的一行包含二个项目: 最先到达谷仓的母牛所在的牧场的标记,和这只母牛走过的路径的长度。</p></p>
+<h2>输入输出样例</h2>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>5
+A d 6
+B d 3
+C e 9
+d Z 8
+e Z 3</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>B 11
+</pre>
+</div>
+</div>
+<h2>说明</h2>
+<p>翻译来自NOCOW</p>
+<p>USACO 2.4</p>
+</div>
+<div class='lg-article-sub am-g' id="sub"></div>
+</div>
+</div>
+</div>
+<div class="am-modal am-modal-prompt" tabindex="-1" id="confirm">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="memtitle">提示</div>
+<div class="am-modal-bd" id="memadmin">
+标程仅供做题后或实在无思路时参考。<br>
+请自觉、自律地使用该功能并请对自己的学习负责。<br>
+如果发现恶意抄袭标程，将按照I类违反进行处理。<br>
+</div>
+<div class="am-modal-footer">
+<span class="am-modal-btn" data-am-modal-cancel>取消</span>
+<span class="am-modal-btn" data-am-modal-confirm>确定</span>
+</div>
+</div>
+</div>
+<script>
+        $(document).ready(function () {
+            $("#expandstd").click(function () {
+                $('#confirm').modal({
+                    relatedTarget: this,
+                    onConfirm: function (e) {
+                        $("#stdcode").slideDown();
+                        $("#expandstd").hide();
+                    }
+                });
+            });
+            $("#submit").click(
+                function () {
+                    hide_artile();
+                    $(document).scrollTop($(document).scrollTop() - 80);
+                    var pid = $(this).attr("pid");
+                    $.get("/problem/ajax_submit?pid=" + pid, function (data) {
+                        var arr = eval('(' + data + ')');
+                        if (arr['code'] == 201) {
+                            $('.lg-article-sub').html(arr['more']['html']);
+                        }
+                        else if (arr['code'] == 200) {
+
+                        }
+                        else {
+                            if (arr['code'] == 0 || arr['code'] == -3) {
+                                backarticle();
+                            }
+                            show_alert("提交失败", arr['message']);
+                        }
+                    });
+                }
+            );
+            $("button[title].am-btn,a[title].am-btn").poshytip({
+                className: 'tip-twitter',
+                showTimeout: 1,
+                alignTo: 'target',
+                alignX: 'center',
+                alignY: 'bottom'
+            });
+            $('[name=showtag]').click(function () {
+                $('.am-badge.am-hide').removeClass('am-hide');
+            });
+            $(".sample-copy").click(function() {
+                var element = $(this).parents(".copy-region").find("pre");
+                var text = $(element).text();
+                var $temp = $("<textarea>");
+                $("body").append($temp);
+                $temp.val(text).select();
+                document.execCommand("copy");
+                $temp.remove();
+                $(this).text("复制成功").removeClass("lg-bg-orange");
+
+                var e = this;
+                setTimeout(function() {
+                    $(e).text("复制").addClass("lg-bg-orange");
+                }, 500);
+            });
+        });
+    </script>
+</div>
+<footer id="app-footer"></footer>
+<div class="am-modal am-modal-alert" tabindex="-1" id="lg-alert">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="lg-alert-title"></div>
+<div class="am-modal-bd" id="lg-alert-message"></div>
+<div class="am-modal-footer">
+<span class="am-modal-btn">确定</span>
+</div>
+</div>
+</div>
+<script src="/js/ace/ace.js"></script>
+<script src="https://cdn.luogu.org/js/vendor.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/jsmind.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/amazeui.min.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts-more.js"></script>
+<script src="/static/katex/katex.min.js"></script>
+<script src="/static/katex/contrib/auto-render.min.js"></script>
+<script src="https://cdn.luogu.org/markdown-palettes/markdown-palettes.min.js?ver=20190219"></script>
+<script src="https://cdn.luogu.org/js/luogu3.js?ver=20190101"></script>
+</body>
+</html>

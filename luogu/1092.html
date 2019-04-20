@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title> P1092 虫食算 - 洛谷</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta name="csrf-token" content="1555851872:t7mP5Rn4wJRL/5OmGYFxpiQlHXtGHlBMJzrjKU9rZqw=">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/amazeui.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/katex.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/luogu3.css?ver=20190102">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/highlight_tomorrow.css">
+<link rel="stylesheet" href="https://cdn.luogu.org/markdown-palettes/markdown-palettes.css?ver=20190219">
+<script src="https://cdn.luogu.org/js/jquery-2.1.1.min.js"></script>
+<script src="https://cdn.luogu.org/js/luogu3_pre.js?ver=20190101"></script>
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn.luogu.org/images/favicon3.ico" media="screen"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/fe/loader.css?ver=20190417">
+<script>window._feInjection = JSON.parse(decodeURIComponent("%7B%22code%22%3A200%2C%22currentUser%22%3Anull%2C%22currentTemplate%22%3A%22Excited%22%2C%22currentData%22%3A%7B%22shortHeader%22%3Afalse%2C%22pageName%22%3A%22%5Cu9898%5Cu76ee%5Cu8be6%5Cu60c5%22%7D%2C%22currentMeta%22%3A%7B%22title%22%3A%22%20P1092%20%5Cu866b%5Cu98df%5Cu7b97%22%7D%7D"));</script>
+<script>window._release = '20190417';</script>
+<script src="https://cdn.luogu.org/fe/loader.js?ver=20190417" charset="utf-8" defer></script>
+</head>
+<body>
+<div id="app-header"></div>
+<nav id="app-sidenav"></nav>
+<div id="app-body"></div>
+<script>
+    function scrollToId (id) {
+        $('html, body').animate({
+            scrollTop: ($('#' + id).offset().top)
+        }, 500);
+    }
+</script>
+<style>
+    .lg-toolbar {
+        display: none;
+    }
+
+    #app-body { /* Unused in fallback FE */
+        display: none;
+    }
+
+    #app-body-new{
+        display: block;
+        margin-bottom: 2em;
+        position: relative;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    @media (min-width: 576px) {
+        #app-body-new {
+            margin-left: 70px;
+        }
+    }
+
+    code {
+        font-family: monospace, "Courier New";
+    }
+
+</style>
+<div id="app-body-new">
+<div class="lg-toolbar" data-am-sticky>
+<h1><a href="/recordnew/lists?uid=&pid=P1092" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a> P1092 虫食算</h1>
+</div>
+<div class="am-g lg-main-content">
+<div class="am-u-md-4 lg-right" name="problemright">
+<section class="am-panel am-panel-default lg-summary" id="psummary">
+<div class="lg-summary-content">
+<ul class="am-list am-list-static lg-summary-list">
+<li>
+<ul class="am-avg-sm-2"><li><span class="lg-bignum-num">4.4<small>K</small><small></small></span><span class="lg-bignum-text">通过</span></li><li><span class="lg-bignum-num">19.7<small>K</small><small></small></span><span class="lg-bignum-text">提交</span></li></ul>
+</li>
+<li>
+<strong>题目提供者</strong>
+<span class="lg-right"><a class='lg-fg-gray' href="/space/show?uid=19" target="_blank">CCF_NOI</a></span>
+</li>
+<li>
+<strong>评测方式</strong>
+<span class="lg-right"><b>云端评测</b></span>
+</li>
+<li><strong>标签</strong>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="4">搜索</span>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="5">数论,数学</span>
+<span class="lg-tag am-badge am-radius lg-bg-bluelight" data-tagid="83">NOIp提高组</span>
+<span class="lg-tag am-badge am-radius lg-bg-green" data-tagid="21">2004</span>
+<style>.lg-tag { cursor: pointer; }</style>
+<script>
+                                $(".lg-tag").click(function() {
+                                    window.open("/problemnew/lists?tag=" + $(this).attr('data-tagid'));
+                                })
+                            </script>
+</li>
+<li><strong>难度</strong>
+<span class="lg-right"><span class="am-badge am-radius lg-bg-bluelight">提高+/省选-</span></span>
+</li>
+<li><strong>时空限制</strong>
+<span class="lg-right">1000ms / 128MB</span>
+</li>
+</ul>
+</div>
+<p>
+<button class="am-btn am-btn-danger am-btn-sm" id="submit" pid="P1092">
+<i class="am-icon-paper-plane"></i> 提交
+</button>
+<a target="_blank" href="/problemnew/solution/P1092" class="am-btn am-btn-primary am-btn-sm">
+<i class="am-icon-book"></i> 题解
+</a>
+<a data-pjax href="/recordnew/lists?pid=P1092" class="am-btn am-btn-primary am-btn-sm" title="查看本题提交记录">
+<i class="am-icon-pie-chart"></i>
+</a>
+<button class="am-btn am-btn-primary am-btn-sm lg-pointer" name="showtag" title="显示算法标签">
+<i class="am-icon-tags"></i>
+</button>
+</p>
+<li>提示：收藏到任务计划后，可在首页查看。</li>
+<p>
+<a class="am-btn am-btn-danger am-btn-sm" href="/fe/problem/P1092" target="_blank">体验新版界面</a>
+</p>
+</section>
+<section class="am-panel am-panel-default lg-summary">
+<h2>最新讨论
+<a onclick="$('#discuss-lists').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看本题讨论">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" style="display: none" id="discuss-lists">
+<li><a data-pjax href="/discuss/show?postid=110251" class="am-padding-0">妹子刚学oi，QwQ求助搜索1W…</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=104362" class="am-padding-0">如果从0~n-1 TEL,可以试下n…</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=101398" class="am-padding-0">情况紧急！</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=99453" class="am-padding-0">求救！求神犇指点！</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=95571" class="am-padding-0">关于map,他死了</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=93467" class="am-padding-0">蒟蒻救助 too</a>
+</li>
+<div style="overflow: auto">
+<a data-pjax href="/discuss/lists?forumname=P1092" class="am-btn am-btn-primary am-btn-sm lg-right">进入讨论版</a>
+</div>
+</ul>
+</section>
+<section class="am-panel am-panel-default lg-summary am-hide-sm">
+<h2>推荐的相关题目
+<a onclick="$('#recommendation-list').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看推荐题目">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" id="recommendation-list" style="display: none">
+<li>
+<a class='colored' href="/problemnew/show/P1120" target="_blank"><b>P1120</b> 小木棍 ［数据加强版］</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P1162" target="_blank"><b>P1162</b> 填涂颜色</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P1032" target="_blank"><b>P1032</b> 字串变换</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P1074" target="_blank"><b>P1074</b> 靶形数独 </a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P1040" target="_blank"><b>P1040</b> 加分二叉树</a>
+</li>
+</ul>
+</section>
+</div>
+<div class="am-u-md-8 lg-right" name="problemleft">
+<div class="lg-content-left">
+<div class="lg-article am-g">
+<h2>题目描述</h2>
+<p>所谓虫食算，就是原先的算式中有一部分被虫子啃掉了，需要我们根据剩下的数字来判定被啃掉的字母。来看一个简单的例子：</p>
+<pre><code> 43#9865#045
++  8468#6633
+ 44445509678</code></pre>
+<p>其中$#$号代表被虫子啃掉的数字。根据算式，我们很容易判断：第一行的两个数字分别是$5$和$3$，第二行的数字是$5$。</p>
+<p>现在，我们对问题做两个限制：</p>
+<p>首先，我们只考虑加法的虫食算。这里的加法是$N$进制加法，算式中三个数都有$N$位，允许有前导的$0$。</p>
+<p>其次，虫子把所有的数都啃光了，我们只知道哪些数字是相同的，我们将相同的数字用相同的字母表示，不同的数字用不同的字母表示。如果这个算式是$N$进制的，我们就取英文字母表午的前$N$个大写字母来表示这个算式中的$0$到$N-1$这$N$个不同的数字：但是这$N$个字母并不一定顺序地代表$0$到$N-1$。输入数据保证$N$个字母分别至少出现一次。</p>
+<pre><code> BADC
++CBDA
+ DCCC</code></pre>
+<p>上面的算式是一个4进制的算式。很显然，我们只要让$ABCD$分别代表$0123$，便可以让这个式子成立了。你的任务是，对于给定的$N$进制加法算式，求出$N$个不同的字母分别代表的数字，使得该加法算式成立。输入数据保证有且仅有一组解。</p>
+<h2>输入输出格式</h2>
+<strong>输入格式：</strong><br>
+<p><p>包含四行。<br />
+第一行有一个正整数$N(N \le 26)$。 </p>
+<p>后面的三行，每行有一个由大写字母组成的字符串，分别代表两个加数以及和。这3个字符串左右两端都没有空格，从高位到低位，并且恰好有$N$位。</p></p>
+<strong>输出格式：</strong><br>
+<p><p>一行，即唯一的那组解。 </p>
+<p>解是这样表示的：输出$N$个数字，分别表示$A,B,C,…$所代表的数字，相邻的两个数字用一个空格隔开，不能有多余的空格。</p></p>
+<h2>输入输出样例</h2>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>5
+ABCED
+BDACE
+EBBAA
+</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>1 0 3 4 2
+</pre>
+</div>
+</div>
+<h2>说明</h2>
+<p>对于30％的数据，保证有$N \le 10$；</p>
+<p>对于50％的数据，保证有$N \le 15$；</p>
+<p>对于全部的数据，保证有$N \le 26$。</p>
+<p>noip2004提高组第4题</p>
+</div>
+<div class='lg-article-sub am-g' id="sub"></div>
+</div>
+</div>
+</div>
+<div class="am-modal am-modal-prompt" tabindex="-1" id="confirm">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="memtitle">提示</div>
+<div class="am-modal-bd" id="memadmin">
+标程仅供做题后或实在无思路时参考。<br>
+请自觉、自律地使用该功能并请对自己的学习负责。<br>
+如果发现恶意抄袭标程，将按照I类违反进行处理。<br>
+</div>
+<div class="am-modal-footer">
+<span class="am-modal-btn" data-am-modal-cancel>取消</span>
+<span class="am-modal-btn" data-am-modal-confirm>确定</span>
+</div>
+</div>
+</div>
+<script>
+        $(document).ready(function () {
+            $("#expandstd").click(function () {
+                $('#confirm').modal({
+                    relatedTarget: this,
+                    onConfirm: function (e) {
+                        $("#stdcode").slideDown();
+                        $("#expandstd").hide();
+                    }
+                });
+            });
+            $("#submit").click(
+                function () {
+                    hide_artile();
+                    $(document).scrollTop($(document).scrollTop() - 80);
+                    var pid = $(this).attr("pid");
+                    $.get("/problem/ajax_submit?pid=" + pid, function (data) {
+                        var arr = eval('(' + data + ')');
+                        if (arr['code'] == 201) {
+                            $('.lg-article-sub').html(arr['more']['html']);
+                        }
+                        else if (arr['code'] == 200) {
+
+                        }
+                        else {
+                            if (arr['code'] == 0 || arr['code'] == -3) {
+                                backarticle();
+                            }
+                            show_alert("提交失败", arr['message']);
+                        }
+                    });
+                }
+            );
+            $("button[title].am-btn,a[title].am-btn").poshytip({
+                className: 'tip-twitter',
+                showTimeout: 1,
+                alignTo: 'target',
+                alignX: 'center',
+                alignY: 'bottom'
+            });
+            $('[name=showtag]').click(function () {
+                $('.am-badge.am-hide').removeClass('am-hide');
+            });
+            $(".sample-copy").click(function() {
+                var element = $(this).parents(".copy-region").find("pre");
+                var text = $(element).text();
+                var $temp = $("<textarea>");
+                $("body").append($temp);
+                $temp.val(text).select();
+                document.execCommand("copy");
+                $temp.remove();
+                $(this).text("复制成功").removeClass("lg-bg-orange");
+
+                var e = this;
+                setTimeout(function() {
+                    $(e).text("复制").addClass("lg-bg-orange");
+                }, 500);
+            });
+        });
+    </script>
+</div>
+<footer id="app-footer"></footer>
+<div class="am-modal am-modal-alert" tabindex="-1" id="lg-alert">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="lg-alert-title"></div>
+<div class="am-modal-bd" id="lg-alert-message"></div>
+<div class="am-modal-footer">
+<span class="am-modal-btn">确定</span>
+</div>
+</div>
+</div>
+<script src="/js/ace/ace.js"></script>
+<script src="https://cdn.luogu.org/js/vendor.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/jsmind.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/amazeui.min.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts-more.js"></script>
+<script src="/static/katex/katex.min.js"></script>
+<script src="/static/katex/contrib/auto-render.min.js"></script>
+<script src="https://cdn.luogu.org/markdown-palettes/markdown-palettes.min.js?ver=20190219"></script>
+<script src="https://cdn.luogu.org/js/luogu3.js?ver=20190101"></script>
+</body>
+</html>

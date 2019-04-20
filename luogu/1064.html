@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title> P1064 金明的预算方案 - 洛谷</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta name="csrf-token" content="1555851859:wgdaambI7b0N+pFfY07N6cTgOhuRguzA2VMhiWg7p/w=">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/amazeui.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/katex.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/luogu3.css?ver=20190102">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/highlight_tomorrow.css">
+<link rel="stylesheet" href="https://cdn.luogu.org/markdown-palettes/markdown-palettes.css?ver=20190219">
+<script src="https://cdn.luogu.org/js/jquery-2.1.1.min.js"></script>
+<script src="https://cdn.luogu.org/js/luogu3_pre.js?ver=20190101"></script>
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn.luogu.org/images/favicon3.ico" media="screen"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/fe/loader.css?ver=20190417">
+<script>window._feInjection = JSON.parse(decodeURIComponent("%7B%22code%22%3A200%2C%22currentUser%22%3Anull%2C%22currentTemplate%22%3A%22Excited%22%2C%22currentData%22%3A%7B%22shortHeader%22%3Afalse%2C%22pageName%22%3A%22%5Cu9898%5Cu76ee%5Cu8be6%5Cu60c5%22%7D%2C%22currentMeta%22%3A%7B%22title%22%3A%22%20P1064%20%5Cu91d1%5Cu660e%5Cu7684%5Cu9884%5Cu7b97%5Cu65b9%5Cu6848%22%7D%7D"));</script>
+<script>window._release = '20190417';</script>
+<script src="https://cdn.luogu.org/fe/loader.js?ver=20190417" charset="utf-8" defer></script>
+</head>
+<body>
+<div id="app-header"></div>
+<nav id="app-sidenav"></nav>
+<div id="app-body"></div>
+<script>
+    function scrollToId (id) {
+        $('html, body').animate({
+            scrollTop: ($('#' + id).offset().top)
+        }, 500);
+    }
+</script>
+<style>
+    .lg-toolbar {
+        display: none;
+    }
+
+    #app-body { /* Unused in fallback FE */
+        display: none;
+    }
+
+    #app-body-new{
+        display: block;
+        margin-bottom: 2em;
+        position: relative;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    @media (min-width: 576px) {
+        #app-body-new {
+            margin-left: 70px;
+        }
+    }
+
+    code {
+        font-family: monospace, "Courier New";
+    }
+
+</style>
+<div id="app-body-new">
+<div class="lg-toolbar" data-am-sticky>
+<h1><a href="/recordnew/lists?uid=&pid=P1064" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a> P1064 金明的预算方案</h1>
+</div>
+<div class="am-g lg-main-content">
+<div class="am-u-md-4 lg-right" name="problemright">
+<section class="am-panel am-panel-default lg-summary" id="psummary">
+<div class="lg-summary-content">
+<ul class="am-list am-list-static lg-summary-list">
+<li>
+<ul class="am-avg-sm-2"><li><span class="lg-bignum-num">12.6<small>K</small><small></small></span><span class="lg-bignum-text">通过</span></li><li><span class="lg-bignum-num">37.7<small>K</small><small></small></span><span class="lg-bignum-text">提交</span></li></ul>
+</li>
+<li>
+<strong>题目提供者</strong>
+<span class="lg-right"><a class='lg-fg-gray' href="/space/show?uid=19" target="_blank">CCF_NOI</a></span>
+</li>
+<li>
+<strong>评测方式</strong>
+<span class="lg-right"><b>云端评测</b></span>
+</li>
+<li><strong>标签</strong>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="3">动态规划,动规,dp</span>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="139">背包</span>
+<span class="lg-tag am-badge am-radius lg-bg-bluelight" data-tagid="83">NOIp提高组</span>
+<span class="lg-tag am-badge am-radius lg-bg-green" data-tagid="23">2006</span>
+<style>.lg-tag { cursor: pointer; }</style>
+<script>
+                                $(".lg-tag").click(function() {
+                                    window.open("/problemnew/lists?tag=" + $(this).attr('data-tagid'));
+                                })
+                            </script>
+</li>
+<li><strong>难度</strong>
+<span class="lg-right"><span class="am-badge am-radius lg-bg-green">普及+/提高</span></span>
+</li>
+<li><strong>时空限制</strong>
+<span class="lg-right">1000ms / 128MB</span>
+</li>
+</ul>
+</div>
+<p>
+<button class="am-btn am-btn-danger am-btn-sm" id="submit" pid="P1064">
+<i class="am-icon-paper-plane"></i> 提交
+</button>
+<a target="_blank" href="/problemnew/solution/P1064" class="am-btn am-btn-primary am-btn-sm">
+<i class="am-icon-book"></i> 题解
+</a>
+<a data-pjax href="/recordnew/lists?pid=P1064" class="am-btn am-btn-primary am-btn-sm" title="查看本题提交记录">
+<i class="am-icon-pie-chart"></i>
+</a>
+<button class="am-btn am-btn-primary am-btn-sm lg-pointer" name="showtag" title="显示算法标签">
+<i class="am-icon-tags"></i>
+</button>
+</p>
+<li>提示：收藏到任务计划后，可在首页查看。</li>
+<p>
+<a class="am-btn am-btn-danger am-btn-sm" href="/fe/problem/P1064" target="_blank">体验新版界面</a>
+</p>
+</section>
+<section class="am-panel am-panel-default lg-summary">
+<h2>最新讨论
+<a onclick="$('#discuss-lists').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看本题讨论">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" style="display: none" id="discuss-lists">
+<li><a data-pjax href="/discuss/show?postid=108877" class="am-padding-0">q的所属主件编号竟然是包括…</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=108764" class="am-padding-0">第七个测试点为什么WA？</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=106833" class="am-padding-0">不知道哪里错了，请dalao看…</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=103053" class="am-padding-0">求助！</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=102879" class="am-padding-0">P1064帮忙看一下谢谢大佬，…</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=102831" class="am-padding-0">90分 求解</a>
+</li>
+<div style="overflow: auto">
+<a data-pjax href="/discuss/lists?forumname=P1064" class="am-btn am-btn-primary am-btn-sm lg-right">进入讨论版</a>
+</div>
+</ul>
+</section>
+<section class="am-panel am-panel-default lg-summary am-hide-sm">
+<h2>推荐的相关题目
+<a onclick="$('#recommendation-list').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看推荐题目">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" id="recommendation-list" style="display: none">
+<li>
+<a class='colored' href="/problemnew/show/P1048" target="_blank"><b>P1048</b> 采药</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P1541" target="_blank"><b>P1541</b> 乌龟棋</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P1063" target="_blank"><b>P1063</b> 能量项链</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P1049" target="_blank"><b>P1049</b> 装箱问题</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P1616" target="_blank"><b>P1616</b> 疯狂的采药</a>
+</li>
+</ul>
+</section>
+</div>
+<div class="am-u-md-8 lg-right" name="problemleft">
+<div class="lg-content-left">
+<div class="lg-article am-g">
+<h2>题目描述</h2>
+<p>金明今天很开心，家里购置的新房就要领钥匙了，新房里有一间金明自己专用的很宽敞的房间。更让他高兴的是，妈妈昨天对他说：“你的房间需要购买哪些物品，怎么布置，你说了算，只要不超过$N$元钱就行”。今天一早，金明就开始做预算了，他把想买的物品分为两类：主件与附件，附件是从属于某个主件的，下表就是一些主件与附件的例子：</p>
+<p>主件 附件</p>
+<p>电脑 打印机，扫描仪</p>
+<p>书柜 图书</p>
+<p>书桌 台灯，文具</p>
+<p>工作椅 无</p>
+<p>如果要买归类为附件的物品，必须先买该附件所属的主件。每个主件可以有$0$个、$1$个或$2$个附件。附件不再有从属于自己的附件。金明想买的东西很多，肯定会超过妈妈限定的$N$元。于是，他把每件物品规定了一个重要度，分为$5$等：用整数$1-5$表示，第$5$等最重要。他还从因特网上查到了每件物品的价格（都是$10$元的整数倍）。他希望在不超过$N$元（可以等于$N$元）的前提下，使每件物品的价格与重要度的乘积的总和最大。</p>
+<p>设第$j$件物品的价格为$v_[j]$，重要度为$w_[j]$，共选中了$k$件物品，编号依次为$j_1,j_2,…,j_k$，则所求的总和为：</p>
+<p>$v_[j_1] \times w_[j_1]+v_[j_2] \times w_[j_2]+ …+v_[j_k] \times w_[j_k]$。</p>
+<p>请你帮助金明设计一个满足要求的购物单。</p>
+<h2>输入输出格式</h2>
+<strong>输入格式：</strong><br>
+<p><p>第$1$行，为两个正整数，用一个空格隔开：</p>
+<p>$N m$
+（其中$N(&lt;32000)$表示总钱数，$m(&lt;60)$为希望购买物品的个数。）
+从第$2$行到第$m+1$行，第$j$行给出了编号为$j-1$的物品的基本数据，每行有$3$个非负整数</p>
+<p>$v p q$
+（其中$v$表示该物品的价格（$v&lt;10000$），p表示该物品的重要度（$1-5$），$q$表示该物品是主件还是附件。如果$q=0$，表示该物品为主件，如果$q&gt;0$，表示该物品为附件，$q$是所属主件的编号）</p></p>
+<strong>输出格式：</strong><br>
+<p><p>一个正整数，为不超过总钱数的物品的价格与重要度乘积的总和的最大值（$&lt;200000$）。</p></p>
+<h2>输入输出样例</h2>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>1000 5
+800 2 0
+400 5 1
+300 5 1
+400 3 0
+500 2 0
+</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>2200</pre>
+</div>
+</div>
+<h2>说明</h2>
+<p>NOIP 2006 提高组 第二题</p>
+</div>
+<div class='lg-article-sub am-g' id="sub"></div>
+</div>
+</div>
+</div>
+<div class="am-modal am-modal-prompt" tabindex="-1" id="confirm">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="memtitle">提示</div>
+<div class="am-modal-bd" id="memadmin">
+标程仅供做题后或实在无思路时参考。<br>
+请自觉、自律地使用该功能并请对自己的学习负责。<br>
+如果发现恶意抄袭标程，将按照I类违反进行处理。<br>
+</div>
+<div class="am-modal-footer">
+<span class="am-modal-btn" data-am-modal-cancel>取消</span>
+<span class="am-modal-btn" data-am-modal-confirm>确定</span>
+</div>
+</div>
+</div>
+<script>
+        $(document).ready(function () {
+            $("#expandstd").click(function () {
+                $('#confirm').modal({
+                    relatedTarget: this,
+                    onConfirm: function (e) {
+                        $("#stdcode").slideDown();
+                        $("#expandstd").hide();
+                    }
+                });
+            });
+            $("#submit").click(
+                function () {
+                    hide_artile();
+                    $(document).scrollTop($(document).scrollTop() - 80);
+                    var pid = $(this).attr("pid");
+                    $.get("/problem/ajax_submit?pid=" + pid, function (data) {
+                        var arr = eval('(' + data + ')');
+                        if (arr['code'] == 201) {
+                            $('.lg-article-sub').html(arr['more']['html']);
+                        }
+                        else if (arr['code'] == 200) {
+
+                        }
+                        else {
+                            if (arr['code'] == 0 || arr['code'] == -3) {
+                                backarticle();
+                            }
+                            show_alert("提交失败", arr['message']);
+                        }
+                    });
+                }
+            );
+            $("button[title].am-btn,a[title].am-btn").poshytip({
+                className: 'tip-twitter',
+                showTimeout: 1,
+                alignTo: 'target',
+                alignX: 'center',
+                alignY: 'bottom'
+            });
+            $('[name=showtag]').click(function () {
+                $('.am-badge.am-hide').removeClass('am-hide');
+            });
+            $(".sample-copy").click(function() {
+                var element = $(this).parents(".copy-region").find("pre");
+                var text = $(element).text();
+                var $temp = $("<textarea>");
+                $("body").append($temp);
+                $temp.val(text).select();
+                document.execCommand("copy");
+                $temp.remove();
+                $(this).text("复制成功").removeClass("lg-bg-orange");
+
+                var e = this;
+                setTimeout(function() {
+                    $(e).text("复制").addClass("lg-bg-orange");
+                }, 500);
+            });
+        });
+    </script>
+</div>
+<footer id="app-footer"></footer>
+<div class="am-modal am-modal-alert" tabindex="-1" id="lg-alert">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="lg-alert-title"></div>
+<div class="am-modal-bd" id="lg-alert-message"></div>
+<div class="am-modal-footer">
+<span class="am-modal-btn">确定</span>
+</div>
+</div>
+</div>
+<script src="/js/ace/ace.js"></script>
+<script src="https://cdn.luogu.org/js/vendor.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/jsmind.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/amazeui.min.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts-more.js"></script>
+<script src="/static/katex/katex.min.js"></script>
+<script src="/static/katex/contrib/auto-render.min.js"></script>
+<script src="https://cdn.luogu.org/markdown-palettes/markdown-palettes.min.js?ver=20190219"></script>
+<script src="https://cdn.luogu.org/js/luogu3.js?ver=20190101"></script>
+</body>
+</html>

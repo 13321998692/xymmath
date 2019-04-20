@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title> P4826 [USACO15FEB]Superbull 超级牛 - 洛谷</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta name="csrf-token" content="1555853469:h545bwJ1rZowmyyG9M1KbTQgiHJedI90V9CuU67Pgtc=">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/amazeui.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/katex.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/luogu3.css?ver=20190102">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/highlight_tomorrow.css">
+<link rel="stylesheet" href="https://cdn.luogu.org/markdown-palettes/markdown-palettes.css?ver=20190219">
+<script src="https://cdn.luogu.org/js/jquery-2.1.1.min.js"></script>
+<script src="https://cdn.luogu.org/js/luogu3_pre.js?ver=20190101"></script>
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn.luogu.org/images/favicon3.ico" media="screen"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/fe/loader.css?ver=20190417">
+<script>window._feInjection = JSON.parse(decodeURIComponent("%7B%22code%22%3A200%2C%22currentUser%22%3Anull%2C%22currentTemplate%22%3A%22Excited%22%2C%22currentData%22%3A%7B%22shortHeader%22%3Afalse%2C%22pageName%22%3A%22%5Cu9898%5Cu76ee%5Cu8be6%5Cu60c5%22%7D%2C%22currentMeta%22%3A%7B%22title%22%3A%22%20P4826%20%5BUSACO15FEB%5DSuperbull%20%5Cu8d85%5Cu7ea7%5Cu725b%22%7D%7D"));</script>
+<script>window._release = '20190417';</script>
+<script src="https://cdn.luogu.org/fe/loader.js?ver=20190417" charset="utf-8" defer></script>
+</head>
+<body>
+<div id="app-header"></div>
+<nav id="app-sidenav"></nav>
+<div id="app-body"></div>
+<script>
+    function scrollToId (id) {
+        $('html, body').animate({
+            scrollTop: ($('#' + id).offset().top)
+        }, 500);
+    }
+</script>
+<style>
+    .lg-toolbar {
+        display: none;
+    }
+
+    #app-body { /* Unused in fallback FE */
+        display: none;
+    }
+
+    #app-body-new{
+        display: block;
+        margin-bottom: 2em;
+        position: relative;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    @media (min-width: 576px) {
+        #app-body-new {
+            margin-left: 70px;
+        }
+    }
+
+    code {
+        font-family: monospace, "Courier New";
+    }
+
+</style>
+<div id="app-body-new">
+<div class="lg-toolbar" data-am-sticky>
+<h1><a href="/recordnew/lists?uid=&pid=P4826" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a> P4826 [USACO15FEB]Superbull 超级牛</h1>
+</div>
+<div class="am-g lg-main-content">
+<div class="am-u-md-4 lg-right" name="problemright">
+<section class="am-panel am-panel-default lg-summary" id="psummary">
+<div class="lg-summary-content">
+<ul class="am-list am-list-static lg-summary-list">
+<li>
+<ul class="am-avg-sm-2"><li><span class="lg-bignum-num">100<small></small></span><span class="lg-bignum-text">通过</span></li><li><span class="lg-bignum-num">194<small></small></span><span class="lg-bignum-text">提交</span></li></ul>
+</li>
+<li>
+<strong>题目提供者</strong>
+<span class="lg-right"><a class='lg-fg-green' href="/space/show?uid=57705" target="_blank">俺是小程</a></span>
+</li>
+<li>
+<strong>评测方式</strong>
+<span class="lg-right"><b>云端评测</b></span>
+</li>
+<li><strong>标签</strong>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="155">图的建立,建图</span>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="166">生成树</span>
+<span class="lg-tag am-badge am-radius lg-bg-bluelight" data-tagid="46">USACO</span>
+<span class="lg-tag am-badge am-radius lg-bg-green" data-tagid="32">2015</span>
+<style>.lg-tag { cursor: pointer; }</style>
+<script>
+                                $(".lg-tag").click(function() {
+                                    window.open("/problemnew/lists?tag=" + $(this).attr('data-tagid'));
+                                })
+                            </script>
+</li>
+<li><strong>难度</strong>
+<span class="lg-right"><span class="am-badge am-radius lg-bg-bluelight">提高+/省选-</span></span>
+</li>
+<li><strong>时空限制</strong>
+<span class="lg-right">1000ms / 128MB</span>
+</li>
+</ul>
+</div>
+<p>
+<button class="am-btn am-btn-danger am-btn-sm" id="submit" pid="P4826">
+<i class="am-icon-paper-plane"></i> 提交
+</button>
+<a target="_blank" href="/problemnew/solution/P4826" class="am-btn am-btn-primary am-btn-sm">
+<i class="am-icon-book"></i> 题解
+</a>
+<a data-pjax href="/recordnew/lists?pid=P4826" class="am-btn am-btn-primary am-btn-sm" title="查看本题提交记录">
+<i class="am-icon-pie-chart"></i>
+</a>
+<button class="am-btn am-btn-primary am-btn-sm lg-pointer" name="showtag" title="显示算法标签">
+<i class="am-icon-tags"></i>
+</button>
+</p>
+<li>提示：收藏到任务计划后，可在首页查看。</li>
+<p>
+<a class="am-btn am-btn-danger am-btn-sm" href="/fe/problem/P4826" target="_blank">体验新版界面</a>
+</p>
+</section>
+<section class="am-panel am-panel-default lg-summary">
+<h2>最新讨论
+<a onclick="$('#discuss-lists').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看本题讨论">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" style="display: none" id="discuss-lists">
+<li><a data-pjax href="/discuss/show?postid=63754" class="am-padding-0">重新排版后的翻译</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=63425" class="am-padding-0">要开 long long</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=60124" class="am-padding-0">还是翻译</a>
+</li>
+<div style="overflow: auto">
+<a data-pjax href="/discuss/lists?forumname=P4826" class="am-btn am-btn-primary am-btn-sm lg-right">进入讨论版</a>
+</div>
+</ul>
+</section>
+<section class="am-panel am-panel-default lg-summary am-hide-sm">
+<h2>推荐的相关题目
+<a onclick="$('#recommendation-list').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看推荐题目">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" id="recommendation-list" style="display: none">
+<li>
+<a class='colored' href="/problemnew/show/P4568" target="_blank"><b>P4568</b> [JLOI2011]飞行路线</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P4951" target="_blank"><b>P4951</b> [USACO 2001 OPEN]地震</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/CF986B" target="_blank"><b>CF986B</b> Petr and Permutations</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3959" target="_blank"><b>P3959</b> 宝藏</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P4822" target="_blank"><b>P4822</b> [BJWC2012]冻结</a>
+</li>
+</ul>
+</section>
+</div>
+<div class="am-u-md-8 lg-right" name="problemleft">
+<div class="lg-content-left">
+<div class="lg-article am-g">
+<h2>题意翻译</h2>
+<p>Bessie和她的朋友们正在一年一度的Superbull锦标赛中打球，而Farmer John负责让比赛尽可能激动人心。总共有 $ N $ 支队伍（ $ 1≤N≤2000 $ ）参加了Superbull锦标赛。每个团队都有一个 $ 1 ... 2 ^ {30} -1 $的团队ID。</p>
+<p>Superbull是一场淘汰赛 - 在每场比赛之后，FJ选择淘汰其中一支球队，而被淘汰的球队再也无法参加任何比赛了。当只剩下一支球队时，比赛就结束了。</p>
+<p>FJ注意到一个不寻常的事情：在任何游戏中，两个团队的总分是两个团队ID的按位异或（XOR）。例如，如果第 $ 12 $ 队和第 $ 20 $ 队将参加比赛，则该游戏的得分为 $ 24 $ 分，因为01100 XOR 10100 = 11000。</p>
+<p>FJ想要设计一种比赛方案，让所有比赛的得分总和最大。请帮助Farmer John组织比赛。</p>
+<p>输入格式：第一行包括一个整数 $ N $ ，下面 $ N $ 行每行包括一个队伍的ID。</p>
+<p>输出格式：输出一个整数，代表比赛的最大总得分。</p>
+<p>样例解释：让 $ 3 $ 队与 $ 9 $ 队进行比赛，并让 $ 9 $ 队晋级。然后他让 $ 6 $ 队和 $ 9 $ 队对决，让 $ 6 $ 队获胜。最后，第 $ 6 $ 队和第 $ 10 $ 队比赛， $ 10 $ 队获胜。总得分为：3 XOR 9+6 XOR 9+6 XOR 10=10+15+12=37。</p>
+<h2>题目描述</h2>
+<p>Bessie and her friends are playing hoofball in the annual Superbull championship, and Farmer John is in charge of making the tournament as exciting as possible. A total of $N$ $(1 &lt;= N &lt;= 2000)$ teams are playing in the Superbull. Each team is assigned a distinct integer team ID in the range 1...2^30-1 to distinguish it from the other teams. The Superbull is an elimination tournament -- after every game, Farmer John chooses which team to eliminate from the Superbull, and the eliminated team can no longer play in any more games. The Superbull ends when only one team remains.</p>
+<p>Farmer John notices a very unusual property about the scores in matches! In any game, the combined score of the two teams always ends up being the bitwise exclusive OR (XOR) of the two team IDs. For example, if teams 12 and 20 were to play, then 24 points would be scored in that game, since 01100 XOR 10100 = 11000.</p>
+<p>Farmer John believes that the more points are scored in a game, the more exciting the game is. Because of this, he wants to choose a series of games to be played such that the total number of points scored in the Superbull is maximized. Please help Farmer John organize the matches.</p>
+<h2>输入输出格式</h2>
+<strong>输入格式：</strong><br>
+<p><p>The first line contains the single integer $N$. The following $N$ lines contain the N team IDs.</p></p>
+<strong>输出格式：</strong><br>
+<p><p>Output the maximum possible number of points that can be scored in the Superbull.</p></p>
+<h2>输入输出样例</h2>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>4
+3
+6
+9
+10</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>37</pre>
+</div>
+</div>
+<h2>说明</h2>
+<p>OUTPUT DETAILS: One way to achieve 37 is as follows: FJ matches teams 3 and 9, and decides that 9 wins, so teams 6, 9, and 10 are left in the tournament. He then matches teams 6 and 9, and lets team 6 win. Teams 6 and 10 are then left in the tournament. Finally, teams 6 and 10 face off, and team 10 wins. The total number of points scored is (3 XOR 9) + (6 XOR 9) + (6 XOR 10) = 10 + 15 + 12 = 37.</p>
+<p>NOTE: The bitwise exclusive OR operation, commonly denoted by the ^ symbol, is a bitwise operation that performs the logical exclusive OR operation on each position in two binary integers. The result in each position is 1 if only the first bit is 1 or only the second bit is 1, but is 0 if both bits are 0 or both are 1. For example: 10100 (decimal 20) XOR 01100 (decimal 12) = 11000 (decimal 24)</p>
+<p>[Problem credits: Alex Yang, 2015] </p>
+</div>
+<div class='lg-article-sub am-g' id="sub"></div>
+</div>
+</div>
+</div>
+<div class="am-modal am-modal-prompt" tabindex="-1" id="confirm">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="memtitle">提示</div>
+<div class="am-modal-bd" id="memadmin">
+标程仅供做题后或实在无思路时参考。<br>
+请自觉、自律地使用该功能并请对自己的学习负责。<br>
+如果发现恶意抄袭标程，将按照I类违反进行处理。<br>
+</div>
+<div class="am-modal-footer">
+<span class="am-modal-btn" data-am-modal-cancel>取消</span>
+<span class="am-modal-btn" data-am-modal-confirm>确定</span>
+</div>
+</div>
+</div>
+<script>
+        $(document).ready(function () {
+            $("#expandstd").click(function () {
+                $('#confirm').modal({
+                    relatedTarget: this,
+                    onConfirm: function (e) {
+                        $("#stdcode").slideDown();
+                        $("#expandstd").hide();
+                    }
+                });
+            });
+            $("#submit").click(
+                function () {
+                    hide_artile();
+                    $(document).scrollTop($(document).scrollTop() - 80);
+                    var pid = $(this).attr("pid");
+                    $.get("/problem/ajax_submit?pid=" + pid, function (data) {
+                        var arr = eval('(' + data + ')');
+                        if (arr['code'] == 201) {
+                            $('.lg-article-sub').html(arr['more']['html']);
+                        }
+                        else if (arr['code'] == 200) {
+
+                        }
+                        else {
+                            if (arr['code'] == 0 || arr['code'] == -3) {
+                                backarticle();
+                            }
+                            show_alert("提交失败", arr['message']);
+                        }
+                    });
+                }
+            );
+            $("button[title].am-btn,a[title].am-btn").poshytip({
+                className: 'tip-twitter',
+                showTimeout: 1,
+                alignTo: 'target',
+                alignX: 'center',
+                alignY: 'bottom'
+            });
+            $('[name=showtag]').click(function () {
+                $('.am-badge.am-hide').removeClass('am-hide');
+            });
+            $(".sample-copy").click(function() {
+                var element = $(this).parents(".copy-region").find("pre");
+                var text = $(element).text();
+                var $temp = $("<textarea>");
+                $("body").append($temp);
+                $temp.val(text).select();
+                document.execCommand("copy");
+                $temp.remove();
+                $(this).text("复制成功").removeClass("lg-bg-orange");
+
+                var e = this;
+                setTimeout(function() {
+                    $(e).text("复制").addClass("lg-bg-orange");
+                }, 500);
+            });
+        });
+    </script>
+</div>
+<footer id="app-footer"></footer>
+<div class="am-modal am-modal-alert" tabindex="-1" id="lg-alert">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="lg-alert-title"></div>
+<div class="am-modal-bd" id="lg-alert-message"></div>
+<div class="am-modal-footer">
+<span class="am-modal-btn">确定</span>
+</div>
+</div>
+</div>
+<script src="/js/ace/ace.js"></script>
+<script src="https://cdn.luogu.org/js/vendor.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/jsmind.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/amazeui.min.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts-more.js"></script>
+<script src="/static/katex/katex.min.js"></script>
+<script src="/static/katex/contrib/auto-render.min.js"></script>
+<script src="https://cdn.luogu.org/markdown-palettes/markdown-palettes.min.js?ver=20190219"></script>
+<script src="https://cdn.luogu.org/js/luogu3.js?ver=20190101"></script>
+</body>
+</html>

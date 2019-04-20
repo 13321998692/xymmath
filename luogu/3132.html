@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title> P3132 [USACO16JAN]愤怒的奶牛Angry Cows - 洛谷</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta name="csrf-token" content="1555852753:lhvrPKmRopFnceq1eDeSYqs7+K/PTds4w/kCdH/uTg4=">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/amazeui.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/katex.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/luogu3.css?ver=20190102">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/highlight_tomorrow.css">
+<link rel="stylesheet" href="https://cdn.luogu.org/markdown-palettes/markdown-palettes.css?ver=20190219">
+<script src="https://cdn.luogu.org/js/jquery-2.1.1.min.js"></script>
+<script src="https://cdn.luogu.org/js/luogu3_pre.js?ver=20190101"></script>
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn.luogu.org/images/favicon3.ico" media="screen"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/fe/loader.css?ver=20190417">
+<script>window._feInjection = JSON.parse(decodeURIComponent("%7B%22code%22%3A200%2C%22currentUser%22%3Anull%2C%22currentTemplate%22%3A%22Excited%22%2C%22currentData%22%3A%7B%22shortHeader%22%3Afalse%2C%22pageName%22%3A%22%5Cu9898%5Cu76ee%5Cu8be6%5Cu60c5%22%7D%2C%22currentMeta%22%3A%7B%22title%22%3A%22%20P3132%20%5BUSACO16JAN%5D%5Cu6124%5Cu6012%5Cu7684%5Cu5976%5Cu725bAngry%20Cows%22%7D%7D"));</script>
+<script>window._release = '20190417';</script>
+<script src="https://cdn.luogu.org/fe/loader.js?ver=20190417" charset="utf-8" defer></script>
+</head>
+<body>
+<div id="app-header"></div>
+<nav id="app-sidenav"></nav>
+<div id="app-body"></div>
+<script>
+    function scrollToId (id) {
+        $('html, body').animate({
+            scrollTop: ($('#' + id).offset().top)
+        }, 500);
+    }
+</script>
+<style>
+    .lg-toolbar {
+        display: none;
+    }
+
+    #app-body { /* Unused in fallback FE */
+        display: none;
+    }
+
+    #app-body-new{
+        display: block;
+        margin-bottom: 2em;
+        position: relative;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    @media (min-width: 576px) {
+        #app-body-new {
+            margin-left: 70px;
+        }
+    }
+
+    code {
+        font-family: monospace, "Courier New";
+    }
+
+</style>
+<div id="app-body-new">
+<div class="lg-toolbar" data-am-sticky>
+<h1><a href="/recordnew/lists?uid=&pid=P3132" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a> P3132 [USACO16JAN]愤怒的奶牛Angry Cows</h1>
+</div>
+<div class="am-g lg-main-content">
+<div class="am-u-md-4 lg-right" name="problemright">
+<section class="am-panel am-panel-default lg-summary" id="psummary">
+<div class="lg-summary-content">
+<ul class="am-list am-list-static lg-summary-list">
+<li>
+<ul class="am-avg-sm-2"><li><span class="lg-bignum-num">136<small></small></span><span class="lg-bignum-text">通过</span></li><li><span class="lg-bignum-num">697<small></small></span><span class="lg-bignum-text">提交</span></li></ul>
+</li>
+<li>
+<strong>题目提供者</strong>
+<span class="lg-right"><a class='lg-fg-gray' href="/space/show?uid=20" target="_blank">FarmerJohn2</a></span>
+</li>
+<li>
+<strong>评测方式</strong>
+<span class="lg-right"><b>云端评测</b></span>
+</li>
+<li><strong>标签</strong>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="180">Tarjan</span>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="266">概率论,统计</span>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="7">贪心</span>
+<span class="lg-tag am-badge am-radius lg-bg-bluelight" data-tagid="46">USACO</span>
+<span class="lg-tag am-badge am-radius lg-bg-green" data-tagid="33">2016</span>
+<style>.lg-tag { cursor: pointer; }</style>
+<script>
+                                $(".lg-tag").click(function() {
+                                    window.open("/problemnew/lists?tag=" + $(this).attr('data-tagid'));
+                                })
+                            </script>
+</li>
+<li><strong>难度</strong>
+<span class="lg-right"><span class="am-badge am-radius lg-bg-bluelight">提高+/省选-</span></span>
+</li>
+<li><strong>时空限制</strong>
+<span class="lg-right">1000ms / 128MB</span>
+</li>
+</ul>
+</div>
+<p>
+<button class="am-btn am-btn-danger am-btn-sm" id="submit" pid="P3132">
+<i class="am-icon-paper-plane"></i> 提交
+</button>
+<a target="_blank" href="/problemnew/solution/P3132" class="am-btn am-btn-primary am-btn-sm">
+<i class="am-icon-book"></i> 题解
+</a>
+<a data-pjax href="/recordnew/lists?pid=P3132" class="am-btn am-btn-primary am-btn-sm" title="查看本题提交记录">
+<i class="am-icon-pie-chart"></i>
+</a>
+<button class="am-btn am-btn-primary am-btn-sm lg-pointer" name="showtag" title="显示算法标签">
+<i class="am-icon-tags"></i>
+</button>
+</p>
+<li>提示：收藏到任务计划后，可在首页查看。</li>
+<p>
+<a class="am-btn am-btn-danger am-btn-sm" href="/fe/problem/P3132" target="_blank">体验新版界面</a>
+</p>
+</section>
+<section class="am-panel am-panel-default lg-summary">
+<h2>最新讨论
+<a onclick="$('#discuss-lists').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看本题讨论">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" style="display: none" id="discuss-lists">
+<li><a data-pjax href="/discuss/show?postid=109122" class="am-padding-0">为什么不可以递推</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=103179" class="am-padding-0">所以。。这题如何用标签的方…</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=53713" class="am-padding-0">迷茫女嘉宾在线求助</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=24033" class="am-padding-0">为什么二分不能过？求大神帮…</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=19495" class="am-padding-0">底下那个翻译错了</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=19488" class="am-padding-0">样例有问题</a>
+</li>
+<div style="overflow: auto">
+<a data-pjax href="/discuss/lists?forumname=P3132" class="am-btn am-btn-primary am-btn-sm lg-right">进入讨论版</a>
+</div>
+</ul>
+</section>
+<section class="am-panel am-panel-default lg-summary am-hide-sm">
+<h2>推荐的相关题目
+<a onclick="$('#recommendation-list').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看推荐题目">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" id="recommendation-list" style="display: none">
+<li>
+<a class='colored' href="/problemnew/show/P4374" target="_blank"><b>P4374</b> [USACO18OPEN]Disruption</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P1407" target="_blank"><b>P1407</b> [国家集训队]稳定婚姻</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P2941" target="_blank"><b>P2941</b> [USACO09FEB]环绕岛屿Surround the Islands</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3627" target="_blank"><b>P3627</b> [APIO2009]抢掠计划</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P2746" target="_blank"><b>P2746</b> [USACO5.3]校园网Network of Schools</a>
+</li>
+</ul>
+</section>
+</div>
+<div class="am-u-md-8 lg-right" name="problemleft">
+<div class="lg-content-left">
+<div class="lg-article am-g">
+<h2>题目背景</h2>
+<p>【题目描述】</p>
+<p>奶牛Bessie设计了一个游戏：“愤怒的奶牛”。游戏的原型是：有一些可爆炸的草堆分布在一条数轴的某些坐标上，玩家用弹弓把一头奶牛发射到数轴上。奶牛砸到数轴上的冲击波会引发附近的草堆爆炸，而被引爆的草堆可能会引爆其他草堆。游戏的目标是玩家用一只奶牛炸掉所有的草堆。</p>
+<p>有N个草堆在数轴的不同位置，坐标为x1,x2,….,xn。如果玩家以能量R把奶牛发射到坐标x，就会引爆半径R及以内的的草堆，即坐标范围[x−R,x+R]的草堆都会燃爆，每个被奶牛引爆的草堆又会2次引爆半径R-1及以内的的草堆，2次引爆的草堆又会3次引爆半径R-2及以内的的草堆...直到一次引爆后没有其他草堆被波及或半径为0。</p>
+<p>现在只有1头奶牛，能量为R，请计算如果要引爆所有的草堆，最小的R是多少？</p>
+<p>【输入格式】</p>
+<p>第一行：1个整数N(2≤N≤50,000)。</p>
+<p>下面有N行,每行一个整数：x1,x2,…,xn，范围在[0…1,000,000,000]。</p>
+<p>【输出格式】</p>
+<p>输出最小的能量R，保留1位小数。</p>
+<p>感谢wenyu0909和世界第一弱的翻译。</p>
+<h2>题目描述</h2>
+<p>Bessie the cow has designed what she thinks will be the next big hit video game: &quot;Angry Cows&quot;. The premise, which she believes is completely original, is that the player shoots a cow with a slingshot into a one-dimensional scene consisting of a set of hay bales located at various points on a number line; the cow lands with sufficient force to detonate the hay bales in close proximity to her landing site, which in turn might set of a chain reaction that causes additional hay bales to explode. The goal is to use a single cow to start a chain reaction that detonates all the hay bales.</p>
+<p>There are $N$ hay bales located at distinct integer positions $x_1, x_2, \ldots, x_N$ on the number line. If a cow is launched with power $R$ landing at position $x$, this will causes a blast of &quot;radius $R$&quot;, engulfing all hay bales within the range $x-R \ldo s x+R$. These hay bales then themselves explode (all simultaneously), each with a blast radius of $R-1$. Any not-yet-exploded bales caught in these blasts then all explode (all simultaneously) with blast radius $R-2$, and so on.</p>
+<p>Please determine the minimum amount of power $R$ with which a single cow may be launched so that, if it lands at an appropriate location, it will cause subsequent detonation of every single hay bale in the scene.</p>
+<h2>输入输出格式</h2>
+<strong>输入格式：</strong><br>
+<p><p>The first line of input contains $N$ ($2 \leq N \leq 50,000$). The remaining</p>
+<p>$N$ lines all contain integers $x_1 \ldots x_N$ (each in the range</p>
+<p>$0 \ldots 1,000,000,000$).</p></p>
+<strong>输出格式：</strong><br>
+<p><p>Please output the minimum power $R$ with which a cow must be launched in order</p>
+<p>to detonate all the hay bales. Answers should be rounded and printed to exactly</p>
+<p>1 decimal point.</p></p>
+<h2>输入输出样例</h2>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>5
+8
+10
+3
+11
+1</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>3.0</pre>
+</div>
+</div>
+<h2>说明</h2>
+<p>In this example, a cow launched with power 3 at, say, location 5, will cause</p>
+<p>immediate detonation of hay bales at positions 3 and 8. These then explode</p>
+<p>(simultaneously) each with blast radius 2, engulfing bales at positions 1 and</p>
+<p>10, which next explode (simultaneously) with blast radius 1, engulfing the final</p>
+<p>bale at position 11, which finally explodes with blast radius 0.</p>
+</div>
+<div class='lg-article-sub am-g' id="sub"></div>
+</div>
+</div>
+</div>
+<div class="am-modal am-modal-prompt" tabindex="-1" id="confirm">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="memtitle">提示</div>
+<div class="am-modal-bd" id="memadmin">
+标程仅供做题后或实在无思路时参考。<br>
+请自觉、自律地使用该功能并请对自己的学习负责。<br>
+如果发现恶意抄袭标程，将按照I类违反进行处理。<br>
+</div>
+<div class="am-modal-footer">
+<span class="am-modal-btn" data-am-modal-cancel>取消</span>
+<span class="am-modal-btn" data-am-modal-confirm>确定</span>
+</div>
+</div>
+</div>
+<script>
+        $(document).ready(function () {
+            $("#expandstd").click(function () {
+                $('#confirm').modal({
+                    relatedTarget: this,
+                    onConfirm: function (e) {
+                        $("#stdcode").slideDown();
+                        $("#expandstd").hide();
+                    }
+                });
+            });
+            $("#submit").click(
+                function () {
+                    hide_artile();
+                    $(document).scrollTop($(document).scrollTop() - 80);
+                    var pid = $(this).attr("pid");
+                    $.get("/problem/ajax_submit?pid=" + pid, function (data) {
+                        var arr = eval('(' + data + ')');
+                        if (arr['code'] == 201) {
+                            $('.lg-article-sub').html(arr['more']['html']);
+                        }
+                        else if (arr['code'] == 200) {
+
+                        }
+                        else {
+                            if (arr['code'] == 0 || arr['code'] == -3) {
+                                backarticle();
+                            }
+                            show_alert("提交失败", arr['message']);
+                        }
+                    });
+                }
+            );
+            $("button[title].am-btn,a[title].am-btn").poshytip({
+                className: 'tip-twitter',
+                showTimeout: 1,
+                alignTo: 'target',
+                alignX: 'center',
+                alignY: 'bottom'
+            });
+            $('[name=showtag]').click(function () {
+                $('.am-badge.am-hide').removeClass('am-hide');
+            });
+            $(".sample-copy").click(function() {
+                var element = $(this).parents(".copy-region").find("pre");
+                var text = $(element).text();
+                var $temp = $("<textarea>");
+                $("body").append($temp);
+                $temp.val(text).select();
+                document.execCommand("copy");
+                $temp.remove();
+                $(this).text("复制成功").removeClass("lg-bg-orange");
+
+                var e = this;
+                setTimeout(function() {
+                    $(e).text("复制").addClass("lg-bg-orange");
+                }, 500);
+            });
+        });
+    </script>
+</div>
+<footer id="app-footer"></footer>
+<div class="am-modal am-modal-alert" tabindex="-1" id="lg-alert">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="lg-alert-title"></div>
+<div class="am-modal-bd" id="lg-alert-message"></div>
+<div class="am-modal-footer">
+<span class="am-modal-btn">确定</span>
+</div>
+</div>
+</div>
+<script src="/js/ace/ace.js"></script>
+<script src="https://cdn.luogu.org/js/vendor.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/jsmind.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/amazeui.min.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts-more.js"></script>
+<script src="/static/katex/katex.min.js"></script>
+<script src="/static/katex/contrib/auto-render.min.js"></script>
+<script src="https://cdn.luogu.org/markdown-palettes/markdown-palettes.min.js?ver=20190219"></script>
+<script src="https://cdn.luogu.org/js/luogu3.js?ver=20190101"></script>
+</body>
+</html>

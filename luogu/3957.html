@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title> P3957 跳房子 - 洛谷</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta name="csrf-token" content="1555853172:0YIMR3qE1K9QQqFttgotx/VDnAVBzCY5xM1WDpIUtQY=">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/amazeui.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/katex.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/luogu3.css?ver=20190102">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/highlight_tomorrow.css">
+<link rel="stylesheet" href="https://cdn.luogu.org/markdown-palettes/markdown-palettes.css?ver=20190219">
+<script src="https://cdn.luogu.org/js/jquery-2.1.1.min.js"></script>
+<script src="https://cdn.luogu.org/js/luogu3_pre.js?ver=20190101"></script>
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn.luogu.org/images/favicon3.ico" media="screen"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/fe/loader.css?ver=20190417">
+<script>window._feInjection = JSON.parse(decodeURIComponent("%7B%22code%22%3A200%2C%22currentUser%22%3Anull%2C%22currentTemplate%22%3A%22Excited%22%2C%22currentData%22%3A%7B%22shortHeader%22%3Afalse%2C%22pageName%22%3A%22%5Cu9898%5Cu76ee%5Cu8be6%5Cu60c5%22%7D%2C%22currentMeta%22%3A%7B%22title%22%3A%22%20P3957%20%5Cu8df3%5Cu623f%5Cu5b50%22%7D%7D"));</script>
+<script>window._release = '20190417';</script>
+<script src="https://cdn.luogu.org/fe/loader.js?ver=20190417" charset="utf-8" defer></script>
+</head>
+<body>
+<div id="app-header"></div>
+<nav id="app-sidenav"></nav>
+<div id="app-body"></div>
+<script>
+    function scrollToId (id) {
+        $('html, body').animate({
+            scrollTop: ($('#' + id).offset().top)
+        }, 500);
+    }
+</script>
+<style>
+    .lg-toolbar {
+        display: none;
+    }
+
+    #app-body { /* Unused in fallback FE */
+        display: none;
+    }
+
+    #app-body-new{
+        display: block;
+        margin-bottom: 2em;
+        position: relative;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    @media (min-width: 576px) {
+        #app-body-new {
+            margin-left: 70px;
+        }
+    }
+
+    code {
+        font-family: monospace, "Courier New";
+    }
+
+</style>
+<div id="app-body-new">
+<div class="lg-toolbar" data-am-sticky>
+<h1><a href="/recordnew/lists?uid=&pid=P3957" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a> P3957 跳房子</h1>
+</div>
+<div class="am-g lg-main-content">
+<div class="am-u-md-4 lg-right" name="problemright">
+<section class="am-panel am-panel-default lg-summary" id="psummary">
+<div class="lg-summary-content">
+<ul class="am-list am-list-static lg-summary-list">
+<li>
+<ul class="am-avg-sm-2"><li><span class="lg-bignum-num">4.2<small>K</small><small></small></span><span class="lg-bignum-text">通过</span></li><li><span class="lg-bignum-num">29.4<small>K</small><small></small></span><span class="lg-bignum-text">提交</span></li></ul>
+</li>
+<li>
+<strong>题目提供者</strong>
+<span class="lg-right"><a class='lg-fg-gray' href="/space/show?uid=19" target="_blank">CCF_NOI</a></span>
+</li>
+<li>
+<strong>评测方式</strong>
+<span class="lg-right"><b>云端评测</b></span>
+</li>
+<li><strong>标签</strong>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="45">二分答案</span>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="3">动态规划,动规,dp</span>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="56">单调队列</span>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="288">队列</span>
+<span class="lg-tag am-badge am-radius lg-bg-bluelight" data-tagid="82">NOIp普及组</span>
+<span class="lg-tag am-badge am-radius lg-bg-green" data-tagid="34">2017</span>
+<style>.lg-tag { cursor: pointer; }</style>
+<script>
+                                $(".lg-tag").click(function() {
+                                    window.open("/problemnew/lists?tag=" + $(this).attr('data-tagid'));
+                                })
+                            </script>
+</li>
+<li><strong>难度</strong>
+<span class="lg-right"><span class="am-badge am-radius lg-bg-bluelight">提高+/省选-</span></span>
+</li>
+<li><strong>时空限制</strong>
+<span class="lg-right">2000ms / 256MB</span>
+</li>
+</ul>
+</div>
+<p>
+<button class="am-btn am-btn-danger am-btn-sm" id="submit" pid="P3957">
+<i class="am-icon-paper-plane"></i> 提交
+</button>
+<a target="_blank" href="/problemnew/solution/P3957" class="am-btn am-btn-primary am-btn-sm">
+<i class="am-icon-book"></i> 题解
+</a>
+<a data-pjax href="/recordnew/lists?pid=P3957" class="am-btn am-btn-primary am-btn-sm" title="查看本题提交记录">
+<i class="am-icon-pie-chart"></i>
+</a>
+<button class="am-btn am-btn-primary am-btn-sm lg-pointer" name="showtag" title="显示算法标签">
+<i class="am-icon-tags"></i>
+</button>
+</p>
+<li>提示：收藏到任务计划后，可在首页查看。</li>
+<p>
+<a class="am-btn am-btn-danger am-btn-sm" href="/fe/problem/P3957" target="_blank">体验新版界面</a>
+</p>
+</section>
+<section class="am-panel am-panel-default lg-summary">
+<h2>最新讨论
+<a onclick="$('#discuss-lists').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看本题讨论">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" style="display: none" id="discuss-lists">
+<li><a data-pjax href="/discuss/show?postid=109660" class="am-padding-0">求助：WA声一片</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=108709" class="am-padding-0">RE求助</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=106874" class="am-padding-0">求助，跳房子90分，最后一个…</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=106565" class="am-padding-0">震惊！此题竟可以不开单调队…</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=103050" class="am-padding-0">求助</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=102408" class="am-padding-0">大佬快来</a>
+</li>
+<div style="overflow: auto">
+<a data-pjax href="/discuss/lists?forumname=P3957" class="am-btn am-btn-primary am-btn-sm lg-right">进入讨论版</a>
+</div>
+</ul>
+</section>
+<section class="am-panel am-panel-default lg-summary am-hide-sm">
+<h2>推荐的相关题目
+<a onclick="$('#recommendation-list').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看推荐题目">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" id="recommendation-list" style="display: none">
+<li>
+<a class='colored' href="/problemnew/show/P3956" target="_blank"><b>P3956</b> 棋盘</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P2119" target="_blank"><b>P2119</b> 魔法阵</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3951" target="_blank"><b>P3951</b> 小凯的疑惑</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3952" target="_blank"><b>P3952</b> 时间复杂度 </a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P2058" target="_blank"><b>P2058</b> 海港</a>
+</li>
+</ul>
+</section>
+</div>
+<div class="am-u-md-8 lg-right" name="problemleft">
+<div class="lg-content-left">
+<div class="lg-article am-g">
+<h2>题目描述</h2>
+<p>跳房子，也叫跳飞机，是一种世界性的儿童游戏，也是中国民间传统的体育游戏之一。</p>
+<p>跳房子的游戏规则如下：</p>
+<p>在地面上确定一个起点，然后在起点右侧画 $n$ 个格子，这些格子都在同一条直线上。每个格子内有一个数字（整数），表示到达这个 格子能得到的分数。玩家第一次从起点开始向右跳，跳到起点右侧的一个格子内。第二次再从当前位置继续向右跳，依此类推。规则规定：</p>
+<p>玩家每次都必须跳到当前位置右侧的一个格子内。玩家可以在任意时刻结束游戏，获得的分数为曾经到达过的格子中的数字之和。</p>
+<p>现在小 $R$ 研发了一款弹跳机器人来参加这个游戏。但是这个机器人有一个非常严重的缺陷，它每次向右弹跳的距离只能为固定的 $d$ 。小 $R$ 希望改进他的机器人，如果他花 $g$ 个金币改进他的机器人，那么他的机器人灵活性就能增加 $g$ ，但是需要注意的是，每 次弹跳的距离至少为 $1$ 。具体而言，当 $g&lt;d$ 时，他的机器人每次可以选择向右弹跳的距离为 $d-g,d-g+1,d-g+2$ ，…， $d+g-2$ ， $d+g-1$ ， $d+g$ ；否则（当 $g \geq d$ 时），他的机器人每次可以选择向右弹跳的距离为 $1$ ， $2$ ， $3$ ，…， $d+g-2$ ， $d+g-1$ ， $d+g$ 。</p>
+<p>现在小 $R$ 希望获得至少 $k$ 分，请问他至少要花多少金币来改造他的机器人。</p>
+<h2>输入输出格式</h2>
+<strong>输入格式：</strong><br>
+<p><p>第一行三个正整数 $n$ ， $d$ ， $k$ ，分别表示格子的数目，改进前机器人弹跳的固定距离，以及希望至少获得的分数。相邻两个数 之间用一个空格隔开。</p>
+<p>接下来 $n$ 行，每行两个正整数 $x_i,s_i$ ，分别表示起点到第 $i$ 个格子的距离以及第 $i$ 个格子的分数。两个数之间用一个空格隔开。保证 $x_i$ 按递增顺序输入。</p></p>
+<strong>输出格式：</strong><br>
+<p><p>共一行，一个整数，表示至少要花多少金币来改造他的机器人。若无论如何他都无法获得至少 $k$ 分，输出 $-1$ 。</p></p>
+<h2>输入输出样例</h2>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>7 4 10
+2 6
+5 -3
+10 3
+11 -3
+13 1
+17 6
+20 2</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>2</pre>
+</div>
+</div>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#2：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>7 4 20
+2 6
+5 -3
+10 3
+11 -3
+13 1
+17 6
+20 2</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#2：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>-1</pre>
+</div>
+</div>
+<h2>说明</h2>
+<p>【输入输出样例 1 说明】
+$ 2 $个金币改进后, 小 R 的机器人依次选择的向右弹跳的距离分别为$ 2, 3, 5, 3, 4,3$, 先后到达的位置分别为 $2, 5, 10, 13, 17, 20$, 对应$ 1, 2, 3, 5, 6, 7$ 这$6$ 个格子。这些格子中的数字之和$ 15$ 即为小 R 获得的分数。</p>
+<h3>输入输出样例 2 说明</h3>
+<p>由于样例中 $7$ 个格子组合的最大可能数字之和只有 $18$ ,无论如何都无法获得$ 20 $分</p>
+<h3>数据规模与约定</h3>
+<p>本题共 10 组测试数据,每组数据 10 分。</p>
+<p>对于全部的数据满足$1 ≤ n ≤ 500000, 1 ≤ d ≤2000, 1 ≤ x_i, k ≤ 10^9, |s_i| &lt; 10^5$。</p>
+<p>对于第 $1, 2 $组测试数据, $n ≤ 10$；</p>
+<p>对于第$ 3, 4, 5$ 组测试数据, $n ≤ 500$</p>
+<p>对于第$ 6, 7, 8$ 组测试数据, $d = 1$</p>
+</div>
+<div class='lg-article-sub am-g' id="sub"></div>
+</div>
+</div>
+</div>
+<div class="am-modal am-modal-prompt" tabindex="-1" id="confirm">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="memtitle">提示</div>
+<div class="am-modal-bd" id="memadmin">
+标程仅供做题后或实在无思路时参考。<br>
+请自觉、自律地使用该功能并请对自己的学习负责。<br>
+如果发现恶意抄袭标程，将按照I类违反进行处理。<br>
+</div>
+<div class="am-modal-footer">
+<span class="am-modal-btn" data-am-modal-cancel>取消</span>
+<span class="am-modal-btn" data-am-modal-confirm>确定</span>
+</div>
+</div>
+</div>
+<script>
+        $(document).ready(function () {
+            $("#expandstd").click(function () {
+                $('#confirm').modal({
+                    relatedTarget: this,
+                    onConfirm: function (e) {
+                        $("#stdcode").slideDown();
+                        $("#expandstd").hide();
+                    }
+                });
+            });
+            $("#submit").click(
+                function () {
+                    hide_artile();
+                    $(document).scrollTop($(document).scrollTop() - 80);
+                    var pid = $(this).attr("pid");
+                    $.get("/problem/ajax_submit?pid=" + pid, function (data) {
+                        var arr = eval('(' + data + ')');
+                        if (arr['code'] == 201) {
+                            $('.lg-article-sub').html(arr['more']['html']);
+                        }
+                        else if (arr['code'] == 200) {
+
+                        }
+                        else {
+                            if (arr['code'] == 0 || arr['code'] == -3) {
+                                backarticle();
+                            }
+                            show_alert("提交失败", arr['message']);
+                        }
+                    });
+                }
+            );
+            $("button[title].am-btn,a[title].am-btn").poshytip({
+                className: 'tip-twitter',
+                showTimeout: 1,
+                alignTo: 'target',
+                alignX: 'center',
+                alignY: 'bottom'
+            });
+            $('[name=showtag]').click(function () {
+                $('.am-badge.am-hide').removeClass('am-hide');
+            });
+            $(".sample-copy").click(function() {
+                var element = $(this).parents(".copy-region").find("pre");
+                var text = $(element).text();
+                var $temp = $("<textarea>");
+                $("body").append($temp);
+                $temp.val(text).select();
+                document.execCommand("copy");
+                $temp.remove();
+                $(this).text("复制成功").removeClass("lg-bg-orange");
+
+                var e = this;
+                setTimeout(function() {
+                    $(e).text("复制").addClass("lg-bg-orange");
+                }, 500);
+            });
+        });
+    </script>
+</div>
+<footer id="app-footer"></footer>
+<div class="am-modal am-modal-alert" tabindex="-1" id="lg-alert">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="lg-alert-title"></div>
+<div class="am-modal-bd" id="lg-alert-message"></div>
+<div class="am-modal-footer">
+<span class="am-modal-btn">确定</span>
+</div>
+</div>
+</div>
+<script src="/js/ace/ace.js"></script>
+<script src="https://cdn.luogu.org/js/vendor.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/jsmind.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/amazeui.min.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts-more.js"></script>
+<script src="/static/katex/katex.min.js"></script>
+<script src="/static/katex/contrib/auto-render.min.js"></script>
+<script src="https://cdn.luogu.org/markdown-palettes/markdown-palettes.min.js?ver=20190219"></script>
+<script src="https://cdn.luogu.org/js/luogu3.js?ver=20190101"></script>
+</body>
+</html>

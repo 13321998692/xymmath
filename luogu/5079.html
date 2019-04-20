@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title> P5079 Tweetuzki 爱伊图 - 洛谷</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta name="csrf-token" content="1555853575:Xymi83PmTwq8/pTwYiKiHPrKpf48O6I8eItDqyhKEEo=">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/amazeui.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/katex.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/luogu3.css?ver=20190102">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/highlight_tomorrow.css">
+<link rel="stylesheet" href="https://cdn.luogu.org/markdown-palettes/markdown-palettes.css?ver=20190219">
+<script src="https://cdn.luogu.org/js/jquery-2.1.1.min.js"></script>
+<script src="https://cdn.luogu.org/js/luogu3_pre.js?ver=20190101"></script>
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn.luogu.org/images/favicon3.ico" media="screen"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/fe/loader.css?ver=20190417">
+<script>window._feInjection = JSON.parse(decodeURIComponent("%7B%22code%22%3A200%2C%22currentUser%22%3Anull%2C%22currentTemplate%22%3A%22Excited%22%2C%22currentData%22%3A%7B%22shortHeader%22%3Afalse%2C%22pageName%22%3A%22%5Cu9898%5Cu76ee%5Cu8be6%5Cu60c5%22%7D%2C%22currentMeta%22%3A%7B%22title%22%3A%22%20P5079%20Tweetuzki%20%5Cu7231%5Cu4f0a%5Cu56fe%22%7D%7D"));</script>
+<script>window._release = '20190417';</script>
+<script src="https://cdn.luogu.org/fe/loader.js?ver=20190417" charset="utf-8" defer></script>
+</head>
+<body>
+<div id="app-header"></div>
+<nav id="app-sidenav"></nav>
+<div id="app-body"></div>
+<script>
+    function scrollToId (id) {
+        $('html, body').animate({
+            scrollTop: ($('#' + id).offset().top)
+        }, 500);
+    }
+</script>
+<style>
+    .lg-toolbar {
+        display: none;
+    }
+
+    #app-body { /* Unused in fallback FE */
+        display: none;
+    }
+
+    #app-body-new{
+        display: block;
+        margin-bottom: 2em;
+        position: relative;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    @media (min-width: 576px) {
+        #app-body-new {
+            margin-left: 70px;
+        }
+    }
+
+    code {
+        font-family: monospace, "Courier New";
+    }
+
+</style>
+<div id="app-body-new">
+<div class="lg-toolbar" data-am-sticky>
+<h1><a href="/recordnew/lists?uid=&pid=P5079" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a> P5079 Tweetuzki 爱伊图</h1>
+</div>
+<div class="am-g lg-main-content">
+<div class="am-u-md-4 lg-right" name="problemright">
+<section class="am-panel am-panel-default lg-summary" id="psummary">
+<div class="lg-summary-content">
+<ul class="am-list am-list-static lg-summary-list">
+<li>
+<ul class="am-avg-sm-2"><li><span class="lg-bignum-num">78<small></small></span><span class="lg-bignum-text">通过</span></li><li><span class="lg-bignum-num">363<small></small></span><span class="lg-bignum-text">提交</span></li></ul>
+</li>
+<li>
+<strong>题目提供者</strong>
+<span class="lg-right"><a class='lg-fg-red lg-bold' href="/space/show?uid=48843" target="_blank">Tweetuzki</a></span>
+</li>
+<li>
+<strong>评测方式</strong>
+<span class="lg-right"><b>云端评测</b></span>
+</li>
+<li><strong>标签</strong>
+<style>.lg-tag { cursor: pointer; }</style>
+<script>
+                                $(".lg-tag").click(function() {
+                                    window.open("/problemnew/lists?tag=" + $(this).attr('data-tagid'));
+                                })
+                            </script>
+</li>
+<li><strong>难度</strong>
+<span class="lg-right"><span class="am-badge am-radius lg-bg-bluelight">提高+/省选-</span></span>
+</li>
+<li><strong>时空限制</strong>
+<span class="lg-right">1000ms / 256MB</span>
+</li>
+</ul>
+</div>
+<p>
+<button class="am-btn am-btn-danger am-btn-sm" id="submit" pid="P5079">
+<i class="am-icon-paper-plane"></i> 提交
+</button>
+<a target="_blank" href="/problemnew/solution/P5079" class="am-btn am-btn-primary am-btn-sm">
+<i class="am-icon-book"></i> 题解
+</a>
+<a data-pjax href="/recordnew/lists?pid=P5079" class="am-btn am-btn-primary am-btn-sm" title="查看本题提交记录">
+<i class="am-icon-pie-chart"></i>
+</a>
+<button class="am-btn am-btn-primary am-btn-sm lg-pointer" name="showtag" title="显示算法标签">
+<i class="am-icon-tags"></i>
+</button>
+</p>
+<li>提示：收藏到任务计划后，可在首页查看。</li>
+<p>
+<a class="am-btn am-btn-danger am-btn-sm" href="/fe/problem/P5079" target="_blank">体验新版界面</a>
+</p>
+</section>
+<section class="am-panel am-panel-default lg-summary">
+<h2>最新讨论
+<a onclick="$('#discuss-lists').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看本题讨论">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" style="display: none" id="discuss-lists">
+<li><a data-pjax href="/discuss/show?postid=89410" class="am-padding-0">这题有蓝题难度吗。。。？</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=88419" class="am-padding-0">恶意评分</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=88388" class="am-padding-0">好暴力的样例</a>
+</li>
+<div style="overflow: auto">
+<a data-pjax href="/discuss/lists?forumname=P5079" class="am-btn am-btn-primary am-btn-sm lg-right">进入讨论版</a>
+</div>
+</ul>
+</section>
+<section class="am-panel am-panel-default lg-summary am-hide-sm">
+<h2>推荐的相关题目
+<a onclick="$('#recommendation-list').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看推荐题目">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" id="recommendation-list" style="display: none">
+<li>
+<a class='colored' href="/problemnew/show/P5080" target="_blank"><b>P5080</b> Tweetuzki 爱序列</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P5081" target="_blank"><b>P5081</b> Tweetuzki 爱取球</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P5078" target="_blank"><b>P5078</b> Tweetuzki 爱军训</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P1291" target="_blank"><b>P1291</b> [SHOI2002]百事世界杯之旅</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P5082" target="_blank"><b>P5082</b> 成绩</a>
+</li>
+</ul>
+</section>
+</div>
+<div class="am-u-md-8 lg-right" name="problemleft">
+<div class="lg-content-left">
+<div class="lg-article am-g">
+<h2>题目背景</h2>
+<p>Tweetuzki 的教练最近常常在群里发有关「伊图科技」的文章。「伊图科技」是一家专注于计算机视觉技术的上海创业公司，其人脸识别技术在世界处于领先地位。2018 年 6 月，在全球工业界黄金标准 FRVT 测试中，依图在千万分之一误报下识别准确率接近 $99\%$，是全球工业界在此项指标下的最好水平，这是依图科技连续第二年摘得此项竞赛的冠军，也是首个夺得此项竞赛冠军的中国团队。2018 年 11 月 16 日，美国国家标准与技术研究院（NIST）公布了全球权威人脸识别比赛（FRVT）最新报告，依图算法继续保持第一，在千万分之一误报下的识别准确率超过 $99\%$，是目前全球人脸识别技术的最好水平。</p>
+<p>更重要的是，伊图科技的创始人，是附中的毕业生——Tweetuzki 的学长呢！人脸识别真的好难呢！Tweetuzki 常常幻想，要是自己的程序能有学长们的亿万分之一厉害，那就很好了呢！</p>
+<h2>题目描述</h2>
+<p>Tweetuzki 希望设计出一个程序，这个程序应当能识别输入矩阵中隐藏的数字。</p>
+<p>输入的是一个 $r \times c$ 的字符矩阵，矩阵中的元素只有 <code>.</code>或 <code>#</code>。其中 <code>#</code> 可以构成一些数字。输入的矩阵将严格遵守以下规则：</p>
+<ul>
+<li>
+<p>除 $1$ 占 $5 \times 1$ 的长方形区域外，其余数字均占 $5 \times 3$ 的长方形区域。</p>
+</li>
+<li>
+<p>相邻两个数字间至少有一列 <code>.</code>，即<strong>数字不会贴在一块儿</strong>；且数字<strong>只会左右排放</strong>，不会上下排放。这两点综合起来可以表述为：对于两个数字 $A$ 和 $B$（$A$ 在 $B$ 的左侧），若它们在横向上延伸的区间分别为 $[l_A, r_A]$ 和 $[l_B, r_B]$，那么一定满足 $l_B \ge r_A + 2$。</p>
+</li>
+<li>
+<p>数字的组成严格按照如下所列：</p>
+<pre><code class="language-plain">数字的组成方式：
+#   # # #   # # #   # . #   # # #   # # #   # # #   # # #   # # #   # # # 
+#   . . #   . . #   # . #   # . .   # . .   . . #   # . #   # . #   # . # 
+#   # # #   # # #   # # #   # # #   # # #   . . #   # # #   # # #   # . # 
+#   # . .   . . #   . . #   . . #   # . #   . . #   # . #   . . #   # . # 
+#   # # #   # # #   . . #   # # #   # # #   . . #   # # #   # # #   # # # 
+
+所代表的数字：
+1     2       3       4       5       6       7       8       9       0</code></pre>
+<p><strong>数字不会倾斜、放大或缩小。</strong>具体可见样例。</p>
+</li>
+<li>
+<p>除构成数字的长方形区域外，其余位置皆由 <code>.</code> 填充。保证所有的 <code>#</code> 的连通块一定都能够组成数字，且一定满足上述规则。</p>
+</li>
+</ul>
+<p>由于 Tweetuzki 太弱了，于是向你求助，聪明的你，能不能帮助 Tweetuzki 解决这个问题呢？</p>
+<h2>输入输出格式</h2>
+<strong>输入格式：</strong><br>
+<p><p>第一行两个正整数 $r, c$ $(5 \le r \le 10, 3 \le c \le 10^5)$，表示矩阵的行数和列数。<br />
+接下来 $r$ 行，每行输入 $c$ 个字符，用空格隔开，保证只含有 <code>.</code> 和 <code>#</code> 两种字符。输入矩阵保证合法且一定含有隐藏数字。</p></p>
+<strong>输出格式：</strong><br>
+<p><p>输出仅包含一行一个只含数字的字符串，<strong>按照顺序</strong>输出这个矩阵中隐藏的数字。</p></p>
+<h2>输入输出样例</h2>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>6 10
+# . . . . . # . . #
+# . . . # . # . . #
+# . . . # . # . . #
+# . . . # . # . . #
+# . . . # . # . . #
+. . . . # . . . . .</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>1111</pre>
+</div>
+</div>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#2：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>8 37
+. . . # # # . . . . . . . . . . . . . . . . . . # # # . # . . . . . . . .
+. # . # . # . . . . . . . . # # # . . . . . . . # . # . # . . . . . . . .
+. # . # # # . . . . . . . . # . . . # # # . . . # # # . # . . # # # . . .
+. # . . . # . . . # # # . . # # # . # . # . . . # . # . # . . . . # . . .
+. # . # # # . . . . . # . . # . # . # . # . . . # # # . # . . . . # . . .
+. # . . . . . . . # # # . . # # # . # . # . . . . . . . . . . . . # . . .
+. . . . . . . . . # . . . . . . . . # # # . . . . . . . . . . . . # . . .
+. . . . . . . . . # # # . . . . . . . . . . . . . . . . . . . . . . . . .
+</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#2：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>19260817</pre>
+</div>
+</div>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#3：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>9 94
+# # # . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . # # # . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+# . # . . . . . . . . . . . . . . . . . . . . . . . . # . # . . . . . . . . . . # . . . . . . . . . . . # # # . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+# . # . . . # . . . . . . . . . . . . . . . # # # . . # . # . . . . . . . . . . # # # . . . . . . . . . # . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+# . # . . . # . . # # # . . . . . . . . . . . . # . . # # # . . . . . . . . . . . . # . . . . . . . . . # # # . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+# # # . . . # . . . . # . . . . . . . . . . # # # . . . . # . . . . . . . . . . # # # . . . . . . . . . # . # . . . . . . . # # # . . . . . . # # # . . . . . . . . . # # # . . . . . . . .
+. . . . . . # . . # # # . . . . . . . . . . . . # . . . . # . . . . . . . . . . . . . . . . . . . . . . # # # . . . . . . . . . # . . . . . . # . # . . . . . . . . . # . # . . . . . . . .
+. . . . . . # . . # . . . . . . . . . . . . # # # . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . # . . . . . . # # # . . . . . . . . . # # # . . . . . . . .
+. . . . . . . . . # # # . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . # . . . . . . # . # . . . . . . . . . . . # . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . # . . . . . . # # # . . . . . . . . . # # # . . . . . . . .
+</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#3：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>0123456789
+</pre>
+</div>
+</div>
+<h2>说明</h2>
+<h3>样例解释</h3>
+<p>建议复制进记事本（或各种 IDE）中用等宽字体查看。 </p>
+<h3>子任务</h3>
+<p><strong><em>Subtask</em> #1 <em>(30 points)</em></strong>：矩阵中仅有数字 $1$。<br />
+<strong><em>Subtask</em> #2 <em>(30 points)</em></strong>：矩阵中不含有数字 $1$ 和 $4$。<br />
+<strong><em>Subtask</em> #3 <em>(40 points)</em></strong>：无特殊性质。</p>
+</div>
+<div class='lg-article-sub am-g' id="sub"></div>
+</div>
+</div>
+</div>
+<div class="am-modal am-modal-prompt" tabindex="-1" id="confirm">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="memtitle">提示</div>
+<div class="am-modal-bd" id="memadmin">
+标程仅供做题后或实在无思路时参考。<br>
+请自觉、自律地使用该功能并请对自己的学习负责。<br>
+如果发现恶意抄袭标程，将按照I类违反进行处理。<br>
+</div>
+<div class="am-modal-footer">
+<span class="am-modal-btn" data-am-modal-cancel>取消</span>
+<span class="am-modal-btn" data-am-modal-confirm>确定</span>
+</div>
+</div>
+</div>
+<script>
+        $(document).ready(function () {
+            $("#expandstd").click(function () {
+                $('#confirm').modal({
+                    relatedTarget: this,
+                    onConfirm: function (e) {
+                        $("#stdcode").slideDown();
+                        $("#expandstd").hide();
+                    }
+                });
+            });
+            $("#submit").click(
+                function () {
+                    hide_artile();
+                    $(document).scrollTop($(document).scrollTop() - 80);
+                    var pid = $(this).attr("pid");
+                    $.get("/problem/ajax_submit?pid=" + pid, function (data) {
+                        var arr = eval('(' + data + ')');
+                        if (arr['code'] == 201) {
+                            $('.lg-article-sub').html(arr['more']['html']);
+                        }
+                        else if (arr['code'] == 200) {
+
+                        }
+                        else {
+                            if (arr['code'] == 0 || arr['code'] == -3) {
+                                backarticle();
+                            }
+                            show_alert("提交失败", arr['message']);
+                        }
+                    });
+                }
+            );
+            $("button[title].am-btn,a[title].am-btn").poshytip({
+                className: 'tip-twitter',
+                showTimeout: 1,
+                alignTo: 'target',
+                alignX: 'center',
+                alignY: 'bottom'
+            });
+            $('[name=showtag]').click(function () {
+                $('.am-badge.am-hide').removeClass('am-hide');
+            });
+            $(".sample-copy").click(function() {
+                var element = $(this).parents(".copy-region").find("pre");
+                var text = $(element).text();
+                var $temp = $("<textarea>");
+                $("body").append($temp);
+                $temp.val(text).select();
+                document.execCommand("copy");
+                $temp.remove();
+                $(this).text("复制成功").removeClass("lg-bg-orange");
+
+                var e = this;
+                setTimeout(function() {
+                    $(e).text("复制").addClass("lg-bg-orange");
+                }, 500);
+            });
+        });
+    </script>
+</div>
+<footer id="app-footer"></footer>
+<div class="am-modal am-modal-alert" tabindex="-1" id="lg-alert">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="lg-alert-title"></div>
+<div class="am-modal-bd" id="lg-alert-message"></div>
+<div class="am-modal-footer">
+<span class="am-modal-btn">确定</span>
+</div>
+</div>
+</div>
+<script src="/js/ace/ace.js"></script>
+<script src="https://cdn.luogu.org/js/vendor.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/jsmind.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/amazeui.min.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts-more.js"></script>
+<script src="/static/katex/katex.min.js"></script>
+<script src="/static/katex/contrib/auto-render.min.js"></script>
+<script src="https://cdn.luogu.org/markdown-palettes/markdown-palettes.min.js?ver=20190219"></script>
+<script src="https://cdn.luogu.org/js/luogu3.js?ver=20190101"></script>
+</body>
+</html>

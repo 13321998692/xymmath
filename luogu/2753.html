@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title> P2753 [USACO4.3]字母游戏Letter Game - 洛谷</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta name="csrf-token" content="1555852583:Md4e4I21IY8RAZovpJonXVhT6c1Bpt7/KZ+hWOUSkOk=">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/amazeui.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/katex.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/luogu3.css?ver=20190102">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/highlight_tomorrow.css">
+<link rel="stylesheet" href="https://cdn.luogu.org/markdown-palettes/markdown-palettes.css?ver=20190219">
+<script src="https://cdn.luogu.org/js/jquery-2.1.1.min.js"></script>
+<script src="https://cdn.luogu.org/js/luogu3_pre.js?ver=20190101"></script>
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn.luogu.org/images/favicon3.ico" media="screen"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/fe/loader.css?ver=20190417">
+<script>window._feInjection = JSON.parse(decodeURIComponent("%7B%22code%22%3A200%2C%22currentUser%22%3Anull%2C%22currentTemplate%22%3A%22Excited%22%2C%22currentData%22%3A%7B%22shortHeader%22%3Afalse%2C%22pageName%22%3A%22%5Cu9898%5Cu76ee%5Cu8be6%5Cu60c5%22%7D%2C%22currentMeta%22%3A%7B%22title%22%3A%22%20P2753%20%5BUSACO4.3%5D%5Cu5b57%5Cu6bcd%5Cu6e38%5Cu620fLetter%20Game%22%7D%7D"));</script>
+<script>window._release = '20190417';</script>
+<script src="https://cdn.luogu.org/fe/loader.js?ver=20190417" charset="utf-8" defer></script>
+</head>
+<body>
+<div id="app-header"></div>
+<nav id="app-sidenav"></nav>
+<div id="app-body"></div>
+<script>
+    function scrollToId (id) {
+        $('html, body').animate({
+            scrollTop: ($('#' + id).offset().top)
+        }, 500);
+    }
+</script>
+<style>
+    .lg-toolbar {
+        display: none;
+    }
+
+    #app-body { /* Unused in fallback FE */
+        display: none;
+    }
+
+    #app-body-new{
+        display: block;
+        margin-bottom: 2em;
+        position: relative;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    @media (min-width: 576px) {
+        #app-body-new {
+            margin-left: 70px;
+        }
+    }
+
+    code {
+        font-family: monospace, "Courier New";
+    }
+
+</style>
+<div id="app-body-new">
+<div class="lg-toolbar" data-am-sticky>
+<h1><a href="/recordnew/lists?uid=&pid=P2753" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a> P2753 [USACO4.3]字母游戏Letter Game</h1>
+</div>
+<div class="am-g lg-main-content">
+<div class="am-u-md-4 lg-right" name="problemright">
+<section class="am-panel am-panel-default lg-summary" id="psummary">
+<div class="lg-summary-content">
+<ul class="am-list am-list-static lg-summary-list">
+<li>
+<ul class="am-avg-sm-2"><li><span class="lg-bignum-num">159<small></small></span><span class="lg-bignum-text">通过</span></li><li><span class="lg-bignum-num">390<small></small></span><span class="lg-bignum-text">提交</span></li></ul>
+</li>
+<li>
+<strong>题目提供者</strong>
+<span class="lg-right"><a class='lg-fg-gray' href="/space/show?uid=20" target="_blank">FarmerJohn2</a></span>
+</li>
+<li>
+<strong>评测方式</strong>
+<span class="lg-right"><b>云端评测</b></span>
+</li>
+<li><strong>标签</strong>
+<style>.lg-tag { cursor: pointer; }</style>
+<script>
+                                $(".lg-tag").click(function() {
+                                    window.open("/problemnew/lists?tag=" + $(this).attr('data-tagid'));
+                                })
+                            </script>
+</li>
+<li><strong>难度</strong>
+<span class="lg-right"><span class="am-badge am-radius lg-bg-bluelight">提高+/省选-</span></span>
+</li>
+<li><strong>时空限制</strong>
+<span class="lg-right">1000ms / 128MB</span>
+</li>
+</ul>
+</div>
+<p>
+<button class="am-btn am-btn-danger am-btn-sm" id="submit" pid="P2753">
+<i class="am-icon-paper-plane"></i> 提交
+</button>
+<a target="_blank" href="/problemnew/solution/P2753" class="am-btn am-btn-primary am-btn-sm">
+<i class="am-icon-book"></i> 题解
+</a>
+<a data-pjax href="/recordnew/lists?pid=P2753" class="am-btn am-btn-primary am-btn-sm" title="查看本题提交记录">
+<i class="am-icon-pie-chart"></i>
+</a>
+<button class="am-btn am-btn-primary am-btn-sm lg-pointer" name="showtag" title="显示算法标签">
+<i class="am-icon-tags"></i>
+</button>
+</p>
+<li>提示：收藏到任务计划后，可在首页查看。</li>
+<p>
+<a class="am-btn am-btn-danger am-btn-sm" href="/fe/problem/P2753" target="_blank">体验新版界面</a>
+</p>
+</section>
+<section class="am-panel am-panel-default lg-summary">
+<h2>最新讨论
+<a onclick="$('#discuss-lists').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看本题讨论">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" style="display: none" id="discuss-lists">
+<li><a data-pjax href="/discuss/show?postid=39426" class="am-padding-0">本地，USACO AC，提交WA 5个…</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=24494" class="am-padding-0">求各大佬纠错！</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=19414" class="am-padding-0">Luogu数据太强了</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=19411" class="am-padding-0">洛谷数据太强了 囧rz</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=11780" class="am-padding-0">请问这题的输入文件dict怎么…</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=8317" class="am-padding-0">没有数据啊</a>
+</li>
+<div style="overflow: auto">
+<a data-pjax href="/discuss/lists?forumname=P2753" class="am-btn am-btn-primary am-btn-sm lg-right">进入讨论版</a>
+</div>
+</ul>
+</section>
+<section class="am-panel am-panel-default lg-summary am-hide-sm">
+<h2>推荐的相关题目
+<a onclick="$('#recommendation-list').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看推荐题目">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" id="recommendation-list" style="display: none">
+<li>
+<a class='colored' href="/problemnew/show/P1344" target="_blank"><b>P1344</b> [USACO4.4]追查坏牛奶Pollutant Control</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P2739" target="_blank"><b>P2739</b> [USACO4.4]棋盘游戏Shuttle Puzzle</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P2741" target="_blank"><b>P2741</b> [USACO4.4]重叠的图像Frame Up</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P2752" target="_blank"><b>P2752</b> [USACO4.3]街道赛跑Street Race</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P2742" target="_blank"><b>P2742</b> 【模板】二维凸包 / [USACO5.1]圈奶牛Fencing the Cows</a>
+</li>
+</ul>
+</section>
+</div>
+<div class="am-u-md-8 lg-right" name="problemleft">
+<div class="lg-content-left">
+<div class="lg-article am-g">
+<h2>题目描述</h2>
+<p>在家里用电视机做字母游戏是很流行的，其中一种玩法是:每一个字母有一个数值与之对应.你收集字母组成一个或多个词以得到尽可能高的得分.除非你已有了 “找词的方法”(“a way with words”)，你会把你知道的字都试一遍.有时你也许会查阅其拼写，然后计算得分。显然可以用计算机更为准确地完成此任务。上图示出了英文字母及其所对应的值，当给出英文单词(word) 的表列及收集的字母时，请找出所能形成的得分最高的词或词对(pairs of words)。</p>
+<p><img src="https://cdn.luogu.org/upload/pic/1969.png" alt="" /></p>
+<h2>输入输出格式</h2>
+<strong>输入格式：</strong><br>
+<p><p>(file lgame.in)</p>
+<p>输入文件lgame.in中有一行由小写字母(<code>a'到</code>z')组成的字符串， 这就是收集到字母(就是可以使用的字母)，字符串由至少3个字母至多7个字母(以任意顺序) 组成。</p>
+<p>(file lgame.dict)</p>
+<p>词典文件lgame.dict由至多40，000行组成，文件的最后一行有'.' 表示文件的结束。其它各行每一行都是由至少3个小写字母，至多7 个小写字母组成的字符串。文件中的词已按字典顺序排序。</p>
+<p>（管理员注：读入不用开文件，先读.in，再读.dict）</p></p>
+<strong>输出格式：</strong><br>
+<p><p>(file lgame.out)</p>
+<p>在文件lgame.out的第一行，你的程序应写上最高得分(子任务A).使用上面图形中给出的字母-值对应表。</p>
+<p>随后的每一行是由文件lgame.dict中查到的具有这个得分的所有的词和或词对(word pairs)(子任务B)。要利用图中给定的字母的值。</p>
+<p>当两个词能够形成 一个组合(具有给定的字母)时，这两个词应该打印到同一行，两个词中间用一个空格隔开。不许重复表示词对，例如'rag prom'和'prom rag'是同样的词对，只输出字典顺序较小的那个。</p>
+<p>输出要按照字典顺序排序，如果两个词对第一个单词的顺序相同，则按照第二个单词。一个词对中的两个单词可以相同。</p></p>
+<h2>输入输出样例</h2>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>SAMPLE INPUT(file lgame.in)
+
+prmgroa
+[编辑] SAMPLE INPUT(file lgame.dict)
+
+profile
+program
+prom
+rag
+ram
+rom
+.</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>24
+program
+prom rag</pre>
+</div>
+</div>
+<h2>说明</h2>
+<p>样例输入请参考原题</p>
+<p>题目翻译来自NOCOW。</p>
+<p>USACO Training Section 4.3</p>
+</div>
+<div class='lg-article-sub am-g' id="sub"></div>
+</div>
+</div>
+</div>
+<div class="am-modal am-modal-prompt" tabindex="-1" id="confirm">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="memtitle">提示</div>
+<div class="am-modal-bd" id="memadmin">
+标程仅供做题后或实在无思路时参考。<br>
+请自觉、自律地使用该功能并请对自己的学习负责。<br>
+如果发现恶意抄袭标程，将按照I类违反进行处理。<br>
+</div>
+<div class="am-modal-footer">
+<span class="am-modal-btn" data-am-modal-cancel>取消</span>
+<span class="am-modal-btn" data-am-modal-confirm>确定</span>
+</div>
+</div>
+</div>
+<script>
+        $(document).ready(function () {
+            $("#expandstd").click(function () {
+                $('#confirm').modal({
+                    relatedTarget: this,
+                    onConfirm: function (e) {
+                        $("#stdcode").slideDown();
+                        $("#expandstd").hide();
+                    }
+                });
+            });
+            $("#submit").click(
+                function () {
+                    hide_artile();
+                    $(document).scrollTop($(document).scrollTop() - 80);
+                    var pid = $(this).attr("pid");
+                    $.get("/problem/ajax_submit?pid=" + pid, function (data) {
+                        var arr = eval('(' + data + ')');
+                        if (arr['code'] == 201) {
+                            $('.lg-article-sub').html(arr['more']['html']);
+                        }
+                        else if (arr['code'] == 200) {
+
+                        }
+                        else {
+                            if (arr['code'] == 0 || arr['code'] == -3) {
+                                backarticle();
+                            }
+                            show_alert("提交失败", arr['message']);
+                        }
+                    });
+                }
+            );
+            $("button[title].am-btn,a[title].am-btn").poshytip({
+                className: 'tip-twitter',
+                showTimeout: 1,
+                alignTo: 'target',
+                alignX: 'center',
+                alignY: 'bottom'
+            });
+            $('[name=showtag]').click(function () {
+                $('.am-badge.am-hide').removeClass('am-hide');
+            });
+            $(".sample-copy").click(function() {
+                var element = $(this).parents(".copy-region").find("pre");
+                var text = $(element).text();
+                var $temp = $("<textarea>");
+                $("body").append($temp);
+                $temp.val(text).select();
+                document.execCommand("copy");
+                $temp.remove();
+                $(this).text("复制成功").removeClass("lg-bg-orange");
+
+                var e = this;
+                setTimeout(function() {
+                    $(e).text("复制").addClass("lg-bg-orange");
+                }, 500);
+            });
+        });
+    </script>
+</div>
+<footer id="app-footer"></footer>
+<div class="am-modal am-modal-alert" tabindex="-1" id="lg-alert">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="lg-alert-title"></div>
+<div class="am-modal-bd" id="lg-alert-message"></div>
+<div class="am-modal-footer">
+<span class="am-modal-btn">确定</span>
+</div>
+</div>
+</div>
+<script src="/js/ace/ace.js"></script>
+<script src="https://cdn.luogu.org/js/vendor.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/jsmind.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/amazeui.min.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts-more.js"></script>
+<script src="/static/katex/katex.min.js"></script>
+<script src="/static/katex/contrib/auto-render.min.js"></script>
+<script src="https://cdn.luogu.org/markdown-palettes/markdown-palettes.min.js?ver=20190219"></script>
+<script src="https://cdn.luogu.org/js/luogu3.js?ver=20190101"></script>
+</body>
+</html>

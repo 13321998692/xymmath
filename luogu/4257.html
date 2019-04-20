@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title> P4257 可爱の#10数字划分 - 洛谷</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta name="csrf-token" content="1555853274:IVdYOwbwDzli1wPxoIk5pgqBimFN8BoEhu3xuj2C5G4=">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/amazeui.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/katex.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/luogu3.css?ver=20190102">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/highlight_tomorrow.css">
+<link rel="stylesheet" href="https://cdn.luogu.org/markdown-palettes/markdown-palettes.css?ver=20190219">
+<script src="https://cdn.luogu.org/js/jquery-2.1.1.min.js"></script>
+<script src="https://cdn.luogu.org/js/luogu3_pre.js?ver=20190101"></script>
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn.luogu.org/images/favicon3.ico" media="screen"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/fe/loader.css?ver=20190417">
+<script>window._feInjection = JSON.parse(decodeURIComponent("%7B%22code%22%3A200%2C%22currentUser%22%3Anull%2C%22currentTemplate%22%3A%22Excited%22%2C%22currentData%22%3A%7B%22shortHeader%22%3Afalse%2C%22pageName%22%3A%22%5Cu9898%5Cu76ee%5Cu8be6%5Cu60c5%22%7D%2C%22currentMeta%22%3A%7B%22title%22%3A%22%20P4257%20%5Cu53ef%5Cu7231%5Cu306e%2310%5Cu6570%5Cu5b57%5Cu5212%5Cu5206%22%7D%7D"));</script>
+<script>window._release = '20190417';</script>
+<script src="https://cdn.luogu.org/fe/loader.js?ver=20190417" charset="utf-8" defer></script>
+</head>
+<body>
+<div id="app-header"></div>
+<nav id="app-sidenav"></nav>
+<div id="app-body"></div>
+<script>
+    function scrollToId (id) {
+        $('html, body').animate({
+            scrollTop: ($('#' + id).offset().top)
+        }, 500);
+    }
+</script>
+<style>
+    .lg-toolbar {
+        display: none;
+    }
+
+    #app-body { /* Unused in fallback FE */
+        display: none;
+    }
+
+    #app-body-new{
+        display: block;
+        margin-bottom: 2em;
+        position: relative;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    @media (min-width: 576px) {
+        #app-body-new {
+            margin-left: 70px;
+        }
+    }
+
+    code {
+        font-family: monospace, "Courier New";
+    }
+
+</style>
+<div id="app-body-new">
+<div class="lg-toolbar" data-am-sticky>
+<h1><a href="/recordnew/lists?uid=&pid=P4257" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a> P4257 可爱の#10数字划分</h1>
+</div>
+<div class="am-g lg-main-content">
+<div class="am-u-md-4 lg-right" name="problemright">
+<section class="am-panel am-panel-default lg-summary" id="psummary">
+<div class="lg-summary-content">
+<ul class="am-list am-list-static lg-summary-list">
+<li>
+<ul class="am-avg-sm-2"><li><span class="lg-bignum-num">5<small></small></span><span class="lg-bignum-text">通过</span></li><li><span class="lg-bignum-num">29<small></small></span><span class="lg-bignum-text">提交</span></li></ul>
+</li>
+<li>
+<strong>题目提供者</strong>
+<span class="lg-right"><a class='lg-fg-bluelight' href="/space/show?uid=39505" target="_blank">玫葵之蝶</a></span>
+</li>
+<li>
+<strong>评测方式</strong>
+<span class="lg-right"><b>云端评测</b></span>
+</li>
+<li><strong>标签</strong>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="113">排序</span>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="266">概率论,统计</span>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="239">素数判断,质数,筛法</span>
+<span class="lg-tag am-badge am-radius lg-bg-orange" data-tagid="108">O2优化</span>
+<style>.lg-tag { cursor: pointer; }</style>
+<script>
+                                $(".lg-tag").click(function() {
+                                    window.open("/problemnew/lists?tag=" + $(this).attr('data-tagid'));
+                                })
+                            </script>
+</li>
+<li><strong>难度</strong>
+<span class="lg-right"><span class="am-badge am-radius lg-bg-bluelight">提高+/省选-</span></span>
+</li>
+<li><strong>时空限制</strong>
+<span class="lg-right">1000ms-10000ms / 512MB</span>
+</li>
+</ul>
+</div>
+<p>
+<button class="am-btn am-btn-danger am-btn-sm" id="submit" pid="P4257">
+<i class="am-icon-paper-plane"></i> 提交
+</button>
+<a target="_blank" href="/problemnew/solution/P4257" class="am-btn am-btn-primary am-btn-sm">
+<i class="am-icon-book"></i> 题解
+</a>
+<a data-pjax href="/recordnew/lists?pid=P4257" class="am-btn am-btn-primary am-btn-sm" title="查看本题提交记录">
+<i class="am-icon-pie-chart"></i>
+</a>
+<button class="am-btn am-btn-primary am-btn-sm lg-pointer" name="showtag" title="显示算法标签">
+<i class="am-icon-tags"></i>
+</button>
+</p>
+<li>提示：收藏到任务计划后，可在首页查看。</li>
+<p>
+<a class="am-btn am-btn-danger am-btn-sm" href="/fe/problem/P4257" target="_blank">体验新版界面</a>
+</p>
+</section>
+<section class="am-panel am-panel-default lg-summary">
+<h2>最新讨论
+<a onclick="$('#discuss-lists').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看本题讨论">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" style="display: none" id="discuss-lists">
+<li>暂时没有讨论</li>
+<div style="overflow: auto">
+<a data-pjax href="/discuss/lists?forumname=P4257" class="am-btn am-btn-primary am-btn-sm lg-right">进入讨论版</a>
+</div>
+</ul>
+</section>
+<section class="am-panel am-panel-default lg-summary am-hide-sm">
+<h2>推荐的相关题目
+<a onclick="$('#recommendation-list').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看推荐题目">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" id="recommendation-list" style="display: none">
+<li>暂无</li>
+</ul>
+</section>
+</div>
+<div class="am-u-md-8 lg-right" name="problemleft">
+<div class="lg-content-left">
+<div class="lg-article am-g">
+<h2>题目背景</h2>
+<p>可可可可可可爱的付公主qwq有n个数,1~n,每个数都有价值$V_i$,你要将它们划分成若干个集合,每个数属于一个集合</p>
+<h2>题目描述</h2>
+<p>我们这里规定:</p>
+<p>1.质数只能和质数分在同一个集合</p>
+<p>2.合数只能和合数分在同一个集合(1也算在合数内)</p>
+<p>3.我们假设目前所有质数集合的并集为U(也就是之前所有质数集合以及S的并集),每个质数集合S的价值定义如下:</p>
+<p>$V_S={\frac {(\sum_{i\in S}V_i)^p} {\prod_{i\in U}V_i}}$</p>
+<p>4.我们定义每个合数集合S的价值如下:</p>
+<p>令k=|S|,我们用这k个数分别作为k条边的权值,连接k+1个点,构成一棵树</p>
+<p>对于一个排列P(1~k+1),价值$V_P=\sum_{i=1}^{n-1} f(P_i,P_{i+1})$</p>
+<p>其中$f(u,v)=$ 路径(u,v)上的最大边权</p>
+<p>集合S的价值$V_S=E(min\{V_P\})*|S|$</p>
+<p>(其中E(X)代表X的数学期望)</p>
+<p>(这时集合内所有元素都不同,也就是所有边不同)</p>
+<p>(期望是针对所有可能的有标号无根树,min是针对所有可能的P)</p>
+<p>5.一个划分方案的价值定义为所有集合的价值的乘积</p>
+<p>6.两个划分方案相同当且仅当它们中所有集合对应相同，且质数集合的相对顺序相同</p>
+<p>给定n,p和$V_i$,请你求出所有合法的不同划分方案的价值之和</p>
+<p>结果对1e9+7取模,除法请使用乘法逆元</p>
+<h2>输入输出格式</h2>
+<strong>输入格式：</strong><br>
+<p><p>第一行输入两个正整数n,p</p>
+<p>第二行输入n个正整数Vi</p></p>
+<strong>输出格式：</strong><br>
+<p><p>一行一个非负整数,代表答案对1e9+7取模的结果</p></p>
+<h2>输入输出样例</h2>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>4 1
+1 2 3 4
+</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>333333359</pre>
+</div>
+</div>
+<h2>说明</h2>
+<h3>样例解释</h3>
+<p>有以下6种划分方案:</p>
+<p>1.(2,3)和(1,4) [(2,3)的价值为${\frac 5 6}$,(1,4)的价值为10,总价值为${\frac {25} 3}$]</p>
+<p>2.(2),(3)和(1,4) [(2)的价值为1,(3)的价值为${\frac 1 2}$,(1,4)的价值为10,总价值为5]</p>
+<p>3.(3),(2)和(1,4) [(3)的价值为1,(2)的价值为${\frac 1 3}$,(1,4)的价值为10,总价值为${\frac {10} 3}$]</p>
+<p>4.(2,3)和(1),(4) [(2,3)的价值为${\frac 5 6}$,(1)的价值为1,(4)的价值为4,总价值为${\frac {10} 3}$]</p>
+<p>5.(2),(3)和(1),(4) [(2)的价值为1,(3)的价值为${\frac 1 2}$,(1)的价值为1,(4)的价值为4,总价值为2]</p>
+<p>6.(3),(2)和(1),(4) [(3)的价值为1,(2)的价值为${\frac 1 3}$,(1)的价值为1,(4)的价值为4,总价值为${\frac 4 3}$]</p>
+<p>因此所有划分方案的价值和为${\frac {70} 3}$</p>
+<p>对1e9+7取模后结果为333333359</p>
+<h3>数据范围</h3>
+<p>对于100%的数据,1&lt;=n&lt;=70,1&lt;=Vi&lt;=1e12</p>
+<p>下表中给出了每个测试点具体的数据范围,都表示小于等于</p>
+<p>（为了防止卡OJ，所以本题数据组数进行压缩，分值改变，具体参照表格）</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">数据编号</th>
+<th style="text-align: center;">n</th>
+<th style="text-align: center;">p</th>
+<th style="text-align: center;">Vi</th>
+<th style="text-align: center;">测试点分值</th>
+<th style="text-align: center;">时限</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">1s</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1000</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">1s</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">30</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">10000</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">1s</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">40</td>
+<td style="text-align: center;">1e9</td>
+<td style="text-align: center;">1e12</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">1s</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">50</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1e12</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">1s</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">50</td>
+<td style="text-align: center;">1e9</td>
+<td style="text-align: center;">1e12</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">1s</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">60</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1e12</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">2s</td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">60</td>
+<td style="text-align: center;">1e9</td>
+<td style="text-align: center;">1e12</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">2s</td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">70</td>
+<td style="text-align: center;">1e9</td>
+<td style="text-align: center;">1e12</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">10s</td>
+</tr>
+<tr>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">70</td>
+<td style="text-align: center;">1e9</td>
+<td style="text-align: center;">1e12</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">5s</td>
+</tr>
+</tbody>
+</table>
+<p>提示：大家不要太过相信自己的常数，尽量做好常数优化</p>
+</div>
+<div class='lg-article-sub am-g' id="sub"></div>
+</div>
+</div>
+</div>
+<div class="am-modal am-modal-prompt" tabindex="-1" id="confirm">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="memtitle">提示</div>
+<div class="am-modal-bd" id="memadmin">
+标程仅供做题后或实在无思路时参考。<br>
+请自觉、自律地使用该功能并请对自己的学习负责。<br>
+如果发现恶意抄袭标程，将按照I类违反进行处理。<br>
+</div>
+<div class="am-modal-footer">
+<span class="am-modal-btn" data-am-modal-cancel>取消</span>
+<span class="am-modal-btn" data-am-modal-confirm>确定</span>
+</div>
+</div>
+</div>
+<script>
+        $(document).ready(function () {
+            $("#expandstd").click(function () {
+                $('#confirm').modal({
+                    relatedTarget: this,
+                    onConfirm: function (e) {
+                        $("#stdcode").slideDown();
+                        $("#expandstd").hide();
+                    }
+                });
+            });
+            $("#submit").click(
+                function () {
+                    hide_artile();
+                    $(document).scrollTop($(document).scrollTop() - 80);
+                    var pid = $(this).attr("pid");
+                    $.get("/problem/ajax_submit?pid=" + pid, function (data) {
+                        var arr = eval('(' + data + ')');
+                        if (arr['code'] == 201) {
+                            $('.lg-article-sub').html(arr['more']['html']);
+                        }
+                        else if (arr['code'] == 200) {
+
+                        }
+                        else {
+                            if (arr['code'] == 0 || arr['code'] == -3) {
+                                backarticle();
+                            }
+                            show_alert("提交失败", arr['message']);
+                        }
+                    });
+                }
+            );
+            $("button[title].am-btn,a[title].am-btn").poshytip({
+                className: 'tip-twitter',
+                showTimeout: 1,
+                alignTo: 'target',
+                alignX: 'center',
+                alignY: 'bottom'
+            });
+            $('[name=showtag]').click(function () {
+                $('.am-badge.am-hide').removeClass('am-hide');
+            });
+            $(".sample-copy").click(function() {
+                var element = $(this).parents(".copy-region").find("pre");
+                var text = $(element).text();
+                var $temp = $("<textarea>");
+                $("body").append($temp);
+                $temp.val(text).select();
+                document.execCommand("copy");
+                $temp.remove();
+                $(this).text("复制成功").removeClass("lg-bg-orange");
+
+                var e = this;
+                setTimeout(function() {
+                    $(e).text("复制").addClass("lg-bg-orange");
+                }, 500);
+            });
+        });
+    </script>
+</div>
+<footer id="app-footer"></footer>
+<div class="am-modal am-modal-alert" tabindex="-1" id="lg-alert">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="lg-alert-title"></div>
+<div class="am-modal-bd" id="lg-alert-message"></div>
+<div class="am-modal-footer">
+<span class="am-modal-btn">确定</span>
+</div>
+</div>
+</div>
+<script src="/js/ace/ace.js"></script>
+<script src="https://cdn.luogu.org/js/vendor.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/jsmind.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/amazeui.min.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts-more.js"></script>
+<script src="/static/katex/katex.min.js"></script>
+<script src="/static/katex/contrib/auto-render.min.js"></script>
+<script src="https://cdn.luogu.org/markdown-palettes/markdown-palettes.min.js?ver=20190219"></script>
+<script src="https://cdn.luogu.org/js/luogu3.js?ver=20190101"></script>
+</body>
+</html>

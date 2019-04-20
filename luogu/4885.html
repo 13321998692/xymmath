@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title> P4885 灭顶之灾 - 洛谷</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta name="csrf-token" content="1555853499:58DPIV6BAMrBxfFqw2/4gLbOsth79xfzv0VMdFtX6Sc=">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/amazeui.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/katex.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/luogu3.css?ver=20190102">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/highlight_tomorrow.css">
+<link rel="stylesheet" href="https://cdn.luogu.org/markdown-palettes/markdown-palettes.css?ver=20190219">
+<script src="https://cdn.luogu.org/js/jquery-2.1.1.min.js"></script>
+<script src="https://cdn.luogu.org/js/luogu3_pre.js?ver=20190101"></script>
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn.luogu.org/images/favicon3.ico" media="screen"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/fe/loader.css?ver=20190417">
+<script>window._feInjection = JSON.parse(decodeURIComponent("%7B%22code%22%3A200%2C%22currentUser%22%3Anull%2C%22currentTemplate%22%3A%22Excited%22%2C%22currentData%22%3A%7B%22shortHeader%22%3Afalse%2C%22pageName%22%3A%22%5Cu9898%5Cu76ee%5Cu8be6%5Cu60c5%22%7D%2C%22currentMeta%22%3A%7B%22title%22%3A%22%20P4885%20%5Cu706d%5Cu9876%5Cu4e4b%5Cu707e%22%7D%7D"));</script>
+<script>window._release = '20190417';</script>
+<script src="https://cdn.luogu.org/fe/loader.js?ver=20190417" charset="utf-8" defer></script>
+</head>
+<body>
+<div id="app-header"></div>
+<nav id="app-sidenav"></nav>
+<div id="app-body"></div>
+<script>
+    function scrollToId (id) {
+        $('html, body').animate({
+            scrollTop: ($('#' + id).offset().top)
+        }, 500);
+    }
+</script>
+<style>
+    .lg-toolbar {
+        display: none;
+    }
+
+    #app-body { /* Unused in fallback FE */
+        display: none;
+    }
+
+    #app-body-new{
+        display: block;
+        margin-bottom: 2em;
+        position: relative;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    @media (min-width: 576px) {
+        #app-body-new {
+            margin-left: 70px;
+        }
+    }
+
+    code {
+        font-family: monospace, "Courier New";
+    }
+
+</style>
+<div id="app-body-new">
+<div class="lg-toolbar" data-am-sticky>
+<h1><a href="/recordnew/lists?uid=&pid=P4885" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a> P4885 灭顶之灾</h1>
+</div>
+<div class="am-g lg-main-content">
+<div class="am-u-md-4 lg-right" name="problemright">
+<section class="am-panel am-panel-default lg-summary" id="psummary">
+<div class="lg-summary-content">
+<ul class="am-list am-list-static lg-summary-list">
+<li>
+<ul class="am-avg-sm-2"><li><span class="lg-bignum-num">88<small></small></span><span class="lg-bignum-text">通过</span></li><li><span class="lg-bignum-num">2.1<small>K</small><small></small></span><span class="lg-bignum-text">提交</span></li></ul>
+</li>
+<li>
+<strong>题目提供者</strong>
+<span class="lg-right"><a class='lg-fg-purple lg-bold' href="/space/show?uid=829" target="_blank">Scarlet</a>&nbsp;<span class="am-badge am-radius lg-bg-purple">什么都会</span></span>
+</li>
+<li>
+<strong>评测方式</strong>
+<span class="lg-right"><b>云端评测</b></span>
+</li>
+<li><strong>标签</strong>
+<style>.lg-tag { cursor: pointer; }</style>
+<script>
+                                $(".lg-tag").click(function() {
+                                    window.open("/problemnew/lists?tag=" + $(this).attr('data-tagid'));
+                                })
+                            </script>
+</li>
+<li><strong>难度</strong>
+<span class="lg-right"><span class="am-badge am-radius lg-bg-bluelight">提高+/省选-</span></span>
+</li>
+<li><strong>时空限制</strong>
+<span class="lg-right">1000ms / 128MB</span>
+</li>
+</ul>
+</div>
+<p>
+<button class="am-btn am-btn-danger am-btn-sm" id="submit" pid="P4885">
+<i class="am-icon-paper-plane"></i> 提交
+</button>
+<a target="_blank" href="/problemnew/solution/P4885" class="am-btn am-btn-primary am-btn-sm">
+<i class="am-icon-book"></i> 题解
+</a>
+<a data-pjax href="/recordnew/lists?pid=P4885" class="am-btn am-btn-primary am-btn-sm" title="查看本题提交记录">
+<i class="am-icon-pie-chart"></i>
+</a>
+<button class="am-btn am-btn-primary am-btn-sm lg-pointer" name="showtag" title="显示算法标签">
+<i class="am-icon-tags"></i>
+</button>
+</p>
+<li>提示：收藏到任务计划后，可在首页查看。</li>
+<p>
+<a class="am-btn am-btn-danger am-btn-sm" href="/fe/problem/P4885" target="_blank">体验新版界面</a>
+</p>
+</section>
+<section class="am-panel am-panel-default lg-summary">
+<h2>最新讨论
+<a onclick="$('#discuss-lists').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看本题讨论">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" style="display: none" id="discuss-lists">
+<li><a data-pjax href="/discuss/show?postid=66165" class="am-padding-0">请将题目名称拼音首字母连起…</a>
+</li>
+<div style="overflow: auto">
+<a data-pjax href="/discuss/lists?forumname=P4885" class="am-btn am-btn-primary am-btn-sm lg-right">进入讨论版</a>
+</div>
+</ul>
+</section>
+<section class="am-panel am-panel-default lg-summary am-hide-sm">
+<h2>推荐的相关题目
+<a onclick="$('#recommendation-list').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看推荐题目">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" id="recommendation-list" style="display: none">
+<li>
+<a class='colored' href="/problemnew/show/P4886" target="_blank"><b>P4886</b> 快递员</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P4884" target="_blank"><b>P4884</b> 多少个1？</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P4889" target="_blank"><b>P4889</b> kls与flag</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3256" target="_blank"><b>P3256</b> [JLOI2013]赛车</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3402" target="_blank"><b>P3402</b> 【模板】可持久化并查集</a>
+</li>
+</ul>
+</section>
+</div>
+<div class="am-u-md-8 lg-right" name="problemleft">
+<div class="lg-content-left">
+<div class="lg-article am-g">
+<h2>题目背景</h2>
+<p>请将题目名称拼音首字母连起来读</p>
+<h2>题目描述</h2>
+<p>Scarlet有一张$n*m$的神秘表格。现在Scarlet向表格中填数字，她会从<strong>第一行</strong>中的某个格子起，按照<strong>从左往右，从上往下</strong>的顺序依次填写<strong>从$1$开始的正整数</strong>，直至<strong>填满最后一行</strong>。</p>
+<p>为了让你确定这个表格，Scarlet会告诉你表格中的$s$组<strong>同行连续数字。</strong>之后，Scarlet会对你发起$q$次询问，你需要依次回答每个数字被填在第几行第几列中。</p>
+<h2>输入输出格式</h2>
+<strong>输入格式：</strong><br>
+<p><p>第一行$4$个正整数分别代表$n,m,s,q$</p>
+<p>接下来$s$行，每行两个正整数$a_i,b_i$，代表整数$a_i$到$b_i$在表格中处于同一行且连续</p>
+<p>接下来$q$行，每行一个正整数$A_i$，表示每个询问的数字</p></p>
+<strong>输出格式：</strong><br>
+<p><p>如果符合数据的表格不存在，输出一行“Impossible!”（不含引号）</p>
+<p>再如果符合数据的表格不唯一，输出一行&quot;Uncertain!&quot;（不含引号）</p>
+<p><del>否则输出$q$行，每行两个正整数，代表每个被询问的数字被填在第几行第几列，如果该数字不在表格内，输出&quot;0 0&quot;</del></p>
+<p>Scarlet为了减小输出文件，以轻易地上传测试数据至服务器，她现在只需要你输出所有行列数据的异或和（包括前文的“0 0”）。</p></p>
+<h2>输入输出样例</h2>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>3 4 2 2
+8 9
+2 4
+9
+3</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>7</pre>
+</div>
+</div>
+<h2>说明</h2>
+<p>表格：</p>
+<p>0001</p>
+<p>2345</p>
+<p>6789</p>
+<p>9在第3行第4列</p>
+<p>3在第2行第2列</p>
+<p>3 xor 4 xor 2 xor 2=7</p>
+<h2>数据规模</h2>
+<p>对于30%的数据，$1\leq n,m,s,q\leq50$</p>
+<p>对于60%的数据，$1\leq m,s\leq 2000$</p>
+<p>对于100%的数据，$1\leq n,m,A_i,a_i,b_i\leq 10^{18}$，$1\leq s,q\leq 5*10^5$，$0\leq b_i-a_i\leq m-1$</p>
+<h2>标程<a class="lg-right am-btn am-btn-sm am-btn-primary" id="expandstd">展开</a></h2>
+<div id="stdcode" class="copy-region" style="display:none">
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre><code class="language-cpp line-numbers">#include&lt;bits/stdc++.h&gt;
+#define maxn 1000010
+#define EEE 1000000000000000000L
+#define G c=getchar()
+using namespace std;
+typedef long long LL;
+inline LL read()
+{
+	LL x=0,f=1;char G;
+	while(c&gt;57||c&lt;48){if(c==&#039;-&#039;)f=-1;G;}
+	while(c&gt;47&amp;&amp;c&lt;58)x=x*10+c-48,G;
+	return x*f;
+}
+LL A,B,C,D,k,t,n,m;
+struct poi
+{
+	LL x;
+	int d;
+}Q[1000010];
+inline bool cmp(const poi &amp;a,const poi &amp;b)
+{
+	return a.x&lt;b.x;
+}
+int main()
+{
+//	freopen(&quot;mdzz1.in&quot;,&quot;r&quot;,stdin);
+//	freopen(&quot;mdzz3.out&quot;,&quot;w&quot;,stdout);
+	n=read(),m=read();
+	int s=read(),q=read();
+	A=m-1,B=0,C=0,D=m-1;
+	int sz=0;
+	//k-1&lt;=A||B&lt;=k-1   C&lt;=k-1&lt;=D
+	for(int i=1;i&lt;=s;i++)
+	{
+		LL a=read(),b=read(),X=(a-1)%m,Y=m-b+a-1;
+		if(Y&gt;=X)//[Y-X,m-X+1):GG
+		{
+			Q[sz++]=(poi){Y-X+1,1};
+			Q[sz++]=(poi){m-X,-1};
+		//	A=min(A,Y-X),B=max(B,m-X)
+//			printf(&quot;k-1&lt;=%d||%d&lt;=k-1\n&quot;,Y-X,m-X);
+		}
+		else
+			C=max(C,m-X),D=min(D,m+Y-X);//,printf(&quot;%d&lt;=k-1&lt;=%d\n&quot;,m-X,m+Y-X);
+	}
+	Q[sz++]=(poi){-EEE,1};Q[sz++]=(poi){C,-1};Q[sz++]=(poi){D+1,1};Q[sz++]=(poi){EEE,-1};
+	sort(Q,Q+sz,cmp);
+	LL L=-EEE,R,sum=0,ans=0;
+	for(int i=0;i&lt;sz;)
+	{
+	//	printf(&quot;%lld %lld %d\n&quot;,L,Q[i].x,sum);
+		if(sum&lt;=0)ans+=Q[i].x-L,k=L;
+		L=Q[i].x;
+		for(;Q[i].x==L&amp;&amp;i&lt;sz;i++)
+			sum+=Q[i].d;
+	}
+	if(ans==0)return puts(&quot;Impossible!&quot;),0;
+	else if(ans&gt;1)return puts(&quot;Uncertain!&quot;),0;
+	k++;
+	LL anss=0;
+	for(int i=1;i&lt;=q;i++)
+	{
+		t=read();LL x=(k+t-2)/m+1,y=(k+t-2)%m+1;
+		if(x&lt;1||n&lt;x||y&lt;1||m&lt;y)x=y=0;
+		anss^=x^y;
+//		printf(&quot;%lld %lld\n&quot;,(k+t-2)/m+1,(k+t-2)%m+1);
+	}
+	printf(&quot;%lld&quot;,anss);
+}</code></pre>
+</div>
+</div>
+<div class='lg-article-sub am-g' id="sub"></div>
+</div>
+</div>
+</div>
+<div class="am-modal am-modal-prompt" tabindex="-1" id="confirm">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="memtitle">提示</div>
+<div class="am-modal-bd" id="memadmin">
+标程仅供做题后或实在无思路时参考。<br>
+请自觉、自律地使用该功能并请对自己的学习负责。<br>
+如果发现恶意抄袭标程，将按照I类违反进行处理。<br>
+</div>
+<div class="am-modal-footer">
+<span class="am-modal-btn" data-am-modal-cancel>取消</span>
+<span class="am-modal-btn" data-am-modal-confirm>确定</span>
+</div>
+</div>
+</div>
+<script>
+        $(document).ready(function () {
+            $("#expandstd").click(function () {
+                $('#confirm').modal({
+                    relatedTarget: this,
+                    onConfirm: function (e) {
+                        $("#stdcode").slideDown();
+                        $("#expandstd").hide();
+                    }
+                });
+            });
+            $("#submit").click(
+                function () {
+                    hide_artile();
+                    $(document).scrollTop($(document).scrollTop() - 80);
+                    var pid = $(this).attr("pid");
+                    $.get("/problem/ajax_submit?pid=" + pid, function (data) {
+                        var arr = eval('(' + data + ')');
+                        if (arr['code'] == 201) {
+                            $('.lg-article-sub').html(arr['more']['html']);
+                        }
+                        else if (arr['code'] == 200) {
+
+                        }
+                        else {
+                            if (arr['code'] == 0 || arr['code'] == -3) {
+                                backarticle();
+                            }
+                            show_alert("提交失败", arr['message']);
+                        }
+                    });
+                }
+            );
+            $("button[title].am-btn,a[title].am-btn").poshytip({
+                className: 'tip-twitter',
+                showTimeout: 1,
+                alignTo: 'target',
+                alignX: 'center',
+                alignY: 'bottom'
+            });
+            $('[name=showtag]').click(function () {
+                $('.am-badge.am-hide').removeClass('am-hide');
+            });
+            $(".sample-copy").click(function() {
+                var element = $(this).parents(".copy-region").find("pre");
+                var text = $(element).text();
+                var $temp = $("<textarea>");
+                $("body").append($temp);
+                $temp.val(text).select();
+                document.execCommand("copy");
+                $temp.remove();
+                $(this).text("复制成功").removeClass("lg-bg-orange");
+
+                var e = this;
+                setTimeout(function() {
+                    $(e).text("复制").addClass("lg-bg-orange");
+                }, 500);
+            });
+        });
+    </script>
+</div>
+<footer id="app-footer"></footer>
+<div class="am-modal am-modal-alert" tabindex="-1" id="lg-alert">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="lg-alert-title"></div>
+<div class="am-modal-bd" id="lg-alert-message"></div>
+<div class="am-modal-footer">
+<span class="am-modal-btn">确定</span>
+</div>
+</div>
+</div>
+<script src="/js/ace/ace.js"></script>
+<script src="https://cdn.luogu.org/js/vendor.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/jsmind.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/amazeui.min.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts-more.js"></script>
+<script src="/static/katex/katex.min.js"></script>
+<script src="/static/katex/contrib/auto-render.min.js"></script>
+<script src="https://cdn.luogu.org/markdown-palettes/markdown-palettes.min.js?ver=20190219"></script>
+<script src="https://cdn.luogu.org/js/luogu3.js?ver=20190101"></script>
+</body>
+</html>

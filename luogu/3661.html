@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title> P3661 [USACO17FEB]Why Did the Cow Cross the Road I S - 洛谷</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta name="csrf-token" content="1555853041:B5R2OUXD1QicVD3vz3+dh/EvUg/6QFdflbO3UCrNH4w=">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/amazeui.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/katex.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/luogu3.css?ver=20190102">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/highlight_tomorrow.css">
+<link rel="stylesheet" href="https://cdn.luogu.org/markdown-palettes/markdown-palettes.css?ver=20190219">
+<script src="https://cdn.luogu.org/js/jquery-2.1.1.min.js"></script>
+<script src="https://cdn.luogu.org/js/luogu3_pre.js?ver=20190101"></script>
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn.luogu.org/images/favicon3.ico" media="screen"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/fe/loader.css?ver=20190417">
+<script>window._feInjection = JSON.parse(decodeURIComponent("%7B%22code%22%3A200%2C%22currentUser%22%3Anull%2C%22currentTemplate%22%3A%22Excited%22%2C%22currentData%22%3A%7B%22shortHeader%22%3Afalse%2C%22pageName%22%3A%22%5Cu9898%5Cu76ee%5Cu8be6%5Cu60c5%22%7D%2C%22currentMeta%22%3A%7B%22title%22%3A%22%20P3661%20%5BUSACO17FEB%5DWhy%20Did%20the%20Cow%20Cross%20the%20Road%20I%20S%22%7D%7D"));</script>
+<script>window._release = '20190417';</script>
+<script src="https://cdn.luogu.org/fe/loader.js?ver=20190417" charset="utf-8" defer></script>
+</head>
+<body>
+<div id="app-header"></div>
+<nav id="app-sidenav"></nav>
+<div id="app-body"></div>
+<script>
+    function scrollToId (id) {
+        $('html, body').animate({
+            scrollTop: ($('#' + id).offset().top)
+        }, 500);
+    }
+</script>
+<style>
+    .lg-toolbar {
+        display: none;
+    }
+
+    #app-body { /* Unused in fallback FE */
+        display: none;
+    }
+
+    #app-body-new{
+        display: block;
+        margin-bottom: 2em;
+        position: relative;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    @media (min-width: 576px) {
+        #app-body-new {
+            margin-left: 70px;
+        }
+    }
+
+    code {
+        font-family: monospace, "Courier New";
+    }
+
+</style>
+<div id="app-body-new">
+<div class="lg-toolbar" data-am-sticky>
+<h1><a href="/recordnew/lists?uid=&pid=P3661" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a> P3661 [USACO17FEB]Why Did the Cow Cross the Road I S</h1>
+</div>
+<div class="am-g lg-main-content">
+<div class="am-u-md-4 lg-right" name="problemright">
+<section class="am-panel am-panel-default lg-summary" id="psummary">
+<div class="lg-summary-content">
+<ul class="am-list am-list-static lg-summary-list">
+<li>
+<ul class="am-avg-sm-2"><li><span class="lg-bignum-num">190<small></small></span><span class="lg-bignum-text">通过</span></li><li><span class="lg-bignum-num">540<small></small></span><span class="lg-bignum-text">提交</span></li></ul>
+</li>
+<li>
+<strong>题目提供者</strong>
+<span class="lg-right"><a class='lg-fg-gray' href="/space/show?uid=20" target="_blank">FarmerJohn2</a></span>
+</li>
+<li>
+<strong>评测方式</strong>
+<span class="lg-right"><b>云端评测</b></span>
+</li>
+<li><strong>标签</strong>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="303">后缀数组,SA</span>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="113">排序</span>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="7">贪心</span>
+<span class="lg-tag am-badge am-radius lg-bg-bluelight" data-tagid="46">USACO</span>
+<span class="lg-tag am-badge am-radius lg-bg-green" data-tagid="34">2017</span>
+<span class="lg-tag am-badge am-radius lg-bg-orange" data-tagid="319">高性能</span>
+<style>.lg-tag { cursor: pointer; }</style>
+<script>
+                                $(".lg-tag").click(function() {
+                                    window.open("/problemnew/lists?tag=" + $(this).attr('data-tagid'));
+                                })
+                            </script>
+</li>
+<li><strong>难度</strong>
+<span class="lg-right"><span class="am-badge am-radius lg-bg-bluelight">提高+/省选-</span></span>
+</li>
+<li><strong>时空限制</strong>
+<span class="lg-right">1000ms / 128MB</span>
+</li>
+</ul>
+</div>
+<p>
+<button class="am-btn am-btn-danger am-btn-sm" id="submit" pid="P3661">
+<i class="am-icon-paper-plane"></i> 提交
+</button>
+<a target="_blank" href="/problemnew/solution/P3661" class="am-btn am-btn-primary am-btn-sm">
+<i class="am-icon-book"></i> 题解
+</a>
+<a data-pjax href="/recordnew/lists?pid=P3661" class="am-btn am-btn-primary am-btn-sm" title="查看本题提交记录">
+<i class="am-icon-pie-chart"></i>
+</a>
+<button class="am-btn am-btn-primary am-btn-sm lg-pointer" name="showtag" title="显示算法标签">
+<i class="am-icon-tags"></i>
+</button>
+</p>
+<li>提示：收藏到任务计划后，可在首页查看。</li>
+<p>
+<a class="am-btn am-btn-danger am-btn-sm" href="/fe/problem/P3661" target="_blank">体验新版界面</a>
+</p>
+</section>
+<section class="am-panel am-panel-default lg-summary">
+<h2>最新讨论
+<a onclick="$('#discuss-lists').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看本题讨论">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" style="display: none" id="discuss-lists">
+<li><a data-pjax href="/discuss/show?postid=73212" class="am-padding-0">数据过弱，请求加强。</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=44241" class="am-padding-0">被标签害了。。。</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=30639" class="am-padding-0">补充一个英语梗</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=12964" class="am-padding-0">路过，翻译一下，大概就会有…</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=10328" class="am-padding-0">题目大意</a>
+</li>
+<div style="overflow: auto">
+<a data-pjax href="/discuss/lists?forumname=P3661" class="am-btn am-btn-primary am-btn-sm lg-right">进入讨论版</a>
+</div>
+</ul>
+</section>
+<section class="am-panel am-panel-default lg-summary am-hide-sm">
+<h2>推荐的相关题目
+<a onclick="$('#recommendation-list').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看推荐题目">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" id="recommendation-list" style="display: none">
+<li>
+<a class='colored' href="/problemnew/show/P3662" target="_blank"><b>P3662</b> [USACO17FEB]Why Did the Cow Cross the Road II S</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3663" target="_blank"><b>P3663</b> [USACO17FEB]Why Did the Cow Cross the Road III S</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3660" target="_blank"><b>P3660</b> [USACO17FEB]Why Did the Cow Cross the Road III G</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3659" target="_blank"><b>P3659</b> [USACO17FEB]Why Did the Cow Cross the Road I G</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3657" target="_blank"><b>P3657</b> [USACO17FEB]Why Did the Cow Cross the Road II P</a>
+</li>
+</ul>
+</section>
+</div>
+<div class="am-u-md-8 lg-right" name="problemleft">
+<div class="lg-content-left">
+<div class="lg-article am-g">
+<h2>题目背景</h2>
+<p>征求翻译。如果你能提供翻译（不接受百度翻译等机器翻译）或者题意简述，请直接发讨论，感谢你的贡献。</p>
+<h2>题目描述</h2>
+<p>Farmer John's cows are trying to learn to cross the road effectively. Remembering the old &quot;why did the chicken cross the road?&quot; joke, they figure the chickens must be experts on crossing the road, and go off in search of chickens to help them.</p>
+<p>农夫约翰的牛们正在尝试去学会高效地穿越马路。熟知经典的笑话“为什么鸡要过马路？”，他们想到鸡一定是过马路的专家，便动身寻找能够帮助它们的鸡。</p>
+<p>As it turns out, chickens are very busy creatures and have limited time to help the cows. There are $C$ chickens on the farm ($1 \leq C \leq 20,000$), conveniently numbered $1 \ldots C$, and each chicken $i$ is only willing to help a cow at precisely time $T_i$. The cows, never in a hurry, have more flexibility in their schedules. There are $N$ cows on the farm ($1 \leq N \leq 20,000$), conveniently numbered $1 \ldots N$, where cow $j$ is able to cross the road between time $A_j$ and time $B_j$. Figuring the &quot;buddy system&quot; is the best way to proceed, each cow $j$ would ideally like to find a chicken $i$ to help her cross the road; in order for their schedules to be compatible, $i$ and $j$ must satisfy $A_j \leq T_i \leq B_j$.</p>
+<p>牛们发现，鸡是一种特别繁忙的动物，并且只有一定的时间来帮助它们。农场上共有$C$ 只鸡（$1\le C\le 20000$），十分便利地被编号为$1...C$, 而且，每只鸡$i$ 只有恰好在时间$T_{i}$ 时才会愿意帮助牛们。而从不慌张的牛们，有更加灵活的时间安排。农场上共有$N$ 只牛（$1\le N\le 20000$），也十分便利地被编号为$1...N$，牛$j$ 在时间$A_{j}$ 到$B_{j}$ 之间可以穿过马路。想到“小伙伴系统”是最好的行进方式，每只牛$j$ 会理想地愿意找到一只鸡$i$ 来帮助她穿过马路；为了是它们的时间表不冲突，$i$ 和$j$ 必须满足$A_{j}\le T_{i}\le B_{j}$</p>
+<p>If each cow can be paired with at most one chicken and each chicken with at most one cow, please help compute the maximum number of cow-chicken pairs that can be constructed.</p>
+<p>如果每头奶牛最多只能配一只鸡，而每只鸡最多只配上一头牛，请帮忙计算出可以构造的牛鸡对的最大数量。</p>
+<h2>输入输出格式</h2>
+<strong>输入格式：</strong><br>
+<p><p>The first line of input contains $C$ and $N$. The next $C$ lines contain $T_1 \ldots T_C$, and the next $N$ lines contain $A_j$ and $B_j$ ($A_j \leq B_j$) for $j = 1 \ldots N$. The $A$'s, $B$'s, and $T$'s are all non-negative integers (not necessarily distinct) of size at most 1,000,000,000</p>
+<p>第一行的输入包括$C$ 和$N$。下面的$C$ 行包括$T1...TC$，再接下来的$N$ 行包括$A_{j}$ 和$B_{j}$($A_{j}\le B_{j}$)，$j=1...N$。所有$A,B$ 与$T$ 都是非负整数（可能相等），并皆小于等于$1,000,000,000$。</p></p>
+<strong>输出格式：</strong><br>
+<p><p>Please compute the maximum possible number of cow-chicken pairs.</p>
+<p>请计算最大的可行牛-鸡配对数。</p></p>
+<h2>输入输出样例</h2>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>5 4
+7
+8
+6
+2
+9
+2 5
+4 9
+0 3
+8 13</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>3</pre>
+</div>
+</div>
+<h2>说明</h2>
+<p>感谢@Darkins 提供翻译</p>
+</div>
+<div class='lg-article-sub am-g' id="sub"></div>
+</div>
+</div>
+</div>
+<div class="am-modal am-modal-prompt" tabindex="-1" id="confirm">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="memtitle">提示</div>
+<div class="am-modal-bd" id="memadmin">
+标程仅供做题后或实在无思路时参考。<br>
+请自觉、自律地使用该功能并请对自己的学习负责。<br>
+如果发现恶意抄袭标程，将按照I类违反进行处理。<br>
+</div>
+<div class="am-modal-footer">
+<span class="am-modal-btn" data-am-modal-cancel>取消</span>
+<span class="am-modal-btn" data-am-modal-confirm>确定</span>
+</div>
+</div>
+</div>
+<script>
+        $(document).ready(function () {
+            $("#expandstd").click(function () {
+                $('#confirm').modal({
+                    relatedTarget: this,
+                    onConfirm: function (e) {
+                        $("#stdcode").slideDown();
+                        $("#expandstd").hide();
+                    }
+                });
+            });
+            $("#submit").click(
+                function () {
+                    hide_artile();
+                    $(document).scrollTop($(document).scrollTop() - 80);
+                    var pid = $(this).attr("pid");
+                    $.get("/problem/ajax_submit?pid=" + pid, function (data) {
+                        var arr = eval('(' + data + ')');
+                        if (arr['code'] == 201) {
+                            $('.lg-article-sub').html(arr['more']['html']);
+                        }
+                        else if (arr['code'] == 200) {
+
+                        }
+                        else {
+                            if (arr['code'] == 0 || arr['code'] == -3) {
+                                backarticle();
+                            }
+                            show_alert("提交失败", arr['message']);
+                        }
+                    });
+                }
+            );
+            $("button[title].am-btn,a[title].am-btn").poshytip({
+                className: 'tip-twitter',
+                showTimeout: 1,
+                alignTo: 'target',
+                alignX: 'center',
+                alignY: 'bottom'
+            });
+            $('[name=showtag]').click(function () {
+                $('.am-badge.am-hide').removeClass('am-hide');
+            });
+            $(".sample-copy").click(function() {
+                var element = $(this).parents(".copy-region").find("pre");
+                var text = $(element).text();
+                var $temp = $("<textarea>");
+                $("body").append($temp);
+                $temp.val(text).select();
+                document.execCommand("copy");
+                $temp.remove();
+                $(this).text("复制成功").removeClass("lg-bg-orange");
+
+                var e = this;
+                setTimeout(function() {
+                    $(e).text("复制").addClass("lg-bg-orange");
+                }, 500);
+            });
+        });
+    </script>
+</div>
+<footer id="app-footer"></footer>
+<div class="am-modal am-modal-alert" tabindex="-1" id="lg-alert">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="lg-alert-title"></div>
+<div class="am-modal-bd" id="lg-alert-message"></div>
+<div class="am-modal-footer">
+<span class="am-modal-btn">确定</span>
+</div>
+</div>
+</div>
+<script src="/js/ace/ace.js"></script>
+<script src="https://cdn.luogu.org/js/vendor.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/jsmind.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/amazeui.min.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts-more.js"></script>
+<script src="/static/katex/katex.min.js"></script>
+<script src="/static/katex/contrib/auto-render.min.js"></script>
+<script src="https://cdn.luogu.org/markdown-palettes/markdown-palettes.min.js?ver=20190219"></script>
+<script src="https://cdn.luogu.org/js/luogu3.js?ver=20190101"></script>
+</body>
+</html>

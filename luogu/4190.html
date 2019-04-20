@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title> P4190 [CTSC2010]三国围棋擂台赛 - 洛谷</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta name="csrf-token" content="1555853252:9DJLukMC6MvIjzR1pZD9R0sBv90J9+GiQA5YapgrHew=">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/amazeui.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/katex.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/luogu3.css?ver=20190102">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/highlight_tomorrow.css">
+<link rel="stylesheet" href="https://cdn.luogu.org/markdown-palettes/markdown-palettes.css?ver=20190219">
+<script src="https://cdn.luogu.org/js/jquery-2.1.1.min.js"></script>
+<script src="https://cdn.luogu.org/js/luogu3_pre.js?ver=20190101"></script>
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn.luogu.org/images/favicon3.ico" media="screen"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/fe/loader.css?ver=20190417">
+<script>window._feInjection = JSON.parse(decodeURIComponent("%7B%22code%22%3A200%2C%22currentUser%22%3Anull%2C%22currentTemplate%22%3A%22Excited%22%2C%22currentData%22%3A%7B%22shortHeader%22%3Afalse%2C%22pageName%22%3A%22%5Cu9898%5Cu76ee%5Cu8be6%5Cu60c5%22%7D%2C%22currentMeta%22%3A%7B%22title%22%3A%22%20P4190%20%5BCTSC2010%5D%5Cu4e09%5Cu56fd%5Cu56f4%5Cu68cb%5Cu64c2%5Cu53f0%5Cu8d5b%22%7D%7D"));</script>
+<script>window._release = '20190417';</script>
+<script src="https://cdn.luogu.org/fe/loader.js?ver=20190417" charset="utf-8" defer></script>
+</head>
+<body>
+<div id="app-header"></div>
+<nav id="app-sidenav"></nav>
+<div id="app-body"></div>
+<script>
+    function scrollToId (id) {
+        $('html, body').animate({
+            scrollTop: ($('#' + id).offset().top)
+        }, 500);
+    }
+</script>
+<style>
+    .lg-toolbar {
+        display: none;
+    }
+
+    #app-body { /* Unused in fallback FE */
+        display: none;
+    }
+
+    #app-body-new{
+        display: block;
+        margin-bottom: 2em;
+        position: relative;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    @media (min-width: 576px) {
+        #app-body-new {
+            margin-left: 70px;
+        }
+    }
+
+    code {
+        font-family: monospace, "Courier New";
+    }
+
+</style>
+<div id="app-body-new">
+<div class="lg-toolbar" data-am-sticky>
+<h1><a href="/recordnew/lists?uid=&pid=P4190" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a> P4190 [CTSC2010]三国围棋擂台赛</h1>
+</div>
+<div class="am-g lg-main-content">
+<div class="am-u-md-4 lg-right" name="problemright">
+<section class="am-panel am-panel-default lg-summary" id="psummary">
+<div class="lg-summary-content">
+<ul class="am-list am-list-static lg-summary-list">
+<li>
+<ul class="am-avg-sm-2"><li><span class="lg-bignum-num">5<small></small></span><span class="lg-bignum-text">通过</span></li><li><span class="lg-bignum-num">13<small></small></span><span class="lg-bignum-text">提交</span></li></ul>
+</li>
+<li>
+<strong>题目提供者</strong>
+<span class="lg-right"><a class='lg-fg-red lg-bold' href="/space/show?uid=50167" target="_blank">Imagine</a></span>
+</li>
+<li>
+<strong>评测方式</strong>
+<span class="lg-right"><b>云端评测</b></span>
+</li>
+<li><strong>标签</strong>
+<span class="lg-tag am-badge am-radius lg-bg-bluelight" data-tagid="52">WC/CTSC/集训队</span>
+<span class="lg-tag am-badge am-radius lg-bg-green" data-tagid="27">2010</span>
+<span class="lg-tag am-badge am-radius lg-bg-orange" data-tagid="319">高性能</span>
+<style>.lg-tag { cursor: pointer; }</style>
+<script>
+                                $(".lg-tag").click(function() {
+                                    window.open("/problemnew/lists?tag=" + $(this).attr('data-tagid'));
+                                })
+                            </script>
+</li>
+<li><strong>难度</strong>
+<span class="lg-right"><span class="am-badge am-radius lg-bg-bluelight">提高+/省选-</span></span>
+</li>
+<li><strong>时空限制</strong>
+<span class="lg-right">3000ms / 256MB</span>
+</li>
+</ul>
+</div>
+<p>
+<button class="am-btn am-btn-danger am-btn-sm" id="submit" pid="P4190">
+<i class="am-icon-paper-plane"></i> 提交
+</button>
+<a target="_blank" href="/problemnew/solution/P4190" class="am-btn am-btn-primary am-btn-sm">
+<i class="am-icon-book"></i> 题解
+</a>
+<a data-pjax href="/recordnew/lists?pid=P4190" class="am-btn am-btn-primary am-btn-sm" title="查看本题提交记录">
+<i class="am-icon-pie-chart"></i>
+</a>
+<button class="am-btn am-btn-primary am-btn-sm lg-pointer" name="showtag" title="显示算法标签">
+<i class="am-icon-tags"></i>
+</button>
+</p>
+<li>提示：收藏到任务计划后，可在首页查看。</li>
+<p>
+<a class="am-btn am-btn-danger am-btn-sm" href="/fe/problem/P4190" target="_blank">体验新版界面</a>
+</p>
+</section>
+<section class="am-panel am-panel-default lg-summary">
+<h2>最新讨论
+<a onclick="$('#discuss-lists').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看本题讨论">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" style="display: none" id="discuss-lists">
+<li>暂时没有讨论</li>
+<div style="overflow: auto">
+<a data-pjax href="/discuss/lists?forumname=P4190" class="am-btn am-btn-primary am-btn-sm lg-right">进入讨论版</a>
+</div>
+</ul>
+</section>
+<section class="am-panel am-panel-default lg-summary am-hide-sm">
+<h2>推荐的相关题目
+<a onclick="$('#recommendation-list').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看推荐题目">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" id="recommendation-list" style="display: none">
+<li>暂无</li>
+</ul>
+</section>
+</div>
+<div class="am-u-md-8 lg-right" name="problemleft">
+<div class="lg-content-left">
+<div class="lg-article am-g">
+<h2>题目描述</h2>
+<p>一年一度的“农心杯”三国围棋擂台赛是世界上最高水平的围棋比赛，也是中日韩三国围棋界最激动人心的较量。本题就是建立在这一比赛的规则之上。</p>
+<p>三国围棋擂台赛是三个国家的代表队之间的比赛，下面简要介绍一下比赛的规则：</p>
+<p>1.不妨设三个国家分别为$A$、$B$和$C$，每个国家各有$n$名选手（在上述的实际比赛中$n = 5$），分别称其为$A_1$，$A_2$，…，$A_n$，$B_1$，$B_2$，…，$B_n$，$C_1$，$C_2$，…，$C_n$。</p>
+<p>2.每场比赛都能分出胜负。每场比赛的负者遭到淘汰。</p>
+<p>3.每队第一位出场的选手都已经确定为每队的第$n$位选手，即$A_n$、$B_n$和 $C_n$。</p>
+<p>4.通过抽签等概率地选出一支队伍。该队将在第一轮中轮空，而剩下的两支队伍的第$n$位选手将进行第一场比赛。</p>
+<p>5.第一场比赛的胜者（这里的胜者是指赢得该局比赛的选手，下同）与轮空队伍的第$n$位选手进行第二场比赛。比如在第一场比赛中$C_n$战胜了$A_n$，则第二场则由$C_n$对阵$B_n$。</p>
+<p>6.从第三场比赛开始，前一场比赛未参加的队伍将选出一个未被淘汰的选手与上一场比赛的胜者进行下一场比赛。</p>
+<p>7.这个过程将一直进行，直到某个队伍的全部参赛选手都被淘汰为止。</p>
+<p>8.当只有两支队伍的时候，每场比赛后，由负方选择一位未被淘汰的选手与胜者进行下一场比赛。</p>
+<p>9.当两支队伍中的任意一队的全部选手均被淘汰后比赛结束，余下的那支队伍将获得农心杯。</p>
+<p>新一届的比赛就要开始了。你作为$A$队的领队，在比赛开始前已经统计了这$3n$位选手之间的胜率——即对于来自不同队伍的两个选手$Q$和$R$，我们已知$Q$战胜$R$的概率为$p$（$0 \leq p \leq 1$），且$R$战胜$Q$的概率为$1-p$。</p>
+<p>由于你所在的国家实力超群，可以认为剩下的两只队伍都将矛头对准了你。$B$、$C$队的每个决策，即派出选手的顺序的目的都是使你所在的国家（$A$队）夺冠的概率尽可能小，而$A$队的决策的目的必然是使最后夺冠的概率尽可能大。你要做的事情就是计算出在这种极为不利的情况下，在三方都做出最优决策的前提下，$A$队夺冠的期望$E_A$。</p>
+<p>关于期望的计算：设现在在场上比赛的人是$Q$和$R$，$Q$胜$R$的概率为$p$，则此时$A$队胜率的期望</p>
+<p>$E_A = p$ × $E_1 + (1 - p)$ × $E_2$</p>
+<p>其中$E_1$为$Q$胜$R$后$A$队夺冠的期望，$E_2$为$R$胜$Q$后$A$队夺冠的期望。$E_1$、$E_2$则同样使用上式递归计算。</p>
+<p>$A$队的决策会尽可能使这个期望尽可能大，而$B$、$C$队则会使这个期望尽可能小。当$B$、$C$队的全部选手都被淘汰后夺冠期望为$1$，$A$队所有队员被淘汰后期望为$0$。</p>
+<p>例如当每队有$3$位参赛选手时，相互之间的胜率由如下的$3$个$3*3$的矩阵给出，其中矩阵中的每个数值$p$为所在行选手对于所在列选手的胜率，所在列选手对于所在行选手的胜率为$1-p$。</p>
+<p><img src="https://www.z4a.net/images/2018/01/30/QQ20180130165331.png" alt="QQ20180130165331.png" /></p>
+<p>三支队的第三位选手的水平相同，在第两局比赛后，三支队的选手获胜的概率是相同的。假设第二局获胜的是$B_3$，第三局轮到$A$队出场。这时我们可以派出$A_1$和$A_2$两种选择。</p>
+<p>如果派出$A_2$，虽然第三局一定可以战胜$B_3$（胜率为$100 \%$），但是$C$队会在第四场比赛中派出$C_2$，$A_2$对于$C_2$必败（胜率为$0$），第五场中$B$队会让$B_1$出场，第六场$A_1$只能出场，这时对$A_1$必胜的$B_2$还未登场，因此$A_1$迟早会遭到淘汰，$A$队夺冠的概率就为$0$。</p>
+<p>如果派出$A_1$，虽然本局对于$B_3$比赛只有$50 \%$的胜率，但是夺冠的概率为$6.25 \%$；因此在第三场应该派出$A_1$。</p>
+<p>根据第三场比赛的参赛选手的六种情况，最后夺冠的期望为：</p>
+<p>$$ \dfrac{(6.25\%+3.125\%+18.75\%+25\%+60.9375\%+50\%)}{6} = 27.34375\%$$</p>
+<h2>输入输出格式</h2>
+<strong>输入格式：</strong><br>
+<p><p>输入文件为go.in。</p>
+<p>第一行包括一个整数$n$，表示每队的选手数。</p>
+<p>第二行到第$n + 1$行每行包含$n$个实数，整体为一个$n*n$的矩阵，表示$A$队对$B$队的胜率。其中第$i + 1$行的第$j$个数表示选手$A_i$对选手$B_j$时的胜率。</p>
+<p>第$n + 2$行为空行。</p>
+<p>第$n + 3$行到第$2n + 2$行每行包含$n$个实数，同样为一个$n*n$的矩阵，表示$A$队对$C$队的胜率。其中第$i + n + 2$行的第$j$个数表示选手$A_i$对选手$C_j$时的胜率。</p>
+<p>第$2n + 3$行为空行。</p>
+<p>第$2n + 4$行到第$3n + 3$行每行包含$n$个实数，整体为一个$n*n$的矩阵，表示$B$队对$C$队的胜率。其中第$i + 2n + 3$行的第$j$个数表示选手$B_i$对选手$C_j$时的胜率。</p></p>
+<strong>输出格式：</strong><br>
+<p><p>输出文件go.out仅包含一个实数，保留$6$位小数，表示$A$队获得冠军的概率。</p></p>
+<h2>输入输出样例</h2>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>3
+1.0 0.0 0.5
+0.5 1.0 1.0
+0.5 0.5 0.5
+
+0.5 0.5 1.0
+0.5 0.0 0.5
+0.5 0.5 0.5
+
+0.5 0.0 1.0
+0.5 0.5 0.5
+0.5 0.5 0.5 
+</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>0.273438</pre>
+</div>
+</div>
+<h2>说明</h2>
+<p>$30\%$的数据中，$n \leq 4$。</p>
+<p>$40\%$的数据中，$n \leq 5$。</p>
+<p>$100\%$的数据中，$n \leq 7$。</p>
+<p>对于$10\%$的数据有三个胜率矩阵中，每个矩阵的元素都相同，但不同矩阵的数字可能不同。</p>
+</div>
+<div class='lg-article-sub am-g' id="sub"></div>
+</div>
+</div>
+</div>
+<div class="am-modal am-modal-prompt" tabindex="-1" id="confirm">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="memtitle">提示</div>
+<div class="am-modal-bd" id="memadmin">
+标程仅供做题后或实在无思路时参考。<br>
+请自觉、自律地使用该功能并请对自己的学习负责。<br>
+如果发现恶意抄袭标程，将按照I类违反进行处理。<br>
+</div>
+<div class="am-modal-footer">
+<span class="am-modal-btn" data-am-modal-cancel>取消</span>
+<span class="am-modal-btn" data-am-modal-confirm>确定</span>
+</div>
+</div>
+</div>
+<script>
+        $(document).ready(function () {
+            $("#expandstd").click(function () {
+                $('#confirm').modal({
+                    relatedTarget: this,
+                    onConfirm: function (e) {
+                        $("#stdcode").slideDown();
+                        $("#expandstd").hide();
+                    }
+                });
+            });
+            $("#submit").click(
+                function () {
+                    hide_artile();
+                    $(document).scrollTop($(document).scrollTop() - 80);
+                    var pid = $(this).attr("pid");
+                    $.get("/problem/ajax_submit?pid=" + pid, function (data) {
+                        var arr = eval('(' + data + ')');
+                        if (arr['code'] == 201) {
+                            $('.lg-article-sub').html(arr['more']['html']);
+                        }
+                        else if (arr['code'] == 200) {
+
+                        }
+                        else {
+                            if (arr['code'] == 0 || arr['code'] == -3) {
+                                backarticle();
+                            }
+                            show_alert("提交失败", arr['message']);
+                        }
+                    });
+                }
+            );
+            $("button[title].am-btn,a[title].am-btn").poshytip({
+                className: 'tip-twitter',
+                showTimeout: 1,
+                alignTo: 'target',
+                alignX: 'center',
+                alignY: 'bottom'
+            });
+            $('[name=showtag]').click(function () {
+                $('.am-badge.am-hide').removeClass('am-hide');
+            });
+            $(".sample-copy").click(function() {
+                var element = $(this).parents(".copy-region").find("pre");
+                var text = $(element).text();
+                var $temp = $("<textarea>");
+                $("body").append($temp);
+                $temp.val(text).select();
+                document.execCommand("copy");
+                $temp.remove();
+                $(this).text("复制成功").removeClass("lg-bg-orange");
+
+                var e = this;
+                setTimeout(function() {
+                    $(e).text("复制").addClass("lg-bg-orange");
+                }, 500);
+            });
+        });
+    </script>
+</div>
+<footer id="app-footer"></footer>
+<div class="am-modal am-modal-alert" tabindex="-1" id="lg-alert">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="lg-alert-title"></div>
+<div class="am-modal-bd" id="lg-alert-message"></div>
+<div class="am-modal-footer">
+<span class="am-modal-btn">确定</span>
+</div>
+</div>
+</div>
+<script src="/js/ace/ace.js"></script>
+<script src="https://cdn.luogu.org/js/vendor.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/jsmind.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/amazeui.min.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts-more.js"></script>
+<script src="/static/katex/katex.min.js"></script>
+<script src="/static/katex/contrib/auto-render.min.js"></script>
+<script src="https://cdn.luogu.org/markdown-palettes/markdown-palettes.min.js?ver=20190219"></script>
+<script src="https://cdn.luogu.org/js/luogu3.js?ver=20190101"></script>
+</body>
+</html>

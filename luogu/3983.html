@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title> P3983 赛斯石（赛后强化版） - 洛谷</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta name="csrf-token" content="1555853181:RM/4boVwOjJ2PB3yy6TewyDka0xNvYnx1ZQba5uEXjo=">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/amazeui.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/katex.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/luogu3.css?ver=20190102">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/highlight_tomorrow.css">
+<link rel="stylesheet" href="https://cdn.luogu.org/markdown-palettes/markdown-palettes.css?ver=20190219">
+<script src="https://cdn.luogu.org/js/jquery-2.1.1.min.js"></script>
+<script src="https://cdn.luogu.org/js/luogu3_pre.js?ver=20190101"></script>
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn.luogu.org/images/favicon3.ico" media="screen"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/fe/loader.css?ver=20190417">
+<script>window._feInjection = JSON.parse(decodeURIComponent("%7B%22code%22%3A200%2C%22currentUser%22%3Anull%2C%22currentTemplate%22%3A%22Excited%22%2C%22currentData%22%3A%7B%22shortHeader%22%3Afalse%2C%22pageName%22%3A%22%5Cu9898%5Cu76ee%5Cu8be6%5Cu60c5%22%7D%2C%22currentMeta%22%3A%7B%22title%22%3A%22%20P3983%20%5Cu8d5b%5Cu65af%5Cu77f3%5Cuff08%5Cu8d5b%5Cu540e%5Cu5f3a%5Cu5316%5Cu7248%5Cuff09%22%7D%7D"));</script>
+<script>window._release = '20190417';</script>
+<script src="https://cdn.luogu.org/fe/loader.js?ver=20190417" charset="utf-8" defer></script>
+</head>
+<body>
+<div id="app-header"></div>
+<nav id="app-sidenav"></nav>
+<div id="app-body"></div>
+<script>
+    function scrollToId (id) {
+        $('html, body').animate({
+            scrollTop: ($('#' + id).offset().top)
+        }, 500);
+    }
+</script>
+<style>
+    .lg-toolbar {
+        display: none;
+    }
+
+    #app-body { /* Unused in fallback FE */
+        display: none;
+    }
+
+    #app-body-new{
+        display: block;
+        margin-bottom: 2em;
+        position: relative;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    @media (min-width: 576px) {
+        #app-body-new {
+            margin-left: 70px;
+        }
+    }
+
+    code {
+        font-family: monospace, "Courier New";
+    }
+
+</style>
+<div id="app-body-new">
+<div class="lg-toolbar" data-am-sticky>
+<h1><a href="/recordnew/lists?uid=&pid=P3983" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a> P3983 赛斯石（赛后强化版）</h1>
+</div>
+<div class="am-g lg-main-content">
+<div class="am-u-md-4 lg-right" name="problemright">
+<section class="am-panel am-panel-default lg-summary" id="psummary">
+<div class="lg-summary-content">
+<ul class="am-list am-list-static lg-summary-list">
+<li>
+<ul class="am-avg-sm-2"><li><span class="lg-bignum-num">287<small></small></span><span class="lg-bignum-text">通过</span></li><li><span class="lg-bignum-num">1.6<small>K</small><small></small></span><span class="lg-bignum-text">提交</span></li></ul>
+</li>
+<li>
+<strong>题目提供者</strong>
+<span class="lg-right"><a class='lg-fg-bluelight' href="/space/show?uid=50871" target="_blank">孤独·粲泽</a></span>
+</li>
+<li>
+<strong>评测方式</strong>
+<span class="lg-right"><b>云端评测</b></span>
+</li>
+<li><strong>标签</strong>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="3">动态规划,动规,dp</span>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="139">背包</span>
+<span class="lg-tag am-badge am-radius lg-bg-green" data-tagid="34">2017</span>
+<style>.lg-tag { cursor: pointer; }</style>
+<script>
+                                $(".lg-tag").click(function() {
+                                    window.open("/problemnew/lists?tag=" + $(this).attr('data-tagid'));
+                                })
+                            </script>
+</li>
+<li><strong>难度</strong>
+<span class="lg-right"><span class="am-badge am-radius lg-bg-green">普及+/提高</span></span>
+</li>
+<li><strong>时空限制</strong>
+<span class="lg-right">1000ms / 128MB</span>
+</li>
+</ul>
+</div>
+<p>
+<button class="am-btn am-btn-danger am-btn-sm" id="submit" pid="P3983">
+<i class="am-icon-paper-plane"></i> 提交
+</button>
+<a target="_blank" href="/problemnew/solution/P3983" class="am-btn am-btn-primary am-btn-sm">
+<i class="am-icon-book"></i> 题解
+</a>
+<a data-pjax href="/recordnew/lists?pid=P3983" class="am-btn am-btn-primary am-btn-sm" title="查看本题提交记录">
+<i class="am-icon-pie-chart"></i>
+</a>
+<button class="am-btn am-btn-primary am-btn-sm lg-pointer" name="showtag" title="显示算法标签">
+<i class="am-icon-tags"></i>
+</button>
+</p>
+<li>提示：收藏到任务计划后，可在首页查看。</li>
+<p>
+<a class="am-btn am-btn-danger am-btn-sm" href="/fe/problem/P3983" target="_blank">体验新版界面</a>
+</p>
+</section>
+<section class="am-panel am-panel-default lg-summary">
+<h2>最新讨论
+<a onclick="$('#discuss-lists').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看本题讨论">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" style="display: none" id="discuss-lists">
+<li><a data-pjax href="/discuss/show?postid=100867" class="am-padding-0">求路过的DALAO看看本蒟蒻的…</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=71606" class="am-padding-0">提供一组hack数据</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=69931" class="am-padding-0">样例2是什么鬼！！！！</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=61854" class="am-padding-0">这题太坑了</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=30157" class="am-padding-0">题解有抄袭现象</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=29989" class="am-padding-0">题解有误导性</a>
+</li>
+<div style="overflow: auto">
+<a data-pjax href="/discuss/lists?forumname=P3983" class="am-btn am-btn-primary am-btn-sm lg-right">进入讨论版</a>
+</div>
+</ul>
+</section>
+<section class="am-panel am-panel-default lg-summary am-hide-sm">
+<h2>推荐的相关题目
+<a onclick="$('#recommendation-list').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看推荐题目">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" id="recommendation-list" style="display: none">
+<li>
+<a class='colored' href="/problemnew/show/P3982" target="_blank"><b>P3982</b> 龙盘雪峰信息解析器</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3981" target="_blank"><b>P3981</b> 琅泽难题</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P2071" target="_blank"><b>P2071</b> 座位安排</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3958" target="_blank"><b>P3958</b> 奶酪</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3951" target="_blank"><b>P3951</b> 小凯的疑惑</a>
+</li>
+</ul>
+</section>
+</div>
+<div class="am-u-md-8 lg-right" name="problemleft">
+<div class="lg-content-left">
+<div class="lg-article am-g">
+<h2>题目背景</h2>
+<pre><code class="language-cpp">白露横江，水光接天，纵一苇之所如，凌万顷之茫然。——苏轼</code></pre>
+<p>真程海洋近来需要进购大批赛斯石，你或许会问，什么是赛斯石？</p>
+<p>首先我们来了解一下赛斯，赛斯是一个重量单位，我们用$ si $作为其单位。比如$ 1 $赛斯就是$ 1si $。</p>
+<p>而赛斯石有这样一个性质，它本来是一赛斯一赛斯单独存在的，但是用自然枪将其精化之后，它就会与其它经过精化的赛斯石进行合并，合并到合适的重量之后，便将其钝化，使其不再合并其它赛斯石，如果合错了，也可以用金刚刀将其切开（神奇的是你只能切成整数赛斯重量）。赛斯石的重量只能是<strong>整数</strong>赛斯重量，而不同赛斯重量的赛斯石的价格也是不一样的。</p>
+<h2>题目描述</h2>
+<p>现需上市$ Need $赛斯重量的赛斯石，卖家想算出这些赛斯石经过某种合并方式来获得的最大收益。然而目前有一个问题，市场在真程大殿附近（真程海洋中心位置），卖家需要租船送赛斯石过去（即不考虑卖家自己租船过去的费用），目前有十种船可以租，载重量从$ 1si $到$ 10si $，每艘船的租价也是有所不同的，如下表所示：</p>
+<p><img src="https://cdn.luogu.org/upload/pic/10663.png" alt="" /> </p>
+<p>由于真程大殿附近有强烈的赛斯力，导致<strong>无法对赛斯石进行任何操作</strong>，商家将赛斯石运过来之后就只能按照之前合并好的卖。假设卖家不返回，且这些赛斯石全部能卖出去。现在卖家他要计算总盈利（设总盈利=赛斯石的总收益-租船所需总费用），请你设计一个程序，算出一种最佳方案，以获得<strong>最大总盈利</strong>。</p>
+<h2>输入输出格式</h2>
+<strong>输入格式：</strong><br>
+<p><p>输入一共有两行</p>
+<p>第一行有一个数据$ Need $（赛斯石的总量，单位：$ si $）</p>
+<p>第二行有十个数据$ a_{1}\ ...\ a_{10} $（分别为$ 1si $到$ 10si $的赛斯石市场价格，单位：元）</p></p>
+<strong>输出格式：</strong><br>
+<p><p>输出仅一行，包含一个整数，表示最大总盈利。</p></p>
+<h2>输入输出样例</h2>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>11
+1 6 11 17 23 27 33 35 38 43</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>32</pre>
+</div>
+</div>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#2：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>7
+1 5 14 18 20 28 31 34 39 42</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#2：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>21</pre>
+</div>
+</div>
+<h2>说明</h2>
+<h3>样例一说明：</h3>
+<p>将$ 11 $个单位赛斯石合并为一个$ 4si $的赛斯石和一个$ 7si $的赛斯石并且租两个载重分别为$ 4si $和$ 7si $的船，这样做为最佳方案，那么最大总盈利就是$ 32 $元。</p>
+<h3>注意：</h3>
+<p>对于所有输入数据，均在区间$ (0, 100000) $中，并且为整数；</p>
+<p>保证卖家最大总盈利为正；</p>
+<p>同一行中，每两个数据之间有一个空格。</p>
+<p>赛后强化版于$ 2017 $年$ 11 $月$ 9 $日$ 8 $点$ 10 $分已强化完毕。</p>
+</div>
+<div class='lg-article-sub am-g' id="sub"></div>
+</div>
+</div>
+</div>
+<div class="am-modal am-modal-prompt" tabindex="-1" id="confirm">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="memtitle">提示</div>
+<div class="am-modal-bd" id="memadmin">
+标程仅供做题后或实在无思路时参考。<br>
+请自觉、自律地使用该功能并请对自己的学习负责。<br>
+如果发现恶意抄袭标程，将按照I类违反进行处理。<br>
+</div>
+<div class="am-modal-footer">
+<span class="am-modal-btn" data-am-modal-cancel>取消</span>
+<span class="am-modal-btn" data-am-modal-confirm>确定</span>
+</div>
+</div>
+</div>
+<script>
+        $(document).ready(function () {
+            $("#expandstd").click(function () {
+                $('#confirm').modal({
+                    relatedTarget: this,
+                    onConfirm: function (e) {
+                        $("#stdcode").slideDown();
+                        $("#expandstd").hide();
+                    }
+                });
+            });
+            $("#submit").click(
+                function () {
+                    hide_artile();
+                    $(document).scrollTop($(document).scrollTop() - 80);
+                    var pid = $(this).attr("pid");
+                    $.get("/problem/ajax_submit?pid=" + pid, function (data) {
+                        var arr = eval('(' + data + ')');
+                        if (arr['code'] == 201) {
+                            $('.lg-article-sub').html(arr['more']['html']);
+                        }
+                        else if (arr['code'] == 200) {
+
+                        }
+                        else {
+                            if (arr['code'] == 0 || arr['code'] == -3) {
+                                backarticle();
+                            }
+                            show_alert("提交失败", arr['message']);
+                        }
+                    });
+                }
+            );
+            $("button[title].am-btn,a[title].am-btn").poshytip({
+                className: 'tip-twitter',
+                showTimeout: 1,
+                alignTo: 'target',
+                alignX: 'center',
+                alignY: 'bottom'
+            });
+            $('[name=showtag]').click(function () {
+                $('.am-badge.am-hide').removeClass('am-hide');
+            });
+            $(".sample-copy").click(function() {
+                var element = $(this).parents(".copy-region").find("pre");
+                var text = $(element).text();
+                var $temp = $("<textarea>");
+                $("body").append($temp);
+                $temp.val(text).select();
+                document.execCommand("copy");
+                $temp.remove();
+                $(this).text("复制成功").removeClass("lg-bg-orange");
+
+                var e = this;
+                setTimeout(function() {
+                    $(e).text("复制").addClass("lg-bg-orange");
+                }, 500);
+            });
+        });
+    </script>
+</div>
+<footer id="app-footer"></footer>
+<div class="am-modal am-modal-alert" tabindex="-1" id="lg-alert">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="lg-alert-title"></div>
+<div class="am-modal-bd" id="lg-alert-message"></div>
+<div class="am-modal-footer">
+<span class="am-modal-btn">确定</span>
+</div>
+</div>
+</div>
+<script src="/js/ace/ace.js"></script>
+<script src="https://cdn.luogu.org/js/vendor.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/jsmind.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/amazeui.min.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts-more.js"></script>
+<script src="/static/katex/katex.min.js"></script>
+<script src="/static/katex/contrib/auto-render.min.js"></script>
+<script src="https://cdn.luogu.org/markdown-palettes/markdown-palettes.min.js?ver=20190219"></script>
+<script src="https://cdn.luogu.org/js/luogu3.js?ver=20190101"></script>
+</body>
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title> P1231 教辅的组成 - 洛谷</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta name="csrf-token" content="1555851930:PGl4hsPO1z6VK/mcCaEaE1vEQw8bhRGStzm1EUHP1t8=">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/amazeui.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/katex.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/luogu3.css?ver=20190102">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/highlight_tomorrow.css">
+<link rel="stylesheet" href="https://cdn.luogu.org/markdown-palettes/markdown-palettes.css?ver=20190219">
+<script src="https://cdn.luogu.org/js/jquery-2.1.1.min.js"></script>
+<script src="https://cdn.luogu.org/js/luogu3_pre.js?ver=20190101"></script>
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn.luogu.org/images/favicon3.ico" media="screen"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/fe/loader.css?ver=20190417">
+<script>window._feInjection = JSON.parse(decodeURIComponent("%7B%22code%22%3A200%2C%22currentUser%22%3Anull%2C%22currentTemplate%22%3A%22Excited%22%2C%22currentData%22%3A%7B%22shortHeader%22%3Afalse%2C%22pageName%22%3A%22%5Cu9898%5Cu76ee%5Cu8be6%5Cu60c5%22%7D%2C%22currentMeta%22%3A%7B%22title%22%3A%22%20P1231%20%5Cu6559%5Cu8f85%5Cu7684%5Cu7ec4%5Cu6210%22%7D%7D"));</script>
+<script>window._release = '20190417';</script>
+<script src="https://cdn.luogu.org/fe/loader.js?ver=20190417" charset="utf-8" defer></script>
+</head>
+<body>
+<div id="app-header"></div>
+<nav id="app-sidenav"></nav>
+<div id="app-body"></div>
+<script>
+    function scrollToId (id) {
+        $('html, body').animate({
+            scrollTop: ($('#' + id).offset().top)
+        }, 500);
+    }
+</script>
+<style>
+    .lg-toolbar {
+        display: none;
+    }
+
+    #app-body { /* Unused in fallback FE */
+        display: none;
+    }
+
+    #app-body-new{
+        display: block;
+        margin-bottom: 2em;
+        position: relative;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    @media (min-width: 576px) {
+        #app-body-new {
+            margin-left: 70px;
+        }
+    }
+
+    code {
+        font-family: monospace, "Courier New";
+    }
+
+</style>
+<div id="app-body-new">
+<div class="lg-toolbar" data-am-sticky>
+<h1><a href="/recordnew/lists?uid=&pid=P1231" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a> P1231 教辅的组成</h1>
+</div>
+<div class="am-g lg-main-content">
+<div class="am-u-md-4 lg-right" name="problemright">
+<section class="am-panel am-panel-default lg-summary" id="psummary">
+<div class="lg-summary-content">
+<ul class="am-list am-list-static lg-summary-list">
+<li>
+<ul class="am-avg-sm-2"><li><span class="lg-bignum-num">1.3<small>K</small><small></small></span><span class="lg-bignum-text">通过</span></li><li><span class="lg-bignum-num">4.7<small>K</small><small></small></span><span class="lg-bignum-text">提交</span></li></ul>
+</li>
+<li>
+<strong>题目提供者</strong>
+<span class="lg-right"><a class='lg-fg-purple lg-bold' href="/space/show?uid=1492" target="_blank">HansBug</a>&nbsp;<span class="am-badge am-radius lg-bg-purple">管理员</span></span>
+</li>
+<li>
+<strong>评测方式</strong>
+<span class="lg-right"><b>云端评测</b></span>
+</li>
+<li><strong>标签</strong>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="79">网络流</span>
+<span class="lg-tag am-badge am-radius lg-bg-bluelight" data-tagid="81">洛谷原创</span>
+<span class="lg-tag am-badge am-radius lg-bg-orange" data-tagid="319">高性能</span>
+<style>.lg-tag { cursor: pointer; }</style>
+<script>
+                                $(".lg-tag").click(function() {
+                                    window.open("/problemnew/lists?tag=" + $(this).attr('data-tagid'));
+                                })
+                            </script>
+</li>
+<li><strong>难度</strong>
+<span class="lg-right"><span class="am-badge am-radius lg-bg-bluelight">提高+/省选-</span></span>
+</li>
+<li><strong>时空限制</strong>
+<span class="lg-right">1000ms / 128MB</span>
+</li>
+</ul>
+</div>
+<p>
+<button class="am-btn am-btn-danger am-btn-sm" id="submit" pid="P1231">
+<i class="am-icon-paper-plane"></i> 提交
+</button>
+<a target="_blank" href="/problemnew/solution/P1231" class="am-btn am-btn-primary am-btn-sm">
+<i class="am-icon-book"></i> 题解
+</a>
+<a data-pjax href="/recordnew/lists?pid=P1231" class="am-btn am-btn-primary am-btn-sm" title="查看本题提交记录">
+<i class="am-icon-pie-chart"></i>
+</a>
+<button class="am-btn am-btn-primary am-btn-sm lg-pointer" name="showtag" title="显示算法标签">
+<i class="am-icon-tags"></i>
+</button>
+</p>
+<li>提示：收藏到任务计划后，可在首页查看。</li>
+<p>
+<a class="am-btn am-btn-danger am-btn-sm" href="/fe/problem/P1231" target="_blank">体验新版界面</a>
+</p>
+</section>
+<section class="am-panel am-panel-default lg-summary">
+<h2>最新讨论
+<a onclick="$('#discuss-lists').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看本题讨论">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" style="display: none" id="discuss-lists">
+<li><a data-pjax href="/discuss/show?postid=110231" class="am-padding-0">关于这题评论区</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=110220" class="am-padding-0">萌新刚学OI</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=106793" class="am-padding-0">Dinic30分TLE</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=104806" class="am-padding-0">30分求助--dinic</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=101640" class="am-padding-0">有个疑问</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=101626" class="am-padding-0">ISAP，为什么T了？</a>
+</li>
+<div style="overflow: auto">
+<a data-pjax href="/discuss/lists?forumname=P1231" class="am-btn am-btn-primary am-btn-sm lg-right">进入讨论版</a>
+</div>
+</ul>
+</section>
+<section class="am-panel am-panel-default lg-summary am-hide-sm">
+<h2>推荐的相关题目
+<a onclick="$('#recommendation-list').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看推荐题目">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" id="recommendation-list" style="display: none">
+<li>
+<a class='colored' href="/problemnew/show/P1402" target="_blank"><b>P1402</b> 酒店之王</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P1345" target="_blank"><b>P1345</b> [USACO5.4]奶牛的电信Telecowmunication</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P2891" target="_blank"><b>P2891</b> [USACO07OPEN]吃饭Dining</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P1251" target="_blank"><b>P1251</b> 餐巾计划问题</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3381" target="_blank"><b>P3381</b> 【模板】最小费用最大流</a>
+</li>
+</ul>
+</section>
+</div>
+<div class="am-u-md-8 lg-right" name="problemleft">
+<div class="lg-content-left">
+<div class="lg-article am-g">
+<h2>题目背景</h2>
+<p>滚粗了的HansBug在收拾旧语文书，然而他发现了什么奇妙的东西。</p>
+<h2>题目描述</h2>
+<p>蒟蒻HansBug在一本语文书里面发现了一本答案，然而他却明明记得这书应该还包含一份练习题。然而出现在他眼前的书多得数不胜数，其中有书，有答案，有练习册。已知一个完整的书册均应该包含且仅包含一本书、一本练习册和一份答案，然而现在全都乱做了一团。许多书上面的字迹都已经模糊了，然而HansBug还是可以大致判断这是一本书还是练习册或答案，并且能够大致知道一本书和答案以及一本书和练习册的对应关系（即仅仅知道某书和某答案、某书和某练习册有可能相对应，除此以外的均不可能对应）。既然如此，HansBug想知道在这样的情况下，最多可能同时组合成多少个完整的书册。</p>
+<h2>输入输出格式</h2>
+<strong>输入格式：</strong><br>
+<p><p>第一行包含三个正整数N1、N2、N3，分别表示书的个数、练习册的个数和答案的个数。</p>
+<p>第二行包含一个正整数M1，表示书和练习册可能的对应关系个数。</p>
+<p>接下来M1行每行包含两个正整数x、y，表示第x本书和第y本练习册可能对应。（1&lt;=x&lt;=N1，1&lt;=y&lt;=N2）</p>
+<p>第M1+3行包含一个正整数M2，表述书和答案可能的对应关系个数。</p>
+<p>接下来M2行每行包含两个正整数x、y，表示第x本书和第y本答案可能对应。（1&lt;=x&lt;=N1，1&lt;=y&lt;=N3）</p></p>
+<strong>输出格式：</strong><br>
+<p><p>输出包含一个正整数，表示最多可能组成完整书册的数目。</p></p>
+<h2>输入输出样例</h2>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>5 3 4
+5
+4 3
+2 2
+5 2
+5 1
+5 3
+5
+1 3
+3 1
+2 2
+3 3
+4 3
+</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>2</pre>
+</div>
+</div>
+<h2>说明</h2>
+<p>样例说明：</p>
+<p>如题，N1=5，N2=3，N3=4，表示书有5本、练习册有3本、答案有4本。</p>
+<p>M1=5，表示书和练习册共有5个可能的对应关系，分别为：书4和练习册3、书2和练习册2、书5和练习册2、书5和练习册1以及书5和练习册3。</p>
+<p>M2=5，表示数和答案共有5个可能的对应关系，分别为：书1和答案3、书3和答案1、书2和答案2、书3和答案3以及书4和答案3。</p>
+<p>所以，以上情况的话最多可以同时配成两个书册，分别为：书2+练习册2+答案2、书4+练习册3+答案3。</p>
+<p>数据规模：</p>
+<p><img src="https://cdn.luogu.org/upload/pic/2285.png" alt="" /> </p>
+<p>对于数据点1, 2, 3，M1，M2&lt;= 20</p>
+<p>对于数据点4~10，M1，M2 &lt;= 20000</p>
+</div>
+<div class='lg-article-sub am-g' id="sub"></div>
+</div>
+</div>
+</div>
+<div class="am-modal am-modal-prompt" tabindex="-1" id="confirm">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="memtitle">提示</div>
+<div class="am-modal-bd" id="memadmin">
+标程仅供做题后或实在无思路时参考。<br>
+请自觉、自律地使用该功能并请对自己的学习负责。<br>
+如果发现恶意抄袭标程，将按照I类违反进行处理。<br>
+</div>
+<div class="am-modal-footer">
+<span class="am-modal-btn" data-am-modal-cancel>取消</span>
+<span class="am-modal-btn" data-am-modal-confirm>确定</span>
+</div>
+</div>
+</div>
+<script>
+        $(document).ready(function () {
+            $("#expandstd").click(function () {
+                $('#confirm').modal({
+                    relatedTarget: this,
+                    onConfirm: function (e) {
+                        $("#stdcode").slideDown();
+                        $("#expandstd").hide();
+                    }
+                });
+            });
+            $("#submit").click(
+                function () {
+                    hide_artile();
+                    $(document).scrollTop($(document).scrollTop() - 80);
+                    var pid = $(this).attr("pid");
+                    $.get("/problem/ajax_submit?pid=" + pid, function (data) {
+                        var arr = eval('(' + data + ')');
+                        if (arr['code'] == 201) {
+                            $('.lg-article-sub').html(arr['more']['html']);
+                        }
+                        else if (arr['code'] == 200) {
+
+                        }
+                        else {
+                            if (arr['code'] == 0 || arr['code'] == -3) {
+                                backarticle();
+                            }
+                            show_alert("提交失败", arr['message']);
+                        }
+                    });
+                }
+            );
+            $("button[title].am-btn,a[title].am-btn").poshytip({
+                className: 'tip-twitter',
+                showTimeout: 1,
+                alignTo: 'target',
+                alignX: 'center',
+                alignY: 'bottom'
+            });
+            $('[name=showtag]').click(function () {
+                $('.am-badge.am-hide').removeClass('am-hide');
+            });
+            $(".sample-copy").click(function() {
+                var element = $(this).parents(".copy-region").find("pre");
+                var text = $(element).text();
+                var $temp = $("<textarea>");
+                $("body").append($temp);
+                $temp.val(text).select();
+                document.execCommand("copy");
+                $temp.remove();
+                $(this).text("复制成功").removeClass("lg-bg-orange");
+
+                var e = this;
+                setTimeout(function() {
+                    $(e).text("复制").addClass("lg-bg-orange");
+                }, 500);
+            });
+        });
+    </script>
+</div>
+<footer id="app-footer"></footer>
+<div class="am-modal am-modal-alert" tabindex="-1" id="lg-alert">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="lg-alert-title"></div>
+<div class="am-modal-bd" id="lg-alert-message"></div>
+<div class="am-modal-footer">
+<span class="am-modal-btn">确定</span>
+</div>
+</div>
+</div>
+<script src="/js/ace/ace.js"></script>
+<script src="https://cdn.luogu.org/js/vendor.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/jsmind.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/amazeui.min.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts-more.js"></script>
+<script src="/static/katex/katex.min.js"></script>
+<script src="/static/katex/contrib/auto-render.min.js"></script>
+<script src="https://cdn.luogu.org/markdown-palettes/markdown-palettes.min.js?ver=20190219"></script>
+<script src="https://cdn.luogu.org/js/luogu3.js?ver=20190101"></script>
+</body>
+</html>

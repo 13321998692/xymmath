@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title> P3930 SAC E#1 - 一道大水题 Knight - 洛谷</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta name="csrf-token" content="1555853159:YeTHyp+vZ9yGhj0iORz6wzwnJ6s0o7eqX+4ccGK4OpE=">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/amazeui.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/katex.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/luogu3.css?ver=20190102">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/highlight_tomorrow.css">
+<link rel="stylesheet" href="https://cdn.luogu.org/markdown-palettes/markdown-palettes.css?ver=20190219">
+<script src="https://cdn.luogu.org/js/jquery-2.1.1.min.js"></script>
+<script src="https://cdn.luogu.org/js/luogu3_pre.js?ver=20190101"></script>
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn.luogu.org/images/favicon3.ico" media="screen"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/fe/loader.css?ver=20190417">
+<script>window._feInjection = JSON.parse(decodeURIComponent("%7B%22code%22%3A200%2C%22currentUser%22%3Anull%2C%22currentTemplate%22%3A%22Excited%22%2C%22currentData%22%3A%7B%22shortHeader%22%3Afalse%2C%22pageName%22%3A%22%5Cu9898%5Cu76ee%5Cu8be6%5Cu60c5%22%7D%2C%22currentMeta%22%3A%7B%22title%22%3A%22%20P3930%20SAC%20E%231%20-%20%5Cu4e00%5Cu9053%5Cu5927%5Cu6c34%5Cu9898%20Knight%22%7D%7D"));</script>
+<script>window._release = '20190417';</script>
+<script src="https://cdn.luogu.org/fe/loader.js?ver=20190417" charset="utf-8" defer></script>
+</head>
+<body>
+<div id="app-header"></div>
+<nav id="app-sidenav"></nav>
+<div id="app-body"></div>
+<script>
+    function scrollToId (id) {
+        $('html, body').animate({
+            scrollTop: ($('#' + id).offset().top)
+        }, 500);
+    }
+</script>
+<style>
+    .lg-toolbar {
+        display: none;
+    }
+
+    #app-body { /* Unused in fallback FE */
+        display: none;
+    }
+
+    #app-body-new{
+        display: block;
+        margin-bottom: 2em;
+        position: relative;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    @media (min-width: 576px) {
+        #app-body-new {
+            margin-left: 70px;
+        }
+    }
+
+    code {
+        font-family: monospace, "Courier New";
+    }
+
+</style>
+<div id="app-body-new">
+<div class="lg-toolbar" data-am-sticky>
+<h1><a href="/recordnew/lists?uid=&pid=P3930" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a> P3930 SAC E#1 - 一道大水题 Knight</h1>
+</div>
+<div class="am-g lg-main-content">
+<div class="am-u-md-4 lg-right" name="problemright">
+<section class="am-panel am-panel-default lg-summary" id="psummary">
+<div class="lg-summary-content">
+<ul class="am-list am-list-static lg-summary-list">
+<li>
+<ul class="am-avg-sm-2"><li><span class="lg-bignum-num">134<small></small></span><span class="lg-bignum-text">通过</span></li><li><span class="lg-bignum-num">1.4<small>K</small><small></small></span><span class="lg-bignum-text">提交</span></li></ul>
+</li>
+<li>
+<strong>题目提供者</strong>
+<span class="lg-right"><a class='lg-fg-bluelight' href="/space/show?uid=19487" target="_blank">ProjectWTA</a></span>
+</li>
+<li>
+<strong>评测方式</strong>
+<span class="lg-right"><b>云端评测</b></span>
+</li>
+<li><strong>标签</strong>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="126">广度优先搜索,BFS</span>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="151">状态压缩,状压</span>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="244">进制</span>
+<span class="lg-tag am-badge am-radius lg-bg-bluelight" data-tagid="81">洛谷原创</span>
+<span class="lg-tag am-badge am-radius lg-bg-orange" data-tagid="108">O2优化</span>
+<span class="lg-tag am-badge am-radius lg-bg-orange" data-tagid="319">高性能</span>
+<style>.lg-tag { cursor: pointer; }</style>
+<script>
+                                $(".lg-tag").click(function() {
+                                    window.open("/problemnew/lists?tag=" + $(this).attr('data-tagid'));
+                                })
+                            </script>
+</li>
+<li><strong>难度</strong>
+<span class="lg-right"><span class="am-badge am-radius lg-bg-bluelight">提高+/省选-</span></span>
+</li>
+<li><strong>时空限制</strong>
+<span class="lg-right">3000ms / 512MB</span>
+</li>
+</ul>
+</div>
+<p>
+<button class="am-btn am-btn-danger am-btn-sm" id="submit" pid="P3930">
+<i class="am-icon-paper-plane"></i> 提交
+</button>
+<a target="_blank" href="/problemnew/solution/P3930" class="am-btn am-btn-primary am-btn-sm">
+<i class="am-icon-book"></i> 题解
+</a>
+<a data-pjax href="/recordnew/lists?pid=P3930" class="am-btn am-btn-primary am-btn-sm" title="查看本题提交记录">
+<i class="am-icon-pie-chart"></i>
+</a>
+<button class="am-btn am-btn-primary am-btn-sm lg-pointer" name="showtag" title="显示算法标签">
+<i class="am-icon-tags"></i>
+</button>
+</p>
+<li>提示：收藏到任务计划后，可在首页查看。</li>
+<p>
+<a class="am-btn am-btn-danger am-btn-sm" href="/fe/problem/P3930" target="_blank">体验新版界面</a>
+</p>
+</section>
+<section class="am-panel am-panel-default lg-summary">
+<h2>最新讨论
+<a onclick="$('#discuss-lists').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看本题讨论">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" style="display: none" id="discuss-lists">
+<li><a data-pjax href="/discuss/show?postid=24185" class="am-padding-0">题解有误</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=24074" class="am-padding-0">新人求助，一道大水题，本机…</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=24015" class="am-padding-0">数据真的有坑</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=24006" class="am-padding-0">请问数据4是什么，WA了好久…</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=24000" class="am-padding-0">标程好像真的有问题啊。。</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=23968" class="am-padding-0">数据有误</a>
+</li>
+<div style="overflow: auto">
+<a data-pjax href="/discuss/lists?forumname=P3930" class="am-btn am-btn-primary am-btn-sm lg-right">进入讨论版</a>
+</div>
+</ul>
+</section>
+<section class="am-panel am-panel-default lg-summary am-hide-sm">
+<h2>推荐的相关题目
+<a onclick="$('#recommendation-list').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看推荐题目">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" id="recommendation-list" style="display: none">
+<li>
+<a class='colored' href="/problemnew/show/P3932" target="_blank"><b>P3932</b> 浮游大陆的68号岛</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3369" target="_blank"><b>P3369</b> 【模板】普通平衡树</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3928" target="_blank"><b>P3928</b> SAC E#1 - 一道简单题 Sequence2</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3933" target="_blank"><b>P3933</b> Chtholly Nota Seniorious</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P2900" target="_blank"><b>P2900</b> [USACO08MAR]土地征用Land Acquisition</a>
+</li>
+</ul>
+</section>
+</div>
+<div class="am-u-md-8 lg-right" name="problemleft">
+<div class="lg-content-left">
+<div class="lg-article am-g">
+<h2>题目背景</h2>
+<p>毒奶色和F91是好朋友。</p>
+<h2>题目描述</h2>
+<p>他们经常在一起玩一个游戏，不，不是星际争霸，是国际象棋。</p>
+<p>毒奶色觉得F91是一只鸡。他在一个n×n的棋盘上用黑色的城堡（车）、骑士（马）、主教（象）、皇后（副）、国王（帅）、士兵（卒）摆了一个阵。</p>
+<p>然而F91觉得毒奶色是一只鸡。他发起了挑战：他要操纵一个白色骑士，不经过任何一个棋子的攻击范围（F91可以连续行动，而毒奶色的棋子不会动，除非白骑士进入了对方的攻击范围），并击杀毒奶色的国王（即进入黑国王所在的位置）。</p>
+<p>请告诉F91他最少需要多少步骤来完成这一项壮举。</p>
+<p>注意：</p>
+<p>1.当F91的白骑士走到毒奶色的棋子所在的格子上的时候，会击杀（吃掉）该棋子。这个棋子也就不再对F91的白骑士有威胁了。</p>
+<p>2.如果白骑士开场就在黑子的攻击范围内，则立刻被击杀、F91立刻失败。</p>
+<p>3.即使白骑士在攻击王的瞬间进入了其他棋子攻击范围（即其他棋子“看护”着王所在的格子），依然算F91获胜。</p>
+<p>攻击范围：</p>
+<p>城堡：横、竖方向所有位置，直到被一个其他棋子阻拦。</p>
+<pre><code class="language-cpp">..#..
+..#..
+##C##
+..#..
+..#..</code></pre>
+<p>骑士：横2竖1或者横1竖2的所有位置（最多8个，类似日字）。</p>
+<pre><code class="language-cpp">.#.#.
+#...#
+..K..
+#...#
+.#.#.</code></pre>
+<p>主教：斜向（45°）所有位置，直到被一个其他棋子阻拦。</p>
+<pre><code class="language-cpp">#...#
+.#.#.
+..B..
+.#.#.
+#...#</code></pre>
+<p>皇后：城堡和主教的结合体（既能横/竖向攻击，也能45°角斜向攻击，直到被其他棋子阻挡）。</p>
+<pre><code class="language-cpp">#.#.#
+.###.
+##Q##
+.###.
+#.#.#</code></pre>
+<p>国王：身边8连通位置的8个格子。</p>
+<pre><code class="language-cpp">.....
+.###.
+.#X#.
+.###.
+.....</code></pre>
+<p>士兵：左下方/右下方（45°）的格子（最多2个）。</p>
+<pre><code>.....
+.....
+..P..
+.#.#.
+.....</code></pre>
+<p>其中字母表示棋子类型，参考输入格式。</p>
+<p>‘#’表示可攻击范围。</p>
+<h2>输入输出格式</h2>
+<strong>输入格式：</strong><br>
+<p><p>输入包含多组数据。</p>
+<p>每一组数据中，第一行一个整数n表示棋盘规模。</p>
+<p>接下来n行，每行一个长度为n的字符串。描述棋盘的格局。</p>
+<p>其中：</p>
+<p>.表示空</p>
+<p>O表示白骑士</p>
+<p>C表示黑城堡</p>
+<p>K表示黑骑士</p>
+<p>B表示黑主教</p>
+<p>Q表示黒皇后</p>
+<p>X表示黑国王</p>
+<p>P表示黑士兵</p></p>
+<strong>输出格式：</strong><br>
+<p><p>对于每一个测试数据，每行输出一个整数，表示F91的最小步数。</p>
+<p>如果无论F91如何行动也无法击杀黑国王，输出-1。</p></p>
+<h2>输入输出样例</h2>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>8
+...X....
+........
+........
+........
+........
+........
+........
+......O.</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>4</pre>
+</div>
+</div>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#2：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>8
+......X.
+........
+.O......
+...P.Q.C
+.....B..
+........
+...K....
+........</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#2：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>7</pre>
+</div>
+</div>
+<h2>说明</h2>
+<p><strong>输入最多包含5组数据。</strong></p>
+<p>对于20%的数据，毒奶色只有国王。n &lt;= 8。</p>
+<p>对于30%的数据，毒奶色只有国王、骑士。n &lt;= 8。</p>
+<p>对于60%的数据，毒奶色只有国王、骑士、王后。n &lt;= 50。</p>
+<p>对于100%的数据，毒奶色可以有全套16颗棋子（2城堡，2骑士，2主教，1后，1王，8兵）。n &lt;= 50。</p>
+<p>温馨提示：</p>
+<p>时间限制可能比想象之中还要更紧一点，请注意实现细节以保证性能。</p>
+<p>样例2解释：</p>
+<p>一种可行的做法是：</p>
+<pre><code class="language-cpp">......X.
+.3..6...
+.O5.....
+4.2P.Q.C
+1....B..
+........
+...K....
+........</code></pre>
+<h2>标程<a class="lg-right am-btn am-btn-sm am-btn-primary" id="expandstd">展开</a></h2>
+<div id="stdcode" class="copy-region" style="display:none">
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre><code class="language-cpp line-numbers">#include &lt;iostream&gt;
+#include &lt;cstring&gt;
+#include &lt;cstdio&gt;
+#include &lt;queue&gt;
+#include &lt;unordered_map&gt;
+#include &lt;map&gt;
+#define maxn 50
+#define seed1 1009
+#define seed2 5861
+#define mod1 998244353
+#define mod2 1000000009
+
+const int dx[8] = {2, 1, -1, -2, -2, -1, 1, 2};
+const int dy[8] = {1, 2, 2, 1, -1, -2, -2, -1};
+const int dxk[8] = {1, 1 ,0, -1, -1, -1, 0, 1};
+const int dyk[8] = {0, 1, 1, 1, 0, -1, -1, -1};
+
+struct Status
+{
+    enum ChessType
+    {
+        EMPTY,
+        HERO,
+        CASTLE,
+        KNIGHT,
+        BISHOP,
+        QUEEN,
+        KING,
+        PAWN
+    };
+
+    int map[maxn][maxn];
+    int x, y, dist, n;
+    long long hashVal;
+    
+    inline bool read()
+    {
+        char s[60];
+        if (scanf(&quot;%d&quot;, &amp;n) &lt; 1)
+            return false;
+        for (int i = 0; i &lt; n; i++)
+        {
+            scanf(&quot;%s&quot;, s);
+            for (int j = 0; j &lt; n; j++)
+            {
+                if (s[j] == &#039;.&#039;)
+                    map[i][j] = EMPTY;
+                else if (s[j] == &#039;O&#039;)
+                {
+                    map[i][j] = HERO;
+                    x = i, y = j;
+                }
+                else if (s[j] == &#039;C&#039;)
+                    map[i][j] = CASTLE;
+                else if (s[j] == &#039;K&#039;)
+                    map[i][j] = KNIGHT;
+                else if (s[j] == &#039;B&#039;)
+                    map[i][j] = BISHOP;
+                else if (s[j] == &#039;Q&#039;)
+                    map[i][j] = QUEEN;
+                else if (s[j] == &#039;X&#039;)
+                    map[i][j] = KING;
+                else if (s[j] == &#039;P&#039;)
+                    map[i][j] = PAWN;
+            }
+        }
+        dist = 0;
+        calcHash();
+        return true;
+    }
+    
+    inline bool judgeCastle(int a, int b, int TYPE)
+    {
+        for (int i = a + 1; i &lt; n; i++)
+            if (map[i][b] != EMPTY)
+            {
+                if (map[i][b] == TYPE)
+                    return true;
+                else
+                    break;
+            }
+        for (int i = a - 1; i &gt;= 0 ; i--)
+            if (map[i][b] != EMPTY)
+            {
+                if (map[i][b] == TYPE)
+                    return true;
+                else
+                    break;
+            }
+        
+        for (int i = b + 1; i &lt; n; i++)
+            if (map[a][i] != EMPTY)
+            {
+                if (map[a][i] == TYPE)
+                    return true;
+                else
+                    break;
+            }
+            
+        for (int i = b - 1; i &gt;= n ; i--)
+            if (map[a][i] != EMPTY)
+            {
+                if (map[a][i] == TYPE)
+                    return true;
+                else
+                    break;
+            }
+        return false;
+    }
+    
+    inline bool judgeKnight(int a, int b, int TYPE)
+    {
+        for (int d = 0, i, j; d &lt; n; d++)
+        {
+            i = a + dx[d];
+            j = b + dy[d];
+            if (0 &lt;= i &amp;&amp; i &lt; n &amp;&amp; 0 &lt;= j &amp;&amp; j &lt; n &amp;&amp; map[i][j] == TYPE)
+                return true;
+        }
+        return false;
+    }
+    
+    inline bool judgeBishop(int a, int b, int TYPE)
+    {
+        for (int i = a + 1, j = b + 1; i &lt; n &amp;&amp; j &lt; n; i++, j++)
+            if (map[i][j] != EMPTY)
+            {
+                if (map[i][j] == TYPE)
+                    return true;
+                else
+                    break;
+            }
+        for (int i = a + 1, j = b - 1; i &lt; n &amp;&amp; j &gt;= 0; i++, j--)
+            if (map[i][j] != EMPTY)
+            {
+                if (map[i][j] == TYPE)
+                    return true;
+                else
+                    break;
+            }
+        for (int i = a - 1, j = b + 1; i &gt;= 0 &amp;&amp; j &lt; n; i--, j++)
+            if (map[i][j] != EMPTY)
+            {
+                if (map[i][j] == TYPE)
+                    return true;
+                else
+                    break;
+            }
+        for (int i = a - 1, j = b - 1; i &gt;= 0 &amp;&amp; j &gt;= 0; i--, j--)
+            if (map[i][j] != EMPTY)
+            {
+                if (map[i][j] == TYPE)
+                    return true;
+                else
+                    break;
+            }
+        return false;
+    }
+    
+    inline bool judgeQueen(int a, int b, int TYPE)
+    {
+        return judgeCastle(a, b, TYPE) || judgeBishop(a, b, TYPE);
+    }
+    
+    inline bool judgeKing(int a, int b, int TYPE)
+    {
+        for(int d = 0, i, j; d &lt; 8; d++)
+        {
+            i = a + dxk[d];
+            j = b + dyk[d];
+            if (0 &lt;= i &amp;&amp; i &lt; n &amp;&amp; 0 &lt;= j &amp;&amp; j &lt; n &amp;&amp; map[i][j] == TYPE)
+                return true;
+        }
+        return false;
+    }
+    
+    inline bool judgePawn(int a, int b, int TYPE)
+    {
+        if (a == 0)
+            return false;
+        if (b &gt; 0 &amp;&amp; map[a-1][b-1] == TYPE)
+            return true;
+        if (b &lt; n &amp;&amp; map[a-1][b+1] == TYPE)
+            return true;
+        return false;
+    }
+    
+    inline bool judge()
+    {
+        /*
+        for (int i = 0; i &lt; n; i++)
+        for (int j = 0; j &lt; n; j++)
+            if (judge(i, j)) return true;
+        return false;
+        */
+        int &amp;a = x;
+        int &amp;b = y;
+        
+        return 
+            judgeCastle(a, b, CASTLE) ||
+            judgeKnight(a, b, KNIGHT) ||
+            judgeBishop(a, b, BISHOP) ||
+            judgeQueen(a, b, QUEEN) ||
+            judgeKing(a, b, KING) ||
+            judgePawn(a, b, PAWN);
+    }
+    
+    inline int step(int d)
+    {
+        map[x][y] = EMPTY;
+    
+        x += dx[d];
+        y += dy[d];
+        dist++;
+        
+        if (x &lt; 0 || x &gt;= n || y &lt; 0 || y &gt;= n)
+            return -1;
+        if (map[x][y] == KING)
+            return 1;
+        
+        map[x][y] = HERO;
+        return judge() ? -1 : (calcHash(), 0);
+    }
+    
+    inline bool operator &lt;(const Status &amp;b) const
+    {
+        for (int i = 0; i &lt; n; i++)
+        for (int j = 0; j &lt; n; j++)
+            if (map[i][j] != b.map[i][j])
+                return map[i][j] &lt; b.map[i][j];
+        return false;
+    }
+    
+    inline bool operator == (const Status &amp;s) const
+    {
+        return hashVal == s.hashVal;
+    }
+    
+    inline void calcHash()
+    {
+        long long tmp = 0;
+        for (int i = 0; i &lt; n; i++)
+        for (int j = 0; j &lt; n; j++)
+            tmp = (tmp * seed1 + map[i][j]) % mod1;
+        /*
+        long long tmp2 = 0;
+        for (int i = 0; i &lt; n; i++)
+        for (int j = 0; j &lt; n; j++)
+            tmp2 = (tmp2 * seed2 + map[i][j]) % mod2;
+            
+        hashVal = (tmp &lt;&lt; 32) | tmp2;
+        */
+        hashVal = tmp;
+    }
+    
+    inline void show()
+    {
+        printf(&quot;======================\n&quot;);
+        for (int i = 0; i &lt; n; i++)
+        {
+            for (int j = 0; j &lt; n; j++)
+            {
+                putchar(&#039;0&#039; + map[i][j]);
+            }
+            putchar(&#039;\n&#039;);
+        }
+        printf(&quot;%lld\n&quot;, hashVal);
+    }
+    
+} init, cur, next;
+
+namespace std   
+{  
+    template &lt;&gt;  
+    struct hash&lt;Status&gt;
+    {  
+        std::size_t operator()(const Status &amp;s) const  
+        {  
+            using std::size_t;  
+            using std::hash;  
+  
+            // Compute individual hash values for first,  
+            // second and third and combine them using XOR  
+            // and bit shifting:  
+  
+            return hash&lt;long long&gt;()(s.hashVal);
+        }  
+    };  
+}
+std::queue&lt;Status&gt; q;
+std::unordered_map&lt;Status, bool&gt; vis;
+//std::map&lt;Status, bool&gt; vis;
+
+int val;
+
+int main()
+{
+    while (init.read())
+    {
+    
+        if (init.judge())
+        {
+            printf(&quot;-1\n&quot;);
+            continue;
+        }
+        
+        vis.clear();
+        while(!q.empty())
+            q.pop();
+        
+        q.push(init);
+        vis[init] = true;
+        
+        int cnt = 0;
+        while(!q.empty())
+        {
+            cur = q.front(); q.pop();
+            
+            for (int i = 0; i &lt; 8; i++)
+            {
+                next = cur;
+                val = next.step(i);
+                //printf(&quot;%d, &quot;, val);
+                if (val == 1)
+                    break;
+                else if (!val &amp;&amp; !vis[next])
+                {
+                    vis[next] = true;
+                    q.push(next);
+                }
+            }
+            cnt++;
+            
+            
+            if (val == 1)
+                break;
+        }
+        
+        if (val == 1)
+            printf(&quot;%d\n&quot;, next.dist);
+        else
+            printf(&quot;-1\n&quot;);
+    }
+
+    return 0;
+}</code></pre>
+</div>
+</div>
+<div class='lg-article-sub am-g' id="sub"></div>
+</div>
+</div>
+</div>
+<div class="am-modal am-modal-prompt" tabindex="-1" id="confirm">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="memtitle">提示</div>
+<div class="am-modal-bd" id="memadmin">
+标程仅供做题后或实在无思路时参考。<br>
+请自觉、自律地使用该功能并请对自己的学习负责。<br>
+如果发现恶意抄袭标程，将按照I类违反进行处理。<br>
+</div>
+<div class="am-modal-footer">
+<span class="am-modal-btn" data-am-modal-cancel>取消</span>
+<span class="am-modal-btn" data-am-modal-confirm>确定</span>
+</div>
+</div>
+</div>
+<script>
+        $(document).ready(function () {
+            $("#expandstd").click(function () {
+                $('#confirm').modal({
+                    relatedTarget: this,
+                    onConfirm: function (e) {
+                        $("#stdcode").slideDown();
+                        $("#expandstd").hide();
+                    }
+                });
+            });
+            $("#submit").click(
+                function () {
+                    hide_artile();
+                    $(document).scrollTop($(document).scrollTop() - 80);
+                    var pid = $(this).attr("pid");
+                    $.get("/problem/ajax_submit?pid=" + pid, function (data) {
+                        var arr = eval('(' + data + ')');
+                        if (arr['code'] == 201) {
+                            $('.lg-article-sub').html(arr['more']['html']);
+                        }
+                        else if (arr['code'] == 200) {
+
+                        }
+                        else {
+                            if (arr['code'] == 0 || arr['code'] == -3) {
+                                backarticle();
+                            }
+                            show_alert("提交失败", arr['message']);
+                        }
+                    });
+                }
+            );
+            $("button[title].am-btn,a[title].am-btn").poshytip({
+                className: 'tip-twitter',
+                showTimeout: 1,
+                alignTo: 'target',
+                alignX: 'center',
+                alignY: 'bottom'
+            });
+            $('[name=showtag]').click(function () {
+                $('.am-badge.am-hide').removeClass('am-hide');
+            });
+            $(".sample-copy").click(function() {
+                var element = $(this).parents(".copy-region").find("pre");
+                var text = $(element).text();
+                var $temp = $("<textarea>");
+                $("body").append($temp);
+                $temp.val(text).select();
+                document.execCommand("copy");
+                $temp.remove();
+                $(this).text("复制成功").removeClass("lg-bg-orange");
+
+                var e = this;
+                setTimeout(function() {
+                    $(e).text("复制").addClass("lg-bg-orange");
+                }, 500);
+            });
+        });
+    </script>
+</div>
+<footer id="app-footer"></footer>
+<div class="am-modal am-modal-alert" tabindex="-1" id="lg-alert">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="lg-alert-title"></div>
+<div class="am-modal-bd" id="lg-alert-message"></div>
+<div class="am-modal-footer">
+<span class="am-modal-btn">确定</span>
+</div>
+</div>
+</div>
+<script src="/js/ace/ace.js"></script>
+<script src="https://cdn.luogu.org/js/vendor.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/jsmind.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/amazeui.min.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts-more.js"></script>
+<script src="/static/katex/katex.min.js"></script>
+<script src="/static/katex/contrib/auto-render.min.js"></script>
+<script src="https://cdn.luogu.org/markdown-palettes/markdown-palettes.min.js?ver=20190219"></script>
+<script src="https://cdn.luogu.org/js/luogu3.js?ver=20190101"></script>
+</body>
+</html>

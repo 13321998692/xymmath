@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title> P3927 SAC E#1 - 一道中档题 Factorial - 洛谷</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta name="csrf-token" content="1555853158:WTjGT+fPYoafCf1Le23uqStwBIM76pFGH7Qqi5o9jxo=">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/amazeui.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/katex.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/luogu3.css?ver=20190102">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/highlight_tomorrow.css">
+<link rel="stylesheet" href="https://cdn.luogu.org/markdown-palettes/markdown-palettes.css?ver=20190219">
+<script src="https://cdn.luogu.org/js/jquery-2.1.1.min.js"></script>
+<script src="https://cdn.luogu.org/js/luogu3_pre.js?ver=20190101"></script>
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn.luogu.org/images/favicon3.ico" media="screen"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/fe/loader.css?ver=20190417">
+<script>window._feInjection = JSON.parse(decodeURIComponent("%7B%22code%22%3A200%2C%22currentUser%22%3Anull%2C%22currentTemplate%22%3A%22Excited%22%2C%22currentData%22%3A%7B%22shortHeader%22%3Afalse%2C%22pageName%22%3A%22%5Cu9898%5Cu76ee%5Cu8be6%5Cu60c5%22%7D%2C%22currentMeta%22%3A%7B%22title%22%3A%22%20P3927%20SAC%20E%231%20-%20%5Cu4e00%5Cu9053%5Cu4e2d%5Cu6863%5Cu9898%20Factorial%22%7D%7D"));</script>
+<script>window._release = '20190417';</script>
+<script src="https://cdn.luogu.org/fe/loader.js?ver=20190417" charset="utf-8" defer></script>
+</head>
+<body>
+<div id="app-header"></div>
+<nav id="app-sidenav"></nav>
+<div id="app-body"></div>
+<script>
+    function scrollToId (id) {
+        $('html, body').animate({
+            scrollTop: ($('#' + id).offset().top)
+        }, 500);
+    }
+</script>
+<style>
+    .lg-toolbar {
+        display: none;
+    }
+
+    #app-body { /* Unused in fallback FE */
+        display: none;
+    }
+
+    #app-body-new{
+        display: block;
+        margin-bottom: 2em;
+        position: relative;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    @media (min-width: 576px) {
+        #app-body-new {
+            margin-left: 70px;
+        }
+    }
+
+    code {
+        font-family: monospace, "Courier New";
+    }
+
+</style>
+<div id="app-body-new">
+<div class="lg-toolbar" data-am-sticky>
+<h1><a href="/recordnew/lists?uid=&pid=P3927" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a> P3927 SAC E#1 - 一道中档题 Factorial</h1>
+</div>
+<div class="am-g lg-main-content">
+<div class="am-u-md-4 lg-right" name="problemright">
+<section class="am-panel am-panel-default lg-summary" id="psummary">
+<div class="lg-summary-content">
+<ul class="am-list am-list-static lg-summary-list">
+<li>
+<ul class="am-avg-sm-2"><li><span class="lg-bignum-num">1.4<small>K</small><small></small></span><span class="lg-bignum-text">通过</span></li><li><span class="lg-bignum-num">4.6<small>K</small><small></small></span><span class="lg-bignum-text">提交</span></li></ul>
+</li>
+<li>
+<strong>题目提供者</strong>
+<span class="lg-right"><a class='lg-fg-bluelight' href="/space/show?uid=19487" target="_blank">ProjectWTA</a></span>
+</li>
+<li>
+<strong>评测方式</strong>
+<span class="lg-right"><b>云端评测</b></span>
+</li>
+<li><strong>标签</strong>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="266">概率论,统计</span>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="239">素数判断,质数,筛法</span>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="244">进制</span>
+<span class="lg-tag am-badge am-radius lg-bg-bluelight" data-tagid="81">洛谷原创</span>
+<span class="lg-tag am-badge am-radius lg-bg-orange" data-tagid="108">O2优化</span>
+<span class="lg-tag am-badge am-radius lg-bg-orange" data-tagid="319">高性能</span>
+<style>.lg-tag { cursor: pointer; }</style>
+<script>
+                                $(".lg-tag").click(function() {
+                                    window.open("/problemnew/lists?tag=" + $(this).attr('data-tagid'));
+                                })
+                            </script>
+</li>
+<li><strong>难度</strong>
+<span class="lg-right"><span class="am-badge am-radius lg-bg-bluelight">提高+/省选-</span></span>
+</li>
+<li><strong>时空限制</strong>
+<span class="lg-right">1000ms / 256MB</span>
+</li>
+</ul>
+</div>
+<p>
+<button class="am-btn am-btn-danger am-btn-sm" id="submit" pid="P3927">
+<i class="am-icon-paper-plane"></i> 提交
+</button>
+<a target="_blank" href="/problemnew/solution/P3927" class="am-btn am-btn-primary am-btn-sm">
+<i class="am-icon-book"></i> 题解
+</a>
+<a data-pjax href="/recordnew/lists?pid=P3927" class="am-btn am-btn-primary am-btn-sm" title="查看本题提交记录">
+<i class="am-icon-pie-chart"></i>
+</a>
+<button class="am-btn am-btn-primary am-btn-sm lg-pointer" name="showtag" title="显示算法标签">
+<i class="am-icon-tags"></i>
+</button>
+</p>
+<li>提示：收藏到任务计划后，可在首页查看。</li>
+<p>
+<a class="am-btn am-btn-danger am-btn-sm" href="/fe/problem/P3927" target="_blank">体验新版界面</a>
+</p>
+</section>
+<section class="am-panel am-panel-default lg-summary">
+<h2>最新讨论
+<a onclick="$('#discuss-lists').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看本题讨论">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" style="display: none" id="discuss-lists">
+<li><a data-pjax href="/discuss/show?postid=99156" class="am-padding-0">19.2.10 CF原题 纪念一下</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=78729" class="am-padding-0">关于取最小值</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=26733" class="am-padding-0">这个题有没有其他做法</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=24877" class="am-padding-0">为什么题面和题解的数据范围…</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=24852" class="am-padding-0">要用longlong吗</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=24049" class="am-padding-0">蒟蒻的小问题</a>
+</li>
+<div style="overflow: auto">
+<a data-pjax href="/discuss/lists?forumname=P3927" class="am-btn am-btn-primary am-btn-sm lg-right">进入讨论版</a>
+</div>
+</ul>
+</section>
+<section class="am-panel am-panel-default lg-summary am-hide-sm">
+<h2>推荐的相关题目
+<a onclick="$('#recommendation-list').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看推荐题目">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" id="recommendation-list" style="display: none">
+<li>
+<a class='colored' href="/problemnew/show/P3928" target="_blank"><b>P3928</b> SAC E#1 - 一道简单题 Sequence2</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3930" target="_blank"><b>P3930</b> SAC E#1 - 一道大水题 Knight</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3931" target="_blank"><b>P3931</b> SAC E#1 - 一道难题 Tree</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3932" target="_blank"><b>P3932</b> 浮游大陆的68号岛</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P2680" target="_blank"><b>P2680</b> 运输计划</a>
+</li>
+</ul>
+</section>
+</div>
+<div class="am-u-md-8 lg-right" name="problemleft">
+<div class="lg-content-left">
+<div class="lg-article am-g">
+<h2>题目背景</h2>
+<h1>数据已修改</h1>
+<p>SOL君（炉石主播）和SOL菌（完美信息教室讲师）是好朋友。</p>
+<h2>题目描述</h2>
+<p>SOL君很喜欢阶乘。而SOL菌很喜欢研究进制。</p>
+<p>这一天，SOL君跟SOL菌炫技，随口算出了n的阶乘。</p>
+<p>SOL菌表示不服，立刻就要算这个数在k进制表示下末尾0的个数。</p>
+<p>但是SOL菌太菜了于是请你帮忙。</p>
+<h2>输入输出格式</h2>
+<strong>输入格式：</strong><br>
+<p><p>每组输入仅包含一行：两个整数n，k。</p></p>
+<strong>输出格式：</strong><br>
+<p><p>输出一个整数：n!在k进制下后缀0的个数。</p></p>
+<h2>输入输出样例</h2>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>10 40</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>2</pre>
+</div>
+</div>
+<h2>说明</h2>
+<p>对于20%的数据，n &lt;= 1000000， k = 10</p>
+<p>对于另外20%的数据，n &lt;= 20， k &lt;= 36</p>
+<p>对于100%的数据，n &lt;= 10^12，k &lt;= 10^12</p>
+<h2>update</h2>
+<p>1.一组数据</p>
+<p>2.K不会==1</p>
+<p>3.现在std没有爆long long</p>
+<p>4.对数据有问题联系icy （建议大家不要面向数据编程）</p>
+<h2>标程<a class="lg-right am-btn am-btn-sm am-btn-primary" id="expandstd">展开</a></h2>
+<div id="stdcode" class="copy-region" style="display:none">
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre><code class="language-cpp line-numbers">#include &lt;iostream&gt;
+#include &lt;cstring&gt;
+#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+
+using namespace std;
+
+typedef long long ll;
+typedef pair&lt;ll, ll&gt; pll;
+
+vector&lt;pll&gt; divisors;
+ll n, k, cnt, res, cur, tmp;
+
+int main()
+{
+    while(scanf(&quot;%lld%lld&quot;, &amp;n, &amp;k) &gt;= 2)
+    {
+        divisors.clear();
+        for (ll i = 2; i * i &lt;= k; i++)
+        {
+            for (cnt = 0; k % i == 0; cnt++, k /= i);
+            if (cnt) divisors.push_back(make_pair(i, cnt));
+        }
+        if (k != 1)
+            divisors.push_back(make_pair(k, 1));
+        
+        res = 0x7fffffffffffffffll;
+        for (int i = 0; i &lt; divisors.size(); i++)
+        {
+            cur = 0;
+            pll x = divisors[i];
+            for (tmp = x.first; tmp &lt;= n; tmp *= x.first)
+                cur += n / tmp;
+            res = min(res, cur / x.second);
+        }
+        printf(&quot;%lld\n&quot;, res);  
+    }
+        
+    return 0;
+}
+
+//pollard-rho
+namespace rho {
+    typedef long long ll;
+    ll prime[9] = {2, 3, 5, 7, 11, 13, 17, 19, 23};
+    vector&lt;pair&lt;ll, int&gt; &gt; res;
+    vector&lt;ll&gt; fac;
+    ll mul(ll a, ll b, ll MOD) {
+        ll tmp = a * b - (ll)((long double)a / MOD * b + 1e-8) * MOD;
+        if(tmp &lt; 0) tmp += MOD;
+        return tmp;
+    }
+    ll ksm(ll x, ll y, ll MOD) {
+        if(!y) return 1;
+        if(y == 1) return x % MOD;
+        ll w = ksm(x, y / 2, MOD);
+        w = mul(w, w, MOD);
+        if(y % 2) w = mul(w, x, MOD);
+        return w;
+    }
+    ll gcd(ll x, ll y) {
+        if(!y) return x;
+        if(x % y == 0) return y;
+        return gcd(y, x % y);
+    }
+    bool MR(ll n) {
+        if(n &lt; 2) return 0;
+        if(n == 2) return 1;
+        if(n % 2 == 0) return 0;
+        ll m = n - 1; int k = 0;
+        while(m % 2 == 0) {
+            k++; m /= 2;
+        }
+        for(int i = 0; i &lt; 9; i++) {
+            ll a = prime[i], w = ksm(a, m, n);
+            if(w == 1 || w == n - 1 || a == n) continue;
+            for(int j = 1; j &lt;= k; j++) {
+                ll u = mul(w, w, n);
+                if(w != 1 &amp;&amp; w != n - 1 &amp;&amp; u == 1) return 0;
+                w = u;
+            }
+            if(w != 1) return 0;
+        }
+        return 1;
+    }
+    int rho(ll n, ll c) {
+        ll x1 = (ll)(rand() + 1) % n, x2 = x1, p = 1, k = 2;
+        for(ll i = 1; p == 1; i++) {
+            x1 = (mul(x1, x1, n) + c) % n;
+            p = x1 &gt; x2 ? x1 - x2 : x2 - x1;
+            p = gcd(p, n);
+            if(i == k) {
+                x2 = x1; k += k;
+            }
+        }
+        return p;
+    }
+    void solve(ll n) {
+        if(n == 1) return;
+        if(MR(n)) {
+            for(int i = 0; i &lt; res.size(); i++) {
+                if(res[i].first == n) {
+                    res[i].second++;
+                    return;
+                }
+            }
+            res.push_back(make_pair(n, 1));
+            return;
+        }
+        ll t = n;
+        while(t == n) {
+            t = rho(n, rand() % (n - 1) + 1);
+        }
+        solve(t); solve(n / t);
+    }
+    void dfs(int cur, ll mul) {
+        if(cur == res.size()) {
+            fac.push_back(mul);
+            return;
+        }
+        ll base = 1;
+        for(int i = 0; i &lt;= res[cur].second; i++) {
+            dfs(cur + 1, mul * base);
+            base *= res[cur].first;
+        }
+    }
+    vector&lt;ll&gt; getFac(ll n) {
+        res.clear(); solve(n);
+        sort(res.begin(), res.end());
+        fac.clear(); dfs(0, 1); 
+        sort(fac.begin(), fac.end());
+        return fac;
+    }
+}</code></pre>
+</div>
+</div>
+<div class='lg-article-sub am-g' id="sub"></div>
+</div>
+</div>
+</div>
+<div class="am-modal am-modal-prompt" tabindex="-1" id="confirm">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="memtitle">提示</div>
+<div class="am-modal-bd" id="memadmin">
+标程仅供做题后或实在无思路时参考。<br>
+请自觉、自律地使用该功能并请对自己的学习负责。<br>
+如果发现恶意抄袭标程，将按照I类违反进行处理。<br>
+</div>
+<div class="am-modal-footer">
+<span class="am-modal-btn" data-am-modal-cancel>取消</span>
+<span class="am-modal-btn" data-am-modal-confirm>确定</span>
+</div>
+</div>
+</div>
+<script>
+        $(document).ready(function () {
+            $("#expandstd").click(function () {
+                $('#confirm').modal({
+                    relatedTarget: this,
+                    onConfirm: function (e) {
+                        $("#stdcode").slideDown();
+                        $("#expandstd").hide();
+                    }
+                });
+            });
+            $("#submit").click(
+                function () {
+                    hide_artile();
+                    $(document).scrollTop($(document).scrollTop() - 80);
+                    var pid = $(this).attr("pid");
+                    $.get("/problem/ajax_submit?pid=" + pid, function (data) {
+                        var arr = eval('(' + data + ')');
+                        if (arr['code'] == 201) {
+                            $('.lg-article-sub').html(arr['more']['html']);
+                        }
+                        else if (arr['code'] == 200) {
+
+                        }
+                        else {
+                            if (arr['code'] == 0 || arr['code'] == -3) {
+                                backarticle();
+                            }
+                            show_alert("提交失败", arr['message']);
+                        }
+                    });
+                }
+            );
+            $("button[title].am-btn,a[title].am-btn").poshytip({
+                className: 'tip-twitter',
+                showTimeout: 1,
+                alignTo: 'target',
+                alignX: 'center',
+                alignY: 'bottom'
+            });
+            $('[name=showtag]').click(function () {
+                $('.am-badge.am-hide').removeClass('am-hide');
+            });
+            $(".sample-copy").click(function() {
+                var element = $(this).parents(".copy-region").find("pre");
+                var text = $(element).text();
+                var $temp = $("<textarea>");
+                $("body").append($temp);
+                $temp.val(text).select();
+                document.execCommand("copy");
+                $temp.remove();
+                $(this).text("复制成功").removeClass("lg-bg-orange");
+
+                var e = this;
+                setTimeout(function() {
+                    $(e).text("复制").addClass("lg-bg-orange");
+                }, 500);
+            });
+        });
+    </script>
+</div>
+<footer id="app-footer"></footer>
+<div class="am-modal am-modal-alert" tabindex="-1" id="lg-alert">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="lg-alert-title"></div>
+<div class="am-modal-bd" id="lg-alert-message"></div>
+<div class="am-modal-footer">
+<span class="am-modal-btn">确定</span>
+</div>
+</div>
+</div>
+<script src="/js/ace/ace.js"></script>
+<script src="https://cdn.luogu.org/js/vendor.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/jsmind.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/amazeui.min.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts-more.js"></script>
+<script src="/static/katex/katex.min.js"></script>
+<script src="/static/katex/contrib/auto-render.min.js"></script>
+<script src="https://cdn.luogu.org/markdown-palettes/markdown-palettes.min.js?ver=20190219"></script>
+<script src="https://cdn.luogu.org/js/luogu3.js?ver=20190101"></script>
+</body>
+</html>

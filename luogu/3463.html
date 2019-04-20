@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title> P3463 [POI2007]EGZ-Driving Exam - 洛谷</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta name="csrf-token" content="1555852892:8VOAmksjiKYyW0+Qib9UTpaiD2LS+wF07xq9VE481jU=">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/amazeui.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/katex.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/luogu3.css?ver=20190102">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/highlight_tomorrow.css">
+<link rel="stylesheet" href="https://cdn.luogu.org/markdown-palettes/markdown-palettes.css?ver=20190219">
+<script src="https://cdn.luogu.org/js/jquery-2.1.1.min.js"></script>
+<script src="https://cdn.luogu.org/js/luogu3_pre.js?ver=20190101"></script>
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn.luogu.org/images/favicon3.ico" media="screen"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/fe/loader.css?ver=20190417">
+<script>window._feInjection = JSON.parse(decodeURIComponent("%7B%22code%22%3A200%2C%22currentUser%22%3Anull%2C%22currentTemplate%22%3A%22Excited%22%2C%22currentData%22%3A%7B%22shortHeader%22%3Afalse%2C%22pageName%22%3A%22%5Cu9898%5Cu76ee%5Cu8be6%5Cu60c5%22%7D%2C%22currentMeta%22%3A%7B%22title%22%3A%22%20P3463%20%5BPOI2007%5DEGZ-Driving%20Exam%22%7D%7D"));</script>
+<script>window._release = '20190417';</script>
+<script src="https://cdn.luogu.org/fe/loader.js?ver=20190417" charset="utf-8" defer></script>
+</head>
+<body>
+<div id="app-header"></div>
+<nav id="app-sidenav"></nav>
+<div id="app-body"></div>
+<script>
+    function scrollToId (id) {
+        $('html, body').animate({
+            scrollTop: ($('#' + id).offset().top)
+        }, 500);
+    }
+</script>
+<style>
+    .lg-toolbar {
+        display: none;
+    }
+
+    #app-body { /* Unused in fallback FE */
+        display: none;
+    }
+
+    #app-body-new{
+        display: block;
+        margin-bottom: 2em;
+        position: relative;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    @media (min-width: 576px) {
+        #app-body-new {
+            margin-left: 70px;
+        }
+    }
+
+    code {
+        font-family: monospace, "Courier New";
+    }
+
+</style>
+<div id="app-body-new">
+<div class="lg-toolbar" data-am-sticky>
+<h1><a href="/recordnew/lists?uid=&pid=P3463" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a> P3463 [POI2007]EGZ-Driving Exam</h1>
+</div>
+<div class="am-g lg-main-content">
+<div class="am-u-md-4 lg-right" name="problemright">
+<section class="am-panel am-panel-default lg-summary" id="psummary">
+<div class="lg-summary-content">
+<ul class="am-list am-list-static lg-summary-list">
+<li>
+<ul class="am-avg-sm-2"><li><span class="lg-bignum-num">38<small></small></span><span class="lg-bignum-text">通过</span></li><li><span class="lg-bignum-num">137<small></small></span><span class="lg-bignum-text">提交</span></li></ul>
+</li>
+<li>
+<strong>题目提供者</strong>
+<span class="lg-right"><a class='lg-fg-purple lg-bold' href="/space/show?uid=3" target="_blank">洛谷</a></span>
+</li>
+<li>
+<strong>评测方式</strong>
+<span class="lg-right"><b>云端评测</b></span>
+</li>
+<li><strong>标签</strong>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="3">动态规划,动规,dp</span>
+<span class="lg-tag am-badge am-radius lg-bg-bluelight" data-tagid="57">POI</span>
+<span class="lg-tag am-badge am-radius lg-bg-green" data-tagid="24">2007</span>
+<span class="lg-tag am-badge am-radius lg-bg-orange" data-tagid="319">高性能</span>
+<style>.lg-tag { cursor: pointer; }</style>
+<script>
+                                $(".lg-tag").click(function() {
+                                    window.open("/problemnew/lists?tag=" + $(this).attr('data-tagid'));
+                                })
+                            </script>
+</li>
+<li><strong>难度</strong>
+<span class="lg-right"><span class="am-badge am-radius lg-bg-bluelight">提高+/省选-</span></span>
+</li>
+<li><strong>时空限制</strong>
+<span class="lg-right">1000ms / 128MB</span>
+</li>
+</ul>
+</div>
+<p>
+<button class="am-btn am-btn-danger am-btn-sm" id="submit" pid="P3463">
+<i class="am-icon-paper-plane"></i> 提交
+</button>
+<a target="_blank" href="/problemnew/solution/P3463" class="am-btn am-btn-primary am-btn-sm">
+<i class="am-icon-book"></i> 题解
+</a>
+<a data-pjax href="/recordnew/lists?pid=P3463" class="am-btn am-btn-primary am-btn-sm" title="查看本题提交记录">
+<i class="am-icon-pie-chart"></i>
+</a>
+<button class="am-btn am-btn-primary am-btn-sm lg-pointer" name="showtag" title="显示算法标签">
+<i class="am-icon-tags"></i>
+</button>
+</p>
+<li>提示：收藏到任务计划后，可在首页查看。</li>
+<p>
+<a class="am-btn am-btn-danger am-btn-sm" href="/fe/problem/P3463" target="_blank">体验新版界面</a>
+</p>
+</section>
+<section class="am-panel am-panel-default lg-summary">
+<h2>最新讨论
+<a onclick="$('#discuss-lists').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看本题讨论">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" style="display: none" id="discuss-lists">
+<li><a data-pjax href="/discuss/show?postid=67313" class="am-padding-0">这个绿牌异常骚气</a>
+</li>
+<div style="overflow: auto">
+<a data-pjax href="/discuss/lists?forumname=P3463" class="am-btn am-btn-primary am-btn-sm lg-right">进入讨论版</a>
+</div>
+</ul>
+</section>
+<section class="am-panel am-panel-default lg-summary am-hide-sm">
+<h2>推荐的相关题目
+<a onclick="$('#recommendation-list').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看推荐题目">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" id="recommendation-list" style="display: none">
+<li>
+<a class='colored' href="/problemnew/show/P3462" target="_blank"><b>P3462</b> [POI2007]ODW-Weights</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P2114" target="_blank"><b>P2114</b> [NOI2014]起床困难综合症</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P4254" target="_blank"><b>P4254</b> [JSOI2008]Blue Mary开公司</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3515" target="_blank"><b>P3515</b> [POI2011]Lightning Conductor</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P4948" target="_blank"><b>P4948</b> 数列求和</a>
+</li>
+</ul>
+</section>
+</div>
+<div class="am-u-md-8 lg-right" name="problemleft">
+<div class="lg-content-left">
+<div class="lg-article am-g">
+<h2>题目描述</h2>
+<p>The Byteotian driving licence exam takes place in an area in which there are $n$ straight, parallel, unidirectional, north-oriented streets (that is the allowed driving direction is south to north). Each of the streets is exactly $m$ meters long, all of them begin and end on the same level. These streets are numbered from $1$ to $n$ starting the westernmost. There are also $p$ unidirectional, east or west-oriented streets perpendicular to the abovementioned, each one of them connecting a pair of adjacent north-oriented streets. It is also possible that an east-oriented and a west-oriented street overlap, thus forming a bidirectional one.</p>
+<p><img src="https://cdn.luogu.org/upload/pic/6981.png" alt="" /> </p>
+<p>An exemplary testing area ($n=4, m=3, p=5$).</p>
+<p>The examiner chooses a north-oriented street, at the beginnig of which the examination starts and anothernorth-oriented street, where it is to come to an end. The task of the applicant is to drive from the starting tothe final point, observing the allowed directions.The examiner always chooses as starting point a street, from which it is possible to drive to the endpointof any other north-oriented street.The work of the examiners is a very tedious one, because they always have to start at the beginning ofone of the few suitable streets. The board of directors have decided to build a new testing area on the basis ofpre-existent plans. It has been calculated, that available funds allow for no more than $k$ east or west-orientedstreets to be built. Those new streets are to be constructed in such a way, so as to add the largest possiblenumber of potential starting points (there may or may not exist starting points on the pre-existent plan). Newstreets have to connect pairs of adjacent north-oriented streets.</p>
+<h2>Task</h2>
+<p>Write a programme which:</p>
+<ul>
+<li>
+<p>reads a description of the testing area and the number $k$ from the standard input,</p>
+</li>
+<li>
+<p>calculates the greatest number of potential new starting points for the examination, generated by adding no more than $k$ east or west-oriented streets,</p>
+</li>
+<li>
+<p>writes the outcome to the standard output.</p>
+</li>
+</ul>
+<p>成都的驾驶考试在一个有n条平行的自南向北的单向的道路的场地中进行。每条道路长度为m米，并且都在同一条水平线上开始和结束。街道从西向东分别编号为1到n。同样有p条单向的自西向东或自东向西的街道垂直于上面描述的街道，每一条这样的街道链接了两个相邻的自南向北的道路。当然自西向东和自东向西的道路可以重叠，那就是一个双向的街道了。</p>
+<p>考生选择一个自南向北的道路作为他考试的起始点和另外一个自南向北的道路作为他考试的终止点。他们的考试项目是将车从开始的道路驾驶到作为终止点的道路。考生们总是选择一个可以到达所有其他街道的起始道路作为开始点。现在，考生们总是感到十分无趣因为他们只有很少的起始道路可以选择，所以教练们决定改造先有的考试场所，由于经费的限制，他们决定添加至多K条东西向的道路，使得能够选择的起始道路尽量地多。</p>
+<h2>输入输出格式</h2>
+<strong>输入格式：</strong><br>
+<p><p>In the first line of the standard input there are four integers $n$, $m$, $p$ and $k$ ($2 \le n \le 100\ 000$, $1 \le m, k, \le 100\ 000$, $0 \le p \le 100\ 000$), separated by single spaces, denoting respectively: the number of north-oriented streets, the length of each one of them, the number of pre-existent east or west-oriented streets, the maximal number of new streets to be built. The north-oriented streets are numbered from $1$ to $n$, starting with the westernmost.</p>
+<p>The following $p$ lines contain three integers each: $n_i$, $m_i$ and $d_i$ ($1 \le n_i \le n$, $0 \le m_i \le m$, $d_i \in \{0, 1\}$), separated by single spaces, denoting the 'th east-oriented (for $d_i=0$) or west-oriented (for $d_i=1$) street. This street connects north-oriented streets $n$ and $n+1$, intersecting them in points $m_i$ meters distant from their beginning.</p></p>
+<strong>输出格式：</strong><br>
+<p><p>The first and only line of the standard output should contain a single integer, denoting the maximal numberof new examination starting points generated by building no more than $k$ east or west-oriented streets. Thenewly built streets <strong>do not have to</strong> intersect the north-oriented streets in points, whose distance from thebeginning of the street is an integer. The newly built east or west-oriented streets may overlap, thus formingbidirectional streets.</p></p>
+<h2>输入输出样例</h2>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>4 3 5 2
+2 0 0
+2 2 1
+3 3 1
+1 1 1
+3 3 0</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>2</pre>
+</div>
+</div>
+</div>
+<div class='lg-article-sub am-g' id="sub"></div>
+</div>
+</div>
+</div>
+<div class="am-modal am-modal-prompt" tabindex="-1" id="confirm">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="memtitle">提示</div>
+<div class="am-modal-bd" id="memadmin">
+标程仅供做题后或实在无思路时参考。<br>
+请自觉、自律地使用该功能并请对自己的学习负责。<br>
+如果发现恶意抄袭标程，将按照I类违反进行处理。<br>
+</div>
+<div class="am-modal-footer">
+<span class="am-modal-btn" data-am-modal-cancel>取消</span>
+<span class="am-modal-btn" data-am-modal-confirm>确定</span>
+</div>
+</div>
+</div>
+<script>
+        $(document).ready(function () {
+            $("#expandstd").click(function () {
+                $('#confirm').modal({
+                    relatedTarget: this,
+                    onConfirm: function (e) {
+                        $("#stdcode").slideDown();
+                        $("#expandstd").hide();
+                    }
+                });
+            });
+            $("#submit").click(
+                function () {
+                    hide_artile();
+                    $(document).scrollTop($(document).scrollTop() - 80);
+                    var pid = $(this).attr("pid");
+                    $.get("/problem/ajax_submit?pid=" + pid, function (data) {
+                        var arr = eval('(' + data + ')');
+                        if (arr['code'] == 201) {
+                            $('.lg-article-sub').html(arr['more']['html']);
+                        }
+                        else if (arr['code'] == 200) {
+
+                        }
+                        else {
+                            if (arr['code'] == 0 || arr['code'] == -3) {
+                                backarticle();
+                            }
+                            show_alert("提交失败", arr['message']);
+                        }
+                    });
+                }
+            );
+            $("button[title].am-btn,a[title].am-btn").poshytip({
+                className: 'tip-twitter',
+                showTimeout: 1,
+                alignTo: 'target',
+                alignX: 'center',
+                alignY: 'bottom'
+            });
+            $('[name=showtag]').click(function () {
+                $('.am-badge.am-hide').removeClass('am-hide');
+            });
+            $(".sample-copy").click(function() {
+                var element = $(this).parents(".copy-region").find("pre");
+                var text = $(element).text();
+                var $temp = $("<textarea>");
+                $("body").append($temp);
+                $temp.val(text).select();
+                document.execCommand("copy");
+                $temp.remove();
+                $(this).text("复制成功").removeClass("lg-bg-orange");
+
+                var e = this;
+                setTimeout(function() {
+                    $(e).text("复制").addClass("lg-bg-orange");
+                }, 500);
+            });
+        });
+    </script>
+</div>
+<footer id="app-footer"></footer>
+<div class="am-modal am-modal-alert" tabindex="-1" id="lg-alert">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="lg-alert-title"></div>
+<div class="am-modal-bd" id="lg-alert-message"></div>
+<div class="am-modal-footer">
+<span class="am-modal-btn">确定</span>
+</div>
+</div>
+</div>
+<script src="/js/ace/ace.js"></script>
+<script src="https://cdn.luogu.org/js/vendor.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/jsmind.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/amazeui.min.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts-more.js"></script>
+<script src="/static/katex/katex.min.js"></script>
+<script src="/static/katex/contrib/auto-render.min.js"></script>
+<script src="https://cdn.luogu.org/markdown-palettes/markdown-palettes.min.js?ver=20190219"></script>
+<script src="https://cdn.luogu.org/js/luogu3.js?ver=20190101"></script>
+</body>
+</html>

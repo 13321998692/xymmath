@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title> P4509 [CTSC2015]葱 - 洛谷</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta name="csrf-token" content="1555853359:Tp94pBRhCMLzvWod4fK/0gedRdeiPFEPCK3zyqg8830=">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/amazeui.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/katex.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/luogu3.css?ver=20190102">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/highlight_tomorrow.css">
+<link rel="stylesheet" href="https://cdn.luogu.org/markdown-palettes/markdown-palettes.css?ver=20190219">
+<script src="https://cdn.luogu.org/js/jquery-2.1.1.min.js"></script>
+<script src="https://cdn.luogu.org/js/luogu3_pre.js?ver=20190101"></script>
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn.luogu.org/images/favicon3.ico" media="screen"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/fe/loader.css?ver=20190417">
+<script>window._feInjection = JSON.parse(decodeURIComponent("%7B%22code%22%3A200%2C%22currentUser%22%3Anull%2C%22currentTemplate%22%3A%22Excited%22%2C%22currentData%22%3A%7B%22shortHeader%22%3Afalse%2C%22pageName%22%3A%22%5Cu9898%5Cu76ee%5Cu8be6%5Cu60c5%22%7D%2C%22currentMeta%22%3A%7B%22title%22%3A%22%20P4509%20%5BCTSC2015%5D%5Cu8471%22%7D%7D"));</script>
+<script>window._release = '20190417';</script>
+<script src="https://cdn.luogu.org/fe/loader.js?ver=20190417" charset="utf-8" defer></script>
+</head>
+<body>
+<div id="app-header"></div>
+<nav id="app-sidenav"></nav>
+<div id="app-body"></div>
+<script>
+    function scrollToId (id) {
+        $('html, body').animate({
+            scrollTop: ($('#' + id).offset().top)
+        }, 500);
+    }
+</script>
+<style>
+    .lg-toolbar {
+        display: none;
+    }
+
+    #app-body { /* Unused in fallback FE */
+        display: none;
+    }
+
+    #app-body-new{
+        display: block;
+        margin-bottom: 2em;
+        position: relative;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    @media (min-width: 576px) {
+        #app-body-new {
+            margin-left: 70px;
+        }
+    }
+
+    code {
+        font-family: monospace, "Courier New";
+    }
+
+</style>
+<div id="app-body-new">
+<div class="lg-toolbar" data-am-sticky>
+<h1><a href="/recordnew/lists?uid=&pid=P4509" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a> P4509 [CTSC2015]葱</h1>
+</div>
+<div class="am-g lg-main-content">
+<div class="am-u-md-4 lg-right" name="problemright">
+<section class="am-panel am-panel-default lg-summary" id="psummary">
+<div class="lg-summary-content">
+<ul class="am-list am-list-static lg-summary-list">
+<li>
+<ul class="am-avg-sm-2"><li><span class="lg-bignum-num">7<small></small></span><span class="lg-bignum-text">通过</span></li><li><span class="lg-bignum-num">36<small></small></span><span class="lg-bignum-text">提交</span></li></ul>
+</li>
+<li>
+<strong>题目提供者</strong>
+<span class="lg-right"><a class='lg-fg-bluelight' href="/space/show?uid=50954" target="_blank">Xeonacid</a></span>
+</li>
+<li>
+<strong>评测方式</strong>
+<span class="lg-right"><b>云端评测</b></span>
+</li>
+<li><strong>标签</strong>
+<span class="lg-tag am-badge am-radius lg-bg-bluelight" data-tagid="52">WC/CTSC/集训队</span>
+<span class="lg-tag am-badge am-radius lg-bg-green" data-tagid="32">2015</span>
+<span class="lg-tag am-badge am-radius lg-bg-orange" data-tagid="319">高性能</span>
+<style>.lg-tag { cursor: pointer; }</style>
+<script>
+                                $(".lg-tag").click(function() {
+                                    window.open("/problemnew/lists?tag=" + $(this).attr('data-tagid'));
+                                })
+                            </script>
+</li>
+<li><strong>难度</strong>
+<span class="lg-right"><span class="am-badge am-radius lg-bg-bluelight">提高+/省选-</span></span>
+</li>
+<li><strong>时空限制</strong>
+<span class="lg-right">2500ms / 512MB</span>
+</li>
+</ul>
+</div>
+<p>
+<button class="am-btn am-btn-danger am-btn-sm" id="submit" pid="P4509">
+<i class="am-icon-paper-plane"></i> 提交
+</button>
+<a target="_blank" href="/problemnew/solution/P4509" class="am-btn am-btn-primary am-btn-sm">
+<i class="am-icon-book"></i> 题解
+</a>
+<a data-pjax href="/recordnew/lists?pid=P4509" class="am-btn am-btn-primary am-btn-sm" title="查看本题提交记录">
+<i class="am-icon-pie-chart"></i>
+</a>
+<button class="am-btn am-btn-primary am-btn-sm lg-pointer" name="showtag" title="显示算法标签">
+<i class="am-icon-tags"></i>
+</button>
+</p>
+<li>提示：收藏到任务计划后，可在首页查看。</li>
+<p>
+<a class="am-btn am-btn-danger am-btn-sm" href="/fe/problem/P4509" target="_blank">体验新版界面</a>
+</p>
+</section>
+<section class="am-panel am-panel-default lg-summary">
+<h2>最新讨论
+<a onclick="$('#discuss-lists').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看本题讨论">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" style="display: none" id="discuss-lists">
+<li><a data-pjax href="/discuss/show?postid=84443" class="am-padding-0">恶意评分？</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=80326" class="am-padding-0">那三个大佬是谁啊= =</a>
+</li>
+<div style="overflow: auto">
+<a data-pjax href="/discuss/lists?forumname=P4509" class="am-btn am-btn-primary am-btn-sm lg-right">进入讨论版</a>
+</div>
+</ul>
+</section>
+<section class="am-panel am-panel-default lg-summary am-hide-sm">
+<h2>推荐的相关题目
+<a onclick="$('#recommendation-list').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看推荐题目">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" id="recommendation-list" style="display: none">
+<li>暂无</li>
+</ul>
+</section>
+</div>
+<div class="am-u-md-8 lg-right" name="problemleft">
+<div class="lg-content-left">
+<div class="lg-article am-g">
+<h2>题目描述</h2>
+<p>小葱和小绪是一对好朋友，自从小葱11连出了1UR2SR之后，小绪就觉得小葱的人品特别好，于是小绪给小葱出了一道题来测试小葱的人品。 </p>
+<p>小绪首先在平面上画了$N$个点，分别是$P_1,P_2,...,P_N$。</p>
+<p>小绪把这$N个点$顺次相连，即连接$(P_1,P_2),(P_2,P_3),...,(P_{N-1},P_N)$，得到$N-1$条线段。 </p>
+<p>之后小绪每次在平面上画出一条直线，然后问小葱这条直线与多少条线段相交。特别的，在线段端点处相交算作相交，直线完全覆盖线段时也算作相交。 这样的问题自然难不倒小葱，小葱只需要凭自己的人品用直觉就能给出正确的答案。 </p>
+<p>小绪想测试小葱的人品究竟有多好，于是他加大了问题的难度： 除了每次询问以外，小绪会不时地讲一个新的点$P$插入到$P_i$和$P_{i+1}$之间，然后按照顺序对所有的点重新标记下标，即在$P_i$之后的点的下标会依次增加，而点$P$会变成新的点$P_{i+1}$。</p>
+<p>特别的，点$P$也可以插入到第一个点之前或最后一个点之后。</p>
+<p>人品超级好的小葱依旧能够轻松的给出答案，于是小绪又进一步提高了难度： </p>
+<p>每次插入或提问之后，小绪都将操作后的所有线段记录了下来，称作一个历史版本。历史版本$T$表示在第$T$次操作后得到的历史版本。 </p>
+<p>插入新点的操作改为了在某一个历史版本$T$的基础上，插入一个点$P$，并得到一个新的历史版本。 </p>
+<p>小绪对小葱的提问改为了对于一个历史版本$T$，给出一条直线，询问这条直线会与多少条线段相交。 </p>
+<p>小葱虽然人品很好，但面对这样的问题却也束手无策了，他只好找到来参加CTSC的你，请你来帮他解决这个问题。 </p>
+<h2>输入输出格式</h2>
+<strong>输入格式：</strong><br>
+<p><p>第一行两个整数$N,M,C$，表示一开始的点数和总共的操作数，以及数据是否加密。</p>
+<p>如果$C=1$，那么代表数据被加密过，每次询问操作中的$X_0,Y_0,X,Y$以及插入操作中的$X,Y$都是被加密过的数据，你需要将它们异或last_ans从而得到正确的数据，其中last_ans是上一次询问的答案，刚开始last_ans=0。 </p>
+<p>接下来$N$行每行两个整数，其中第$i$行的两个整数表示$P_i$的横坐标和纵坐标。 </p>
+<p>接下来$M$行，表示小绪的$M$次操作，其中第$i$行（从$1$开始标号）操作后得到的结果为历史版本$i$。</p>
+<p>对于每次操作，首先会有一个字母代表小绪的这次操作的操作类型。</p>
+<p>如果这个字母是$'H'$，代表本次操作为一次询问操作。接下来会有五个整数$T,X_0,Y_0,X,Y$，代表在历史版本$T$的情况下，小绪给出一条经过$(X_0,Y_0)$，方向为$(X,Y)$的直线，小葱要回答出它会和多少条直线相交。 </p>
+<p>如果这个字母是$'Z'$，代表本次操作为一次插入操作。接下来会有四个数$T,i,X,Y$，代表小绪在历史版本$T$的基础上，在$P_i$后面插入了一个坐标为$(X,Y)$的点。特别地，如果$i=0$，表示该点在$P_1$之前。 </p></p>
+<strong>输出格式：</strong><br>
+<p><p>要求对每一次询问操作，输出一行一个整数代表小葱应该回答的正确答案。 </p></p>
+<h2>输入输出样例</h2>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>2 3 0
+0 0
+1 1
+H 0 1 0 -1 1
+H 1 0 1 1 1
+H 2 -1 -1 1 1</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>1
+0
+1</pre>
+</div>
+</div>
+<h2>说明</h2>
+<p>样例解释1： </p>
+<p>对于第三次询问，直线完全覆盖了线段，小绪会认为这也算相交。 </p>
+<p>数据规模和约定： </p>
+<p>保证每次询问操作的$T$一定小于等于当前操作的数量，所有输入数据均为整数。 </p>
+<p>有以下$4$类特殊数据，它们两两没有交集： </p>
+<ol>
+<li>
+<p>对于10%的数据，保证$1≤N,M≤1000$； </p>
+</li>
+<li>
+<p>对于15%的数据，保证对于第$i$次操作，$T=i-1$； </p>
+</li>
+<li>
+<p>对于15%的数据，保证$C=0$且不存在修改操作； </p>
+</li>
+<li>
+<p>对于15%的数据，对于询问操作，保证$Y=0$（加密过的数据指解密后的$Y$），即给出的直线平行于$x$轴。 </p>
+</li>
+</ol>
+<p>以上数据还保证$1≤N,M≤5*10^4$。 </p>
+<p>对于100%的数据，保证$1≤N,M≤10^5$，所有的坐标范围在$[-10^8,10^8]$内，且每组数据中所有询问的答案总和不超过$10^6$，插入操作的次数不会超过$5*10^4$。注意这些线段可能会互相相交。</p>
+</div>
+<div class='lg-article-sub am-g' id="sub"></div>
+</div>
+</div>
+</div>
+<div class="am-modal am-modal-prompt" tabindex="-1" id="confirm">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="memtitle">提示</div>
+<div class="am-modal-bd" id="memadmin">
+标程仅供做题后或实在无思路时参考。<br>
+请自觉、自律地使用该功能并请对自己的学习负责。<br>
+如果发现恶意抄袭标程，将按照I类违反进行处理。<br>
+</div>
+<div class="am-modal-footer">
+<span class="am-modal-btn" data-am-modal-cancel>取消</span>
+<span class="am-modal-btn" data-am-modal-confirm>确定</span>
+</div>
+</div>
+</div>
+<script>
+        $(document).ready(function () {
+            $("#expandstd").click(function () {
+                $('#confirm').modal({
+                    relatedTarget: this,
+                    onConfirm: function (e) {
+                        $("#stdcode").slideDown();
+                        $("#expandstd").hide();
+                    }
+                });
+            });
+            $("#submit").click(
+                function () {
+                    hide_artile();
+                    $(document).scrollTop($(document).scrollTop() - 80);
+                    var pid = $(this).attr("pid");
+                    $.get("/problem/ajax_submit?pid=" + pid, function (data) {
+                        var arr = eval('(' + data + ')');
+                        if (arr['code'] == 201) {
+                            $('.lg-article-sub').html(arr['more']['html']);
+                        }
+                        else if (arr['code'] == 200) {
+
+                        }
+                        else {
+                            if (arr['code'] == 0 || arr['code'] == -3) {
+                                backarticle();
+                            }
+                            show_alert("提交失败", arr['message']);
+                        }
+                    });
+                }
+            );
+            $("button[title].am-btn,a[title].am-btn").poshytip({
+                className: 'tip-twitter',
+                showTimeout: 1,
+                alignTo: 'target',
+                alignX: 'center',
+                alignY: 'bottom'
+            });
+            $('[name=showtag]').click(function () {
+                $('.am-badge.am-hide').removeClass('am-hide');
+            });
+            $(".sample-copy").click(function() {
+                var element = $(this).parents(".copy-region").find("pre");
+                var text = $(element).text();
+                var $temp = $("<textarea>");
+                $("body").append($temp);
+                $temp.val(text).select();
+                document.execCommand("copy");
+                $temp.remove();
+                $(this).text("复制成功").removeClass("lg-bg-orange");
+
+                var e = this;
+                setTimeout(function() {
+                    $(e).text("复制").addClass("lg-bg-orange");
+                }, 500);
+            });
+        });
+    </script>
+</div>
+<footer id="app-footer"></footer>
+<div class="am-modal am-modal-alert" tabindex="-1" id="lg-alert">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="lg-alert-title"></div>
+<div class="am-modal-bd" id="lg-alert-message"></div>
+<div class="am-modal-footer">
+<span class="am-modal-btn">确定</span>
+</div>
+</div>
+</div>
+<script src="/js/ace/ace.js"></script>
+<script src="https://cdn.luogu.org/js/vendor.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/jsmind.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/amazeui.min.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts-more.js"></script>
+<script src="/static/katex/katex.min.js"></script>
+<script src="/static/katex/contrib/auto-render.min.js"></script>
+<script src="https://cdn.luogu.org/markdown-palettes/markdown-palettes.min.js?ver=20190219"></script>
+<script src="https://cdn.luogu.org/js/luogu3.js?ver=20190101"></script>
+</body>
+</html>

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title> P4712 「生物」能量流动 - 洛谷</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta name="csrf-token" content="1555853429:MN5s0uCRgJOYapl3k6EFzgRmnDIGejoK1Wgyjp8zeaM=">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/amazeui.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/katex.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/luogu3.css?ver=20190102">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/highlight_tomorrow.css">
+<link rel="stylesheet" href="https://cdn.luogu.org/markdown-palettes/markdown-palettes.css?ver=20190219">
+<script src="https://cdn.luogu.org/js/jquery-2.1.1.min.js"></script>
+<script src="https://cdn.luogu.org/js/luogu3_pre.js?ver=20190101"></script>
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn.luogu.org/images/favicon3.ico" media="screen"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/fe/loader.css?ver=20190417">
+<script>window._feInjection = JSON.parse(decodeURIComponent("%7B%22code%22%3A200%2C%22currentUser%22%3Anull%2C%22currentTemplate%22%3A%22Excited%22%2C%22currentData%22%3A%7B%22shortHeader%22%3Afalse%2C%22pageName%22%3A%22%5Cu9898%5Cu76ee%5Cu8be6%5Cu60c5%22%7D%2C%22currentMeta%22%3A%7B%22title%22%3A%22%20P4712%20%5Cu300c%5Cu751f%5Cu7269%5Cu300d%5Cu80fd%5Cu91cf%5Cu6d41%5Cu52a8%22%7D%7D"));</script>
+<script>window._release = '20190417';</script>
+<script src="https://cdn.luogu.org/fe/loader.js?ver=20190417" charset="utf-8" defer></script>
+</head>
+<body>
+<div id="app-header"></div>
+<nav id="app-sidenav"></nav>
+<div id="app-body"></div>
+<script>
+    function scrollToId (id) {
+        $('html, body').animate({
+            scrollTop: ($('#' + id).offset().top)
+        }, 500);
+    }
+</script>
+<style>
+    .lg-toolbar {
+        display: none;
+    }
+
+    #app-body { /* Unused in fallback FE */
+        display: none;
+    }
+
+    #app-body-new{
+        display: block;
+        margin-bottom: 2em;
+        position: relative;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    @media (min-width: 576px) {
+        #app-body-new {
+            margin-left: 70px;
+        }
+    }
+
+    code {
+        font-family: monospace, "Courier New";
+    }
+
+</style>
+<div id="app-body-new">
+<div class="lg-toolbar" data-am-sticky>
+<h1><a href="/recordnew/lists?uid=&pid=P4712" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a> P4712 「生物」能量流动</h1>
+</div>
+<div class="am-g lg-main-content">
+<div class="am-u-md-4 lg-right" name="problemright">
+<section class="am-panel am-panel-default lg-summary" id="psummary">
+<div class="lg-summary-content">
+<ul class="am-list am-list-static lg-summary-list">
+<li>
+<ul class="am-avg-sm-2"><li><span class="lg-bignum-num">427<small></small></span><span class="lg-bignum-text">通过</span></li><li><span class="lg-bignum-num">2.4<small>K</small><small></small></span><span class="lg-bignum-text">提交</span></li></ul>
+</li>
+<li>
+<strong>题目提供者</strong>
+<span class="lg-right"><a class='lg-fg-purple lg-bold' href="/space/show?uid=12621" target="_blank">fstqwq</a>&nbsp;<span class="am-badge am-radius lg-bg-purple">管理员</span></span>
+</li>
+<li>
+<strong>评测方式</strong>
+<span class="lg-right"><b>云端评测</b></span>
+</li>
+<li><strong>标签</strong>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="254">前缀和</span>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="111">枚举,暴力</span>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="7">贪心</span>
+<span class="lg-tag am-badge am-radius lg-bg-orange" data-tagid="108">O2优化</span>
+<span class="lg-tag am-badge am-radius lg-bg-orange" data-tagid="107">Special Judge</span>
+<style>.lg-tag { cursor: pointer; }</style>
+<script>
+                                $(".lg-tag").click(function() {
+                                    window.open("/problemnew/lists?tag=" + $(this).attr('data-tagid'));
+                                })
+                            </script>
+</li>
+<li><strong>难度</strong>
+<span class="lg-right"><span class="am-badge am-radius lg-bg-green">普及+/提高</span></span>
+</li>
+<li><strong>时空限制</strong>
+<span class="lg-right">2000ms / 524MB</span>
+</li>
+</ul>
+</div>
+<p>
+<button class="am-btn am-btn-danger am-btn-sm" id="submit" pid="P4712">
+<i class="am-icon-paper-plane"></i> 提交
+</button>
+<a target="_blank" href="/problemnew/solution/P4712" class="am-btn am-btn-primary am-btn-sm">
+<i class="am-icon-book"></i> 题解
+</a>
+<a data-pjax href="/recordnew/lists?pid=P4712" class="am-btn am-btn-primary am-btn-sm" title="查看本题提交记录">
+<i class="am-icon-pie-chart"></i>
+</a>
+<button class="am-btn am-btn-primary am-btn-sm lg-pointer" name="showtag" title="显示算法标签">
+<i class="am-icon-tags"></i>
+</button>
+</p>
+<li>提示：收藏到任务计划后，可在首页查看。</li>
+<p>
+<a class="am-btn am-btn-danger am-btn-sm" href="/fe/problem/P4712" target="_blank">体验新版界面</a>
+</p>
+</section>
+<section class="am-panel am-panel-default lg-summary">
+<h2>最新讨论
+<a onclick="$('#discuss-lists').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看本题讨论">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" style="display: none" id="discuss-lists">
+<li><a data-pjax href="/discuss/show?postid=103243" class="am-padding-0">是WA!我加了WA！！！</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=46233" class="am-padding-0"> 莫名WA的看过来</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=46216" class="am-padding-0">求助啊两个subtask都WA一半</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=46175" class="am-padding-0">第二块任务里面有四个点RE</a>
+</li>
+<div style="overflow: auto">
+<a data-pjax href="/discuss/lists?forumname=P4712" class="am-btn am-btn-primary am-btn-sm lg-right">进入讨论版</a>
+</div>
+</ul>
+</section>
+<section class="am-panel am-panel-default lg-summary am-hide-sm">
+<h2>推荐的相关题目
+<a onclick="$('#recommendation-list').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看推荐题目">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" id="recommendation-list" style="display: none">
+<li>
+<a class='colored' href="/problemnew/show/P4711" target="_blank"><b>P4711</b> 「化学」相对分子质量</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P4714" target="_blank"><b>P4714</b> 「数学」约数个数和</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3952" target="_blank"><b>P3952</b> 时间复杂度 </a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P4713" target="_blank"><b>P4713</b> 「语文」凑字数</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P4753" target="_blank"><b>P4753</b> River Jumping</a>
+</li>
+</ul>
+</section>
+</div>
+<div class="am-u-md-8 lg-right" name="problemleft">
+<div class="lg-content-left">
+<div class="lg-article am-g">
+<h2>题目描述</h2>
+<p>生物课上，小 F 学习到了食物链、食物网的相关内容。</p>
+<p>他学到，能量是逐级递减的。比如在食物链上，两个链接起来的生物 $A \rightarrow B$（意思是 $B$ 吃 $A$）之间的能量传递效率最多只有 $\frac 1 5$；而研究种间关系，能够使能量流向对人类最有益的部分。</p>
+<p>现在，小 F 想研究一下能量流动的关系，于是他在脑海里创造了一个生态的系统。</p>
+<p>在这个生态的系统里，有 $n+2$ 种生物，其中 $0$ 是生产者，整个生态系统所流经的能量由它固定；你是贪婪的顶级掠食者 $n + 1$，可以捕食所有生物；其他的掠食者 $[1, n]$ 各有各的喜好，只会捕食编号在 $[0, r_i]$ 的生物。由于天然形成的强弱顺序，上述关系满足 $r_i \leq r_{i + 1}(1 \leq i &lt; n),$ $r_i &lt; i(1 \leq i \leq n)$。</p>
+<p>每种动物需要摄取至少 $a_i$ 单位能量才能存活；一个生物摄取到的能量可以传递给捕食者，但传递效率都不超过 $\frac 1 5$。也就是说，假设该动物捕获了 $b_i$ 单位的能量，所有捕食它的掠食者得到的能量总和 $c_i$，那么有：</p>
+<ul>
+<li>$b_i \geq a_i$</li>
+<li>$c_i \leq \frac 1 5 b_i$</li>
+</ul>
+<p>你希望知道，在所有生物都存活的情况下，在最优情况下你能获取到的最大能量是多少。</p>
+<h2>输入输出格式</h2>
+<strong>输入格式：</strong><br>
+<p><p>输入第一行两个个整数 $n, a_0(1 \leq n \leq 10 ^ 5, 1 \leq a_0 \leq 10 ^ 9)$。$a_0$ 是生产者固定的能量值。 </p>
+<p>接下来 $n$ 行，每行 $2$ 个正整数，表示 $a_i, r_i(1 \leq a_i \leq 10 ^ 9)$。</p>
+<p>数据保证，$0\leq r_i &lt; i, r_i \leq r_{i + 1}$。</p></p>
+<strong>输出格式：</strong><br>
+<p><p>输出一行一个浮点数，表示你——顶级掠食者——能得到的最大能量。如果不能使得所有生物存活（包括你自己），请输出 $-1$。</p>
+<p>你的答案与参考答案的相对误差或者绝对误差不超过 $10 ^ {-8}$ 即被认为是正确的。如果你的程序是正确的，可以不用考虑精度问题。</p></p>
+<h2>输入输出样例</h2>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>2 9
+1 0
+1 1</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>0.2000000</pre>
+</div>
+</div>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#2：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>2 9
+1 0
+1 0</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#2：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>-1</pre>
+</div>
+</div>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#3：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>2 10
+1 0
+1 0</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#3：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>0.4000000</pre>
+</div>
+</div>
+<h2>说明</h2>
+<h3>样例 1 解释</h3>
+<p>最优情况下：</p>
+<ul>
+<li>1 号掠食者捕食生产者 0，捕食 5 点能量，传递效率为 $\frac 1 5$，得到 1 点能量。</li>
+<li>2 号掠食者捕食生产者 0，捕食 4 点能量，传递效率为 $\frac 1 5$，得到 0.8 点能量。</li>
+<li>2 号掠食者捕食掠食者 1，捕食 1 点能量，传递效率为 $\frac 1 5$，得到 0.2 点能量。</li>
+</ul>
+<p>可怜的你只能捕获 2 号掠食者的能量，捕食 1 点能量，得到 0.2 点能量。</p>
+<h3>样例 2, 3 解释</h3>
+<p>由于 2 号掠食者开始减肥不吃肉了（也有可能是打不过 1 了），所以所需的生产者能量从 9 点变成了 10 点。</p>
+<h3>子任务</h3>
+<p>子任务 $1(21 \mathrm{pts}) : n \leq 100$；</p>
+<p>子任务 $2(89 \mathrm{pts}) : n \leq 10 ^ 5$。</p>
+</div>
+<div class='lg-article-sub am-g' id="sub"></div>
+</div>
+</div>
+</div>
+<div class="am-modal am-modal-prompt" tabindex="-1" id="confirm">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="memtitle">提示</div>
+<div class="am-modal-bd" id="memadmin">
+标程仅供做题后或实在无思路时参考。<br>
+请自觉、自律地使用该功能并请对自己的学习负责。<br>
+如果发现恶意抄袭标程，将按照I类违反进行处理。<br>
+</div>
+<div class="am-modal-footer">
+<span class="am-modal-btn" data-am-modal-cancel>取消</span>
+<span class="am-modal-btn" data-am-modal-confirm>确定</span>
+</div>
+</div>
+</div>
+<script>
+        $(document).ready(function () {
+            $("#expandstd").click(function () {
+                $('#confirm').modal({
+                    relatedTarget: this,
+                    onConfirm: function (e) {
+                        $("#stdcode").slideDown();
+                        $("#expandstd").hide();
+                    }
+                });
+            });
+            $("#submit").click(
+                function () {
+                    hide_artile();
+                    $(document).scrollTop($(document).scrollTop() - 80);
+                    var pid = $(this).attr("pid");
+                    $.get("/problem/ajax_submit?pid=" + pid, function (data) {
+                        var arr = eval('(' + data + ')');
+                        if (arr['code'] == 201) {
+                            $('.lg-article-sub').html(arr['more']['html']);
+                        }
+                        else if (arr['code'] == 200) {
+
+                        }
+                        else {
+                            if (arr['code'] == 0 || arr['code'] == -3) {
+                                backarticle();
+                            }
+                            show_alert("提交失败", arr['message']);
+                        }
+                    });
+                }
+            );
+            $("button[title].am-btn,a[title].am-btn").poshytip({
+                className: 'tip-twitter',
+                showTimeout: 1,
+                alignTo: 'target',
+                alignX: 'center',
+                alignY: 'bottom'
+            });
+            $('[name=showtag]').click(function () {
+                $('.am-badge.am-hide').removeClass('am-hide');
+            });
+            $(".sample-copy").click(function() {
+                var element = $(this).parents(".copy-region").find("pre");
+                var text = $(element).text();
+                var $temp = $("<textarea>");
+                $("body").append($temp);
+                $temp.val(text).select();
+                document.execCommand("copy");
+                $temp.remove();
+                $(this).text("复制成功").removeClass("lg-bg-orange");
+
+                var e = this;
+                setTimeout(function() {
+                    $(e).text("复制").addClass("lg-bg-orange");
+                }, 500);
+            });
+        });
+    </script>
+</div>
+<footer id="app-footer"></footer>
+<div class="am-modal am-modal-alert" tabindex="-1" id="lg-alert">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="lg-alert-title"></div>
+<div class="am-modal-bd" id="lg-alert-message"></div>
+<div class="am-modal-footer">
+<span class="am-modal-btn">确定</span>
+</div>
+</div>
+</div>
+<script src="/js/ace/ace.js"></script>
+<script src="https://cdn.luogu.org/js/vendor.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/jsmind.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/amazeui.min.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts-more.js"></script>
+<script src="/static/katex/katex.min.js"></script>
+<script src="/static/katex/contrib/auto-render.min.js"></script>
+<script src="https://cdn.luogu.org/markdown-palettes/markdown-palettes.min.js?ver=20190219"></script>
+<script src="https://cdn.luogu.org/js/luogu3.js?ver=20190101"></script>
+</body>
+</html>

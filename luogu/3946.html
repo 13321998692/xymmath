@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title> P3946 ことりのおやつ（小鸟的点心） - 洛谷</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta name="csrf-token" content="1555853167:UiUfcjB2tFNt4XvS/p5nFjfoUTHJEprheVjaJiLeabs=">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/amazeui.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/katex.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/luogu3.css?ver=20190102">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/highlight_tomorrow.css">
+<link rel="stylesheet" href="https://cdn.luogu.org/markdown-palettes/markdown-palettes.css?ver=20190219">
+<script src="https://cdn.luogu.org/js/jquery-2.1.1.min.js"></script>
+<script src="https://cdn.luogu.org/js/luogu3_pre.js?ver=20190101"></script>
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn.luogu.org/images/favicon3.ico" media="screen"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/fe/loader.css?ver=20190417">
+<script>window._feInjection = JSON.parse(decodeURIComponent("%7B%22code%22%3A200%2C%22currentUser%22%3Anull%2C%22currentTemplate%22%3A%22Excited%22%2C%22currentData%22%3A%7B%22shortHeader%22%3Afalse%2C%22pageName%22%3A%22%5Cu9898%5Cu76ee%5Cu8be6%5Cu60c5%22%7D%2C%22currentMeta%22%3A%7B%22title%22%3A%22%20P3946%20%5Cu3053%5Cu3068%5Cu308a%5Cu306e%5Cu304a%5Cu3084%5Cu3064%5Cuff08%5Cu5c0f%5Cu9e1f%5Cu7684%5Cu70b9%5Cu5fc3%5Cuff09%22%7D%7D"));</script>
+<script>window._release = '20190417';</script>
+<script src="https://cdn.luogu.org/fe/loader.js?ver=20190417" charset="utf-8" defer></script>
+</head>
+<body>
+<div id="app-header"></div>
+<nav id="app-sidenav"></nav>
+<div id="app-body"></div>
+<script>
+    function scrollToId (id) {
+        $('html, body').animate({
+            scrollTop: ($('#' + id).offset().top)
+        }, 500);
+    }
+</script>
+<style>
+    .lg-toolbar {
+        display: none;
+    }
+
+    #app-body { /* Unused in fallback FE */
+        display: none;
+    }
+
+    #app-body-new{
+        display: block;
+        margin-bottom: 2em;
+        position: relative;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    @media (min-width: 576px) {
+        #app-body-new {
+            margin-left: 70px;
+        }
+    }
+
+    code {
+        font-family: monospace, "Courier New";
+    }
+
+</style>
+<div id="app-body-new">
+<div class="lg-toolbar" data-am-sticky>
+<h1><a href="/recordnew/lists?uid=&pid=P3946" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a> P3946 ことりのおやつ（小鸟的点心）</h1>
+</div>
+<div class="am-g lg-main-content">
+<div class="am-u-md-4 lg-right" name="problemright">
+<section class="am-panel am-panel-default lg-summary" id="psummary">
+<div class="lg-summary-content">
+<ul class="am-list am-list-static lg-summary-list">
+<li>
+<ul class="am-avg-sm-2"><li><span class="lg-bignum-num">413<small></small></span><span class="lg-bignum-text">通过</span></li><li><span class="lg-bignum-num">1.7<small>K</small><small></small></span><span class="lg-bignum-text">提交</span></li></ul>
+</li>
+<li>
+<strong>题目提供者</strong>
+<span class="lg-right"><a class='lg-fg-bluelight' href="/space/show?uid=21421" target="_blank">pantw</a></span>
+</li>
+<li>
+<strong>评测方式</strong>
+<span class="lg-right"><b>云端评测</b></span>
+</li>
+<li><strong>标签</strong>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="164">SPFA</span>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="160">最短路</span>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="157">邻接表</span>
+<span class="lg-tag am-badge am-radius lg-bg-orange" data-tagid="319">高性能</span>
+<style>.lg-tag { cursor: pointer; }</style>
+<script>
+                                $(".lg-tag").click(function() {
+                                    window.open("/problemnew/lists?tag=" + $(this).attr('data-tagid'));
+                                })
+                            </script>
+</li>
+<li><strong>难度</strong>
+<span class="lg-right"><span class="am-badge am-radius lg-bg-bluelight">提高+/省选-</span></span>
+</li>
+<li><strong>时空限制</strong>
+<span class="lg-right">1000ms / 128MB</span>
+</li>
+</ul>
+</div>
+<p>
+<button class="am-btn am-btn-danger am-btn-sm" id="submit" pid="P3946">
+<i class="am-icon-paper-plane"></i> 提交
+</button>
+<a target="_blank" href="/problemnew/solution/P3946" class="am-btn am-btn-primary am-btn-sm">
+<i class="am-icon-book"></i> 题解
+</a>
+<a data-pjax href="/recordnew/lists?pid=P3946" class="am-btn am-btn-primary am-btn-sm" title="查看本题提交记录">
+<i class="am-icon-pie-chart"></i>
+</a>
+<button class="am-btn am-btn-primary am-btn-sm lg-pointer" name="showtag" title="显示算法标签">
+<i class="am-icon-tags"></i>
+</button>
+</p>
+<li>提示：收藏到任务计划后，可在首页查看。</li>
+<p>
+<a class="am-btn am-btn-danger am-btn-sm" href="/fe/problem/P3946" target="_blank">体验新版界面</a>
+</p>
+</section>
+<section class="am-panel am-panel-default lg-summary">
+<h2>最新讨论
+<a onclick="$('#discuss-lists').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看本题讨论">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" style="display: none" id="discuss-lists">
+<li><a data-pjax href="/discuss/show?postid=101373" class="am-padding-0">TLE on #20....</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=100295" class="am-padding-0">WA #19 的注意了qwq</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=63626" class="am-padding-0">评测卡了十年了吧emmmmmmm</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=63616" class="am-padding-0">数据？</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=49944" class="am-padding-0">图片挂了</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=48642" class="am-padding-0">RE60 求救</a>
+</li>
+<div style="overflow: auto">
+<a data-pjax href="/discuss/lists?forumname=P3946" class="am-btn am-btn-primary am-btn-sm lg-right">进入讨论版</a>
+</div>
+</ul>
+</section>
+<section class="am-panel am-panel-default lg-summary am-hide-sm">
+<h2>推荐的相关题目
+<a onclick="$('#recommendation-list').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看推荐题目">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" id="recommendation-list" style="display: none">
+<li>
+<a class='colored' href="/problemnew/show/P3947" target="_blank"><b>P3947</b> 肝活动</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3003" target="_blank"><b>P3003</b> [USACO10DEC]苹果交货Apple Delivery</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3102" target="_blank"><b>P3102</b> [USACO14FEB]秘密代码Secret Code</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P2169" target="_blank"><b>P2169</b> 正则表达式</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P1119" target="_blank"><b>P1119</b> 灾后重建</a>
+</li>
+</ul>
+</section>
+</div>
+<div class="am-u-md-8 lg-right" name="problemleft">
+<div class="lg-content-left">
+<div class="lg-article am-g">
+<h2>题目描述</h2>
+<p>这是2017年的冬天。（又到了白色相簿的季节2333）</p>
+<p><img src="https://db.loveliv.es/png/navi/476/0" alt="滑雪鸟" /></p>
+<p>滑完雪之后，ことり突然想吃点心啦！于是她去了甜品店。</p>
+<p>日本的冬天经常下雪。不幸的是，今天也是这样，每秒钟雪的厚度会增加q毫米。</p>
+<p>秋叶原共有n个地点，编号从1到n。每个地点在开始的时候的积雪高度为hi。</p>
+<p>有m条<strong>双向</strong>道路连接这些地点，它们的长度分别为wi米。</p>
+<p>雪太大，公共交通系统已经停摆了，所以ことり得走路回家。她走路的速度是1m/s。</p>
+<p>为了方便地图的绘制，秋叶原的道路规划使得每条道路严格地连接两个不同的地点，并且不会有两条道路连接的地点相同。</p>
+<p>每个地点都有一个极限雪高li，单位是毫米，如果到达这个地点的时候，这里的雪的高度高于li则会被困在这个点走不出去，无法成功地走到ことり家。</p>
+<p>点心店这个地点的编号是s，ことり家的编号是t。</p>
+<p>不考虑点心店和ことり家的雪。</p>
+<p>ことり想在g秒内回到家吃点心，越快越好。如果在g秒之内，ことり无法到家，或者她被困在路上了，那么ことり会把wtnap变成她的点心( ・ 8 ・ )</p>
+<h2>输入输出格式</h2>
+<strong>输入格式：</strong><br>
+<p><p>第1行6个整数，空格隔开，分别代表n，m，s，t，g，q。</p>
+<p>以下n行，每行2个整数，空格隔开，分别表示这个地点的hi和li。</p>
+<p>以下m行，每行3个整数，空格隔开，分别表示这条路连接的两个地点u, v和这条路的长度wi。</p></p>
+<strong>输出格式：</strong><br>
+<p><p>输出1行1个整数，表示到达ことり家的最短用时。</p>
+<p>如果wtnap变成了ことり的点心那么输出&quot;wtnap wa kotori no oyatsu desu!&quot;</p>
+<p>输出时不含引号。</p></p>
+<h2>输入输出样例</h2>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>2 1 1 2 10 1
+1 10
+3 10
+1 2 6</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>6</pre>
+</div>
+</div>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#2：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>5 6 2 5 10 1
+1 10
+1 10
+1 10
+1 10
+1 10
+1 5 9
+1 3 9
+2 4 1
+2 5 9
+3 4 1
+3 5 6</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#2：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>8</pre>
+</div>
+</div>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#3：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>5 6 2 5 10 1
+1 10
+1 10
+10 10
+1 10
+1 10
+1 5 9
+1 3 9
+2 4 1
+2 5 11
+3 4 1
+3 5 6
+</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#3：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>wtnap wa kotori no oyatsu desu!</pre>
+</div>
+</div>
+<h2>说明</h2>
+<p>对于0%的数据，与样例一模一样；<br />
+对于40%的数据，q = 0。<br />
+对于上一行中50%的数据，所有wi &lt; li。<br />
+对于100%的数据，1 ≤ s, t ≤ n; 0 ≤ g, q ≤ 10^9; 0 ≤ wi ≤ li ≤ 10^9。</p>
+<p><img src="https://cdn.luogu.org/upload/pic/9826.png" alt="" /></p>
+<h2>标程<a class="lg-right am-btn am-btn-sm am-btn-primary" id="expandstd">展开</a></h2>
+<div id="stdcode" class="copy-region" style="display:none">
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre><code class="language-cpp line-numbers">#include &lt;queue&gt;
+#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#define FILENAME &quot;oyatsu&quot;
+#define maxn 100010
+#define maxm 1000010
+#define Lovelive long long
+#define lld &quot;%lld&quot;
+#define INF 0x3F3F3F3F
+#define LINF 0x3F3F3F3F3F3F3F3F 
+using namespace std;
+struct heapnode{
+    Lovelive x, d;
+};    
+bool operator &lt; (const heapnode&amp; a, const heapnode&amp; b) {
+    return a.d &gt; b.d;
+}
+struct Kotori{
+    Lovelive n, m, s, t, g, q, h[maxn], l[maxn], a, b, c;
+    int head[maxn], next[maxm], to[maxm], weight[maxm], ec;
+    bool done[maxn];
+    Lovelive dist[maxn];
+    
+    void addedge(int u, int v, int w){
+        ec++;
+        next[ec] = head[u];
+        head[u] = ec;
+        to[ec] = v;
+        weight[ec] = w;
+    }
+    
+    void init() {
+        memset(dist, 0x3f, sizeof dist);
+        scanf(lld lld lld lld lld lld, &amp;n, &amp;m, &amp;s, &amp;t, &amp;g, &amp;q);
+        for(int i = 1; i &lt;= n; i++) scanf(lld lld, &amp;h[i], &amp;l[i]);
+        h[t] = 0; l[t] = INF;
+        for(int i = 1; i &lt;= m; i++) {
+            scanf(lld lld lld, &amp;a, &amp;b, &amp;c);
+            addedge(a, b, c);
+            addedge(b, a, c);
+        }
+    }
+    
+    void Dijk() {
+        priority_queue&lt;heapnode&gt; Q;
+        dist[s] = 0;
+        Q.push((heapnode){s, 0});
+        while(!Q.empty()) {
+            heapnode cur = Q.top();
+            Q.pop();
+            int x = cur.x, d = cur.d;
+            if(done[x]) continue;
+            done[x] = true;
+            if(h[x] + d*q &gt; l[x]) continue;
+            for(int i = head[x]; i; i = next[i]) {
+                if(dist[x] + weight[i] &lt; dist[to[i]]) {
+                    dist[to[i]] = dist[x] + weight[i];
+                    Q.push((heapnode){to[i], dist[to[i]]});
+                }
+            }
+        }
+    }
+    
+    void daisuki() {
+        init();
+        Dijk();
+        if(dist[t] &gt; g || !done[t]) puts(&quot;wtnap wa kotori no oyatsu desu!&quot;);
+        else printf(lld, dist[t]);
+    }
+}kotori;
+int main() {
+    kotori.daisuki();
+}</code></pre>
+</div>
+</div>
+<div class='lg-article-sub am-g' id="sub"></div>
+</div>
+</div>
+</div>
+<div class="am-modal am-modal-prompt" tabindex="-1" id="confirm">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="memtitle">提示</div>
+<div class="am-modal-bd" id="memadmin">
+标程仅供做题后或实在无思路时参考。<br>
+请自觉、自律地使用该功能并请对自己的学习负责。<br>
+如果发现恶意抄袭标程，将按照I类违反进行处理。<br>
+</div>
+<div class="am-modal-footer">
+<span class="am-modal-btn" data-am-modal-cancel>取消</span>
+<span class="am-modal-btn" data-am-modal-confirm>确定</span>
+</div>
+</div>
+</div>
+<script>
+        $(document).ready(function () {
+            $("#expandstd").click(function () {
+                $('#confirm').modal({
+                    relatedTarget: this,
+                    onConfirm: function (e) {
+                        $("#stdcode").slideDown();
+                        $("#expandstd").hide();
+                    }
+                });
+            });
+            $("#submit").click(
+                function () {
+                    hide_artile();
+                    $(document).scrollTop($(document).scrollTop() - 80);
+                    var pid = $(this).attr("pid");
+                    $.get("/problem/ajax_submit?pid=" + pid, function (data) {
+                        var arr = eval('(' + data + ')');
+                        if (arr['code'] == 201) {
+                            $('.lg-article-sub').html(arr['more']['html']);
+                        }
+                        else if (arr['code'] == 200) {
+
+                        }
+                        else {
+                            if (arr['code'] == 0 || arr['code'] == -3) {
+                                backarticle();
+                            }
+                            show_alert("提交失败", arr['message']);
+                        }
+                    });
+                }
+            );
+            $("button[title].am-btn,a[title].am-btn").poshytip({
+                className: 'tip-twitter',
+                showTimeout: 1,
+                alignTo: 'target',
+                alignX: 'center',
+                alignY: 'bottom'
+            });
+            $('[name=showtag]').click(function () {
+                $('.am-badge.am-hide').removeClass('am-hide');
+            });
+            $(".sample-copy").click(function() {
+                var element = $(this).parents(".copy-region").find("pre");
+                var text = $(element).text();
+                var $temp = $("<textarea>");
+                $("body").append($temp);
+                $temp.val(text).select();
+                document.execCommand("copy");
+                $temp.remove();
+                $(this).text("复制成功").removeClass("lg-bg-orange");
+
+                var e = this;
+                setTimeout(function() {
+                    $(e).text("复制").addClass("lg-bg-orange");
+                }, 500);
+            });
+        });
+    </script>
+</div>
+<footer id="app-footer"></footer>
+<div class="am-modal am-modal-alert" tabindex="-1" id="lg-alert">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="lg-alert-title"></div>
+<div class="am-modal-bd" id="lg-alert-message"></div>
+<div class="am-modal-footer">
+<span class="am-modal-btn">确定</span>
+</div>
+</div>
+</div>
+<script src="/js/ace/ace.js"></script>
+<script src="https://cdn.luogu.org/js/vendor.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/jsmind.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/amazeui.min.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts-more.js"></script>
+<script src="/static/katex/katex.min.js"></script>
+<script src="/static/katex/contrib/auto-render.min.js"></script>
+<script src="https://cdn.luogu.org/markdown-palettes/markdown-palettes.min.js?ver=20190219"></script>
+<script src="https://cdn.luogu.org/js/luogu3.js?ver=20190101"></script>
+</body>
+</html>

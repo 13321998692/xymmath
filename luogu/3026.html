@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title> P3026 [USACO11OPEN]学习语言Learning Languages - 洛谷</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta name="csrf-token" content="1555852704:iyef/s1hGh0sDuLU13R+iyGVBShV2ehUQmHm/nFhVt0=">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/amazeui.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/katex.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/luogu3.css?ver=20190102">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/highlight_tomorrow.css">
+<link rel="stylesheet" href="https://cdn.luogu.org/markdown-palettes/markdown-palettes.css?ver=20190219">
+<script src="https://cdn.luogu.org/js/jquery-2.1.1.min.js"></script>
+<script src="https://cdn.luogu.org/js/luogu3_pre.js?ver=20190101"></script>
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn.luogu.org/images/favicon3.ico" media="screen"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/fe/loader.css?ver=20190417">
+<script>window._feInjection = JSON.parse(decodeURIComponent("%7B%22code%22%3A200%2C%22currentUser%22%3Anull%2C%22currentTemplate%22%3A%22Excited%22%2C%22currentData%22%3A%7B%22shortHeader%22%3Afalse%2C%22pageName%22%3A%22%5Cu9898%5Cu76ee%5Cu8be6%5Cu60c5%22%7D%2C%22currentMeta%22%3A%7B%22title%22%3A%22%20P3026%20%5BUSACO11OPEN%5D%5Cu5b66%5Cu4e60%5Cu8bed%5Cu8a00Learning%20Languages%22%7D%7D"));</script>
+<script>window._release = '20190417';</script>
+<script src="https://cdn.luogu.org/fe/loader.js?ver=20190417" charset="utf-8" defer></script>
+</head>
+<body>
+<div id="app-header"></div>
+<nav id="app-sidenav"></nav>
+<div id="app-body"></div>
+<script>
+    function scrollToId (id) {
+        $('html, body').animate({
+            scrollTop: ($('#' + id).offset().top)
+        }, 500);
+    }
+</script>
+<style>
+    .lg-toolbar {
+        display: none;
+    }
+
+    #app-body { /* Unused in fallback FE */
+        display: none;
+    }
+
+    #app-body-new{
+        display: block;
+        margin-bottom: 2em;
+        position: relative;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    @media (min-width: 576px) {
+        #app-body-new {
+            margin-left: 70px;
+        }
+    }
+
+    code {
+        font-family: monospace, "Courier New";
+    }
+
+</style>
+<div id="app-body-new">
+<div class="lg-toolbar" data-am-sticky>
+<h1><a href="/recordnew/lists?uid=&pid=P3026" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a> P3026 [USACO11OPEN]学习语言Learning Languages</h1>
+</div>
+<div class="am-g lg-main-content">
+<div class="am-u-md-4 lg-right" name="problemright">
+<section class="am-panel am-panel-default lg-summary" id="psummary">
+<div class="lg-summary-content">
+<ul class="am-list am-list-static lg-summary-list">
+<li>
+<ul class="am-avg-sm-2"><li><span class="lg-bignum-num">161<small></small></span><span class="lg-bignum-text">通过</span></li><li><span class="lg-bignum-num">561<small></small></span><span class="lg-bignum-text">提交</span></li></ul>
+</li>
+<li>
+<strong>题目提供者</strong>
+<span class="lg-right"><a class='lg-fg-gray' href="/space/show?uid=20" target="_blank">FarmerJohn2</a></span>
+</li>
+<li>
+<strong>评测方式</strong>
+<span class="lg-right"><b>云端评测</b></span>
+</li>
+<li><strong>标签</strong>
+<span class="lg-tag am-badge am-radius lg-bg-bluelight" data-tagid="46">USACO</span>
+<span class="lg-tag am-badge am-radius lg-bg-green" data-tagid="28">2011</span>
+<style>.lg-tag { cursor: pointer; }</style>
+<script>
+                                $(".lg-tag").click(function() {
+                                    window.open("/problemnew/lists?tag=" + $(this).attr('data-tagid'));
+                                })
+                            </script>
+</li>
+<li><strong>难度</strong>
+<span class="lg-right"><span class="am-badge am-radius lg-bg-bluelight">提高+/省选-</span></span>
+</li>
+<li><strong>时空限制</strong>
+<span class="lg-right">1000ms / 128MB</span>
+</li>
+</ul>
+</div>
+<p>
+<button class="am-btn am-btn-danger am-btn-sm" id="submit" pid="P3026">
+<i class="am-icon-paper-plane"></i> 提交
+</button>
+<a target="_blank" href="/problemnew/solution/P3026" class="am-btn am-btn-primary am-btn-sm">
+<i class="am-icon-book"></i> 题解
+</a>
+<a data-pjax href="/recordnew/lists?pid=P3026" class="am-btn am-btn-primary am-btn-sm" title="查看本题提交记录">
+<i class="am-icon-pie-chart"></i>
+</a>
+<button class="am-btn am-btn-primary am-btn-sm lg-pointer" name="showtag" title="显示算法标签">
+<i class="am-icon-tags"></i>
+</button>
+</p>
+<li>提示：收藏到任务计划后，可在首页查看。</li>
+<p>
+<a class="am-btn am-btn-danger am-btn-sm" href="/fe/problem/P3026" target="_blank">体验新版界面</a>
+</p>
+</section>
+<section class="am-panel am-panel-default lg-summary">
+<h2>最新讨论
+<a onclick="$('#discuss-lists').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看本题讨论">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" style="display: none" id="discuss-lists">
+<li><a data-pjax href="/discuss/show?postid=89740" class="am-padding-0">求修正数据</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=67715" class="am-padding-0">能不能修一下latex</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=36050" class="am-padding-0">真正题面</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=5595" class="am-padding-0">注意这里！测试数据有问题</a>
+</li>
+<div style="overflow: auto">
+<a data-pjax href="/discuss/lists?forumname=P3026" class="am-btn am-btn-primary am-btn-sm lg-right">进入讨论版</a>
+</div>
+</ul>
+</section>
+<section class="am-panel am-panel-default lg-summary am-hide-sm">
+<h2>推荐的相关题目
+<a onclick="$('#recommendation-list').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看推荐题目">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" id="recommendation-list" style="display: none">
+<li>
+<a class='colored' href="/problemnew/show/CF277A" target="_blank"><b>CF277A</b> Learning Languages</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3144" target="_blank"><b>P3144</b> [USACO16OPEN]关闭农场Closing the Farm_Silver</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P2024" target="_blank"><b>P2024</b> [NOI2001]食物链</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P2889" target="_blank"><b>P2889</b> [USACO07NOV]挤奶的时间Milking Time</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3608" target="_blank"><b>P3608</b> [USACO17JAN]Balanced Photo平衡的照片</a>
+</li>
+</ul>
+</section>
+</div>
+<div class="am-u-md-8 lg-right" name="problemleft">
+<div class="lg-content-left">
+<div class="lg-article am-g">
+<h2>题目描述</h2>
+<p>Farmer John's N (2 &lt;= N &lt;= 10,000) cows, conveniently numbered 1..N, are fluent in some M (1 &lt;= M &lt;= 30,000) languages, also conveniently numbered from 1..M. Cow i can speak in K_i (1 &lt;= K_i &lt;= M) languages, namely L_i1, L_i2,..., L_{iK_i} (1 &lt;= L_ij &lt;= M). FJ's cows aren't THAT smart, so the sum of K_i over all cows i is at most 100,000.</p>
+<p>Two cows can't directly talk to each other unless both speak a common language. However, cows can pass messages along, translating if necessary. In other words, cows A and B can have a conversation if and only if there exists a sequence of cows T_1, T_2, ..., T_k such that A and T_1 share a language, T_1 and T_2 share a language, etc., and T_k and B share a language.</p>
+<p>Farmer John wishes that his cows could be even more social, so he wants all his cows to be able to socialize with any other cow. He can buy books to teach any one of his cows any language he pleases. Being a fairly frugal farmer, FJ wants to purchase the minimum number of books necessary to enable all of his cows to speak to each other. Help him determine:</p>
+<p>* The minimum number of books he must purchase</p>
+<p>* Any set of books assigned to cows in any order which will help him meet this goal; a program will grade your output.</p>
+<p>By way of example, suppose there are three cows named Alberta, Bessie, and Contessa along with three languages denoted as #1, #2, and #3. Alberta can speak languages #2 and #3, Bessie can speak language #2, and Contessa can speak language #1. Currently, Alberta and Bessie can talk to each other, but Contessa is left alone.</p>
+<pre><code>#1   #2   #3
+Alberta           x    x
+Bessie            x
+Contessa     x</code></pre>
+<p>FJ wants to fix this situation, so he can buy Contessa a book to teach her language #2. This will ensure all cows speak the same language, so they can all communicate with one another.</p>
+<p>Note that an alternate solution exists: instead, FJ could buy</p>
+<p>Contessa a book to teach her language #3. Not all cows would speak the same language, but this would still be a valid solution because Contessa could communicate through Alberta (who also speaks language #3) if she wants to talk to Bessie. Other alternatives exist, and any valid alternate solution will also be accepted.</p>
+<p>农夫约翰的$N(2&lt;=N&lt;=10,000)$只奶牛标号为$1..N$，同样的有$M(1&lt;=M&lt;=30,000)$种牛语标号为$1..M$，第i只奶牛会说$K_i(1&lt;=K_i&lt;=M)$种牛语，分别为$L_i1,L_i2,…,L_{iK_i}(1&lt;=L_ij&lt;=M)$，农夫的奶牛不是特别聪明，所以$K_i$的累加和不大于$100,000$。</p>
+<p>两只奶牛只有当他们至少有一门语言一样的时候才可以沟通。否则这两只奶牛就需要别人来帮他们翻译才能交流。换句话说，A和B要进行沟通，他们可以通过$T_1,T_2,…,T_k$来传递，比如A和$T_1,T_1$和$T_2,…,T_k$和B进行交流。</p>
+<p>农夫希望他的奶牛可以多多沟通，所以他买了很多课本去教她的奶牛语言。当然农夫非常的吝啬，他希望买最少的书就可以让所有的奶牛可以交流。你的任务就是帮他算出最少需要买几本书。</p>
+<h2>输入输出格式</h2>
+<strong>输入格式：</strong><br>
+<p><p>* Line 1: Two space-separated integers: N and M</p>
+<p>* Lines 2..N+1: Line i+1 describes the languages that cow i can speak with $(K_i)+1$ space-separated integers: $K_i$, $L_i1$,</p>
+<p>L_i2,...,L_i{K_i}. </p></p>
+<strong>输出格式：</strong><br>
+<p><p>* Line 1: A single integer that is the minimum number of books that FJ must purchase.</p>
+<p>* Lines 2..B+1: Line i+1 contains two space-separated integers: the language id # and the id # of the cow to receive book i. If multiple solutions exist, print any one.</p></p>
+<h2>输入输出样例</h2>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>3 3 
+2 3 2 
+1 2 
+1 1 
+</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>1 
+</pre>
+</div>
+</div>
+</div>
+<div class='lg-article-sub am-g' id="sub"></div>
+</div>
+</div>
+</div>
+<div class="am-modal am-modal-prompt" tabindex="-1" id="confirm">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="memtitle">提示</div>
+<div class="am-modal-bd" id="memadmin">
+标程仅供做题后或实在无思路时参考。<br>
+请自觉、自律地使用该功能并请对自己的学习负责。<br>
+如果发现恶意抄袭标程，将按照I类违反进行处理。<br>
+</div>
+<div class="am-modal-footer">
+<span class="am-modal-btn" data-am-modal-cancel>取消</span>
+<span class="am-modal-btn" data-am-modal-confirm>确定</span>
+</div>
+</div>
+</div>
+<script>
+        $(document).ready(function () {
+            $("#expandstd").click(function () {
+                $('#confirm').modal({
+                    relatedTarget: this,
+                    onConfirm: function (e) {
+                        $("#stdcode").slideDown();
+                        $("#expandstd").hide();
+                    }
+                });
+            });
+            $("#submit").click(
+                function () {
+                    hide_artile();
+                    $(document).scrollTop($(document).scrollTop() - 80);
+                    var pid = $(this).attr("pid");
+                    $.get("/problem/ajax_submit?pid=" + pid, function (data) {
+                        var arr = eval('(' + data + ')');
+                        if (arr['code'] == 201) {
+                            $('.lg-article-sub').html(arr['more']['html']);
+                        }
+                        else if (arr['code'] == 200) {
+
+                        }
+                        else {
+                            if (arr['code'] == 0 || arr['code'] == -3) {
+                                backarticle();
+                            }
+                            show_alert("提交失败", arr['message']);
+                        }
+                    });
+                }
+            );
+            $("button[title].am-btn,a[title].am-btn").poshytip({
+                className: 'tip-twitter',
+                showTimeout: 1,
+                alignTo: 'target',
+                alignX: 'center',
+                alignY: 'bottom'
+            });
+            $('[name=showtag]').click(function () {
+                $('.am-badge.am-hide').removeClass('am-hide');
+            });
+            $(".sample-copy").click(function() {
+                var element = $(this).parents(".copy-region").find("pre");
+                var text = $(element).text();
+                var $temp = $("<textarea>");
+                $("body").append($temp);
+                $temp.val(text).select();
+                document.execCommand("copy");
+                $temp.remove();
+                $(this).text("复制成功").removeClass("lg-bg-orange");
+
+                var e = this;
+                setTimeout(function() {
+                    $(e).text("复制").addClass("lg-bg-orange");
+                }, 500);
+            });
+        });
+    </script>
+</div>
+<footer id="app-footer"></footer>
+<div class="am-modal am-modal-alert" tabindex="-1" id="lg-alert">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="lg-alert-title"></div>
+<div class="am-modal-bd" id="lg-alert-message"></div>
+<div class="am-modal-footer">
+<span class="am-modal-btn">确定</span>
+</div>
+</div>
+</div>
+<script src="/js/ace/ace.js"></script>
+<script src="https://cdn.luogu.org/js/vendor.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/jsmind.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/amazeui.min.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts-more.js"></script>
+<script src="/static/katex/katex.min.js"></script>
+<script src="/static/katex/contrib/auto-render.min.js"></script>
+<script src="https://cdn.luogu.org/markdown-palettes/markdown-palettes.min.js?ver=20190219"></script>
+<script src="https://cdn.luogu.org/js/luogu3.js?ver=20190101"></script>
+</body>
+</html>

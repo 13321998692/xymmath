@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title> P3945 三体问题 - 洛谷</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta name="csrf-token" content="1555853166:AS/3MWA5+TYA9WRG0lsi01C3HahqHpM1Msm5Lfd24CQ=">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/amazeui.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/katex.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/luogu3.css?ver=20190102">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/highlight_tomorrow.css">
+<link rel="stylesheet" href="https://cdn.luogu.org/markdown-palettes/markdown-palettes.css?ver=20190219">
+<script src="https://cdn.luogu.org/js/jquery-2.1.1.min.js"></script>
+<script src="https://cdn.luogu.org/js/luogu3_pre.js?ver=20190101"></script>
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn.luogu.org/images/favicon3.ico" media="screen"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/fe/loader.css?ver=20190417">
+<script>window._feInjection = JSON.parse(decodeURIComponent("%7B%22code%22%3A200%2C%22currentUser%22%3Anull%2C%22currentTemplate%22%3A%22Excited%22%2C%22currentData%22%3A%7B%22shortHeader%22%3Afalse%2C%22pageName%22%3A%22%5Cu9898%5Cu76ee%5Cu8be6%5Cu60c5%22%7D%2C%22currentMeta%22%3A%7B%22title%22%3A%22%20P3945%20%5Cu4e09%5Cu4f53%5Cu95ee%5Cu9898%22%7D%7D"));</script>
+<script>window._release = '20190417';</script>
+<script src="https://cdn.luogu.org/fe/loader.js?ver=20190417" charset="utf-8" defer></script>
+</head>
+<body>
+<div id="app-header"></div>
+<nav id="app-sidenav"></nav>
+<div id="app-body"></div>
+<script>
+    function scrollToId (id) {
+        $('html, body').animate({
+            scrollTop: ($('#' + id).offset().top)
+        }, 500);
+    }
+</script>
+<style>
+    .lg-toolbar {
+        display: none;
+    }
+
+    #app-body { /* Unused in fallback FE */
+        display: none;
+    }
+
+    #app-body-new{
+        display: block;
+        margin-bottom: 2em;
+        position: relative;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    @media (min-width: 576px) {
+        #app-body-new {
+            margin-left: 70px;
+        }
+    }
+
+    code {
+        font-family: monospace, "Courier New";
+    }
+
+</style>
+<div id="app-body-new">
+<div class="lg-toolbar" data-am-sticky>
+<h1><a href="/recordnew/lists?uid=&pid=P3945" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a> P3945 三体问题</h1>
+</div>
+<div class="am-g lg-main-content">
+<div class="am-u-md-4 lg-right" name="problemright">
+<section class="am-panel am-panel-default lg-summary" id="psummary">
+<div class="lg-summary-content">
+<ul class="am-list am-list-static lg-summary-list">
+<li>
+<ul class="am-avg-sm-2"><li><span class="lg-bignum-num">99<small></small></span><span class="lg-bignum-text">通过</span></li><li><span class="lg-bignum-num">521<small></small></span><span class="lg-bignum-text">提交</span></li></ul>
+</li>
+<li>
+<strong>题目提供者</strong>
+<span class="lg-right"><a class='lg-fg-bluelight' href="/space/show?uid=59301" target="_blank">FirstLight0521</a></span>
+</li>
+<li>
+<strong>评测方式</strong>
+<span class="lg-right"><b>云端评测</b></span>
+</li>
+<li><strong>标签</strong>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="286">向量</span>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="1">模拟</span>
+<span class="lg-tag am-badge am-radius lg-bg-orange" data-tagid="107">Special Judge</span>
+<style>.lg-tag { cursor: pointer; }</style>
+<script>
+                                $(".lg-tag").click(function() {
+                                    window.open("/problemnew/lists?tag=" + $(this).attr('data-tagid'));
+                                })
+                            </script>
+</li>
+<li><strong>难度</strong>
+<span class="lg-right"><span class="am-badge am-radius lg-bg-bluelight">提高+/省选-</span></span>
+</li>
+<li><strong>时空限制</strong>
+<span class="lg-right">1000ms / 128MB</span>
+</li>
+</ul>
+</div>
+<p>
+<button class="am-btn am-btn-danger am-btn-sm" id="submit" pid="P3945">
+<i class="am-icon-paper-plane"></i> 提交
+</button>
+<a target="_blank" href="/problemnew/solution/P3945" class="am-btn am-btn-primary am-btn-sm">
+<i class="am-icon-book"></i> 题解
+</a>
+<a data-pjax href="/recordnew/lists?pid=P3945" class="am-btn am-btn-primary am-btn-sm" title="查看本题提交记录">
+<i class="am-icon-pie-chart"></i>
+</a>
+<button class="am-btn am-btn-primary am-btn-sm lg-pointer" name="showtag" title="显示算法标签">
+<i class="am-icon-tags"></i>
+</button>
+</p>
+<li>提示：收藏到任务计划后，可在首页查看。</li>
+<p>
+<a class="am-btn am-btn-danger am-btn-sm" href="/fe/problem/P3945" target="_blank">体验新版界面</a>
+</p>
+</section>
+<section class="am-panel am-panel-default lg-summary">
+<h2>最新讨论
+<a onclick="$('#discuss-lists').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看本题讨论">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" style="display: none" id="discuss-lists">
+<li><a data-pjax href="/discuss/show?postid=47305" class="am-padding-0">【求助】为什么全部RE？</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=34434" class="am-padding-0">二向箔？</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=26257" class="am-padding-0">为什么要先更新速度，后更新…</a>
+</li>
+<div style="overflow: auto">
+<a data-pjax href="/discuss/lists?forumname=P3945" class="am-btn am-btn-primary am-btn-sm lg-right">进入讨论版</a>
+</div>
+</ul>
+</section>
+<section class="am-panel am-panel-default lg-summary am-hide-sm">
+<h2>推荐的相关题目
+<a onclick="$('#recommendation-list').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看推荐题目">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" id="recommendation-list" style="display: none">
+<li>
+<a class='colored' href="/problemnew/show/P3946" target="_blank"><b>P3946</b> ことりのおやつ（小鸟的点心）</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P2167" target="_blank"><b>P2167</b> [SDOI2009]Bill的挑战</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3794" target="_blank"><b>P3794</b> 签到题IV</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P1606" target="_blank"><b>P1606</b> [USACO07FEB]白银莲花池Lilypad Pond</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P4424" target="_blank"><b>P4424</b> [HNOI/AHOI2018]寻宝游戏</a>
+</li>
+</ul>
+</section>
+</div>
+<div class="am-u-md-8 lg-right" name="problemleft">
+<div class="lg-content-left">
+<div class="lg-article am-g">
+<h2>题目背景</h2>
+<p>@FirstLight0521 出题人在这里哦~</p>
+<p>三体人所居住的星系由于三体运动的不确定性而导致三体星人生活动荡不安，善良的人类程序员（也就是你了！伟大的英雄！）决定帮助愚蠢得连程序都不会写的三体星人模拟天体的运动轨迹。这时，无聊的“歌者”文明决定戏弄一下你，于是给三体星系添加了一些新的星体。</p>
+<h2>题目描述</h2>
+<p>输入N个天体与他们在空间中的坐标（xi,yi,zi）、初速度（vx,vy,vz）与质量Mi，已知三体世界受到“歌者”影响时间的流动不是连续的（每0.01秒钟刷新一次），天体均视为质点，求t时刻所有天体的坐标。</p>
+<h1>本题G取(6.67408*10^(-11))，在代码中可以写成：</h1>
+<pre><code class="language-cpp">#define G 6.67408e-11</code></pre>
+<h3>当你的答案与标准答案的相对误差不超过0.5%的时候，你在本测试点得到AC。</h3>
+<h3>也就是说，保留多少位小数你可以自行确定。</h3>
+<h3>标准答案将会保留12位小数。本题开启SPJ判断你的答案是否正确。</h3>
+<h2>输入输出格式</h2>
+<strong>输入格式：</strong><br>
+<p><p>第一行输入天体数N与时刻t，接下来逐行输入以空格分隔的各天体坐标、质量与初速度（三个方向上的分速度）。</p></p>
+<strong>输出格式：</strong><br>
+<p><p>N行，每行为第i个天体在t时刻的坐标xi,yi,zi，空格隔开。</p></p>
+<h2>输入输出样例</h2>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>3 100
+0 10 0 10000000 0.006207480877613 0 0
+8.660254037844 -5 0 10000000 -0.003103740438807 -0.00537583613352 0
+-8.660254037844 -5 0 10000000 -0.003103740438807 0.00537583613352 0</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>0.620349511786 9.980741705470 0.000000000000
+8.333401109655 -5.527609289167 0.000000000000
+-8.953750621441 -4.453132416303 0.000000000000</pre>
+</div>
+</div>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#2：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>3 100
+0 10 0 10000000 0.06207480877613 0 0
+8.760254037844 -5 0 10000000 -0.03103740438807 -0.0537583613352 0
+-8.660254037844 -5 0 10000000 -0.03103740438807 0.0537583613352 0</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#2：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>6.204092324054 9.982347016794 0.000000000000
+5.642963405596 -10.364100727695 0.000000000000
+-11.747055729651 0.381753710901 0.000000000000</pre>
+</div>
+</div>
+<h2>说明</h2>
+<p>3 &lt;= N &lt;= 30， 0 &lt;= T &lt;= 100。初始坐标范围为[-100, 100]。质量在int64范围内。</p>
+<h2>标程<a class="lg-right am-btn am-btn-sm am-btn-primary" id="expandstd">展开</a></h2>
+<div id="stdcode" class="copy-region" style="display:none">
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre><code class="language-cpp line-numbers">#include &lt;cstdio&gt;
+#include &lt;cmath&gt;
+#define maxn 35
+#define FPS 100
+#define Frame 0.01
+#define G 6.67408e-11
+
+struct Vector3D {
+    double x, y, z;
+    Vector3D(double x = 0.0, double y = 0.0, double z = 0.0): x(x), y(y), z(z) {}
+    void read() {
+        scanf(&quot;%lf%lf%lf&quot;, &amp;x, &amp;y, &amp;z);
+    }
+    void print() {
+        printf(&quot;%.12lf %.12lf %.12lf\n&quot;, x, y, z);
+    }
+}position[maxn], velocity[maxn];
+
+void operator += (Vector3D&amp; a, const Vector3D&amp; b) {
+    a.x += b.x,	a.y += b.y,	a.z += b.z;
+}
+
+Vector3D operator - (const Vector3D&amp; a, const Vector3D&amp; b) {
+    return (Vector3D) {a.x - b.x, a.y - b.y, a.z - b.z};
+}
+
+Vector3D operator * (Vector3D&amp; a, double b) {
+    return (Vector3D) {a.x * b, a.y * b, a.z * b};
+}
+
+double norm(const Vector3D&amp; a) { 
+    return sqrt(a.x * a.x + a.y * a.y + a.z * a.z); 
+}
+
+double mass[maxn];
+int main() {
+    int n, t;
+    scanf(&quot;%d%d&quot;, &amp;n, &amp;t);
+    for(int i = 0; i &lt; n; i++) {
+        position[i].read();
+        scanf(&quot;%lf&quot;, &amp;mass[i]);
+        velocity[i].read();
+    }
+    for(int k = 0; k &lt; t * FPS; k++) {
+        
+        
+        for(int i = 0; i &lt; n; i++) {
+            for(int j = 0; j &lt; n; j++) {
+                if(i == j) continue;
+//              Calculating j&#039;s attraction to i
+                Vector3D difference = position[j] - position[i];
+                double distance = norm(difference);
+//              double Force = G * mass[i] * mass[j] / distance / distance;
+//              double Acceleration = Force / mass[i];
+//              velocity[i] += difference * (Acceleration / distance * Frame); 
+                velocity[i] += difference * (G * mass[j] / distance / distance / distance * Frame);
+            }
+        }
+        
+        for(int i = 0; i &lt; n; i++) {
+            position[i] += velocity[i] * Frame;
+        }
+        
+    }
+    
+    for(int i = 0; i &lt; n; i++) position[i].print();
+}</code></pre>
+</div>
+</div>
+<div class='lg-article-sub am-g' id="sub"></div>
+</div>
+</div>
+</div>
+<div class="am-modal am-modal-prompt" tabindex="-1" id="confirm">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="memtitle">提示</div>
+<div class="am-modal-bd" id="memadmin">
+标程仅供做题后或实在无思路时参考。<br>
+请自觉、自律地使用该功能并请对自己的学习负责。<br>
+如果发现恶意抄袭标程，将按照I类违反进行处理。<br>
+</div>
+<div class="am-modal-footer">
+<span class="am-modal-btn" data-am-modal-cancel>取消</span>
+<span class="am-modal-btn" data-am-modal-confirm>确定</span>
+</div>
+</div>
+</div>
+<script>
+        $(document).ready(function () {
+            $("#expandstd").click(function () {
+                $('#confirm').modal({
+                    relatedTarget: this,
+                    onConfirm: function (e) {
+                        $("#stdcode").slideDown();
+                        $("#expandstd").hide();
+                    }
+                });
+            });
+            $("#submit").click(
+                function () {
+                    hide_artile();
+                    $(document).scrollTop($(document).scrollTop() - 80);
+                    var pid = $(this).attr("pid");
+                    $.get("/problem/ajax_submit?pid=" + pid, function (data) {
+                        var arr = eval('(' + data + ')');
+                        if (arr['code'] == 201) {
+                            $('.lg-article-sub').html(arr['more']['html']);
+                        }
+                        else if (arr['code'] == 200) {
+
+                        }
+                        else {
+                            if (arr['code'] == 0 || arr['code'] == -3) {
+                                backarticle();
+                            }
+                            show_alert("提交失败", arr['message']);
+                        }
+                    });
+                }
+            );
+            $("button[title].am-btn,a[title].am-btn").poshytip({
+                className: 'tip-twitter',
+                showTimeout: 1,
+                alignTo: 'target',
+                alignX: 'center',
+                alignY: 'bottom'
+            });
+            $('[name=showtag]').click(function () {
+                $('.am-badge.am-hide').removeClass('am-hide');
+            });
+            $(".sample-copy").click(function() {
+                var element = $(this).parents(".copy-region").find("pre");
+                var text = $(element).text();
+                var $temp = $("<textarea>");
+                $("body").append($temp);
+                $temp.val(text).select();
+                document.execCommand("copy");
+                $temp.remove();
+                $(this).text("复制成功").removeClass("lg-bg-orange");
+
+                var e = this;
+                setTimeout(function() {
+                    $(e).text("复制").addClass("lg-bg-orange");
+                }, 500);
+            });
+        });
+    </script>
+</div>
+<footer id="app-footer"></footer>
+<div class="am-modal am-modal-alert" tabindex="-1" id="lg-alert">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="lg-alert-title"></div>
+<div class="am-modal-bd" id="lg-alert-message"></div>
+<div class="am-modal-footer">
+<span class="am-modal-btn">确定</span>
+</div>
+</div>
+</div>
+<script src="/js/ace/ace.js"></script>
+<script src="https://cdn.luogu.org/js/vendor.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/jsmind.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/amazeui.min.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts-more.js"></script>
+<script src="/static/katex/katex.min.js"></script>
+<script src="/static/katex/contrib/auto-render.min.js"></script>
+<script src="https://cdn.luogu.org/markdown-palettes/markdown-palettes.min.js?ver=20190219"></script>
+<script src="https://cdn.luogu.org/js/luogu3.js?ver=20190101"></script>
+</body>
+</html>

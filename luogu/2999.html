@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title> P2999 [USACO10NOV]巧克力牛奶Chocolate Milk - 洛谷</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta name="csrf-token" content="1555852691:1TkinMbP1aUDZs1e+vrzw/27ScRW662A/KbTKsuWQoI=">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/amazeui.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/katex.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/luogu3.css?ver=20190102">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/highlight_tomorrow.css">
+<link rel="stylesheet" href="https://cdn.luogu.org/markdown-palettes/markdown-palettes.css?ver=20190219">
+<script src="https://cdn.luogu.org/js/jquery-2.1.1.min.js"></script>
+<script src="https://cdn.luogu.org/js/luogu3_pre.js?ver=20190101"></script>
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn.luogu.org/images/favicon3.ico" media="screen"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/fe/loader.css?ver=20190417">
+<script>window._feInjection = JSON.parse(decodeURIComponent("%7B%22code%22%3A200%2C%22currentUser%22%3Anull%2C%22currentTemplate%22%3A%22Excited%22%2C%22currentData%22%3A%7B%22shortHeader%22%3Afalse%2C%22pageName%22%3A%22%5Cu9898%5Cu76ee%5Cu8be6%5Cu60c5%22%7D%2C%22currentMeta%22%3A%7B%22title%22%3A%22%20P2999%20%5BUSACO10NOV%5D%5Cu5de7%5Cu514b%5Cu529b%5Cu725b%5Cu5976Chocolate%20Milk%22%7D%7D"));</script>
+<script>window._release = '20190417';</script>
+<script src="https://cdn.luogu.org/fe/loader.js?ver=20190417" charset="utf-8" defer></script>
+</head>
+<body>
+<div id="app-header"></div>
+<nav id="app-sidenav"></nav>
+<div id="app-body"></div>
+<script>
+    function scrollToId (id) {
+        $('html, body').animate({
+            scrollTop: ($('#' + id).offset().top)
+        }, 500);
+    }
+</script>
+<style>
+    .lg-toolbar {
+        display: none;
+    }
+
+    #app-body { /* Unused in fallback FE */
+        display: none;
+    }
+
+    #app-body-new{
+        display: block;
+        margin-bottom: 2em;
+        position: relative;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    @media (min-width: 576px) {
+        #app-body-new {
+            margin-left: 70px;
+        }
+    }
+
+    code {
+        font-family: monospace, "Courier New";
+    }
+
+</style>
+<div id="app-body-new">
+<div class="lg-toolbar" data-am-sticky>
+<h1><a href="/recordnew/lists?uid=&pid=P2999" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a> P2999 [USACO10NOV]巧克力牛奶Chocolate Milk</h1>
+</div>
+<div class="am-g lg-main-content">
+<div class="am-u-md-4 lg-right" name="problemright">
+<section class="am-panel am-panel-default lg-summary" id="psummary">
+<div class="lg-summary-content">
+<ul class="am-list am-list-static lg-summary-list">
+<li>
+<ul class="am-avg-sm-2"><li><span class="lg-bignum-num">111<small></small></span><span class="lg-bignum-text">通过</span></li><li><span class="lg-bignum-num">311<small></small></span><span class="lg-bignum-text">提交</span></li></ul>
+</li>
+<li>
+<strong>题目提供者</strong>
+<span class="lg-right"><a class='lg-fg-gray' href="/space/show?uid=20" target="_blank">FarmerJohn2</a></span>
+</li>
+<li>
+<strong>评测方式</strong>
+<span class="lg-right"><b>云端评测</b></span>
+</li>
+<li><strong>标签</strong>
+<span class="lg-tag am-badge am-radius lg-bg-bluelight" data-tagid="46">USACO</span>
+<span class="lg-tag am-badge am-radius lg-bg-green" data-tagid="27">2010</span>
+<span class="lg-tag am-badge am-radius lg-bg-orange" data-tagid="319">高性能</span>
+<style>.lg-tag { cursor: pointer; }</style>
+<script>
+                                $(".lg-tag").click(function() {
+                                    window.open("/problemnew/lists?tag=" + $(this).attr('data-tagid'));
+                                })
+                            </script>
+</li>
+<li><strong>难度</strong>
+<span class="lg-right"><span class="am-badge am-radius lg-bg-bluelight">提高+/省选-</span></span>
+</li>
+<li><strong>时空限制</strong>
+<span class="lg-right">1000ms / 128MB</span>
+</li>
+</ul>
+</div>
+<p>
+<button class="am-btn am-btn-danger am-btn-sm" id="submit" pid="P2999">
+<i class="am-icon-paper-plane"></i> 提交
+</button>
+<a target="_blank" href="/problemnew/solution/P2999" class="am-btn am-btn-primary am-btn-sm">
+<i class="am-icon-book"></i> 题解
+</a>
+<a data-pjax href="/recordnew/lists?pid=P2999" class="am-btn am-btn-primary am-btn-sm" title="查看本题提交记录">
+<i class="am-icon-pie-chart"></i>
+</a>
+<button class="am-btn am-btn-primary am-btn-sm lg-pointer" name="showtag" title="显示算法标签">
+<i class="am-icon-tags"></i>
+</button>
+</p>
+<li>提示：收藏到任务计划后，可在首页查看。</li>
+<p>
+<a class="am-btn am-btn-danger am-btn-sm" href="/fe/problem/P2999" target="_blank">体验新版界面</a>
+</p>
+</section>
+<section class="am-panel am-panel-default lg-summary">
+<h2>最新讨论
+<a onclick="$('#discuss-lists').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看本题讨论">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" style="display: none" id="discuss-lists">
+<li><a data-pjax href="/discuss/show?postid=10939" class="am-padding-0">翻译</a>
+</li>
+<div style="overflow: auto">
+<a data-pjax href="/discuss/lists?forumname=P2999" class="am-btn am-btn-primary am-btn-sm lg-right">进入讨论版</a>
+</div>
+</ul>
+</section>
+<section class="am-panel am-panel-default lg-summary am-hide-sm">
+<h2>推荐的相关题目
+<a onclick="$('#recommendation-list').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看推荐题目">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" id="recommendation-list" style="display: none">
+<li>
+<a class='colored' href="/problemnew/show/P2996" target="_blank"><b>P2996</b> [USACO10NOV]拜访奶牛Visiting Cows</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P1594" target="_blank"><b>P1594</b> 护卫队</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P1983" target="_blank"><b>P1983</b> 车站分级 </a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3074" target="_blank"><b>P3074</b> [USACO13FEB]牛奶调度Milk Scheduling</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P2049" target="_blank"><b>P2049</b> 魔术棋子</a>
+</li>
+</ul>
+</section>
+</div>
+<div class="am-u-md-8 lg-right" name="problemleft">
+<div class="lg-content-left">
+<div class="lg-article am-g">
+<h2>题目描述</h2>
+<p>Farmer John's milk production and shipping system is an intricate one! He uses milking machines for his many cows to harvest the milk that then flows into pipes.</p>
+<p>Each of these pipes connects a milking machine to a joint, where it might be joined by exactly one more pipe (the milk flowing through both pipes merges). The milk then flows through additional pipes (which all start and end at joints) until it reaches the long central pipe connecting to the distribution room.</p>
+<p>The milk then goes through a reverse process of splitting at various joints until it is flows into milk tanks that are picked up and taken to market.</p>
+<p>Farmer John notices that there is at most one way for milk to travel from one joint to any other joint. Furthermore, since Farmer John is an efficient man by nature, he has made sure that milk will flow through each and every pipe; in other words, no pipe is unneeded.</p>
+<p>If we think of a milking machine, joint, or milk tank as a node, there are N (2 &lt;= N &lt;= 100,000) nodes in total (and N-1 pipes</p>
+<p>connecting them). The input describes each pipe as an ordered pair of nodes, A_i (1 &lt;= A_i &lt;= N) and B_i (1 &lt;= B_i &lt;= N; A_i &lt; B_i) indicating milk flows from node A_i to node B_i. If there is no pipe coming in to A_i, it is a milking machine. Likewise, if no pipe goes out from B_i, it is a tank.</p>
+<p>The demand of chocolate milk has skyrocketed in recent months, and Farmer John wants to install a chocolate inserter at one of the joints so he can create delicious chocolate milk for customers.</p>
+<p>Being thrifty, Farmer John has only bought one chocolate inserter, so he wants to place it at a joint through which all the milk passes. He knows that such a joint exists.</p>
+<p>Help Farmer John find all the possible places he can install the chocolate inserter. (Note that Farmer John cannot install the chocolate inserter at the same location as a milking machine.)</p>
+<p>As an example, consider a milking setup like this one:</p>
+<pre><code class="language-cpp">
+           1 ----+
+                 |
+                 v
+           2 --&gt; 4 --&gt; 6 ------------------&gt; 7 --&gt; 8
+                       ^                     |
+                       |                     |
+           3 --&gt; 5 ----+                     + --&gt; 9
+</code></pre>
+<p>Visual inspection shows that the chocolate inserter can be installed at either joint 6 or 7, as all milk flows through those joints.</p>
+<p>农民约翰的牛奶生产和运输系统是极其复杂的！他用挤奶机为他的许多奶牛收获牛奶，然后流入管道。</p>
+<p>每一个管道连接挤奶机到一个节点，在那里它可能会加入一个管道（牛奶流过两个管道合并）。然后，牛奶流通过额外的管道（所有的开始点和结束点在其它节点上的），直到它到达一个关键的节点。</p>
+<p>牛奶然后经过一个反向的过程，在不同的关节分裂，直到它流入牛奶罐被拾起，并送往市场。</p>
+<p>农场主约翰注意到，牛奶从一个关节到另一个关节的方式最多。此外，由于农民约翰本质上是一个能干的人，他已经确信，牛奶会流通过每个管道；换句话说，没有管道是不必要的。</p>
+<p>如果我们认为挤奶机，节点，或牛奶罐都看作一个节点，有N (2 &lt;= N &lt;= 100,000)节点总数（N-1个管道连接它们）。</p>
+<p>输入描述每个管节点的有序对，A_i（1 &lt;= A_i &lt;= N）和B_i（1 &lt;= B_i &lt;= N；A_i &lt; B_i）表示牛奶从A_i流向B_i。如果A_i入度为0，它是一个挤奶机。同样，B_i出度为0，它是一个牛奶罐。</p>
+<p>巧克力牛奶的需求已经在最近几个月急剧增加，农民约翰想安装一个巧克力插件在一个节点上，保证他能为顾客创造美味的巧克力牛奶。</p>
+<p>为了节俭，农民约翰只买了一个巧克力插件，所以他想把它安在一个牛奶都经过的节点上。他知道这样的节点存在。</p>
+<p>帮助农民约翰找到所有可能的地方，他将在那儿安装巧克力的插件。（注：农民约翰巧克力插件不能安装在一个挤奶机上。）</p>
+<pre><code class="language-cpp">
+           1 ----+
+                 |
+                 v
+           2 --&gt; 4 --&gt; 6 ------------------&gt; 7 --&gt; 8
+                       ^                     |
+                       |                     |
+           3 --&gt; 5 ----+                     + --&gt; 9
+</code></pre>
+<p>巧克力插件可以安装在6或7上，所有牛奶流经这些节点。</p>
+<h2>输入输出格式</h2>
+<strong>输入格式：</strong><br>
+<p><p>* Line 1: A single integer: N</p>
+<p>* Lines 2..N: Line i+1 contains two space-separated integers that describe a pipe's connectivity: A_i and B_i</p>
+<p>第1行：一个整数：N</p>
+<p>2到N行：包含空格分隔的两个整数描述管道的连接：A_i和B_i</p></p>
+<strong>输出格式：</strong><br>
+<p><p>* Lines 1..??: Integers, one per line and in ascending order, each denoting a possible joint at which to install the chocolate inserter.</p>
+<p>第1行到？？行：每行一个整数，升序排列，每个表示可以安装巧克力插件的节点。</p></p>
+<h2>输入输出样例</h2>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>9 
+1 4 
+3 5 
+2 4 
+5 6 
+6 7 
+7 8 
+4 6 
+7 9 
+</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>6 
+7 
+</pre>
+</div>
+</div>
+<h2>说明</h2>
+<p>感谢@sgygd2004 提供翻译</p>
+</div>
+<div class='lg-article-sub am-g' id="sub"></div>
+</div>
+</div>
+</div>
+<div class="am-modal am-modal-prompt" tabindex="-1" id="confirm">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="memtitle">提示</div>
+<div class="am-modal-bd" id="memadmin">
+标程仅供做题后或实在无思路时参考。<br>
+请自觉、自律地使用该功能并请对自己的学习负责。<br>
+如果发现恶意抄袭标程，将按照I类违反进行处理。<br>
+</div>
+<div class="am-modal-footer">
+<span class="am-modal-btn" data-am-modal-cancel>取消</span>
+<span class="am-modal-btn" data-am-modal-confirm>确定</span>
+</div>
+</div>
+</div>
+<script>
+        $(document).ready(function () {
+            $("#expandstd").click(function () {
+                $('#confirm').modal({
+                    relatedTarget: this,
+                    onConfirm: function (e) {
+                        $("#stdcode").slideDown();
+                        $("#expandstd").hide();
+                    }
+                });
+            });
+            $("#submit").click(
+                function () {
+                    hide_artile();
+                    $(document).scrollTop($(document).scrollTop() - 80);
+                    var pid = $(this).attr("pid");
+                    $.get("/problem/ajax_submit?pid=" + pid, function (data) {
+                        var arr = eval('(' + data + ')');
+                        if (arr['code'] == 201) {
+                            $('.lg-article-sub').html(arr['more']['html']);
+                        }
+                        else if (arr['code'] == 200) {
+
+                        }
+                        else {
+                            if (arr['code'] == 0 || arr['code'] == -3) {
+                                backarticle();
+                            }
+                            show_alert("提交失败", arr['message']);
+                        }
+                    });
+                }
+            );
+            $("button[title].am-btn,a[title].am-btn").poshytip({
+                className: 'tip-twitter',
+                showTimeout: 1,
+                alignTo: 'target',
+                alignX: 'center',
+                alignY: 'bottom'
+            });
+            $('[name=showtag]').click(function () {
+                $('.am-badge.am-hide').removeClass('am-hide');
+            });
+            $(".sample-copy").click(function() {
+                var element = $(this).parents(".copy-region").find("pre");
+                var text = $(element).text();
+                var $temp = $("<textarea>");
+                $("body").append($temp);
+                $temp.val(text).select();
+                document.execCommand("copy");
+                $temp.remove();
+                $(this).text("复制成功").removeClass("lg-bg-orange");
+
+                var e = this;
+                setTimeout(function() {
+                    $(e).text("复制").addClass("lg-bg-orange");
+                }, 500);
+            });
+        });
+    </script>
+</div>
+<footer id="app-footer"></footer>
+<div class="am-modal am-modal-alert" tabindex="-1" id="lg-alert">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="lg-alert-title"></div>
+<div class="am-modal-bd" id="lg-alert-message"></div>
+<div class="am-modal-footer">
+<span class="am-modal-btn">确定</span>
+</div>
+</div>
+</div>
+<script src="/js/ace/ace.js"></script>
+<script src="https://cdn.luogu.org/js/vendor.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/jsmind.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/amazeui.min.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts-more.js"></script>
+<script src="/static/katex/katex.min.js"></script>
+<script src="/static/katex/contrib/auto-render.min.js"></script>
+<script src="https://cdn.luogu.org/markdown-palettes/markdown-palettes.min.js?ver=20190219"></script>
+<script src="https://cdn.luogu.org/js/luogu3.js?ver=20190101"></script>
+</body>
+</html>

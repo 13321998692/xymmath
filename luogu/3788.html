@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title> P3788 幽幽子吃西瓜 - 洛谷</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta name="csrf-token" content="1555853097:yB+2t/9pdygI5IGS91SpLHSpFVFYdHLc4ekyR7jnBEo=">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/amazeui.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/katex.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/luogu3.css?ver=20190102">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/highlight_tomorrow.css">
+<link rel="stylesheet" href="https://cdn.luogu.org/markdown-palettes/markdown-palettes.css?ver=20190219">
+<script src="https://cdn.luogu.org/js/jquery-2.1.1.min.js"></script>
+<script src="https://cdn.luogu.org/js/luogu3_pre.js?ver=20190101"></script>
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn.luogu.org/images/favicon3.ico" media="screen"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/fe/loader.css?ver=20190417">
+<script>window._feInjection = JSON.parse(decodeURIComponent("%7B%22code%22%3A200%2C%22currentUser%22%3Anull%2C%22currentTemplate%22%3A%22Excited%22%2C%22currentData%22%3A%7B%22shortHeader%22%3Afalse%2C%22pageName%22%3A%22%5Cu9898%5Cu76ee%5Cu8be6%5Cu60c5%22%7D%2C%22currentMeta%22%3A%7B%22title%22%3A%22%20P3788%20%5Cu5e7d%5Cu5e7d%5Cu5b50%5Cu5403%5Cu897f%5Cu74dc%22%7D%7D"));</script>
+<script>window._release = '20190417';</script>
+<script src="https://cdn.luogu.org/fe/loader.js?ver=20190417" charset="utf-8" defer></script>
+</head>
+<body>
+<div id="app-header"></div>
+<nav id="app-sidenav"></nav>
+<div id="app-body"></div>
+<script>
+    function scrollToId (id) {
+        $('html, body').animate({
+            scrollTop: ($('#' + id).offset().top)
+        }, 500);
+    }
+</script>
+<style>
+    .lg-toolbar {
+        display: none;
+    }
+
+    #app-body { /* Unused in fallback FE */
+        display: none;
+    }
+
+    #app-body-new{
+        display: block;
+        margin-bottom: 2em;
+        position: relative;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    @media (min-width: 576px) {
+        #app-body-new {
+            margin-left: 70px;
+        }
+    }
+
+    code {
+        font-family: monospace, "Courier New";
+    }
+
+</style>
+<div id="app-body-new">
+<div class="lg-toolbar" data-am-sticky>
+<h1><a href="/recordnew/lists?uid=&pid=P3788" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a> P3788 幽幽子吃西瓜</h1>
+</div>
+<div class="am-g lg-main-content">
+<div class="am-u-md-4 lg-right" name="problemright">
+<section class="am-panel am-panel-default lg-summary" id="psummary">
+<div class="lg-summary-content">
+<ul class="am-list am-list-static lg-summary-list">
+<li>
+<ul class="am-avg-sm-2"><li><span class="lg-bignum-num">35<small></small></span><span class="lg-bignum-text">通过</span></li><li><span class="lg-bignum-num">168<small></small></span><span class="lg-bignum-text">提交</span></li></ul>
+</li>
+<li>
+<strong>题目提供者</strong>
+<span class="lg-right"><a class='lg-fg-bluelight' href="/space/show?uid=20322" target="_blank">orangebird</a></span>
+</li>
+<li>
+<strong>评测方式</strong>
+<span class="lg-right"><b>云端评测</b></span>
+</li>
+<li><strong>标签</strong>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="8">计算几何</span>
+<span class="lg-tag am-badge am-radius lg-bg-bluelight" data-tagid="81">洛谷原创</span>
+<style>.lg-tag { cursor: pointer; }</style>
+<script>
+                                $(".lg-tag").click(function() {
+                                    window.open("/problemnew/lists?tag=" + $(this).attr('data-tagid'));
+                                })
+                            </script>
+</li>
+<li><strong>难度</strong>
+<span class="lg-right"><span class="am-badge am-radius lg-bg-bluelight">提高+/省选-</span></span>
+</li>
+<li><strong>时空限制</strong>
+<span class="lg-right">1000ms / 128MB</span>
+</li>
+</ul>
+</div>
+<p>
+<button class="am-btn am-btn-danger am-btn-sm" id="submit" pid="P3788">
+<i class="am-icon-paper-plane"></i> 提交
+</button>
+<a target="_blank" href="/problemnew/solution/P3788" class="am-btn am-btn-primary am-btn-sm">
+<i class="am-icon-book"></i> 题解
+</a>
+<a data-pjax href="/recordnew/lists?pid=P3788" class="am-btn am-btn-primary am-btn-sm" title="查看本题提交记录">
+<i class="am-icon-pie-chart"></i>
+</a>
+<button class="am-btn am-btn-primary am-btn-sm lg-pointer" name="showtag" title="显示算法标签">
+<i class="am-icon-tags"></i>
+</button>
+</p>
+<li>提示：收藏到任务计划后，可在首页查看。</li>
+<p>
+<a class="am-btn am-btn-danger am-btn-sm" href="/fe/problem/P3788" target="_blank">体验新版界面</a>
+</p>
+</section>
+<section class="am-panel am-panel-default lg-summary">
+<h2>最新讨论
+<a onclick="$('#discuss-lists').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看本题讨论">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" style="display: none" id="discuss-lists">
+<li><a data-pjax href="/discuss/show?postid=26528" class="am-padding-0">背景</a>
+</li>
+<div style="overflow: auto">
+<a data-pjax href="/discuss/lists?forumname=P3788" class="am-btn am-btn-primary am-btn-sm lg-right">进入讨论版</a>
+</div>
+</ul>
+</section>
+<section class="am-panel am-panel-default lg-summary am-hide-sm">
+<h2>推荐的相关题目
+<a onclick="$('#recommendation-list').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看推荐题目">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" id="recommendation-list" style="display: none">
+<li>
+<a class='colored' href="/problemnew/show/P3792" target="_blank"><b>P3792</b> 由乃与大母神原型和偶像崇拜</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P4014" target="_blank"><b>P4014</b> 分配问题</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P1728" target="_blank"><b>P1728</b> 高手玩电竞</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P1817" target="_blank"><b>P1817</b> 棋盘染色_NOI导刊2011提高（03）</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P2149" target="_blank"><b>P2149</b> [SDOI2009]Elaxia的路线</a>
+</li>
+</ul>
+</section>
+</div>
+<div class="am-u-md-8 lg-right" name="problemleft">
+<div class="lg-content-left">
+<div class="lg-article am-g">
+<h2>题目背景</h2>
+<p><img src="https://cdn.luogu.org/upload/pic/5575.png" alt="" /> </p>
+<p>西行寺幽幽子是冥界的亡灵，她是一个标准的吃货，现在她的面前摆着一个妖梦替她准备的大西瓜。</p>
+<h2>题目描述</h2>
+<p>妖梦费了好大的劲为幽幽子准备了一个大西瓜，甚至和兔子铃仙打了一架。现在妖梦闲来无事，就蹲在一旁看幽幽子吃西瓜。西瓜可以看作一个标准的球体，瓜皮是绿色的，瓜瓤是红色的，瓜皮的厚度可视为0。妖梦恰好以正视的角度看着这个西瓜。幽幽子是一个吃货，妖梦一走神，自己背后的刀就不见了，而西瓜也被切掉了一块。幽幽子切西瓜时刀面始终垂直于桌面，并且切下的一块在俯视图中正好是一个以西瓜中心为顶点，半径为西瓜半径的扇形。如图所示，是一种满足条件的情况</p>
+<p>俯视:</p>
+<p><img src="https://cdn.luogu.org/upload/pic/5576.png" alt="" /> </p>
+<p>正视:</p>
+<p><img src="https://cdn.luogu.org/upload/pic/5577.png" alt="" /> </p>
+<p>妖梦看着红红绿绿的西瓜，忽然陷入思考，红色的西瓜瓤占整个西瓜可视面积的百分之多少呢？但她对几何一窍不通，于是想问问幽幽子，但幽幽子正抱着切下来的西瓜大吃特吃，没有理会妖梦。于是她想让你来帮她解决这个问题。</p>
+<p>为了方便描述问题，我们为俯视图建立一个平面极坐标系，极点在俯视图圆形(扇形)的正中央，极轴方向竖直向下。极轴所对应的角度为0度，角度逆时针依次增加，直到转一圈又回到极轴。因此角度范围是[0,360)。幽幽子会切掉西瓜从a°到b°的这一整块。</p>
+<h2>输入输出格式</h2>
+<strong>输入格式：</strong><br>
+<p><p>第一行一个整数T，表示数据组数。</p>
+<p>接下来T行每行两个整数a,b。表示切掉范围的起始角度和终止角度。若a&gt;b，则切掉的角度为[a,360)∪[0,b]这一范围。</p></p>
+<strong>输出格式：</strong><br>
+<p><p>T行，每行一个实数后跟一个百分号“%”，表示被切掉一部分的西瓜的正视图(平行投影)中，红色的西瓜瓤占西瓜总可视面积的百分比。在此题中，妖梦的视野方向平行于俯视图的极轴，并且极轴射线指向妖梦。</p>
+<p>输出的实数四舍五入保留一位小数，你的答案被判作正确，当且仅当与标准答案完全相同。</p></p>
+<h2>输入输出样例</h2>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>2
+90 270
+315 45</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>0.0%
+70.7%</pre>
+</div>
+</div>
+<h2>说明</h2>
+<p>样例说明:</p>
+<p>第一个样例中，切掉的西瓜恰好在背面，在妖梦的角度看起来与未切过的西瓜并无区别，因此输出0%。第二个样例中，切掉了从315°~45°这一部分,经过计算，得到答案为sqrt(2)/2，化成小数得到0.707,即70.7%</p>
+<p>本题目共有10个测试点。</p>
+<p>对于第1个测试点，a,b∈{0,90,180,270}。</p>
+<p>对于第2个测试点，270&lt;=a&lt;=359,0&lt;=b&lt;=90。</p>
+<p>对于第3,4个测试点，180&lt;=a&lt;=359,0&lt;=b&lt;=179。</p>
+<p>对于全部测试点，0&lt;=a,b&lt;=359,a≠b。</p>
+<p>1&lt;=T&lt;=10000</p>
+<p>命题人:orangebird</p>
+</div>
+<div class='lg-article-sub am-g' id="sub"></div>
+</div>
+</div>
+</div>
+<div class="am-modal am-modal-prompt" tabindex="-1" id="confirm">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="memtitle">提示</div>
+<div class="am-modal-bd" id="memadmin">
+标程仅供做题后或实在无思路时参考。<br>
+请自觉、自律地使用该功能并请对自己的学习负责。<br>
+如果发现恶意抄袭标程，将按照I类违反进行处理。<br>
+</div>
+<div class="am-modal-footer">
+<span class="am-modal-btn" data-am-modal-cancel>取消</span>
+<span class="am-modal-btn" data-am-modal-confirm>确定</span>
+</div>
+</div>
+</div>
+<script>
+        $(document).ready(function () {
+            $("#expandstd").click(function () {
+                $('#confirm').modal({
+                    relatedTarget: this,
+                    onConfirm: function (e) {
+                        $("#stdcode").slideDown();
+                        $("#expandstd").hide();
+                    }
+                });
+            });
+            $("#submit").click(
+                function () {
+                    hide_artile();
+                    $(document).scrollTop($(document).scrollTop() - 80);
+                    var pid = $(this).attr("pid");
+                    $.get("/problem/ajax_submit?pid=" + pid, function (data) {
+                        var arr = eval('(' + data + ')');
+                        if (arr['code'] == 201) {
+                            $('.lg-article-sub').html(arr['more']['html']);
+                        }
+                        else if (arr['code'] == 200) {
+
+                        }
+                        else {
+                            if (arr['code'] == 0 || arr['code'] == -3) {
+                                backarticle();
+                            }
+                            show_alert("提交失败", arr['message']);
+                        }
+                    });
+                }
+            );
+            $("button[title].am-btn,a[title].am-btn").poshytip({
+                className: 'tip-twitter',
+                showTimeout: 1,
+                alignTo: 'target',
+                alignX: 'center',
+                alignY: 'bottom'
+            });
+            $('[name=showtag]').click(function () {
+                $('.am-badge.am-hide').removeClass('am-hide');
+            });
+            $(".sample-copy").click(function() {
+                var element = $(this).parents(".copy-region").find("pre");
+                var text = $(element).text();
+                var $temp = $("<textarea>");
+                $("body").append($temp);
+                $temp.val(text).select();
+                document.execCommand("copy");
+                $temp.remove();
+                $(this).text("复制成功").removeClass("lg-bg-orange");
+
+                var e = this;
+                setTimeout(function() {
+                    $(e).text("复制").addClass("lg-bg-orange");
+                }, 500);
+            });
+        });
+    </script>
+</div>
+<footer id="app-footer"></footer>
+<div class="am-modal am-modal-alert" tabindex="-1" id="lg-alert">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="lg-alert-title"></div>
+<div class="am-modal-bd" id="lg-alert-message"></div>
+<div class="am-modal-footer">
+<span class="am-modal-btn">确定</span>
+</div>
+</div>
+</div>
+<script src="/js/ace/ace.js"></script>
+<script src="https://cdn.luogu.org/js/vendor.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/jsmind.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/amazeui.min.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts-more.js"></script>
+<script src="/static/katex/katex.min.js"></script>
+<script src="/static/katex/contrib/auto-render.min.js"></script>
+<script src="https://cdn.luogu.org/markdown-palettes/markdown-palettes.min.js?ver=20190219"></script>
+<script src="https://cdn.luogu.org/js/luogu3.js?ver=20190101"></script>
+</body>
+</html>

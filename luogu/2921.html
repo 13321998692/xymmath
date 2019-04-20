@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title> P2921 [USACO08DEC]在农场万圣节Trick or Treat on the Farm - 洛谷</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta name="csrf-token" content="1555852655:EsbP47n7fddq9rRATroQUngTQ/LdwjY9UI3JYGVApkc=">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/amazeui.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/katex.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/luogu3.css?ver=20190102">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/highlight_tomorrow.css">
+<link rel="stylesheet" href="https://cdn.luogu.org/markdown-palettes/markdown-palettes.css?ver=20190219">
+<script src="https://cdn.luogu.org/js/jquery-2.1.1.min.js"></script>
+<script src="https://cdn.luogu.org/js/luogu3_pre.js?ver=20190101"></script>
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn.luogu.org/images/favicon3.ico" media="screen"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/fe/loader.css?ver=20190417">
+<script>window._feInjection = JSON.parse(decodeURIComponent("%7B%22code%22%3A200%2C%22currentUser%22%3Anull%2C%22currentTemplate%22%3A%22Excited%22%2C%22currentData%22%3A%7B%22shortHeader%22%3Afalse%2C%22pageName%22%3A%22%5Cu9898%5Cu76ee%5Cu8be6%5Cu60c5%22%7D%2C%22currentMeta%22%3A%7B%22title%22%3A%22%20P2921%20%5BUSACO08DEC%5D%5Cu5728%5Cu519c%5Cu573a%5Cu4e07%5Cu5723%5Cu8282Trick%20or%20Treat%20on%20the%20Farm%22%7D%7D"));</script>
+<script>window._release = '20190417';</script>
+<script src="https://cdn.luogu.org/fe/loader.js?ver=20190417" charset="utf-8" defer></script>
+</head>
+<body>
+<div id="app-header"></div>
+<nav id="app-sidenav"></nav>
+<div id="app-body"></div>
+<script>
+    function scrollToId (id) {
+        $('html, body').animate({
+            scrollTop: ($('#' + id).offset().top)
+        }, 500);
+    }
+</script>
+<style>
+    .lg-toolbar {
+        display: none;
+    }
+
+    #app-body { /* Unused in fallback FE */
+        display: none;
+    }
+
+    #app-body-new{
+        display: block;
+        margin-bottom: 2em;
+        position: relative;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    @media (min-width: 576px) {
+        #app-body-new {
+            margin-left: 70px;
+        }
+    }
+
+    code {
+        font-family: monospace, "Courier New";
+    }
+
+</style>
+<div id="app-body-new">
+<div class="lg-toolbar" data-am-sticky>
+<h1><a href="/recordnew/lists?uid=&pid=P2921" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a> P2921 [USACO08DEC]在农场万圣节Trick or Treat on the Farm</h1>
+</div>
+<div class="am-g lg-main-content">
+<div class="am-u-md-4 lg-right" name="problemright">
+<section class="am-panel am-panel-default lg-summary" id="psummary">
+<div class="lg-summary-content">
+<ul class="am-list am-list-static lg-summary-list">
+<li>
+<ul class="am-avg-sm-2"><li><span class="lg-bignum-num">3.3<small>K</small><small></small></span><span class="lg-bignum-text">通过</span></li><li><span class="lg-bignum-num">9.1<small>K</small><small></small></span><span class="lg-bignum-text">提交</span></li></ul>
+</li>
+<li>
+<strong>题目提供者</strong>
+<span class="lg-right"><a class='lg-fg-gray' href="/space/show?uid=20" target="_blank">FarmerJohn2</a></span>
+</li>
+<li>
+<strong>评测方式</strong>
+<span class="lg-right"><b>云端评测</b></span>
+</li>
+<li><strong>标签</strong>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="3">动态规划,动规,dp</span>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="4">搜索</span>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="129">记忆化搜索</span>
+<span class="lg-tag am-badge am-radius lg-bg-bluelight" data-tagid="46">USACO</span>
+<span class="lg-tag am-badge am-radius lg-bg-green" data-tagid="25">2008</span>
+<style>.lg-tag { cursor: pointer; }</style>
+<script>
+                                $(".lg-tag").click(function() {
+                                    window.open("/problemnew/lists?tag=" + $(this).attr('data-tagid'));
+                                })
+                            </script>
+</li>
+<li><strong>难度</strong>
+<span class="lg-right"><span class="am-badge am-radius lg-bg-bluelight">提高+/省选-</span></span>
+</li>
+<li><strong>时空限制</strong>
+<span class="lg-right">1000ms / 128MB</span>
+</li>
+</ul>
+</div>
+<p>
+<button class="am-btn am-btn-danger am-btn-sm" id="submit" pid="P2921">
+<i class="am-icon-paper-plane"></i> 提交
+</button>
+<a target="_blank" href="/problemnew/solution/P2921" class="am-btn am-btn-primary am-btn-sm">
+<i class="am-icon-book"></i> 题解
+</a>
+<a data-pjax href="/recordnew/lists?pid=P2921" class="am-btn am-btn-primary am-btn-sm" title="查看本题提交记录">
+<i class="am-icon-pie-chart"></i>
+</a>
+<button class="am-btn am-btn-primary am-btn-sm lg-pointer" name="showtag" title="显示算法标签">
+<i class="am-icon-tags"></i>
+</button>
+</p>
+<li>提示：收藏到任务计划后，可在首页查看。</li>
+<p>
+<a class="am-btn am-btn-danger am-btn-sm" href="/fe/problem/P2921" target="_blank">体验新版界面</a>
+</p>
+</section>
+<section class="am-panel am-panel-default lg-summary">
+<h2>最新讨论
+<a onclick="$('#discuss-lists').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看本题讨论">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" style="display: none" id="discuss-lists">
+<li><a data-pjax href="/discuss/show?postid=108144" class="am-padding-0">蜜汁40分，TLE得飞起</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=93769" class="am-padding-0">M的飞起。。。</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=78458" class="am-padding-0">求个Hack数据 写到怀疑人生…</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=78321" class="am-padding-0">今天有必要重新温习一下这道…</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=76867" class="am-padding-0">女装！！！</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=76497" class="am-padding-0">？循环做法求查错</a>
+</li>
+<div style="overflow: auto">
+<a data-pjax href="/discuss/lists?forumname=P2921" class="am-btn am-btn-primary am-btn-sm lg-right">进入讨论版</a>
+</div>
+</ul>
+</section>
+<section class="am-panel am-panel-default lg-summary am-hide-sm">
+<h2>推荐的相关题目
+<a onclick="$('#recommendation-list').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看推荐题目">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" id="recommendation-list" style="display: none">
+<li>
+<a class='colored' href="/problemnew/show/P1341" target="_blank"><b>P1341</b> 无序字母对</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P1462" target="_blank"><b>P1462</b> 通往奥格瑞玛的道路</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P1339" target="_blank"><b>P1339</b> [USACO09OCT]热浪Heat Wave</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P1119" target="_blank"><b>P1119</b> 灾后重建</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P1346" target="_blank"><b>P1346</b> 电车</a>
+</li>
+</ul>
+</section>
+</div>
+<div class="am-u-md-8 lg-right" name="problemleft">
+<div class="lg-content-left">
+<div class="lg-article am-g">
+<h2>题意翻译</h2>
+<h2>题目描述</h2>
+<p>每年，在威斯康星州，奶牛们都会穿上衣服，收集农夫约翰在N(1&lt;=N&lt;=100，000)个牛棚隔间中留下的糖果，以此来庆祝美国秋天的万圣节。</p>
+<p>由于牛棚不太大，FJ通过指定奶牛必须遵循的穿越路线来确保奶牛的乐趣。为了实现这个让奶牛在牛棚里来回穿梭的方案，FJ在第i号隔间上张贴了一个“下一个隔间”Next_i(1&lt;=Next_i&lt;=N)，告诉奶牛要去的下一个隔间；这样，为了收集它们的糖果，奶牛就会在牛棚里来回穿梭了。</p>
+<p>FJ命令奶牛i应该从i号隔间开始收集糖果。如果一只奶牛回到某一个她已经去过的隔间，她就会停止收集糖果。</p>
+<p>在被迫停止收集糖果之前，计算一下每头奶牛要前往的隔间数（包含起点）。</p>
+<h2>输入格式</h2>
+<p>第1行 整数n。</p>
+<p>第2行到n+1行 每行包含一个整数 next_i 。</p>
+<h2>输出格式</h2>
+<p>n行，第i行包含一个整数，表示第i只奶牛要前往的隔间数。</p>
+<h2>样例解释</h2>
+<p>有4个隔间</p>
+<p>隔间1要求牛到隔间1</p>
+<p>隔间2要求牛到隔间3</p>
+<p>隔间3要求牛到隔间2</p>
+<p>隔间4要求牛到隔间3</p>
+<p>牛1，从1号隔间出发，总共访问1个隔间；</p>
+<p>牛2，从2号隔间出发，然后到三号隔间，然后到2号隔间，终止，总共访问2个隔间；</p>
+<p>牛3，从3号隔间出发，然后到2号隔间，然后到3号隔间，终止，总共访问2个隔间；</p>
+<p>牛4，从4号隔间出发，然后到3号隔间，然后到2号隔间，然后到3号隔间，终止，总共访问3个隔间。</p>
+<p>翻译提供者：吃葡萄吐糖</p>
+<h2>题目描述</h2>
+<p>Every year in Wisconsin the cows celebrate the USA autumn holiday of Halloween by dressing up in costumes and collecting candy that Farmer John leaves in the N (1 &lt;= N &lt;= 100,000) stalls conveniently numbered 1..N.</p>
+<p>Because the barn is not so large, FJ makes sure the cows extend their fun by specifying a traversal route the cows must follow. To implement this scheme for traveling back and forth through the barn, FJ has posted a 'next stall number' next_i (1 &lt;= next_i &lt;= N) on stall i that tells the cows which stall to visit next; the cows thus might travel the length of the barn many times in order to collect their candy.</p>
+<p>FJ mandates that cow i should start collecting candy at stall i. A cow stops her candy collection if she arrives back at any stall she has already visited.</p>
+<p>Calculate the number of unique stalls each cow visits before being forced to stop her candy collection.</p>
+<p>POINTS: 100</p>
+<p>每年万圣节，威斯康星的奶牛们都要打扮一番，出门在农场的N个牛棚里转 悠，来采集糖果.她们每走到一个未曾经过的牛棚，就会采集这个棚里的1颗糖果.</p>
+<p>农场不大，所以约翰要想尽法子让奶牛们得到快乐.他给每一个牛棚设置了一个“后继牛 棚”.牛棚i的后继牛棚是next_i 他告诉奶牛们，她们到了一个牛棚之后，只要再往后继牛棚走去， 就可以搜集到很多糖果.事实上这是一种有点欺骗意味的手段，来节约他的糖果.</p>
+<p>第i只奶牛从牛棚i开始她的旅程．请你计算，每一只奶牛可以采集到多少糖果．</p>
+<h2>输入输出格式</h2>
+<strong>输入格式：</strong><br>
+<p><p>* Line 1: A single integer: N</p>
+<p>* Lines 2..N+1: Line i+1 contains a single integer: next_i</p></p>
+<strong>输出格式：</strong><br>
+<p><p>* Lines 1..N: Line i contains a single integer that is the total number of unique stalls visited by cow i before she returns to a stall she has previously visited.</p></p>
+<h2>输入输出样例</h2>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>4 
+1 
+3 
+2 
+3 
+</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>1 
+2 
+2 
+3 
+</pre>
+</div>
+</div>
+<h2>说明</h2>
+<p>Four stalls.</p>
+<p>* Stall 1 directs the cow back to stall 1.</p>
+<p>* Stall 2 directs the cow to stall 3</p>
+<p>* Stall 3 directs the cow to stall 2</p>
+<p>* Stall 4 directs the cow to stall 3</p>
+<p>Cow 1: Start at 1, next is 1. Total stalls visited: 1.</p>
+<p>Cow 2: Start at 2, next is 3, next is 2. Total stalls visited: 2. Cow 3: Start at 3, next is 2, next is 3. Total stalls visited: 2. Cow 4: Start at 4, next is 3, next is 2, next is 3. Total stalls visited: 3.</p>
+</div>
+<div class='lg-article-sub am-g' id="sub"></div>
+</div>
+</div>
+</div>
+<div class="am-modal am-modal-prompt" tabindex="-1" id="confirm">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="memtitle">提示</div>
+<div class="am-modal-bd" id="memadmin">
+标程仅供做题后或实在无思路时参考。<br>
+请自觉、自律地使用该功能并请对自己的学习负责。<br>
+如果发现恶意抄袭标程，将按照I类违反进行处理。<br>
+</div>
+<div class="am-modal-footer">
+<span class="am-modal-btn" data-am-modal-cancel>取消</span>
+<span class="am-modal-btn" data-am-modal-confirm>确定</span>
+</div>
+</div>
+</div>
+<script>
+        $(document).ready(function () {
+            $("#expandstd").click(function () {
+                $('#confirm').modal({
+                    relatedTarget: this,
+                    onConfirm: function (e) {
+                        $("#stdcode").slideDown();
+                        $("#expandstd").hide();
+                    }
+                });
+            });
+            $("#submit").click(
+                function () {
+                    hide_artile();
+                    $(document).scrollTop($(document).scrollTop() - 80);
+                    var pid = $(this).attr("pid");
+                    $.get("/problem/ajax_submit?pid=" + pid, function (data) {
+                        var arr = eval('(' + data + ')');
+                        if (arr['code'] == 201) {
+                            $('.lg-article-sub').html(arr['more']['html']);
+                        }
+                        else if (arr['code'] == 200) {
+
+                        }
+                        else {
+                            if (arr['code'] == 0 || arr['code'] == -3) {
+                                backarticle();
+                            }
+                            show_alert("提交失败", arr['message']);
+                        }
+                    });
+                }
+            );
+            $("button[title].am-btn,a[title].am-btn").poshytip({
+                className: 'tip-twitter',
+                showTimeout: 1,
+                alignTo: 'target',
+                alignX: 'center',
+                alignY: 'bottom'
+            });
+            $('[name=showtag]').click(function () {
+                $('.am-badge.am-hide').removeClass('am-hide');
+            });
+            $(".sample-copy").click(function() {
+                var element = $(this).parents(".copy-region").find("pre");
+                var text = $(element).text();
+                var $temp = $("<textarea>");
+                $("body").append($temp);
+                $temp.val(text).select();
+                document.execCommand("copy");
+                $temp.remove();
+                $(this).text("复制成功").removeClass("lg-bg-orange");
+
+                var e = this;
+                setTimeout(function() {
+                    $(e).text("复制").addClass("lg-bg-orange");
+                }, 500);
+            });
+        });
+    </script>
+</div>
+<footer id="app-footer"></footer>
+<div class="am-modal am-modal-alert" tabindex="-1" id="lg-alert">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="lg-alert-title"></div>
+<div class="am-modal-bd" id="lg-alert-message"></div>
+<div class="am-modal-footer">
+<span class="am-modal-btn">确定</span>
+</div>
+</div>
+</div>
+<script src="/js/ace/ace.js"></script>
+<script src="https://cdn.luogu.org/js/vendor.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/jsmind.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/amazeui.min.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts-more.js"></script>
+<script src="/static/katex/katex.min.js"></script>
+<script src="/static/katex/contrib/auto-render.min.js"></script>
+<script src="https://cdn.luogu.org/markdown-palettes/markdown-palettes.min.js?ver=20190219"></script>
+<script src="https://cdn.luogu.org/js/luogu3.js?ver=20190101"></script>
+</body>
+</html>

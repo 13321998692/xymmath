@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title> P2936 [USACO09JAN]全流Total Flow - 洛谷</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta name="csrf-token" content="1555852662:H6m99eC1kcy+tl1ATyCvwKqxhAs7tidx7mpTNvTFg6o=">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/amazeui.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/katex.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/luogu3.css?ver=20190102">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/highlight_tomorrow.css">
+<link rel="stylesheet" href="https://cdn.luogu.org/markdown-palettes/markdown-palettes.css?ver=20190219">
+<script src="https://cdn.luogu.org/js/jquery-2.1.1.min.js"></script>
+<script src="https://cdn.luogu.org/js/luogu3_pre.js?ver=20190101"></script>
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn.luogu.org/images/favicon3.ico" media="screen"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/fe/loader.css?ver=20190417">
+<script>window._feInjection = JSON.parse(decodeURIComponent("%7B%22code%22%3A200%2C%22currentUser%22%3Anull%2C%22currentTemplate%22%3A%22Excited%22%2C%22currentData%22%3A%7B%22shortHeader%22%3Afalse%2C%22pageName%22%3A%22%5Cu9898%5Cu76ee%5Cu8be6%5Cu60c5%22%7D%2C%22currentMeta%22%3A%7B%22title%22%3A%22%20P2936%20%5BUSACO09JAN%5D%5Cu5168%5Cu6d41Total%20Flow%22%7D%7D"));</script>
+<script>window._release = '20190417';</script>
+<script src="https://cdn.luogu.org/fe/loader.js?ver=20190417" charset="utf-8" defer></script>
+</head>
+<body>
+<div id="app-header"></div>
+<nav id="app-sidenav"></nav>
+<div id="app-body"></div>
+<script>
+    function scrollToId (id) {
+        $('html, body').animate({
+            scrollTop: ($('#' + id).offset().top)
+        }, 500);
+    }
+</script>
+<style>
+    .lg-toolbar {
+        display: none;
+    }
+
+    #app-body { /* Unused in fallback FE */
+        display: none;
+    }
+
+    #app-body-new{
+        display: block;
+        margin-bottom: 2em;
+        position: relative;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    @media (min-width: 576px) {
+        #app-body-new {
+            margin-left: 70px;
+        }
+    }
+
+    code {
+        font-family: monospace, "Courier New";
+    }
+
+</style>
+<div id="app-body-new">
+<div class="lg-toolbar" data-am-sticky>
+<h1><a href="/recordnew/lists?uid=&pid=P2936" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a> P2936 [USACO09JAN]全流Total Flow</h1>
+</div>
+<div class="am-g lg-main-content">
+<div class="am-u-md-4 lg-right" name="problemright">
+<section class="am-panel am-panel-default lg-summary" id="psummary">
+<div class="lg-summary-content">
+<ul class="am-list am-list-static lg-summary-list">
+<li>
+<ul class="am-avg-sm-2"><li><span class="lg-bignum-num">599<small></small></span><span class="lg-bignum-text">通过</span></li><li><span class="lg-bignum-num">1.4<small>K</small><small></small></span><span class="lg-bignum-text">提交</span></li></ul>
+</li>
+<li>
+<strong>题目提供者</strong>
+<span class="lg-right"><a class='lg-fg-gray' href="/space/show?uid=20" target="_blank">FarmerJohn2</a></span>
+</li>
+<li>
+<strong>评测方式</strong>
+<span class="lg-right"><b>云端评测</b></span>
+</li>
+<li><strong>标签</strong>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="194">最大流</span>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="79">网络流</span>
+<span class="lg-tag am-badge am-radius lg-bg-bluelight" data-tagid="46">USACO</span>
+<span class="lg-tag am-badge am-radius lg-bg-green" data-tagid="26">2009</span>
+<style>.lg-tag { cursor: pointer; }</style>
+<script>
+                                $(".lg-tag").click(function() {
+                                    window.open("/problemnew/lists?tag=" + $(this).attr('data-tagid'));
+                                })
+                            </script>
+</li>
+<li><strong>难度</strong>
+<span class="lg-right"><span class="am-badge am-radius lg-bg-bluelight">提高+/省选-</span></span>
+</li>
+<li><strong>时空限制</strong>
+<span class="lg-right">1000ms / 128MB</span>
+</li>
+</ul>
+</div>
+<p>
+<button class="am-btn am-btn-danger am-btn-sm" id="submit" pid="P2936">
+<i class="am-icon-paper-plane"></i> 提交
+</button>
+<a target="_blank" href="/problemnew/solution/P2936" class="am-btn am-btn-primary am-btn-sm">
+<i class="am-icon-book"></i> 题解
+</a>
+<a data-pjax href="/recordnew/lists?pid=P2936" class="am-btn am-btn-primary am-btn-sm" title="查看本题提交记录">
+<i class="am-icon-pie-chart"></i>
+</a>
+<button class="am-btn am-btn-primary am-btn-sm lg-pointer" name="showtag" title="显示算法标签">
+<i class="am-icon-tags"></i>
+</button>
+</p>
+<li>提示：收藏到任务计划后，可在首页查看。</li>
+<p>
+<a class="am-btn am-btn-danger am-btn-sm" href="/fe/problem/P2936" target="_blank">体验新版界面</a>
+</p>
+</section>
+<section class="am-panel am-panel-default lg-summary">
+<h2>最新讨论
+<a onclick="$('#discuss-lists').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看本题讨论">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" style="display: none" id="discuss-lists">
+<li><a data-pjax href="/discuss/show?postid=107589" class="am-padding-0">来自蒟蒻的忠告</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=93045" class="am-padding-0">强烈建议管理员修改题面</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=63652" class="am-padding-0">20分EK求错</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=47604" class="am-padding-0">求差错</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=41031" class="am-padding-0">题目歧义！</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=40465" class="am-padding-0">求查错</a>
+</li>
+<div style="overflow: auto">
+<a data-pjax href="/discuss/lists?forumname=P2936" class="am-btn am-btn-primary am-btn-sm lg-right">进入讨论版</a>
+</div>
+</ul>
+</section>
+<section class="am-panel am-panel-default lg-summary am-hide-sm">
+<h2>推荐的相关题目
+<a onclick="$('#recommendation-list').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看推荐题目">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" id="recommendation-list" style="display: none">
+<li>
+<a class='colored' href="/problemnew/show/P1231" target="_blank"><b>P1231</b> 教辅的组成</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P2756" target="_blank"><b>P2756</b> 飞行员配对方案问题</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3381" target="_blank"><b>P3381</b> 【模板】最小费用最大流</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P1345" target="_blank"><b>P1345</b> [USACO5.4]奶牛的电信Telecowmunication</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P1343" target="_blank"><b>P1343</b> 地震逃生</a>
+</li>
+</ul>
+</section>
+</div>
+<div class="am-u-md-8 lg-right" name="problemleft">
+<div class="lg-content-left">
+<div class="lg-article am-g">
+<h2>题目描述</h2>
+<p>Farmer John always wants his cows to have enough water and thus has made a map of the N (1 &lt;= N &lt;= 700) water pipes on the farm that connect the well to the barn. He was surprised to find a wild mess of different size pipes connected in an apparently haphazard way. He wants to calculate the flow through the pipes.</p>
+<p>Two pipes connected in a row allow water flow that is the minimum of the values of the two pipe's flow values. The example of a pipe with flow capacity 5 connecting to a pipe of flow capacity 3 can be reduced logically to a single pipe of flow capacity 3:</p>
+<p>+---5---+---3---+ -&gt; +---3---+</p>
+<p>Similarly, pipes in parallel let through water that is the sum of their flow capacities:</p>
+<p>+---5---+</p>
+<p>---+ +--- -&gt; +---8---+</p>
+<p>+---3---+</p>
+<p>Finally, a pipe that connects to nothing else can be removed; it contributes no flow to the final overall capacity:</p>
+<p>+---5---+</p>
+<p>---+ -&gt; +---3---+</p>
+<p>+---3---+--</p>
+<p>All the pipes in the many mazes of plumbing can be reduced using these ideas into a single total flow capacity.</p>
+<p>Given a map of the pipes, determine the flow capacity between the well (A) and the barn (Z).</p>
+<p>Consider this example where node names are labeled with letters:</p>
+<p>+-----------6-----------+</p>
+<p>A+---3---+B +Z</p>
+<p>+---3---+---5---+---4---+</p>
+<p>C D</p>
+<p>Pipe BC and CD can be combined:</p>
+<p>+-----------6-----------+</p>
+<p>A+---3---+B +Z</p>
+<p>+-----3-----+-----4-----+</p>
+<p>D
+Then BD and DZ can be combined: </p>
+<p>+-----------6-----------+</p>
+<p>A+---3---+B +Z</p>
+<p>+-----------3-----------+</p>
+<p>Then two legs of BZ can be combined: </p>
+<p>B
+A+---3---+---9---+Z</p>
+<p>Then AB and BZ can be combined to yield a net capacity of 3:</p>
+<p>A+---3---+Z</p>
+<p>Write a program to read in a set of pipes described as two endpoints and then calculate the net flow capacity from 'A' to 'Z'. All</p>
+<p>networks in the test data can be reduced using the rules here.</p>
+<p>Pipe i connects two different nodes a_i and b_i (a_i in range</p>
+<p>'A-Za-z'; b_i in range 'A-Za-z') and has flow F_i (1 &lt;= F_i &lt;= 1,000). Note that lower- and upper-case node names are intended to be treated as different.</p>
+<p>The system will provide extra test case feedback for your first 50 submissions.</p>
+<p>约翰总希望他的奶牛有足够的水喝，因此他找来了农场的水管地图，想算算牛棚得到的水的 总流量.农场里一共有N根水管.约翰发现水管网络混乱不堪，他试图对其进行简 化.他简化的方式是这样的：</p>
+<p>两根水管串联，则可以用较小流量的那根水管代替总流量.</p>
+<p>两根水管并联，则可以用流量为两根水管流量和的一根水管代替它们</p>
+<p>当然，如果存在一根水管一端什么也没有连接，可以将它移除.</p>
+<p>请写个程序算出从水井A到牛棚Z的总流量.数据保证所有输入的水管网络都可以用上述方法 简化.</p>
+<h2>2019.2.21 管理员注：输入数据中可能含有小写字母。</h2>
+<h2>输入输出格式</h2>
+<strong>输入格式：</strong><br>
+<p><p>* Line 1: A single integer: N</p>
+<p>* Lines 2..N + 1: Line i+1 describes pipe i with two letters and an integer, all space-separated: a_i, b_i, and F_i</p></p>
+<strong>输出格式：</strong><br>
+<p><p>* Line 1: A single integer that the maximum flow from the well ('A') to the barn ('Z')</p></p>
+<h2>输入输出样例</h2>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>5 
+A B 3 
+B C 3 
+C D 5 
+D Z 4 
+B Z 6 
+</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>3 
+</pre>
+</div>
+</div>
+</div>
+<div class='lg-article-sub am-g' id="sub"></div>
+</div>
+</div>
+</div>
+<div class="am-modal am-modal-prompt" tabindex="-1" id="confirm">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="memtitle">提示</div>
+<div class="am-modal-bd" id="memadmin">
+标程仅供做题后或实在无思路时参考。<br>
+请自觉、自律地使用该功能并请对自己的学习负责。<br>
+如果发现恶意抄袭标程，将按照I类违反进行处理。<br>
+</div>
+<div class="am-modal-footer">
+<span class="am-modal-btn" data-am-modal-cancel>取消</span>
+<span class="am-modal-btn" data-am-modal-confirm>确定</span>
+</div>
+</div>
+</div>
+<script>
+        $(document).ready(function () {
+            $("#expandstd").click(function () {
+                $('#confirm').modal({
+                    relatedTarget: this,
+                    onConfirm: function (e) {
+                        $("#stdcode").slideDown();
+                        $("#expandstd").hide();
+                    }
+                });
+            });
+            $("#submit").click(
+                function () {
+                    hide_artile();
+                    $(document).scrollTop($(document).scrollTop() - 80);
+                    var pid = $(this).attr("pid");
+                    $.get("/problem/ajax_submit?pid=" + pid, function (data) {
+                        var arr = eval('(' + data + ')');
+                        if (arr['code'] == 201) {
+                            $('.lg-article-sub').html(arr['more']['html']);
+                        }
+                        else if (arr['code'] == 200) {
+
+                        }
+                        else {
+                            if (arr['code'] == 0 || arr['code'] == -3) {
+                                backarticle();
+                            }
+                            show_alert("提交失败", arr['message']);
+                        }
+                    });
+                }
+            );
+            $("button[title].am-btn,a[title].am-btn").poshytip({
+                className: 'tip-twitter',
+                showTimeout: 1,
+                alignTo: 'target',
+                alignX: 'center',
+                alignY: 'bottom'
+            });
+            $('[name=showtag]').click(function () {
+                $('.am-badge.am-hide').removeClass('am-hide');
+            });
+            $(".sample-copy").click(function() {
+                var element = $(this).parents(".copy-region").find("pre");
+                var text = $(element).text();
+                var $temp = $("<textarea>");
+                $("body").append($temp);
+                $temp.val(text).select();
+                document.execCommand("copy");
+                $temp.remove();
+                $(this).text("复制成功").removeClass("lg-bg-orange");
+
+                var e = this;
+                setTimeout(function() {
+                    $(e).text("复制").addClass("lg-bg-orange");
+                }, 500);
+            });
+        });
+    </script>
+</div>
+<footer id="app-footer"></footer>
+<div class="am-modal am-modal-alert" tabindex="-1" id="lg-alert">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="lg-alert-title"></div>
+<div class="am-modal-bd" id="lg-alert-message"></div>
+<div class="am-modal-footer">
+<span class="am-modal-btn">确定</span>
+</div>
+</div>
+</div>
+<script src="/js/ace/ace.js"></script>
+<script src="https://cdn.luogu.org/js/vendor.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/jsmind.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/amazeui.min.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts-more.js"></script>
+<script src="/static/katex/katex.min.js"></script>
+<script src="/static/katex/contrib/auto-render.min.js"></script>
+<script src="https://cdn.luogu.org/markdown-palettes/markdown-palettes.min.js?ver=20190219"></script>
+<script src="https://cdn.luogu.org/js/luogu3.js?ver=20190101"></script>
+</body>
+</html>

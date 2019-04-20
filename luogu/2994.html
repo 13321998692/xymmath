@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title> P2994 [USACO10OCT]吃晚饭的时候Dinner Time - 洛谷</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta name="csrf-token" content="1555852689:9zClGo46QkZ+5CZ25gvVGhA6FLsd6hTxtVP1wzz+XT8=">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/amazeui.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/katex.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/luogu3.css?ver=20190102">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/highlight_tomorrow.css">
+<link rel="stylesheet" href="https://cdn.luogu.org/markdown-palettes/markdown-palettes.css?ver=20190219">
+<script src="https://cdn.luogu.org/js/jquery-2.1.1.min.js"></script>
+<script src="https://cdn.luogu.org/js/luogu3_pre.js?ver=20190101"></script>
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn.luogu.org/images/favicon3.ico" media="screen"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/fe/loader.css?ver=20190417">
+<script>window._feInjection = JSON.parse(decodeURIComponent("%7B%22code%22%3A200%2C%22currentUser%22%3Anull%2C%22currentTemplate%22%3A%22Excited%22%2C%22currentData%22%3A%7B%22shortHeader%22%3Afalse%2C%22pageName%22%3A%22%5Cu9898%5Cu76ee%5Cu8be6%5Cu60c5%22%7D%2C%22currentMeta%22%3A%7B%22title%22%3A%22%20P2994%20%5BUSACO10OCT%5D%5Cu5403%5Cu665a%5Cu996d%5Cu7684%5Cu65f6%5Cu5019Dinner%20Time%22%7D%7D"));</script>
+<script>window._release = '20190417';</script>
+<script src="https://cdn.luogu.org/fe/loader.js?ver=20190417" charset="utf-8" defer></script>
+</head>
+<body>
+<div id="app-header"></div>
+<nav id="app-sidenav"></nav>
+<div id="app-body"></div>
+<script>
+    function scrollToId (id) {
+        $('html, body').animate({
+            scrollTop: ($('#' + id).offset().top)
+        }, 500);
+    }
+</script>
+<style>
+    .lg-toolbar {
+        display: none;
+    }
+
+    #app-body { /* Unused in fallback FE */
+        display: none;
+    }
+
+    #app-body-new{
+        display: block;
+        margin-bottom: 2em;
+        position: relative;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    @media (min-width: 576px) {
+        #app-body-new {
+            margin-left: 70px;
+        }
+    }
+
+    code {
+        font-family: monospace, "Courier New";
+    }
+
+</style>
+<div id="app-body-new">
+<div class="lg-toolbar" data-am-sticky>
+<h1><a href="/recordnew/lists?uid=&pid=P2994" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a> P2994 [USACO10OCT]吃晚饭的时候Dinner Time</h1>
+</div>
+<div class="am-g lg-main-content">
+<div class="am-u-md-4 lg-right" name="problemright">
+<section class="am-panel am-panel-default lg-summary" id="psummary">
+<div class="lg-summary-content">
+<ul class="am-list am-list-static lg-summary-list">
+<li>
+<ul class="am-avg-sm-2"><li><span class="lg-bignum-num">19<small></small></span><span class="lg-bignum-text">通过</span></li><li><span class="lg-bignum-num">54<small></small></span><span class="lg-bignum-text">提交</span></li></ul>
+</li>
+<li>
+<strong>题目提供者</strong>
+<span class="lg-right"><a class='lg-fg-gray' href="/space/show?uid=20" target="_blank">FarmerJohn2</a></span>
+</li>
+<li>
+<strong>评测方式</strong>
+<span class="lg-right"><b>云端评测</b></span>
+</li>
+<li><strong>标签</strong>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="113">排序</span>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="7">贪心</span>
+<span class="lg-tag am-badge am-radius lg-bg-bluelight" data-tagid="46">USACO</span>
+<span class="lg-tag am-badge am-radius lg-bg-green" data-tagid="27">2010</span>
+<span class="lg-tag am-badge am-radius lg-bg-orange" data-tagid="319">高性能</span>
+<style>.lg-tag { cursor: pointer; }</style>
+<script>
+                                $(".lg-tag").click(function() {
+                                    window.open("/problemnew/lists?tag=" + $(this).attr('data-tagid'));
+                                })
+                            </script>
+</li>
+<li><strong>难度</strong>
+<span class="lg-right"><span class="am-badge am-radius lg-bg-bluelight">提高+/省选-</span></span>
+</li>
+<li><strong>时空限制</strong>
+<span class="lg-right">1000ms / 128MB</span>
+</li>
+</ul>
+</div>
+<p>
+<button class="am-btn am-btn-danger am-btn-sm" id="submit" pid="P2994">
+<i class="am-icon-paper-plane"></i> 提交
+</button>
+<a target="_blank" href="/problemnew/solution/P2994" class="am-btn am-btn-primary am-btn-sm">
+<i class="am-icon-book"></i> 题解
+</a>
+<a data-pjax href="/recordnew/lists?pid=P2994" class="am-btn am-btn-primary am-btn-sm" title="查看本题提交记录">
+<i class="am-icon-pie-chart"></i>
+</a>
+<button class="am-btn am-btn-primary am-btn-sm lg-pointer" name="showtag" title="显示算法标签">
+<i class="am-icon-tags"></i>
+</button>
+</p>
+<li>提示：收藏到任务计划后，可在首页查看。</li>
+<p>
+<a class="am-btn am-btn-danger am-btn-sm" href="/fe/problem/P2994" target="_blank">体验新版界面</a>
+</p>
+</section>
+<section class="am-panel am-panel-default lg-summary">
+<h2>最新讨论
+<a onclick="$('#discuss-lists').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看本题讨论">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" style="display: none" id="discuss-lists">
+<li><a data-pjax href="/discuss/show?postid=70900" class="am-padding-0">请求修一下latex和数据范围</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=21382" class="am-padding-0">翻译</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=6127" class="am-padding-0">题目大意</a>
+</li>
+<div style="overflow: auto">
+<a data-pjax href="/discuss/lists?forumname=P2994" class="am-btn am-btn-primary am-btn-sm lg-right">进入讨论版</a>
+</div>
+</ul>
+</section>
+<section class="am-panel am-panel-default lg-summary am-hide-sm">
+<h2>推荐的相关题目
+<a onclick="$('#recommendation-list').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看推荐题目">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" id="recommendation-list" style="display: none">
+<li>
+<a class='colored' href="/problemnew/show/CF1095E" target="_blank"><b>CF1095E</b> Almost Regular Bracket Sequence</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3024" target="_blank"><b>P3024</b> [USACO11OPEN]奶牛跳棋Cow Checkers</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P1580" target="_blank"><b>P1580</b> yyy loves Easter_Egg I</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3808" target="_blank"><b>P3808</b> 【模板】AC自动机（简单版）</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P4053" target="_blank"><b>P4053</b> [JSOI2007]建筑抢修</a>
+</li>
+</ul>
+</section>
+</div>
+<div class="am-u-md-8 lg-right" name="problemleft">
+<div class="lg-content-left">
+<div class="lg-article am-g">
+<h2>题意翻译</h2>
+<h2>【题目描述】</h2>
+<p>农民约翰的$N$ $(1&lt;=n&lt;=1000)$头奶牛（编号为$1$~$n$
+）在保加利亚参加IOI。奶牛们喜欢保加利亚的太阳，并享受他们的假期，一切似乎都很好。</p>
+<p>但是当晚餐时间时这发生了变化。由于餐厅很小，只有$M$ $(1 &lt;= M &lt;= N)$个牛的座位（编号$1$~$m$）。每头奶牛开始在一个坐标$(cx_i,cy_i)$ $(-1000000 &lt;=cx_i≤1000000;-1000000≤ cy_i&lt;= 1000000)$。他们可以在坐标$(sx_j, sy_j)$ $(-1000000 &lt; = sx_j≤1000000;-1000000≤sy_j &lt; = 1000000)$找到座位。</p>
+<p>奶牛有一个非常有效的（虽然很原始）的方法来分配座位。只要一头奶牛可以确定她会先坐到座位上，他会尽快地赶到那里（所有的奶牛都跑得一样快）。</p>
+<p>农民约翰的奶牛可以跳过座位、桌子、其他的牛，所以他们可以在一条直线上跑。当多个奶牛可以在同一时间达到一个座位，最老的牛（在输入数据中出现得早）将会得到座位。同样，当一头奶牛可以到达多个座位时，她也会选择最早在输入数据中出现的一个座位。</p>
+<p>有些牛不能吃晚饭（没有座位），那些饥饿的奶牛集体计划偷农民约翰的食物。农夫约翰想要一个他应该警惕的牛的名单。（在没有饥饿的奶牛的情况下，输出$0$）。你能帮他吗？</p>
+<h2>【输入格式】</h2>
+<p>第 $1$ 行：两个由空格隔开的整数$N$和$M$</p>
+<p>第 $2$ 至 $N+1$ 行：第 $I+1$ 行是两个由空格隔开的整数 $cx_i$ 和 $cy_i$</p>
+<p>第 $N+2$ 至 $N+M+1$ 行：第 $J+N+1$ 行是两个由空格隔开的整数 $sx_j$ 和 $sy_j$</p>
+<h2>【输出格式】</h2>
+<p>第 $1$ 至 $N-M$ 行是农夫约翰需要警惕的牛的编号，编号应该是从小到大的。</p>
+<h2>【样例解释】</h2>
+<p>第 $2$ 头牛：第一头刚开始在 $(0,1)$，第二头在$(1,0)$，只有 $(1,10)$ 有座位。</p>
+<p>第一头和座位之间的距离比第二头近，所以只有第一头能有座位。所以输出 $2$ 。</p>
+<p>感谢@__CDy 提供的翻译</p>
+<h2>题目背景</h2>
+<p>征求翻译。如果你能提供翻译或者题意简述，请直接发讨论，感谢你的贡献。</p>
+<h2>题目描述</h2>
+<p>Farmer John's N (1 &lt;= N &lt;= 1,000) cows conveniently numbered 1..N are participating in the IOI in Bulgaria. The cows like the Bulgarian sun and are enjoying their holiday. All seems well.</p>
+<p>This changes around dinner time. The restaurant is rather small, having only M (1 &lt;= M &lt;= N) cow seats conveniently numbered 1..M. Each cow starts at a location CX_i, CY_i (-1,000,000 &lt;= CX_i &lt;= 1,000,000; -1,000,000 &lt;= CY_i &lt;= 1,000,000); the seats can be found at SX_j, SY_j (-1,000,000 &lt;= SX_j &lt;= 1,000,000; -1,000,000 &lt;= SY_j &lt;= 1,000,000).</p>
+<p>The cows have a very efficient (though primitive) method to distribute themselves into the seats. As soon as a cow is certain she will get to a seat first, she rushes there as fast as she can (all cows runs equally fast).</p>
+<p>Farmer John's cows, like all prize cows, have no problem jumping over seats, tables, or other cows, so they can run in a straight line. When multiple cows can reach a seat at the very same time, the oldest cow (the one appearing earlier in the input data) gets the seat. Likewise, when a cow can be the first to reach multiple seats she will also choose the one appearing earliest in the input.</p>
+<p>Some cows won't be able to eat dinner, and those hungry cows are collectively planning to steal Farmer John's very own food. Farmer John would like a list of cows he should be wary of. (In the case when there are no hungry cows, output 0). Can you help him?</p>
+<p>NOTE: Standard distance calculations will likely require an</p>
+<p>intermediate result that will fit into a 64-bit integer but not into a 32-bit integer.</p>
+<p>农民约翰的N（1≤N≤1000）奶牛(编号1..N)在保加利亚参加IOI。奶牛们喜欢保加利亚的太阳，并享受他们的假期。一切</p>
+<p>似乎都很好。</p>
+<p>这在晚餐时间发生了变化。餐厅很小，只有M（1 &lt;= M = N）个牛的座位（编号1 .. M）.每头奶牛开始在一个位置</p>
+<p>cx_i，cy_i（1000000 &lt;= cx_i≤1000000；1000000≤cy_i &lt;= 1000000）；可以在sx_j，sy_j</p>
+<p>（1000000 &lt; = sx_j≤1000000；1000000≤sy_j &lt; = 1000000）找到座位。</p>
+<p>奶牛有一个非常有效的（虽然很原始）的方法来分配座位。只要一头母牛可以确定她会先坐到座位上，她会尽快地</p>
+<p>赶到那里（所有的母牛都跑得一样快）。</p>
+<p>农民约翰的奶牛跳过座位、桌子、其他的牛不成问题，所以他们可以在一条直线上跑。当多</p>
+<p>个奶牛可以在同一时间达到一个座位，最老的牛（在输入数据中出现得早）将会得到座位。同样，当一头母牛可</p>
+<p>以到达多个座位时，她也会选择最早在输入数据中出现的一个。</p>
+<p>有些牛不能吃晚饭（没有座位），那些饥饿的奶牛集体计划偷农民约翰的食物。农夫约翰想要一个他应</p>
+<p>该警惕的牛的名单。（在没有饥饿的奶牛的情况下，输出0）。你能帮他吗？</p>
+<h2>输入输出格式</h2>
+<strong>输入格式：</strong><br>
+<p><p>* Line 1: Two space-separated integers: N and M</p>
+<p>* Lines 2..N+1: Line i+1 contains two space separated integers: CX_i and CY_i</p>
+<p>* Lines N+2..N+M+1: Line j+N+1 contains two space separated integers: SX_j and SY_j</p>
+<ul>
+<li>
+<p>第一行：两个由空格隔开的整数N和M</p>
+</li>
+<li>
+<p>第二至N+1行：第I+1行是两个由空格隔开的整数cx_i和cy_i</p>
+</li>
+<li>
+<p>第N+2至N+M+1行：第J+N+1行是两个由空格隔开的整数sx_j和sy_j</p>
+</li>
+</ul></p>
+<strong>输出格式：</strong><br>
+<p><p>* Lines 1..N-M: Line i contains the number of the ith cow that Farmer John should be wary of. The cow numbers should be listed in increasing order.</p>
+<ul>
+<li>第1至N-M行是农夫约翰需要警惕的牛的编号，编号应该是从小到大的。</li>
+</ul></p>
+<h2>输入输出样例</h2>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>2 1 
+0 1 
+1 0 
+1 10 
+</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>2 
+</pre>
+</div>
+</div>
+<h2>说明</h2>
+<p>2 cows: Cow 1 starts at (0, 1) and cow 2 at (1, 0). There </p>
+<p>is only 1 seat at (1, 10). </p>
+<p>Cow 1 is closer to the seat than cow 2, so cow 1 will get the only seat.</p>
+<p>2头牛：第一头刚开始在（0，1），第二头在（1，0），只有（1，10）有座位。</p>
+<p>第一头和座位之间的距离比第二头近，所以只有第一头能有座位。所以输出2。</p>
+<p>感谢@PTC06 提供翻译</p>
+</div>
+<div class='lg-article-sub am-g' id="sub"></div>
+</div>
+</div>
+</div>
+<div class="am-modal am-modal-prompt" tabindex="-1" id="confirm">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="memtitle">提示</div>
+<div class="am-modal-bd" id="memadmin">
+标程仅供做题后或实在无思路时参考。<br>
+请自觉、自律地使用该功能并请对自己的学习负责。<br>
+如果发现恶意抄袭标程，将按照I类违反进行处理。<br>
+</div>
+<div class="am-modal-footer">
+<span class="am-modal-btn" data-am-modal-cancel>取消</span>
+<span class="am-modal-btn" data-am-modal-confirm>确定</span>
+</div>
+</div>
+</div>
+<script>
+        $(document).ready(function () {
+            $("#expandstd").click(function () {
+                $('#confirm').modal({
+                    relatedTarget: this,
+                    onConfirm: function (e) {
+                        $("#stdcode").slideDown();
+                        $("#expandstd").hide();
+                    }
+                });
+            });
+            $("#submit").click(
+                function () {
+                    hide_artile();
+                    $(document).scrollTop($(document).scrollTop() - 80);
+                    var pid = $(this).attr("pid");
+                    $.get("/problem/ajax_submit?pid=" + pid, function (data) {
+                        var arr = eval('(' + data + ')');
+                        if (arr['code'] == 201) {
+                            $('.lg-article-sub').html(arr['more']['html']);
+                        }
+                        else if (arr['code'] == 200) {
+
+                        }
+                        else {
+                            if (arr['code'] == 0 || arr['code'] == -3) {
+                                backarticle();
+                            }
+                            show_alert("提交失败", arr['message']);
+                        }
+                    });
+                }
+            );
+            $("button[title].am-btn,a[title].am-btn").poshytip({
+                className: 'tip-twitter',
+                showTimeout: 1,
+                alignTo: 'target',
+                alignX: 'center',
+                alignY: 'bottom'
+            });
+            $('[name=showtag]').click(function () {
+                $('.am-badge.am-hide').removeClass('am-hide');
+            });
+            $(".sample-copy").click(function() {
+                var element = $(this).parents(".copy-region").find("pre");
+                var text = $(element).text();
+                var $temp = $("<textarea>");
+                $("body").append($temp);
+                $temp.val(text).select();
+                document.execCommand("copy");
+                $temp.remove();
+                $(this).text("复制成功").removeClass("lg-bg-orange");
+
+                var e = this;
+                setTimeout(function() {
+                    $(e).text("复制").addClass("lg-bg-orange");
+                }, 500);
+            });
+        });
+    </script>
+</div>
+<footer id="app-footer"></footer>
+<div class="am-modal am-modal-alert" tabindex="-1" id="lg-alert">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="lg-alert-title"></div>
+<div class="am-modal-bd" id="lg-alert-message"></div>
+<div class="am-modal-footer">
+<span class="am-modal-btn">确定</span>
+</div>
+</div>
+</div>
+<script src="/js/ace/ace.js"></script>
+<script src="https://cdn.luogu.org/js/vendor.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/jsmind.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/amazeui.min.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts-more.js"></script>
+<script src="/static/katex/katex.min.js"></script>
+<script src="/static/katex/contrib/auto-render.min.js"></script>
+<script src="https://cdn.luogu.org/markdown-palettes/markdown-palettes.min.js?ver=20190219"></script>
+<script src="https://cdn.luogu.org/js/luogu3.js?ver=20190101"></script>
+</body>
+</html>

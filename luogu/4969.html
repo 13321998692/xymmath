@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title> P4969 神秘的703 - 洛谷</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta name="csrf-token" content="1555853537:u1xhIKPGFthoslKHpd6cPu7Tu+PryNUWRolCZ28oyIU=">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/amazeui.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/katex.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/luogu3.css?ver=20190102">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/highlight_tomorrow.css">
+<link rel="stylesheet" href="https://cdn.luogu.org/markdown-palettes/markdown-palettes.css?ver=20190219">
+<script src="https://cdn.luogu.org/js/jquery-2.1.1.min.js"></script>
+<script src="https://cdn.luogu.org/js/luogu3_pre.js?ver=20190101"></script>
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn.luogu.org/images/favicon3.ico" media="screen"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/fe/loader.css?ver=20190417">
+<script>window._feInjection = JSON.parse(decodeURIComponent("%7B%22code%22%3A200%2C%22currentUser%22%3Anull%2C%22currentTemplate%22%3A%22Excited%22%2C%22currentData%22%3A%7B%22shortHeader%22%3Afalse%2C%22pageName%22%3A%22%5Cu9898%5Cu76ee%5Cu8be6%5Cu60c5%22%7D%2C%22currentMeta%22%3A%7B%22title%22%3A%22%20P4969%20%5Cu795e%5Cu79d8%5Cu7684703%22%7D%7D"));</script>
+<script>window._release = '20190417';</script>
+<script src="https://cdn.luogu.org/fe/loader.js?ver=20190417" charset="utf-8" defer></script>
+</head>
+<body>
+<div id="app-header"></div>
+<nav id="app-sidenav"></nav>
+<div id="app-body"></div>
+<script>
+    function scrollToId (id) {
+        $('html, body').animate({
+            scrollTop: ($('#' + id).offset().top)
+        }, 500);
+    }
+</script>
+<style>
+    .lg-toolbar {
+        display: none;
+    }
+
+    #app-body { /* Unused in fallback FE */
+        display: none;
+    }
+
+    #app-body-new{
+        display: block;
+        margin-bottom: 2em;
+        position: relative;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    @media (min-width: 576px) {
+        #app-body-new {
+            margin-left: 70px;
+        }
+    }
+
+    code {
+        font-family: monospace, "Courier New";
+    }
+
+</style>
+<div id="app-body-new">
+<div class="lg-toolbar" data-am-sticky>
+<h1><a href="/recordnew/lists?uid=&pid=P4969" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a> P4969 神秘的703</h1>
+</div>
+<div class="am-g lg-main-content">
+<div class="am-u-md-4 lg-right" name="problemright">
+<section class="am-panel am-panel-default lg-summary" id="psummary">
+<div class="lg-summary-content">
+<ul class="am-list am-list-static lg-summary-list">
+<li>
+<ul class="am-avg-sm-2"><li><span class="lg-bignum-num">38<small></small></span><span class="lg-bignum-text">通过</span></li><li><span class="lg-bignum-num">952<small></small></span><span class="lg-bignum-text">提交</span></li></ul>
+</li>
+<li>
+<strong>题目提供者</strong>
+<span class="lg-right"><a class='lg-fg-red lg-bold' href="/space/show?uid=61150" target="_blank">冒泡ioa</a></span>
+</li>
+<li>
+<strong>评测方式</strong>
+<span class="lg-right"><b>云端评测</b></span>
+</li>
+<li><strong>标签</strong>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="53">树状数组</span>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="266">概率论,统计</span>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="42">线段树</span>
+<style>.lg-tag { cursor: pointer; }</style>
+<script>
+                                $(".lg-tag").click(function() {
+                                    window.open("/problemnew/lists?tag=" + $(this).attr('data-tagid'));
+                                })
+                            </script>
+</li>
+<li><strong>难度</strong>
+<span class="lg-right"><span class="am-badge am-radius lg-bg-bluelight">提高+/省选-</span></span>
+</li>
+<li><strong>时空限制</strong>
+<span class="lg-right">1000ms / 128MB</span>
+</li>
+</ul>
+</div>
+<p>
+<button class="am-btn am-btn-danger am-btn-sm" id="submit" pid="P4969">
+<i class="am-icon-paper-plane"></i> 提交
+</button>
+<a target="_blank" href="/problemnew/solution/P4969" class="am-btn am-btn-primary am-btn-sm">
+<i class="am-icon-book"></i> 题解
+</a>
+<a data-pjax href="/recordnew/lists?pid=P4969" class="am-btn am-btn-primary am-btn-sm" title="查看本题提交记录">
+<i class="am-icon-pie-chart"></i>
+</a>
+<button class="am-btn am-btn-primary am-btn-sm lg-pointer" name="showtag" title="显示算法标签">
+<i class="am-icon-tags"></i>
+</button>
+</p>
+<li>提示：收藏到任务计划后，可在首页查看。</li>
+<p>
+<a class="am-btn am-btn-danger am-btn-sm" href="/fe/problem/P4969" target="_blank">体验新版界面</a>
+</p>
+</section>
+<section class="am-panel am-panel-default lg-summary">
+<h2>最新讨论
+<a onclick="$('#discuss-lists').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看本题讨论">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" style="display: none" id="discuss-lists">
+<li><a data-pjax href="/discuss/show?postid=95270" class="am-padding-0">出题人不是我啊QAQ</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=89457" class="am-padding-0">dlt</a>
+</li>
+<div style="overflow: auto">
+<a data-pjax href="/discuss/lists?forumname=P4969" class="am-btn am-btn-primary am-btn-sm lg-right">进入讨论版</a>
+</div>
+</ul>
+</section>
+<section class="am-panel am-panel-default lg-summary am-hide-sm">
+<h2>推荐的相关题目
+<a onclick="$('#recommendation-list').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看推荐题目">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" id="recommendation-list" style="display: none">
+<li>
+<a class='colored' href="/problemnew/show/P4945" target="_blank"><b>P4945</b> 最后的战役</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3365" target="_blank"><b>P3365</b> 改造二叉树</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P4931" target="_blank"><b>P4931</b> 情侣？给我烧了！（加强版）</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P4933" target="_blank"><b>P4933</b> 大师</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P2657" target="_blank"><b>P2657</b> [SCOI2009]windy数</a>
+</li>
+</ul>
+</section>
+</div>
+<div class="am-u-md-8 lg-right" name="problemleft">
+<div class="lg-content-left">
+<div class="lg-article am-g">
+<h2>题目背景</h2>
+<p>$Zero$ 和 $Mike$是一对热爱旅行的好朋友，一天在经历了$ZXG$大神的历练后，心力交瘁，于是决定<strong>重阳节</strong>回宾馆刷题，找回自信，于是，我们的故事开始了……</p>
+<h2>题目描述</h2>
+<p><strong>出题人：各位 $Oier$ 一定要细心啊啊啊！！！注意看说明</strong></p>
+<p><strong>出题人：Chen_Xi.Naoh</strong></p>
+<p>$Zero$ 所在宾馆的房间号是 $703$ ，而 $Mike$ 所在宾馆的房间好却是 $704$ ，所以当 $Zero$ 和 $Mike$ 想凑在一起刷题的时候，$Zero$ 需要从 $703$ 前往 $704$ 或者 $Mike$ 从 $704$ 前往 $703$ ，当 $Zero$ 和 $Mike$ 凑在一起时，$Mike$ 便会从<a href="https://www.luogu.org/"> $luogu$ </a>上随机选择 $n$ 道题，每一道题分值为 $300$ ，由于 $Mike$ 身经百战，所以每当 $Mike$ 看到某道题目的时候，大脑里面就会自动给该到题目定义一个难度值 $hard$ (要相信 $Mike$ 的判断都是正确的)，而 $Zero$ 和 $Mike$ 两个人都有一个共同的天赋值 $Talent$ ,每个人都只能解出 $Talent$ 范围内难度的题目，当然 $Zero$ 和 $Mike$ 的天赋值不会很低；</p>
+<p>在 $Zero$ 的房间 $703$ 里面有一位热爱学习的小学弟 $BookCity$ ，在 $Zero$ 和 $Mike$ 刷题的同时，$BookCity$ 会在一旁研究两位学长的做题习惯，并给两位学长加油助威，由于 $BookCity$ 的加油，某道题目的难度就会自动下降一点点(<strong>若 $hard - d \le 0$，则默认该题的 $hard$ 为 $1$ </strong>)；然而，在宾馆的
+$123$ 号房间住着一个拥有魔法但心地邪恶的人 $Guy$ ，能够看到Zero和Mike的动静，并且能够施展魔法(因为是在<strong>重阳节</strong>)，在 $Zero$ 和 $Mike$ 做到某一题的时候，直接将该题的难度暴增至 $s$ 倍！！！！！幸运的是，$Zero$ 和 $Mike$ 的老师 $tingtime$ 会帮助他们两个，在困境的时候为 $Zero$ 和 $Mike$ 指点迷津，将某一题的难度直接调为一个很低的值。</p>
+<p>$Zero$ 和 $Mike$ 每刷完一道题能获得对应分值的自信值( $Zero$ 和 $Mike$ 都是追求完美的人，每一道题要么对，要么干脆不写)，现在，你就是 $Zero$ ，你想知道如果和 $Mike$ 从第 $a$ 到题刷到第 $b$ 到题能回复多少自信值 (<strong>自信值计算方法：$600*AC$ 题目个数 $\Longrightarrow$ 一道题 $300$ 分，$2$ 个人一共恢复 $600$ 自信值</strong>)$Confidence$。</p>
+<h2>输入输出格式</h2>
+<strong>输入格式：</strong><br>
+<p><p>第一行输入两个数，分别表示题目个数 $n$ 和天赋值 $Talent$。<br />
+第二行将输入 $n$ 个数，第 $i$ 个数表示第 $i$ 题的 $ hard$ 值。<br />
+第三行，输入一个数表示事件个数 $m$ ，
+接下来的 $m$ 行中，每行一个合题意事件，严格保证所有事件按顺序发生。</p></p>
+<strong>输出格式：</strong><br>
+<p><p>对于 $Zero$ 的每个询问，输出一行，回答他和 $Mike$（两个人） 能够获得的最大值$Confidence$。</p></p>
+<h2>输入输出样例</h2>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>5 5
+2 3 4 5 9
+5 
+BookCity 1 1
+Guy 2 5
+Zero 1 5
+tingtime 5 1
+Zero 1 5
+</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>1800
+2400</pre>
+</div>
+</div>
+<h2>说明</h2>
+<p>保证所有题目初始的难度值 $hard$ 在 $ [0,2^{31}-1] $ 范围内；</p>
+<p>保证 $Zero$ 和 $Mike$ 的天赋值 $Talent$ 在 $ [0,2^{31}-1] $ 范围内；</p>
+<p>保证 $Zero$ 询问的范围都在 $ [0,2^{31}-1] $ 范围内，但不保证$x$一定会小于$y$</p>
+<p>保证 $Guy$ 的翻倍都在 $ [0,2^{31}-1] $ 范围内；</p>
+<p>保证 $BookCity$ 的减小值 $d$ 都在 $ [0,2^{31}-1] $ 范围内；</p>
+<p>保证所有的输入数据都在 $ [0,2^{31}-1] $ 范围内；</p>
+<p>$Mike$ 身经百战，所以其判断的 $hard$ 都在 $ [0,2^{31}-1] $ 范围内，且不存在难度为负数或者为 $0$ 的送分题；</p>
+<p>保证 $n$ 和$m$ 都在 $ [0,2^{31}-1] $ 范围内；</p>
+<p>对于 $30\%$ 的数据：$0\leqslant n \leqslant 5\times 10^3$,$m \leqslant 5\times 10^3$；</p>
+<p>对于 $50\%$ 的数据：$0\leqslant n \leqslant 5\times 10^4$,$m \leqslant 5\times 10^4$；</p>
+<p>对于 $100\%$ 的数据：$0\leqslant n\leqslant 5\times 10^5$，$m\leqslant 5\times 10^5$。</p>
+<p><strong> 总之保证所有输入数据在$ [0,2^{31}-1] $范围内，但不保证运算在$ [0,2^{63}-1] $范围内！！</strong></p>
+</div>
+<div class='lg-article-sub am-g' id="sub"></div>
+</div>
+</div>
+</div>
+<div class="am-modal am-modal-prompt" tabindex="-1" id="confirm">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="memtitle">提示</div>
+<div class="am-modal-bd" id="memadmin">
+标程仅供做题后或实在无思路时参考。<br>
+请自觉、自律地使用该功能并请对自己的学习负责。<br>
+如果发现恶意抄袭标程，将按照I类违反进行处理。<br>
+</div>
+<div class="am-modal-footer">
+<span class="am-modal-btn" data-am-modal-cancel>取消</span>
+<span class="am-modal-btn" data-am-modal-confirm>确定</span>
+</div>
+</div>
+</div>
+<script>
+        $(document).ready(function () {
+            $("#expandstd").click(function () {
+                $('#confirm').modal({
+                    relatedTarget: this,
+                    onConfirm: function (e) {
+                        $("#stdcode").slideDown();
+                        $("#expandstd").hide();
+                    }
+                });
+            });
+            $("#submit").click(
+                function () {
+                    hide_artile();
+                    $(document).scrollTop($(document).scrollTop() - 80);
+                    var pid = $(this).attr("pid");
+                    $.get("/problem/ajax_submit?pid=" + pid, function (data) {
+                        var arr = eval('(' + data + ')');
+                        if (arr['code'] == 201) {
+                            $('.lg-article-sub').html(arr['more']['html']);
+                        }
+                        else if (arr['code'] == 200) {
+
+                        }
+                        else {
+                            if (arr['code'] == 0 || arr['code'] == -3) {
+                                backarticle();
+                            }
+                            show_alert("提交失败", arr['message']);
+                        }
+                    });
+                }
+            );
+            $("button[title].am-btn,a[title].am-btn").poshytip({
+                className: 'tip-twitter',
+                showTimeout: 1,
+                alignTo: 'target',
+                alignX: 'center',
+                alignY: 'bottom'
+            });
+            $('[name=showtag]').click(function () {
+                $('.am-badge.am-hide').removeClass('am-hide');
+            });
+            $(".sample-copy").click(function() {
+                var element = $(this).parents(".copy-region").find("pre");
+                var text = $(element).text();
+                var $temp = $("<textarea>");
+                $("body").append($temp);
+                $temp.val(text).select();
+                document.execCommand("copy");
+                $temp.remove();
+                $(this).text("复制成功").removeClass("lg-bg-orange");
+
+                var e = this;
+                setTimeout(function() {
+                    $(e).text("复制").addClass("lg-bg-orange");
+                }, 500);
+            });
+        });
+    </script>
+</div>
+<footer id="app-footer"></footer>
+<div class="am-modal am-modal-alert" tabindex="-1" id="lg-alert">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="lg-alert-title"></div>
+<div class="am-modal-bd" id="lg-alert-message"></div>
+<div class="am-modal-footer">
+<span class="am-modal-btn">确定</span>
+</div>
+</div>
+</div>
+<script src="/js/ace/ace.js"></script>
+<script src="https://cdn.luogu.org/js/vendor.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/jsmind.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/amazeui.min.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts-more.js"></script>
+<script src="/static/katex/katex.min.js"></script>
+<script src="/static/katex/contrib/auto-render.min.js"></script>
+<script src="https://cdn.luogu.org/markdown-palettes/markdown-palettes.min.js?ver=20190219"></script>
+<script src="https://cdn.luogu.org/js/luogu3.js?ver=20190101"></script>
+</body>
+</html>

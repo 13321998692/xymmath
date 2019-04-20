@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title> P3655 不成熟的梦想家 (未熟DREAMER) - 洛谷</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta name="csrf-token" content="1555853037:GY3ZGkor7zThZmQ6UsZ7ZsiXb2vfkwdVL2hJyzdCe+Q=">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/amazeui.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/katex.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/luogu3.css?ver=20190102">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/highlight_tomorrow.css">
+<link rel="stylesheet" href="https://cdn.luogu.org/markdown-palettes/markdown-palettes.css?ver=20190219">
+<script src="https://cdn.luogu.org/js/jquery-2.1.1.min.js"></script>
+<script src="https://cdn.luogu.org/js/luogu3_pre.js?ver=20190101"></script>
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn.luogu.org/images/favicon3.ico" media="screen"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/fe/loader.css?ver=20190417">
+<script>window._feInjection = JSON.parse(decodeURIComponent("%7B%22code%22%3A200%2C%22currentUser%22%3Anull%2C%22currentTemplate%22%3A%22Excited%22%2C%22currentData%22%3A%7B%22shortHeader%22%3Afalse%2C%22pageName%22%3A%22%5Cu9898%5Cu76ee%5Cu8be6%5Cu60c5%22%7D%2C%22currentMeta%22%3A%7B%22title%22%3A%22%20P3655%20%5Cu4e0d%5Cu6210%5Cu719f%5Cu7684%5Cu68a6%5Cu60f3%5Cu5bb6%20%28%5Cu672a%5Cu719fDREAMER%29%22%7D%7D"));</script>
+<script>window._release = '20190417';</script>
+<script src="https://cdn.luogu.org/fe/loader.js?ver=20190417" charset="utf-8" defer></script>
+</head>
+<body>
+<div id="app-header"></div>
+<nav id="app-sidenav"></nav>
+<div id="app-body"></div>
+<script>
+    function scrollToId (id) {
+        $('html, body').animate({
+            scrollTop: ($('#' + id).offset().top)
+        }, 500);
+    }
+</script>
+<style>
+    .lg-toolbar {
+        display: none;
+    }
+
+    #app-body { /* Unused in fallback FE */
+        display: none;
+    }
+
+    #app-body-new{
+        display: block;
+        margin-bottom: 2em;
+        position: relative;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    @media (min-width: 576px) {
+        #app-body-new {
+            margin-left: 70px;
+        }
+    }
+
+    code {
+        font-family: monospace, "Courier New";
+    }
+
+</style>
+<div id="app-body-new">
+<div class="lg-toolbar" data-am-sticky>
+<h1><a href="/recordnew/lists?uid=&pid=P3655" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a> P3655 不成熟的梦想家 (未熟DREAMER)</h1>
+</div>
+<div class="am-g lg-main-content">
+<div class="am-u-md-4 lg-right" name="problemright">
+<section class="am-panel am-panel-default lg-summary" id="psummary">
+<div class="lg-summary-content">
+<ul class="am-list am-list-static lg-summary-list">
+<li>
+<ul class="am-avg-sm-2"><li><span class="lg-bignum-num">148<small></small></span><span class="lg-bignum-text">通过</span></li><li><span class="lg-bignum-num">864<small></small></span><span class="lg-bignum-text">提交</span></li></ul>
+</li>
+<li>
+<strong>题目提供者</strong>
+<span class="lg-right"><a class='lg-fg-purple lg-bold' href="/space/show?uid=256" target="_blank">lin_toto</a>&nbsp;<span class="am-badge am-radius lg-bg-purple">Kaguya</span></span>
+</li>
+<li>
+<strong>评测方式</strong>
+<span class="lg-right"><b>云端评测</b></span>
+</li>
+<li><strong>标签</strong>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="330">差分</span>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="53">树状数组</span>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="12">递推</span>
+<span class="lg-tag am-badge am-radius lg-bg-orange" data-tagid="319">高性能</span>
+<style>.lg-tag { cursor: pointer; }</style>
+<script>
+                                $(".lg-tag").click(function() {
+                                    window.open("/problemnew/lists?tag=" + $(this).attr('data-tagid'));
+                                })
+                            </script>
+</li>
+<li><strong>难度</strong>
+<span class="lg-right"><span class="am-badge am-radius lg-bg-yellow">普及/提高-</span></span>
+</li>
+<li><strong>时空限制</strong>
+<span class="lg-right">1000ms / 128MB</span>
+</li>
+</ul>
+</div>
+<p>
+<button class="am-btn am-btn-danger am-btn-sm" id="submit" pid="P3655">
+<i class="am-icon-paper-plane"></i> 提交
+</button>
+<a target="_blank" href="/problemnew/solution/P3655" class="am-btn am-btn-primary am-btn-sm">
+<i class="am-icon-book"></i> 题解
+</a>
+<a data-pjax href="/recordnew/lists?pid=P3655" class="am-btn am-btn-primary am-btn-sm" title="查看本题提交记录">
+<i class="am-icon-pie-chart"></i>
+</a>
+<button class="am-btn am-btn-primary am-btn-sm lg-pointer" name="showtag" title="显示算法标签">
+<i class="am-icon-tags"></i>
+</button>
+</p>
+<li>提示：收藏到任务计划后，可在首页查看。</li>
+<p>
+<a class="am-btn am-btn-danger am-btn-sm" href="/fe/problem/P3655" target="_blank">体验新版界面</a>
+</p>
+</section>
+<section class="am-panel am-panel-default lg-summary">
+<h2>最新讨论
+<a onclick="$('#discuss-lists').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看本题讨论">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" style="display: none" id="discuss-lists">
+<li><a data-pjax href="/discuss/show?postid=108460" class="am-padding-0">双倍经验</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=98466" class="am-padding-0">终于过了2333333</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=9246" class="am-padding-0">为什么40</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=9215" class="am-padding-0">第一个题解中提到的nlgn的树…</a>
+</li>
+<div style="overflow: auto">
+<a data-pjax href="/discuss/lists?forumname=P3655" class="am-btn am-btn-primary am-btn-sm lg-right">进入讨论版</a>
+</div>
+</ul>
+</section>
+<section class="am-panel am-panel-default lg-summary am-hide-sm">
+<h2>推荐的相关题目
+<a onclick="$('#recommendation-list').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看推荐题目">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" id="recommendation-list" style="display: none">
+<li>
+<a class='colored' href="/problemnew/show/P4939" target="_blank"><b>P4939</b> Agent2</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3651" target="_blank"><b>P3651</b> 展翅翱翔之时 (はばたきのとき)</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P1638" target="_blank"><b>P1638</b> 逛画展</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3654" target="_blank"><b>P3654</b> First Step (ファーストステップ)</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3865" target="_blank"><b>P3865</b> 【模板】ST表</a>
+</li>
+</ul>
+</section>
+</div>
+<div class="am-u-md-8 lg-right" name="problemleft">
+<div class="lg-content-left">
+<div class="lg-article am-g">
+<h2>题目背景</h2>
+<p><strong>どんな未来かは 誰もまだ知らない</strong></p>
+<p><strong>那是个任谁也不会知晓的未来</strong></p>
+<p><strong>でも楽しくなるはずだよ</strong></p>
+<p><strong>但应该会充满乐趣吧</strong></p>
+<p><strong>みんなとなら乗りこえられる</strong></p>
+<p><strong>只要大伙儿同在 就能跨越难关</strong></p>
+<p><strong>これからなんだねお互いがんばろうよ</strong></p>
+<p><strong>现在才正要开始 彼此互相加油吧</strong></p>
+<p><strong>どんな未来かは 誰もまだ知らない</strong></p>
+<p><strong>那是个任谁也不会知晓的未来</strong></p>
+<p><strong>でも楽しくしたホントに</strong></p>
+<p><strong>不过真心期望能够充满着乐趣</strong></p>
+<p><strong>みんなとなら無理したくなる</strong></p>
+<p><strong>只要大伙儿同在 就会想将顾虑抛诸脑后</strong></p>
+<p><strong>成長したいなまだまだ未熟DREAMER</strong></p>
+<p><strong>愿能有所成长 如今还只是尚未成熟的梦想家</strong></p>
+<p><img src="https://cdn.luogu.org/upload/pic/4493.png" alt="" /> </p>
+<p>Aqours的成员终于到齐了。</p>
+<p>今天，是我们全员在一起的第一场演唱会。</p>
+<p>大家都好好练习过了，相信一定会表现得很出色的。</p>
+<p>不过，每个人的唱功也要尽量地接近才可以呢，如果太突出或者太落后，也是会影响表现的样子。</p>
+<p>所以我们从隔壁的学园都市借来了一个发明，可以改变我们成员的唱功呢。</p>
+<h2>题目描述</h2>
+<p>我们Aqours的成员共有N+1人，他们会列成一队。</p>
+<p>他们的唱功以A[0]到A[N]表示，A[i]$(0\le i \le N)$均给出。</p>
+<p>学园都市的机器可以改变队列中连续多个成员的唱功值，并将其加上一个数Z，当然当Z是负数的时候就变成减去了。</p>
+<p>我打算一共使用这个机器Q次，每次把第X到第Y号（$1\le X,Y\le10^6$）的成员都加上Z点唱功值。</p>
+<p>而我们队伍的魅力值B，是这么算的：</p>
+<p>一开始B=0，然后从第1号到第N号成员，</p>
+<ul>
+<li>当$A_{i-1}&lt;A_i$：$B = B-S\dot|A_{i-1} - A_i|$</li>
+<li>当$A_{i-1}&gt;A_i$：$B = B+T\dot|A_{i-1} - A_i|$
+其中S和T是LoveLive组委会给我们的常数。</li>
+</ul>
+<p>果然，我是バカチカ（笨蛋千歌）呢，所以作为领导我永远排在队伍的开头，唱功永远是0，机器也不会改到我头上呢。</p>
+<p>你能帮我们算算，我<strong>每次</strong>使用完这个机器之后，成员的魅力B是多少吗？</p>
+<h2>输入输出格式</h2>
+<strong>输入格式：</strong><br>
+<p><p>第一行4个整数，N，Q，S，T，各个变量在描述中已经解释</p>
+<p>接下来N+1行，每行一个数整数Ai，其中A0=0</p>
+<p>接下来Q行，每行3个整数，X，Y，Z各个变量在描述中已经解释</p></p>
+<strong>输出格式：</strong><br>
+<p><p>Q个整数，表示答案。</p></p>
+<h2>输入输出样例</h2>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>4 3 2 3
+0
+5
+2
+4
+6
+1 2 1
+3 4 -3
+1 4 2
+</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>-9
+-1
+-5
+</pre>
+</div>
+</div>
+<h2>说明</h2>
+<p>30% 的数据 $N,Q\le 2000$,</p>
+<p>另外20% 的数据 $S=T$</p>
+<p>100%的数据 $N,Q\le 200000$；$1\le S,T,A_i\le10^6$；$|Z|\le 10^6$
+请注意可能需要使用int64，cin/cout可能超时。</p>
+<p>样例解释：</p>
+<p>第一次变化后，</p>
+<p>A 0 6 3 4 6</p>
+<p>B -12 -3 -5 -9</p>
+<h4>以下是彩蛋</h4>
+<p>没有。</p>
+<p>哪来的那么多彩蛋？</p>
+<h2>标程<a class="lg-right am-btn am-btn-sm am-btn-primary" id="expandstd">展开</a></h2>
+<div id="stdcode" class="copy-region" style="display:none">
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre><code class="language-cpp line-numbers">#include &lt;iostream&gt;
+
+using namespace std;
+
+int a[200005];
+long long f[200005];
+
+int main() {
+	ios::sync_with_stdio(false);
+	int n,q,s,t;
+	cin &gt;&gt; n &gt;&gt; q &gt;&gt; s &gt;&gt; t;
+	for(int i=0;i&lt;=n;i++) {
+		cin &gt;&gt; a[i];
+	}
+
+	long long b = 0;
+	for(int i=1;i&lt;=n;i++) {
+		f[i] = a[i] - a[i-1];
+		if(f[i] &gt; 0) b -= s*f[i];
+		if(f[i] &lt; 0) b -= t*f[i];
+	}
+
+	for(int i=1;i&lt;=q;i++) {
+		int x,y,z,mul_1,mul_2;
+		//for(int j=1;j&lt;=n;j++) cout &lt;&lt; f[j] &lt;&lt; &quot; &quot;;
+		cin &gt;&gt; x &gt;&gt; y &gt;&gt; z;
+
+		mul_1 = f[x] &lt; 0 ? t : s;
+		mul_2 = f[x]+z &lt; 0 ? t : s;
+		b += mul_1*f[x];
+		b -= mul_2*(f[x]+z);
+		f[x] += z;
+
+		if(y != n) {
+			mul_1 = f[y+1] &lt; 0 ? t : s;
+			mul_2 = f[y+1]-z &lt; 0 ? t : s;
+			b += mul_1*f[y+1];
+			b -= mul_2*(f[y+1]-z);
+			f[y+1] -= z;
+		}
+
+		cout &lt;&lt; b &lt;&lt; endl;
+	}
+	return 0;
+}</code></pre>
+</div>
+</div>
+<div class='lg-article-sub am-g' id="sub"></div>
+</div>
+</div>
+</div>
+<div class="am-modal am-modal-prompt" tabindex="-1" id="confirm">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="memtitle">提示</div>
+<div class="am-modal-bd" id="memadmin">
+标程仅供做题后或实在无思路时参考。<br>
+请自觉、自律地使用该功能并请对自己的学习负责。<br>
+如果发现恶意抄袭标程，将按照I类违反进行处理。<br>
+</div>
+<div class="am-modal-footer">
+<span class="am-modal-btn" data-am-modal-cancel>取消</span>
+<span class="am-modal-btn" data-am-modal-confirm>确定</span>
+</div>
+</div>
+</div>
+<script>
+        $(document).ready(function () {
+            $("#expandstd").click(function () {
+                $('#confirm').modal({
+                    relatedTarget: this,
+                    onConfirm: function (e) {
+                        $("#stdcode").slideDown();
+                        $("#expandstd").hide();
+                    }
+                });
+            });
+            $("#submit").click(
+                function () {
+                    hide_artile();
+                    $(document).scrollTop($(document).scrollTop() - 80);
+                    var pid = $(this).attr("pid");
+                    $.get("/problem/ajax_submit?pid=" + pid, function (data) {
+                        var arr = eval('(' + data + ')');
+                        if (arr['code'] == 201) {
+                            $('.lg-article-sub').html(arr['more']['html']);
+                        }
+                        else if (arr['code'] == 200) {
+
+                        }
+                        else {
+                            if (arr['code'] == 0 || arr['code'] == -3) {
+                                backarticle();
+                            }
+                            show_alert("提交失败", arr['message']);
+                        }
+                    });
+                }
+            );
+            $("button[title].am-btn,a[title].am-btn").poshytip({
+                className: 'tip-twitter',
+                showTimeout: 1,
+                alignTo: 'target',
+                alignX: 'center',
+                alignY: 'bottom'
+            });
+            $('[name=showtag]').click(function () {
+                $('.am-badge.am-hide').removeClass('am-hide');
+            });
+            $(".sample-copy").click(function() {
+                var element = $(this).parents(".copy-region").find("pre");
+                var text = $(element).text();
+                var $temp = $("<textarea>");
+                $("body").append($temp);
+                $temp.val(text).select();
+                document.execCommand("copy");
+                $temp.remove();
+                $(this).text("复制成功").removeClass("lg-bg-orange");
+
+                var e = this;
+                setTimeout(function() {
+                    $(e).text("复制").addClass("lg-bg-orange");
+                }, 500);
+            });
+        });
+    </script>
+</div>
+<footer id="app-footer"></footer>
+<div class="am-modal am-modal-alert" tabindex="-1" id="lg-alert">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="lg-alert-title"></div>
+<div class="am-modal-bd" id="lg-alert-message"></div>
+<div class="am-modal-footer">
+<span class="am-modal-btn">确定</span>
+</div>
+</div>
+</div>
+<script src="/js/ace/ace.js"></script>
+<script src="https://cdn.luogu.org/js/vendor.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/jsmind.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/amazeui.min.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts-more.js"></script>
+<script src="/static/katex/katex.min.js"></script>
+<script src="/static/katex/contrib/auto-render.min.js"></script>
+<script src="https://cdn.luogu.org/markdown-palettes/markdown-palettes.min.js?ver=20190219"></script>
+<script src="https://cdn.luogu.org/js/luogu3.js?ver=20190101"></script>
+</body>
+</html>

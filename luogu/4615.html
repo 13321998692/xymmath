@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title> P4615 [COCI2017-2018#5] Birokracija - 洛谷</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta name="csrf-token" content="1555853395:W6jFnqqYJnBbMnV5hOTqjG5VVGCtG59WNId5IrXUHzk=">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/amazeui.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/katex.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/luogu3.css?ver=20190102">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/highlight_tomorrow.css">
+<link rel="stylesheet" href="https://cdn.luogu.org/markdown-palettes/markdown-palettes.css?ver=20190219">
+<script src="https://cdn.luogu.org/js/jquery-2.1.1.min.js"></script>
+<script src="https://cdn.luogu.org/js/luogu3_pre.js?ver=20190101"></script>
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn.luogu.org/images/favicon3.ico" media="screen"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/fe/loader.css?ver=20190417">
+<script>window._feInjection = JSON.parse(decodeURIComponent("%7B%22code%22%3A200%2C%22currentUser%22%3Anull%2C%22currentTemplate%22%3A%22Excited%22%2C%22currentData%22%3A%7B%22shortHeader%22%3Afalse%2C%22pageName%22%3A%22%5Cu9898%5Cu76ee%5Cu8be6%5Cu60c5%22%7D%2C%22currentMeta%22%3A%7B%22title%22%3A%22%20P4615%20%5BCOCI2017-2018%235%5D%20Birokracija%22%7D%7D"));</script>
+<script>window._release = '20190417';</script>
+<script src="https://cdn.luogu.org/fe/loader.js?ver=20190417" charset="utf-8" defer></script>
+</head>
+<body>
+<div id="app-header"></div>
+<nav id="app-sidenav"></nav>
+<div id="app-body"></div>
+<script>
+    function scrollToId (id) {
+        $('html, body').animate({
+            scrollTop: ($('#' + id).offset().top)
+        }, 500);
+    }
+</script>
+<style>
+    .lg-toolbar {
+        display: none;
+    }
+
+    #app-body { /* Unused in fallback FE */
+        display: none;
+    }
+
+    #app-body-new{
+        display: block;
+        margin-bottom: 2em;
+        position: relative;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    @media (min-width: 576px) {
+        #app-body-new {
+            margin-left: 70px;
+        }
+    }
+
+    code {
+        font-family: monospace, "Courier New";
+    }
+
+</style>
+<div id="app-body-new">
+<div class="lg-toolbar" data-am-sticky>
+<h1><a href="/recordnew/lists?uid=&pid=P4615" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a> P4615 [COCI2017-2018#5] Birokracija</h1>
+</div>
+<div class="am-g lg-main-content">
+<div class="am-u-md-4 lg-right" name="problemright">
+<section class="am-panel am-panel-default lg-summary" id="psummary">
+<div class="lg-summary-content">
+<ul class="am-list am-list-static lg-summary-list">
+<li>
+<ul class="am-avg-sm-2"><li><span class="lg-bignum-num">33<small></small></span><span class="lg-bignum-text">通过</span></li><li><span class="lg-bignum-num">54<small></small></span><span class="lg-bignum-text">提交</span></li></ul>
+</li>
+<li>
+<strong>题目提供者</strong>
+<span class="lg-right"><a class='lg-fg-red lg-bold' href="/space/show?uid=50092" target="_blank">da32s1da</a></span>
+</li>
+<li>
+<strong>评测方式</strong>
+<span class="lg-right"><b>云端评测</b></span>
+</li>
+<li><strong>标签</strong>
+<span class="lg-tag am-badge am-radius lg-bg-bluelight" data-tagid="333">COCI</span>
+<span class="lg-tag am-badge am-radius lg-bg-green" data-tagid="35">2018</span>
+<span class="lg-tag am-badge am-radius lg-bg-orange" data-tagid="319">高性能</span>
+<style>.lg-tag { cursor: pointer; }</style>
+<script>
+                                $(".lg-tag").click(function() {
+                                    window.open("/problemnew/lists?tag=" + $(this).attr('data-tagid'));
+                                })
+                            </script>
+</li>
+<li><strong>难度</strong>
+<span class="lg-right"><span class="am-badge am-radius lg-bg-bluelight">提高+/省选-</span></span>
+</li>
+<li><strong>时空限制</strong>
+<span class="lg-right">1000ms / 64MB</span>
+</li>
+</ul>
+</div>
+<p>
+<button class="am-btn am-btn-danger am-btn-sm" id="submit" pid="P4615">
+<i class="am-icon-paper-plane"></i> 提交
+</button>
+<a target="_blank" href="/problemnew/solution/P4615" class="am-btn am-btn-primary am-btn-sm">
+<i class="am-icon-book"></i> 题解
+</a>
+<a data-pjax href="/recordnew/lists?pid=P4615" class="am-btn am-btn-primary am-btn-sm" title="查看本题提交记录">
+<i class="am-icon-pie-chart"></i>
+</a>
+<button class="am-btn am-btn-primary am-btn-sm lg-pointer" name="showtag" title="显示算法标签">
+<i class="am-icon-tags"></i>
+</button>
+</p>
+<li>提示：收藏到任务计划后，可在首页查看。</li>
+<p>
+<a class="am-btn am-btn-danger am-btn-sm" href="/fe/problem/P4615" target="_blank">体验新版界面</a>
+</p>
+</section>
+<section class="am-panel am-panel-default lg-summary">
+<h2>最新讨论
+<a onclick="$('#discuss-lists').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看本题讨论">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" style="display: none" id="discuss-lists">
+<li><a data-pjax href="/discuss/show?postid=64086" class="am-padding-0">翻译</a>
+</li>
+<div style="overflow: auto">
+<a data-pjax href="/discuss/lists?forumname=P4615" class="am-btn am-btn-primary am-btn-sm lg-right">进入讨论版</a>
+</div>
+</ul>
+</section>
+<section class="am-panel am-panel-default lg-summary am-hide-sm">
+<h2>推荐的相关题目
+<a onclick="$('#recommendation-list').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看推荐题目">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" id="recommendation-list" style="display: none">
+<li>
+<a class='colored' href="/problemnew/show/P2573" target="_blank"><b>P2573</b> [SCOI2012]滑雪</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P2472" target="_blank"><b>P2472</b> [SCOI2007]蜥蜴</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3171" target="_blank"><b>P3171</b> [CQOI2015]网络吞吐量</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P2590" target="_blank"><b>P2590</b> [ZJOI2008]树的统计</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/CF784E" target="_blank"><b>CF784E</b> Twisted Circuit</a>
+</li>
+</ul>
+</section>
+</div>
+<div class="am-u-md-8 lg-right" name="problemleft">
+<div class="lg-content-left">
+<div class="lg-article am-g">
+<h2>题意翻译</h2>
+<p>Mirko是一家大公司的CEO。该公司由$N$人组成，编号为1到N，Mirko编号为$1$。公司的结构像一棵树一样，每个员工（Mirko除外）都有老板，我们说这个员工是该老板的助手。每个老板都可以有多名助手。Mirko没有老板，但有他的助手。</p>
+<p>之后会有一些任务，Mirko会将该任务委托给他编号最小的助手。然后，该助手也将任务委托给他编号最小的助手，并且这个过程重复进行，直到任务被发送给没有助手的人，然后他必须亲自完成任务。</p>
+<p>执行任务的人获得1个硬币，那个人的老板获得2个硬币，那个人的老板获得3个硬币，依此类推，一直到Mirko。之后，真正完成工作的员工意识到系统的不公平并感到伤心，并且不会再执行任务（也就是辞职）。</p>
+<p>当公司收到的下一个任务时，因为少了一个人，所以薪水可能更少，但工作必须继续。任务是无限多的（直到公司倒闭），因此整个过程（分配新任务，执行任务，划分薪水和执行任务人员的退出）重复进行，最后Mirko独自留在公司并完成他的第一个（也是他的最后一个）任务。</p>
+<p>当然，在此之前，Mirko将积累相当多的财富，但他也想知道每个员工赚了多少钱。</p>
+<p>输入输出格式</p>
+<p>输入格式：
+第一行有一个整数$N(2 ≤ N ≤ 2e5)$，既包括Mirko在内的员工的个数。
+紧接着第二行有$n-1$个整数，分别为$a2,a3,\cdots ,an(1 ≤ a_i &lt; i )$，$ai$表示$ai$的上级。</p>
+<p>输出格式</p>
+<p>输出一行$N$个整数，第$i$个整数表示编号为$i$的人
+能得到的金币数。</p>
+<p>说明</p>
+<p>$50\%$的数据满足$2≤N≤5000$。</p>
+<h2>题目描述</h2>
+<p>Mirko has become CEO of a huge corporation. This corporation consists of ​N people,
+labeled from 1 to ​N
+, and Mirko is labeled 1. The corporation is structured so that each
+employee (except Mirko) has a boss, and we say that employee is an assistant to that boss.
+Each boss can have multiple assistants, but still reports to their boss. This holds for
+everyone except Mirko, who is at the top of the pyramid and doesn’t have a boss, but has his
+assistants.</p>
+<p>When Mirko gets a task from the investors, he then delegates that task to his assistant with
+the minimal number. This assistant then delegates the task to their assistant with the
+minimal number, and this process repeats until the task is given to an unlucky person
+without an assistant, who then must do the task.</p>
+<p>This is when the real problems begin. The person that did the task gets paid 1 coin, the boss
+of that person gets 2 coins, the boss of that person gets 3 coins, and so on, all the way to
+Mirko, who gets as many coins as there are people in this sequence. After that, the
+employee that really did the job realizes how unfair the system is and quits their job out of
+principle.</p>
+<p>When it comes to doing the next task in the corporation, there is a person less, so maybe the
+paychecks are less, but the work must continue. Tasks are piling up, so the whole procedure
+(assigning a new task, doing it, dividing paychecks and the person doing the task quitting)
+repeats until Mirko is left alone in the corporation and does his first (also his last) task.</p>
+<p>Of course, Mirko will have amassed quite a fortune until then, but he also wants to know how
+much money each of the employees earned.</p>
+<h2>输入输出格式</h2>
+<strong>输入格式：</strong><br>
+<p><p>The first line of input contains the positive integer ​N (2 ≤ ​N ≤ 2·$10^5$​ ), the number of
+employees (including Mirko).</p>
+<p>The following line contains ​N- 1 positive integers $a_2$​ , ​$a_3$​ , ​$a_4$ , …, ​$a_n$
+(1 ≤ ​$a_i$
+&lt; ​i
+), where ​$a_i$
+denotes the boss of employee ​i
+.</p></p>
+<strong>输出格式：</strong><br>
+<p><p>You must output a single line consisting of ​N numbers, the $i^{th}$ number corresponding to the
+amount of money earned by the $i^{th}$ employee.</p></p>
+<h2>输入输出样例</h2>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>3
+1 1</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>5 1 1</pre>
+</div>
+</div>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#2：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>5
+1 2 2 4</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#2：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>13 8 1 3 1</pre>
+</div>
+</div>
+<h2>说明</h2>
+<p>In test cases worth 50% of total points, it will hold 2 ≤ ​N
+≤ 5000.</p>
+<p><strong>Clarification of the second test case:</strong></p>
+<p>Mirko assigns the first task to employee 2, who then assigns it to employee 3, who then does it. For
+this, employee 3 gets 1 coin, employee 2 gets 2 coins, and employee 1 (Mirko) gets 3 coins.
+Employee 3 then quits.</p>
+<p>Mirko assigns the second task to employee 2, who then assigns it to employee 4 (because employee
+3 quit), who then assigns it to employee 5, who then does it. For this, employee 5 gets 1 coin,
+employee 4 gets 2 coins, employee 2 gets 3 coins, and employee 1 gets 4 coins. Employee 5 then quits.</p>
+<p>The procedure is repeated for a total of 5 tasks.</p>
+<p>In total, Mirko gets 13 coins, employee 2 gets 8, employee 4 gets 3, and employee 3 and 5 each get 1
+coin.</p>
+</div>
+<div class='lg-article-sub am-g' id="sub"></div>
+</div>
+</div>
+</div>
+<div class="am-modal am-modal-prompt" tabindex="-1" id="confirm">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="memtitle">提示</div>
+<div class="am-modal-bd" id="memadmin">
+标程仅供做题后或实在无思路时参考。<br>
+请自觉、自律地使用该功能并请对自己的学习负责。<br>
+如果发现恶意抄袭标程，将按照I类违反进行处理。<br>
+</div>
+<div class="am-modal-footer">
+<span class="am-modal-btn" data-am-modal-cancel>取消</span>
+<span class="am-modal-btn" data-am-modal-confirm>确定</span>
+</div>
+</div>
+</div>
+<script>
+        $(document).ready(function () {
+            $("#expandstd").click(function () {
+                $('#confirm').modal({
+                    relatedTarget: this,
+                    onConfirm: function (e) {
+                        $("#stdcode").slideDown();
+                        $("#expandstd").hide();
+                    }
+                });
+            });
+            $("#submit").click(
+                function () {
+                    hide_artile();
+                    $(document).scrollTop($(document).scrollTop() - 80);
+                    var pid = $(this).attr("pid");
+                    $.get("/problem/ajax_submit?pid=" + pid, function (data) {
+                        var arr = eval('(' + data + ')');
+                        if (arr['code'] == 201) {
+                            $('.lg-article-sub').html(arr['more']['html']);
+                        }
+                        else if (arr['code'] == 200) {
+
+                        }
+                        else {
+                            if (arr['code'] == 0 || arr['code'] == -3) {
+                                backarticle();
+                            }
+                            show_alert("提交失败", arr['message']);
+                        }
+                    });
+                }
+            );
+            $("button[title].am-btn,a[title].am-btn").poshytip({
+                className: 'tip-twitter',
+                showTimeout: 1,
+                alignTo: 'target',
+                alignX: 'center',
+                alignY: 'bottom'
+            });
+            $('[name=showtag]').click(function () {
+                $('.am-badge.am-hide').removeClass('am-hide');
+            });
+            $(".sample-copy").click(function() {
+                var element = $(this).parents(".copy-region").find("pre");
+                var text = $(element).text();
+                var $temp = $("<textarea>");
+                $("body").append($temp);
+                $temp.val(text).select();
+                document.execCommand("copy");
+                $temp.remove();
+                $(this).text("复制成功").removeClass("lg-bg-orange");
+
+                var e = this;
+                setTimeout(function() {
+                    $(e).text("复制").addClass("lg-bg-orange");
+                }, 500);
+            });
+        });
+    </script>
+</div>
+<footer id="app-footer"></footer>
+<div class="am-modal am-modal-alert" tabindex="-1" id="lg-alert">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="lg-alert-title"></div>
+<div class="am-modal-bd" id="lg-alert-message"></div>
+<div class="am-modal-footer">
+<span class="am-modal-btn">确定</span>
+</div>
+</div>
+</div>
+<script src="/js/ace/ace.js"></script>
+<script src="https://cdn.luogu.org/js/vendor.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/jsmind.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/amazeui.min.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts-more.js"></script>
+<script src="/static/katex/katex.min.js"></script>
+<script src="/static/katex/contrib/auto-render.min.js"></script>
+<script src="https://cdn.luogu.org/markdown-palettes/markdown-palettes.min.js?ver=20190219"></script>
+<script src="https://cdn.luogu.org/js/luogu3.js?ver=20190101"></script>
+</body>
+</html>

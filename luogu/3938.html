@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title> P3938 斐波那契 - 洛谷</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta name="csrf-token" content="1555853163:/WqMznYUeVkRwc6GzDZg7gd5TW5hBLgl68H0jSMHCS4=">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/amazeui.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/katex.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/luogu3.css?ver=20190102">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/highlight_tomorrow.css">
+<link rel="stylesheet" href="https://cdn.luogu.org/markdown-palettes/markdown-palettes.css?ver=20190219">
+<script src="https://cdn.luogu.org/js/jquery-2.1.1.min.js"></script>
+<script src="https://cdn.luogu.org/js/luogu3_pre.js?ver=20190101"></script>
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn.luogu.org/images/favicon3.ico" media="screen"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/fe/loader.css?ver=20190417">
+<script>window._feInjection = JSON.parse(decodeURIComponent("%7B%22code%22%3A200%2C%22currentUser%22%3Anull%2C%22currentTemplate%22%3A%22Excited%22%2C%22currentData%22%3A%7B%22shortHeader%22%3Afalse%2C%22pageName%22%3A%22%5Cu9898%5Cu76ee%5Cu8be6%5Cu60c5%22%7D%2C%22currentMeta%22%3A%7B%22title%22%3A%22%20P3938%20%5Cu6590%5Cu6ce2%5Cu90a3%5Cu5951%22%7D%7D"));</script>
+<script>window._release = '20190417';</script>
+<script src="https://cdn.luogu.org/fe/loader.js?ver=20190417" charset="utf-8" defer></script>
+</head>
+<body>
+<div id="app-header"></div>
+<nav id="app-sidenav"></nav>
+<div id="app-body"></div>
+<script>
+    function scrollToId (id) {
+        $('html, body').animate({
+            scrollTop: ($('#' + id).offset().top)
+        }, 500);
+    }
+</script>
+<style>
+    .lg-toolbar {
+        display: none;
+    }
+
+    #app-body { /* Unused in fallback FE */
+        display: none;
+    }
+
+    #app-body-new{
+        display: block;
+        margin-bottom: 2em;
+        position: relative;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    @media (min-width: 576px) {
+        #app-body-new {
+            margin-left: 70px;
+        }
+    }
+
+    code {
+        font-family: monospace, "Courier New";
+    }
+
+</style>
+<div id="app-body-new">
+<div class="lg-toolbar" data-am-sticky>
+<h1><a href="/recordnew/lists?uid=&pid=P3938" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a> P3938 斐波那契</h1>
+</div>
+<div class="am-g lg-main-content">
+<div class="am-u-md-4 lg-right" name="problemright">
+<section class="am-panel am-panel-default lg-summary" id="psummary">
+<div class="lg-summary-content">
+<ul class="am-list am-list-static lg-summary-list">
+<li>
+<ul class="am-avg-sm-2"><li><span class="lg-bignum-num">1.2<small>K</small><small></small></span><span class="lg-bignum-text">通过</span></li><li><span class="lg-bignum-num">5.1<small>K</small><small></small></span><span class="lg-bignum-text">提交</span></li></ul>
+</li>
+<li>
+<strong>题目提供者</strong>
+<span class="lg-right"><a class='lg-fg-purple lg-bold' href="/space/show?uid=12621" target="_blank">fstqwq</a>&nbsp;<span class="am-badge am-radius lg-bg-purple">管理员</span></span>
+</li>
+<li>
+<strong>评测方式</strong>
+<span class="lg-right"><b>云端评测</b></span>
+</li>
+<li><strong>标签</strong>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="125">二分查找</span>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="260">斐波那契,Fibonacci</span>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="211">最近公共祖先,LCA</span>
+<span class="lg-tag am-badge am-radius lg-bg-green" data-tagid="34">2017</span>
+<span class="lg-tag am-badge am-radius lg-bg-orange" data-tagid="108">O2优化</span>
+<style>.lg-tag { cursor: pointer; }</style>
+<script>
+                                $(".lg-tag").click(function() {
+                                    window.open("/problemnew/lists?tag=" + $(this).attr('data-tagid'));
+                                })
+                            </script>
+</li>
+<li><strong>难度</strong>
+<span class="lg-right"><span class="am-badge am-radius lg-bg-green">普及+/提高</span></span>
+</li>
+<li><strong>时空限制</strong>
+<span class="lg-right">1000ms / 256MB</span>
+</li>
+</ul>
+</div>
+<p>
+<button class="am-btn am-btn-danger am-btn-sm" id="submit" pid="P3938">
+<i class="am-icon-paper-plane"></i> 提交
+</button>
+<a target="_blank" href="/problemnew/solution/P3938" class="am-btn am-btn-primary am-btn-sm">
+<i class="am-icon-book"></i> 题解
+</a>
+<a data-pjax href="/recordnew/lists?pid=P3938" class="am-btn am-btn-primary am-btn-sm" title="查看本题提交记录">
+<i class="am-icon-pie-chart"></i>
+</a>
+<button class="am-btn am-btn-primary am-btn-sm lg-pointer" name="showtag" title="显示算法标签">
+<i class="am-icon-tags"></i>
+</button>
+</p>
+<li>提示：收藏到任务计划后，可在首页查看。</li>
+<p>
+<a class="am-btn am-btn-danger am-btn-sm" href="/fe/problem/P3938" target="_blank">体验新版界面</a>
+</p>
+</section>
+<section class="am-panel am-panel-default lg-summary">
+<h2>最新讨论
+<a onclick="$('#discuss-lists').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看本题讨论">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" style="display: none" id="discuss-lists">
+<li><a data-pjax href="/discuss/show?postid=71923" class="am-padding-0">这里是标题</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=26640" class="am-padding-0">本机秒出答案，提交和在线I…</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=26524" class="am-padding-0">当真兔子们是在自交么。。。…</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=26517" class="am-padding-0">求助QwQ</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=26484" class="am-padding-0">求大佬ORZ</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=26469" class="am-padding-0">被卡成70</a>
+</li>
+<div style="overflow: auto">
+<a data-pjax href="/discuss/lists?forumname=P3938" class="am-btn am-btn-primary am-btn-sm lg-right">进入讨论版</a>
+</div>
+</ul>
+</section>
+<section class="am-panel am-panel-default lg-summary am-hide-sm">
+<h2>推荐的相关题目
+<a onclick="$('#recommendation-list').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看推荐题目">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" id="recommendation-list" style="display: none">
+<li>
+<a class='colored' href="/problemnew/show/P3939" target="_blank"><b>P3939</b> 数颜色</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3941" target="_blank"><b>P3941</b> 入阵曲</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3942" target="_blank"><b>P3942</b> 将军令</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3940" target="_blank"><b>P3940</b> 分组</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P1967" target="_blank"><b>P1967</b> 货车运输</a>
+</li>
+</ul>
+</section>
+</div>
+<div class="am-u-md-8 lg-right" name="problemleft">
+<div class="lg-content-left">
+<div class="lg-article am-g">
+<h2>题目背景</h2>
+<p>大样例下发链接：<a href="http://pan.baidu.com/s/1c0LbQ2">http://pan.baidu.com/s/1c0LbQ2</a> 密码：jigg</p>
+<h2>题目描述</h2>
+<p>小 C 养了一些很可爱的兔子。 有一天，小 C 突然发现兔子们都是严格按照伟大的数学家斐波那契提出的模型来进行 繁衍：一对兔子从出生后第二个月起，每个月刚开始的时候都会产下一对小兔子。我们假定， 在整个过程中兔子不会出现任何意外。</p>
+<p>小 C 把兔子按出生顺序，把兔子们从 1 开始标号，并且小 C 的兔子都是 1 号兔子和 1 号兔子的后代。如果某两对兔子是同时出生的，那么小 C 会将父母标号更小的一对优先标 号。</p>
+<p>如果我们把这种关系用图画下来，前六个月大概就是这样的：</p>
+<p><img src="https://cdn.luogu.org/upload/pic/9806.png" alt="" /> </p>
+<p>其中，一个箭头 A → B 表示 A 是 B 的祖先，相同的颜色表示同一个月出生的兔子。</p>
+<p>为了更细致地了解兔子们是如何繁衍的，小 C 找来了一些兔子，并且向你提出了 m 个 问题：她想知道关于每两对兔子 $a_i$ 和 $b_i$ ，他们的最近公共祖先是谁。你能帮帮小 C 吗？</p>
+<p>一对兔子的祖先是这对兔子以及他们父母（如果有的话）的祖先，而最近公共祖先是指 两对兔子所共有的祖先中，离他们的距离之和最近的一对兔子。比如，5 和 7 的最近公共祖 先是 2，1 和 2 的最近公共祖先是 1，6 和 6 的最近公共祖先是 6。</p>
+<h2>输入输出格式</h2>
+<strong>输入格式：</strong><br>
+<p><p>从标准输入读入数据。 输入第一行，包含一个正整数 m。 输入接下来 m 行，每行包含 2 个正整数，表示 $a_i$ 和 $b_i$ 。</p></p>
+<strong>输出格式：</strong><br>
+<p><p>输出到标准输出中。 输入一共 m 行，每行一个正整数，依次表示你对问题的答案。</p></p>
+<h2>输入输出样例</h2>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>5 
+1 1 
+2 3 
+5 7 
+7 13 
+4 12</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>1 
+1 
+2 
+2 
+4 </pre>
+</div>
+</div>
+<h2>说明</h2>
+<p>【数据范围与约定】 子任务会给出部分测试数据的特点。如果你在解决题目中遇到了困难，可以尝试只解 决一部分测试数据。 每个测试点的数据规模及特点如下表：</p>
+<p><img src="https://cdn.luogu.org/upload/pic/9807.png" alt="" /> </p>
+<p>特殊性质 1：保证 $a_i$, $b_i$ 均为某一个月出生的兔子中标号最大的一对兔子。例如，对 于前六个月，标号最大的兔子分别是 1, 2, 3, 5, 8, 13。</p>
+<p>特殊性质 2：保证 $|a_i-b_i|\le 1$。</p>
+</div>
+<div class='lg-article-sub am-g' id="sub"></div>
+</div>
+</div>
+</div>
+<div class="am-modal am-modal-prompt" tabindex="-1" id="confirm">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="memtitle">提示</div>
+<div class="am-modal-bd" id="memadmin">
+标程仅供做题后或实在无思路时参考。<br>
+请自觉、自律地使用该功能并请对自己的学习负责。<br>
+如果发现恶意抄袭标程，将按照I类违反进行处理。<br>
+</div>
+<div class="am-modal-footer">
+<span class="am-modal-btn" data-am-modal-cancel>取消</span>
+<span class="am-modal-btn" data-am-modal-confirm>确定</span>
+</div>
+</div>
+</div>
+<script>
+        $(document).ready(function () {
+            $("#expandstd").click(function () {
+                $('#confirm').modal({
+                    relatedTarget: this,
+                    onConfirm: function (e) {
+                        $("#stdcode").slideDown();
+                        $("#expandstd").hide();
+                    }
+                });
+            });
+            $("#submit").click(
+                function () {
+                    hide_artile();
+                    $(document).scrollTop($(document).scrollTop() - 80);
+                    var pid = $(this).attr("pid");
+                    $.get("/problem/ajax_submit?pid=" + pid, function (data) {
+                        var arr = eval('(' + data + ')');
+                        if (arr['code'] == 201) {
+                            $('.lg-article-sub').html(arr['more']['html']);
+                        }
+                        else if (arr['code'] == 200) {
+
+                        }
+                        else {
+                            if (arr['code'] == 0 || arr['code'] == -3) {
+                                backarticle();
+                            }
+                            show_alert("提交失败", arr['message']);
+                        }
+                    });
+                }
+            );
+            $("button[title].am-btn,a[title].am-btn").poshytip({
+                className: 'tip-twitter',
+                showTimeout: 1,
+                alignTo: 'target',
+                alignX: 'center',
+                alignY: 'bottom'
+            });
+            $('[name=showtag]').click(function () {
+                $('.am-badge.am-hide').removeClass('am-hide');
+            });
+            $(".sample-copy").click(function() {
+                var element = $(this).parents(".copy-region").find("pre");
+                var text = $(element).text();
+                var $temp = $("<textarea>");
+                $("body").append($temp);
+                $temp.val(text).select();
+                document.execCommand("copy");
+                $temp.remove();
+                $(this).text("复制成功").removeClass("lg-bg-orange");
+
+                var e = this;
+                setTimeout(function() {
+                    $(e).text("复制").addClass("lg-bg-orange");
+                }, 500);
+            });
+        });
+    </script>
+</div>
+<footer id="app-footer"></footer>
+<div class="am-modal am-modal-alert" tabindex="-1" id="lg-alert">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="lg-alert-title"></div>
+<div class="am-modal-bd" id="lg-alert-message"></div>
+<div class="am-modal-footer">
+<span class="am-modal-btn">确定</span>
+</div>
+</div>
+</div>
+<script src="/js/ace/ace.js"></script>
+<script src="https://cdn.luogu.org/js/vendor.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/jsmind.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/amazeui.min.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts-more.js"></script>
+<script src="/static/katex/katex.min.js"></script>
+<script src="/static/katex/contrib/auto-render.min.js"></script>
+<script src="https://cdn.luogu.org/markdown-palettes/markdown-palettes.min.js?ver=20190219"></script>
+<script src="https://cdn.luogu.org/js/luogu3.js?ver=20190101"></script>
+</body>
+</html>

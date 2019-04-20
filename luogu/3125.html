@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title> P3125 [USACO15OPEN]Bessie的生日自助餐Bessie&#039;s… - 洛谷</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta name="csrf-token" content="1555852750:SVuqoL4KDYn3VYBdmmJCwVRwq+uliNFp3ZSoJeNwHAg=">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/amazeui.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/katex.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/luogu3.css?ver=20190102">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/highlight_tomorrow.css">
+<link rel="stylesheet" href="https://cdn.luogu.org/markdown-palettes/markdown-palettes.css?ver=20190219">
+<script src="https://cdn.luogu.org/js/jquery-2.1.1.min.js"></script>
+<script src="https://cdn.luogu.org/js/luogu3_pre.js?ver=20190101"></script>
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn.luogu.org/images/favicon3.ico" media="screen"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/fe/loader.css?ver=20190417">
+<script>window._feInjection = JSON.parse(decodeURIComponent("%7B%22code%22%3A200%2C%22currentUser%22%3Anull%2C%22currentTemplate%22%3A%22Excited%22%2C%22currentData%22%3A%7B%22shortHeader%22%3Afalse%2C%22pageName%22%3A%22%5Cu9898%5Cu76ee%5Cu8be6%5Cu60c5%22%7D%2C%22currentMeta%22%3A%7B%22title%22%3A%22%20P3125%20%5BUSACO15OPEN%5DBessie%5Cu7684%5Cu751f%5Cu65e5%5Cu81ea%5Cu52a9%5Cu9910Bessie%27s%5Cu2026%22%7D%7D"));</script>
+<script>window._release = '20190417';</script>
+<script src="https://cdn.luogu.org/fe/loader.js?ver=20190417" charset="utf-8" defer></script>
+</head>
+<body>
+<div id="app-header"></div>
+<nav id="app-sidenav"></nav>
+<div id="app-body"></div>
+<script>
+    function scrollToId (id) {
+        $('html, body').animate({
+            scrollTop: ($('#' + id).offset().top)
+        }, 500);
+    }
+</script>
+<style>
+    .lg-toolbar {
+        display: none;
+    }
+
+    #app-body { /* Unused in fallback FE */
+        display: none;
+    }
+
+    #app-body-new{
+        display: block;
+        margin-bottom: 2em;
+        position: relative;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    @media (min-width: 576px) {
+        #app-body-new {
+            margin-left: 70px;
+        }
+    }
+
+    code {
+        font-family: monospace, "Courier New";
+    }
+
+</style>
+<div id="app-body-new">
+<div class="lg-toolbar" data-am-sticky>
+<h1><a href="/recordnew/lists?uid=&pid=P3125" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a> P3125 [USACO15OPEN]Bessie的生日自助餐Bessie&#039;s…</h1>
+</div>
+<div class="am-g lg-main-content">
+<div class="am-u-md-4 lg-right" name="problemright">
+<section class="am-panel am-panel-default lg-summary" id="psummary">
+<div class="lg-summary-content">
+<ul class="am-list am-list-static lg-summary-list">
+<li>
+<ul class="am-avg-sm-2"><li><span class="lg-bignum-num">122<small></small></span><span class="lg-bignum-text">通过</span></li><li><span class="lg-bignum-num">273<small></small></span><span class="lg-bignum-text">提交</span></li></ul>
+</li>
+<li>
+<strong>题目提供者</strong>
+<span class="lg-right"><a class='lg-fg-gray' href="/space/show?uid=20" target="_blank">FarmerJohn2</a></span>
+</li>
+<li>
+<strong>评测方式</strong>
+<span class="lg-right"><b>云端评测</b></span>
+</li>
+<li><strong>标签</strong>
+<span class="lg-tag am-badge am-radius lg-bg-bluelight" data-tagid="46">USACO</span>
+<span class="lg-tag am-badge am-radius lg-bg-green" data-tagid="32">2015</span>
+<span class="lg-tag am-badge am-radius lg-bg-orange" data-tagid="319">高性能</span>
+<style>.lg-tag { cursor: pointer; }</style>
+<script>
+                                $(".lg-tag").click(function() {
+                                    window.open("/problemnew/lists?tag=" + $(this).attr('data-tagid'));
+                                })
+                            </script>
+</li>
+<li><strong>难度</strong>
+<span class="lg-right"><span class="am-badge am-radius lg-bg-bluelight">提高+/省选-</span></span>
+</li>
+<li><strong>时空限制</strong>
+<span class="lg-right">1000ms / 128MB</span>
+</li>
+</ul>
+</div>
+<p>
+<button class="am-btn am-btn-danger am-btn-sm" id="submit" pid="P3125">
+<i class="am-icon-paper-plane"></i> 提交
+</button>
+<a target="_blank" href="/problemnew/solution/P3125" class="am-btn am-btn-primary am-btn-sm">
+<i class="am-icon-book"></i> 题解
+</a>
+<a data-pjax href="/recordnew/lists?pid=P3125" class="am-btn am-btn-primary am-btn-sm" title="查看本题提交记录">
+<i class="am-icon-pie-chart"></i>
+</a>
+<button class="am-btn am-btn-primary am-btn-sm lg-pointer" name="showtag" title="显示算法标签">
+<i class="am-icon-tags"></i>
+</button>
+</p>
+<li>提示：收藏到任务计划后，可在首页查看。</li>
+<p>
+<a class="am-btn am-btn-danger am-btn-sm" href="/fe/problem/P3125" target="_blank">体验新版界面</a>
+</p>
+</section>
+<section class="am-panel am-panel-default lg-summary">
+<h2>最新讨论
+<a onclick="$('#discuss-lists').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看本题讨论">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" style="display: none" id="discuss-lists">
+<li><a data-pjax href="/discuss/show?postid=4725" class="am-padding-0">翻译</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=4338" class="am-padding-0">题解</a>
+</li>
+<div style="overflow: auto">
+<a data-pjax href="/discuss/lists?forumname=P3125" class="am-btn am-btn-primary am-btn-sm lg-right">进入讨论版</a>
+</div>
+</ul>
+</section>
+<section class="am-panel am-panel-default lg-summary am-hide-sm">
+<h2>推荐的相关题目
+<a onclick="$('#recommendation-list').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看推荐题目">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" id="recommendation-list" style="display: none">
+<li>
+<a class='colored' href="/problemnew/show/P3127" target="_blank"><b>P3127</b> [USACO15OPEN]被困在haybales（金）Trappe…</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P2845" target="_blank"><b>P2845</b> [USACO15DEC]Switching on the Lights 开关灯</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3126" target="_blank"><b>P3126</b> [USACO15OPEN]回文的路径Palindromic Paths</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P2966" target="_blank"><b>P2966</b> [USACO09DEC]牛收费路径Cow Toll Paths</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3000" target="_blank"><b>P3000</b> [USACO10DEC]牛的健美操Cow Calisthenics</a>
+</li>
+</ul>
+</section>
+</div>
+<div class="am-u-md-8 lg-right" name="problemleft">
+<div class="lg-content-left">
+<div class="lg-article am-g">
+<h2>题目描述</h2>
+<p>For Bessie the cow’s birthday, Farmer John has given her free reign over one</p>
+<p>of his best fields to eat grass.</p>
+<p>The field is covered in $N$ patches of grass ($1 \le N \le 1000$), conveniently</p>
+<p>numbered $1\ldots N$, that each have a distinct quality value. If Bessie eats</p>
+<p>grass of quality $Q$, she gains $Q$ units of energy. Each patch is connected to</p>
+<p>up to 10 neighboring patches via bi-directional paths, and it takes Bessie $E$</p>
+<p>units of energy to move between adjacent patches ($1 \le E \le 1,000,000$).</p>
+<p>Bessie can choose to start grazing in any patch she wishes, and she wants to</p>
+<p>stop grazing once she has accumulated a maximum amount of energy.</p>
+<p>Unfortunately, Bessie is a picky bovine, and once she eats grass of a certain</p>
+<p>quality, she’ll never eat grass at or below that quality level again! She is</p>
+<p>still happy to walk through patches without eating their grass; in fact, she</p>
+<p>might find it beneficial to walk through a patch of high-quality grass without</p>
+<p>eating it, only to return later for a tasty snack.</p>
+<p>Please help determine the maximum amount of energy Bessie can accumulate.</p>
+<p>为了庆祝奶牛Bessie的生日，Farmer John给了她一块最好的牧场，让她自由的享用。</p>
+<p>牧场上一共有N块草地（1≤N≤1000），编号为1...N，每块草地上牧草的质量都不同。</p>
+<p>如果Bessie吃掉的草地上牧草质量为Q，她可以获得Q单位的能量。</p>
+<p>每块草地最多和10块草地有相连的道路，在相连的两个草地之间走动需要消耗E单位的能量(1≤E≤1,000,000)。</p>
+<p>Bessie可以从任意一块草地开始吃草，并且想要在获得了最多能量的时候停止。</p>
+<p>有点遗憾的，Bessie是一头挑食的奶牛，一旦她吃过了一定质量的牧草，她就不会再吃相同或更低质量的牧草！但是她仍然很愿意路过某些草地，而不吃它们。实际上，她发现路过一块高质量的草地而不吃它，等一下返回再去享用，有时会更有利！</p>
+<p>请帮忙计算Bessie能够获得的能量的最大值。</p>
+<h2>输入输出格式</h2>
+<strong>输入格式：</strong><br>
+<p><p>The first line of input contains $N$ and $E$. Each of the remaining $N$ lines</p>
+<p>describe a patch of grass. They contain two integers $Q$ and $D$ giving the</p>
+<p>quality of the patch (in the range $1\ldots 1,000,000$) and its number of</p>
+<p>neighbors. The remaining $D$ numbers on the line specify the neighbors.</p>
+<p>1行：包含两个整数N和E。</p>
+<p>接下来N行：每行描述一块草地，首先两个整数Q和D，分别表示草地上牧草的质量（范围1…1,000,000）和相连的草地数量。然后D个整数表示相连的草地。</p></p>
+<strong>输出格式：</strong><br>
+<p><p>Please output the maximum amount of energy Bessie can accumulate.</p>
+<p>输出Bessie能够获得的能量的最大值。</p></p>
+<h2>输入输出样例</h2>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>5 2
+4 1 2
+1 3 1 3 4
+6 2 2 5
+5 2 2 5
+2 2 3 4</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>7</pre>
+</div>
+</div>
+<h2>说明</h2>
+<p>Bessie starts at patch 4 gaining 5 units of energy from the grass there. She</p>
+<p>then takes the path to patch 5 losing 2 units of energy during her travel.</p>
+<p>She refuses to eat the lower quality grass at patch 5 and travels to patch 3</p>
+<p>again losing 2 units of energy. Finally she eats the grass at patch 3 gaining 6 units of energy</p>
+<p>for a total of 7 energy.</p>
+<p>Note tha the sample case above is different from test case 1 when you submit.</p>
+<p>感谢@蒟蒻orz神犇 提供翻译</p>
+</div>
+<div class='lg-article-sub am-g' id="sub"></div>
+</div>
+</div>
+</div>
+<div class="am-modal am-modal-prompt" tabindex="-1" id="confirm">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="memtitle">提示</div>
+<div class="am-modal-bd" id="memadmin">
+标程仅供做题后或实在无思路时参考。<br>
+请自觉、自律地使用该功能并请对自己的学习负责。<br>
+如果发现恶意抄袭标程，将按照I类违反进行处理。<br>
+</div>
+<div class="am-modal-footer">
+<span class="am-modal-btn" data-am-modal-cancel>取消</span>
+<span class="am-modal-btn" data-am-modal-confirm>确定</span>
+</div>
+</div>
+</div>
+<script>
+        $(document).ready(function () {
+            $("#expandstd").click(function () {
+                $('#confirm').modal({
+                    relatedTarget: this,
+                    onConfirm: function (e) {
+                        $("#stdcode").slideDown();
+                        $("#expandstd").hide();
+                    }
+                });
+            });
+            $("#submit").click(
+                function () {
+                    hide_artile();
+                    $(document).scrollTop($(document).scrollTop() - 80);
+                    var pid = $(this).attr("pid");
+                    $.get("/problem/ajax_submit?pid=" + pid, function (data) {
+                        var arr = eval('(' + data + ')');
+                        if (arr['code'] == 201) {
+                            $('.lg-article-sub').html(arr['more']['html']);
+                        }
+                        else if (arr['code'] == 200) {
+
+                        }
+                        else {
+                            if (arr['code'] == 0 || arr['code'] == -3) {
+                                backarticle();
+                            }
+                            show_alert("提交失败", arr['message']);
+                        }
+                    });
+                }
+            );
+            $("button[title].am-btn,a[title].am-btn").poshytip({
+                className: 'tip-twitter',
+                showTimeout: 1,
+                alignTo: 'target',
+                alignX: 'center',
+                alignY: 'bottom'
+            });
+            $('[name=showtag]').click(function () {
+                $('.am-badge.am-hide').removeClass('am-hide');
+            });
+            $(".sample-copy").click(function() {
+                var element = $(this).parents(".copy-region").find("pre");
+                var text = $(element).text();
+                var $temp = $("<textarea>");
+                $("body").append($temp);
+                $temp.val(text).select();
+                document.execCommand("copy");
+                $temp.remove();
+                $(this).text("复制成功").removeClass("lg-bg-orange");
+
+                var e = this;
+                setTimeout(function() {
+                    $(e).text("复制").addClass("lg-bg-orange");
+                }, 500);
+            });
+        });
+    </script>
+</div>
+<footer id="app-footer"></footer>
+<div class="am-modal am-modal-alert" tabindex="-1" id="lg-alert">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="lg-alert-title"></div>
+<div class="am-modal-bd" id="lg-alert-message"></div>
+<div class="am-modal-footer">
+<span class="am-modal-btn">确定</span>
+</div>
+</div>
+</div>
+<script src="/js/ace/ace.js"></script>
+<script src="https://cdn.luogu.org/js/vendor.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/jsmind.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/amazeui.min.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts-more.js"></script>
+<script src="/static/katex/katex.min.js"></script>
+<script src="/static/katex/contrib/auto-render.min.js"></script>
+<script src="https://cdn.luogu.org/markdown-palettes/markdown-palettes.min.js?ver=20190219"></script>
+<script src="https://cdn.luogu.org/js/luogu3.js?ver=20190101"></script>
+</body>
+</html>

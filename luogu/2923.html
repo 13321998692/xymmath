@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title> P2923 [USACO08DEC]赢得跳棋Winning Checkers - 洛谷</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta name="csrf-token" content="1555852656:F+ieWHQj8v0PawE8R68D+pEGGlSQMAADSCxHOjwbPl0=">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/amazeui.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/katex.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/luogu3.css?ver=20190102">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/highlight_tomorrow.css">
+<link rel="stylesheet" href="https://cdn.luogu.org/markdown-palettes/markdown-palettes.css?ver=20190219">
+<script src="https://cdn.luogu.org/js/jquery-2.1.1.min.js"></script>
+<script src="https://cdn.luogu.org/js/luogu3_pre.js?ver=20190101"></script>
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn.luogu.org/images/favicon3.ico" media="screen"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/fe/loader.css?ver=20190417">
+<script>window._feInjection = JSON.parse(decodeURIComponent("%7B%22code%22%3A200%2C%22currentUser%22%3Anull%2C%22currentTemplate%22%3A%22Excited%22%2C%22currentData%22%3A%7B%22shortHeader%22%3Afalse%2C%22pageName%22%3A%22%5Cu9898%5Cu76ee%5Cu8be6%5Cu60c5%22%7D%2C%22currentMeta%22%3A%7B%22title%22%3A%22%20P2923%20%5BUSACO08DEC%5D%5Cu8d62%5Cu5f97%5Cu8df3%5Cu68cbWinning%20Checkers%22%7D%7D"));</script>
+<script>window._release = '20190417';</script>
+<script src="https://cdn.luogu.org/fe/loader.js?ver=20190417" charset="utf-8" defer></script>
+</head>
+<body>
+<div id="app-header"></div>
+<nav id="app-sidenav"></nav>
+<div id="app-body"></div>
+<script>
+    function scrollToId (id) {
+        $('html, body').animate({
+            scrollTop: ($('#' + id).offset().top)
+        }, 500);
+    }
+</script>
+<style>
+    .lg-toolbar {
+        display: none;
+    }
+
+    #app-body { /* Unused in fallback FE */
+        display: none;
+    }
+
+    #app-body-new{
+        display: block;
+        margin-bottom: 2em;
+        position: relative;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    @media (min-width: 576px) {
+        #app-body-new {
+            margin-left: 70px;
+        }
+    }
+
+    code {
+        font-family: monospace, "Courier New";
+    }
+
+</style>
+<div id="app-body-new">
+<div class="lg-toolbar" data-am-sticky>
+<h1><a href="/recordnew/lists?uid=&pid=P2923" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a> P2923 [USACO08DEC]赢得跳棋Winning Checkers</h1>
+</div>
+<div class="am-g lg-main-content">
+<div class="am-u-md-4 lg-right" name="problemright">
+<section class="am-panel am-panel-default lg-summary" id="psummary">
+<div class="lg-summary-content">
+<ul class="am-list am-list-static lg-summary-list">
+<li>
+<ul class="am-avg-sm-2"><li><span class="lg-bignum-num">4<small></small></span><span class="lg-bignum-text">通过</span></li><li><span class="lg-bignum-num">77<small></small></span><span class="lg-bignum-text">提交</span></li></ul>
+</li>
+<li>
+<strong>题目提供者</strong>
+<span class="lg-right"><a class='lg-fg-gray' href="/space/show?uid=20" target="_blank">FarmerJohn2</a></span>
+</li>
+<li>
+<strong>评测方式</strong>
+<span class="lg-right"><b>云端评测</b></span>
+</li>
+<li><strong>标签</strong>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="3">动态规划,动规,dp</span>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="288">队列</span>
+<span class="lg-tag am-badge am-radius lg-bg-bluelight" data-tagid="46">USACO</span>
+<span class="lg-tag am-badge am-radius lg-bg-green" data-tagid="25">2008</span>
+<span class="lg-tag am-badge am-radius lg-bg-orange" data-tagid="319">高性能</span>
+<style>.lg-tag { cursor: pointer; }</style>
+<script>
+                                $(".lg-tag").click(function() {
+                                    window.open("/problemnew/lists?tag=" + $(this).attr('data-tagid'));
+                                })
+                            </script>
+</li>
+<li><strong>难度</strong>
+<span class="lg-right"><span class="am-badge am-radius lg-bg-bluelight">提高+/省选-</span></span>
+</li>
+<li><strong>时空限制</strong>
+<span class="lg-right">1000ms / 128MB</span>
+</li>
+</ul>
+</div>
+<p>
+<button class="am-btn am-btn-danger am-btn-sm" id="submit" pid="P2923">
+<i class="am-icon-paper-plane"></i> 提交
+</button>
+<a target="_blank" href="/problemnew/solution/P2923" class="am-btn am-btn-primary am-btn-sm">
+<i class="am-icon-book"></i> 题解
+</a>
+<a data-pjax href="/recordnew/lists?pid=P2923" class="am-btn am-btn-primary am-btn-sm" title="查看本题提交记录">
+<i class="am-icon-pie-chart"></i>
+</a>
+<button class="am-btn am-btn-primary am-btn-sm lg-pointer" name="showtag" title="显示算法标签">
+<i class="am-icon-tags"></i>
+</button>
+</p>
+<li>提示：收藏到任务计划后，可在首页查看。</li>
+<p>
+<a class="am-btn am-btn-danger am-btn-sm" href="/fe/problem/P2923" target="_blank">体验新版界面</a>
+</p>
+</section>
+<section class="am-panel am-panel-default lg-summary">
+<h2>最新讨论
+<a onclick="$('#discuss-lists').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看本题讨论">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" style="display: none" id="discuss-lists">
+<li><a data-pjax href="/discuss/show?postid=39581" class="am-padding-0">让我们来看看如何拿到剩下的…</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=39534" class="am-padding-0">让我们来看看如何拿到74分</a>
+</li>
+<div style="overflow: auto">
+<a data-pjax href="/discuss/lists?forumname=P2923" class="am-btn am-btn-primary am-btn-sm lg-right">进入讨论版</a>
+</div>
+</ul>
+</section>
+<section class="am-panel am-panel-default lg-summary am-hide-sm">
+<h2>推荐的相关题目
+<a onclick="$('#recommendation-list').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看推荐题目">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" id="recommendation-list" style="display: none">
+<li>
+<a class='colored' href="/problemnew/show/P1005" target="_blank"><b>P1005</b> 矩阵取数游戏</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P2765" target="_blank"><b>P2765</b> 魔术球问题</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P2082" target="_blank"><b>P2082</b> 区间覆盖(加强版)</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P1135" target="_blank"><b>P1135</b> 奇怪的电梯</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P1169" target="_blank"><b>P1169</b> [ZJOI2007]棋盘制作</a>
+</li>
+</ul>
+</section>
+</div>
+<div class="am-u-md-8 lg-right" name="problemleft">
+<div class="lg-content-left">
+<div class="lg-article am-g">
+<h2>题目描述</h2>
+<p>The cows have taken up the game of checkers with a vengeance.</p>
+<p>Unfortunately, despite their unlimited enjoyment of playing, they are terrible at the endgame and want your help.</p>
+<p>Given an NxN (4 &lt;= N &lt;= 500) checkboard, determine the optimal set of moves (i.e., smallest number of moves) to end the game on the next move. Checkers move only on the '+' squares and capture by jumping 'over' an opponent's piece in the traditional way. The piece is removed as soon as it is jumped. See the example below where N=8:</p>
+<pre><code class="language-cpp">- + - + - + - +  The K's mark Bessie's kings; the o's represent the 
++ - + - + - + -  opponent's checkers. Bessie always moves next. The 
+- + - K - + - +  Kings jump opponent's checkers successively in any 
++ - + - + - + -  diagonal direction (and removes pieces when jumped). 
+- o - o - + - + 
++ - K - + - + -  For this board, the best solution requires the lower 
+- o - + - + - +  left King to jump successively across all three of the 
++ - K - + - K -  opponents' checkers, thus ending the game (moving K marked as &gt;K&lt;): 
+Original          After move 1       After move 2        After move 3 
+- + - + - + - +     - + - + - + - +    - + - + - + - +     - + - + - + - + 
++ - + - + - + -     + - + - + - + -    + - + - + - + -     + - + - + - + - 
+- + - K - + - +     - + - K - + - +    - + - K - + - +     - + - K - + - + 
++ - + - + - + -     + - + - + - + -    + -&gt;K&lt;- + - + -     + - + - + - + - 
+- o - o - + - +     - o - o - + - +    - + - o - + - +     - + - + - + - + 
++ - K - + - + -    &gt;K&lt;- K - + - + -    + - K - + - + -     + - K -&gt;K&lt;- + - 
+- o - + - + - +     - + - + - + - +    - + - + - + - +     - + - + - + - + 
++ -&gt;K&lt;- + - K -     + - + - + - K -    + - K - + - K -     + - K - + - K - 
+
+The moves traversed these squares: 
+1 2 3 4 5 6 7 8           R C 
+1 - + - + - + - +    start: 8 3 
+2 + - + - + - + -    move:  6 1 
+3 - + - K - + - +    move:  4 3 
+4 + - * - + - + -    move:  6 5 
+5 - o - o - + - + 
+6 * - K - * - + - 
+7 - o - + - + - + 
+8 + - K - + - K - </code></pre>
+<p>Write a program to determine the game-ending sequence for an NxN input board if it exists. There is at least a king and at least one opponent piece on the board. The king can jump a piece on every move of the optimal solution.</p>
+<p>POINTS: 330</p>
+<p>奶牛们在疯狂地玩着西洋跳棋，但是非常不幸，不管他们多么享受，他们还是在最后阶段遇 到了可怕的麻烦，他们需要你的帮助.</p>
+<p>有一个N x N(4 &lt; W &lt; 500)跳棋棋盘，请确定最佳的结束比赛步骤.跳棋子仅仅能够在标记 有“ + ”的格子里停留，通过“飞跃”俘获对方的棋子.刚刚跳过的格子将被立即封锁.请看下面 的例子：</p>
+<p>这是一张边长为8的棋盘图.“K”代表贝茜的王；“0”代表对手的棋子.王需要斜着连续的 跳过对的棋子，跳过的格子将会被封锁.对于这个情况，获胜的方案需要最下面、最左边的王 连续的跳过三个对方的棋子（如下图所示），游戏因此结束.</p>
+<p>请写一个程序，给出输入的棋盘的结束游戏步骤（存在时，是唯一的）.至少有一个王和一 个对手棋子在棋盘上.</p>
+<p>无解的时候应当输出impossible</p>
+<h2>输入输出格式</h2>
+<strong>输入格式：</strong><br>
+<p><p>* Line 1: A single integer: N</p>
+<p>* Lines 2..N+1: Line i+1 contains N characters (each one of: '-', '+', 'K', or 'o') that represent row i of a proper checkboard. Line 2 always begins with '-'.</p></p>
+<strong>输出格式：</strong><br>
+<p><p>* Lines 1..?: If there is no winning sequence of jump, output</p>
+<p>'impossible' on a line by itself. If such a sequence exists, each line contains two space-separated integers that represent successive locations of a king whose moves will win the game. Any such sequence is acceptable.</p></p>
+<h2>输入输出样例</h2>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>8 
+-+-+-+-+ 
++-+-+-+- 
+-+-K-+-+ 
++-+-+-+- 
+-o-o-+-+ 
++-K-+-+- 
+-o-+-+-+ 
++-K-+-K- 
+</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>8 3 
+6 1 
+4 3 
+6 5 
+</pre>
+</div>
+</div>
+</div>
+<div class='lg-article-sub am-g' id="sub"></div>
+</div>
+</div>
+</div>
+<div class="am-modal am-modal-prompt" tabindex="-1" id="confirm">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="memtitle">提示</div>
+<div class="am-modal-bd" id="memadmin">
+标程仅供做题后或实在无思路时参考。<br>
+请自觉、自律地使用该功能并请对自己的学习负责。<br>
+如果发现恶意抄袭标程，将按照I类违反进行处理。<br>
+</div>
+<div class="am-modal-footer">
+<span class="am-modal-btn" data-am-modal-cancel>取消</span>
+<span class="am-modal-btn" data-am-modal-confirm>确定</span>
+</div>
+</div>
+</div>
+<script>
+        $(document).ready(function () {
+            $("#expandstd").click(function () {
+                $('#confirm').modal({
+                    relatedTarget: this,
+                    onConfirm: function (e) {
+                        $("#stdcode").slideDown();
+                        $("#expandstd").hide();
+                    }
+                });
+            });
+            $("#submit").click(
+                function () {
+                    hide_artile();
+                    $(document).scrollTop($(document).scrollTop() - 80);
+                    var pid = $(this).attr("pid");
+                    $.get("/problem/ajax_submit?pid=" + pid, function (data) {
+                        var arr = eval('(' + data + ')');
+                        if (arr['code'] == 201) {
+                            $('.lg-article-sub').html(arr['more']['html']);
+                        }
+                        else if (arr['code'] == 200) {
+
+                        }
+                        else {
+                            if (arr['code'] == 0 || arr['code'] == -3) {
+                                backarticle();
+                            }
+                            show_alert("提交失败", arr['message']);
+                        }
+                    });
+                }
+            );
+            $("button[title].am-btn,a[title].am-btn").poshytip({
+                className: 'tip-twitter',
+                showTimeout: 1,
+                alignTo: 'target',
+                alignX: 'center',
+                alignY: 'bottom'
+            });
+            $('[name=showtag]').click(function () {
+                $('.am-badge.am-hide').removeClass('am-hide');
+            });
+            $(".sample-copy").click(function() {
+                var element = $(this).parents(".copy-region").find("pre");
+                var text = $(element).text();
+                var $temp = $("<textarea>");
+                $("body").append($temp);
+                $temp.val(text).select();
+                document.execCommand("copy");
+                $temp.remove();
+                $(this).text("复制成功").removeClass("lg-bg-orange");
+
+                var e = this;
+                setTimeout(function() {
+                    $(e).text("复制").addClass("lg-bg-orange");
+                }, 500);
+            });
+        });
+    </script>
+</div>
+<footer id="app-footer"></footer>
+<div class="am-modal am-modal-alert" tabindex="-1" id="lg-alert">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="lg-alert-title"></div>
+<div class="am-modal-bd" id="lg-alert-message"></div>
+<div class="am-modal-footer">
+<span class="am-modal-btn">确定</span>
+</div>
+</div>
+</div>
+<script src="/js/ace/ace.js"></script>
+<script src="https://cdn.luogu.org/js/vendor.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/jsmind.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/amazeui.min.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts-more.js"></script>
+<script src="/static/katex/katex.min.js"></script>
+<script src="/static/katex/contrib/auto-render.min.js"></script>
+<script src="https://cdn.luogu.org/markdown-palettes/markdown-palettes.min.js?ver=20190219"></script>
+<script src="https://cdn.luogu.org/js/luogu3.js?ver=20190101"></script>
+</body>
+</html>

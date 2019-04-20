@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title> P2946 [USACO09MAR]牛飞盘队Cow Frisbee Team - 洛谷</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta name="csrf-token" content="1555852667:/p56dYXQVWgdMA4ec0wceSpG2f6UXOz4rW+aaJPnu6k=">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/amazeui.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/katex.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/luogu3.css?ver=20190102">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/highlight_tomorrow.css">
+<link rel="stylesheet" href="https://cdn.luogu.org/markdown-palettes/markdown-palettes.css?ver=20190219">
+<script src="https://cdn.luogu.org/js/jquery-2.1.1.min.js"></script>
+<script src="https://cdn.luogu.org/js/luogu3_pre.js?ver=20190101"></script>
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn.luogu.org/images/favicon3.ico" media="screen"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/fe/loader.css?ver=20190417">
+<script>window._feInjection = JSON.parse(decodeURIComponent("%7B%22code%22%3A200%2C%22currentUser%22%3Anull%2C%22currentTemplate%22%3A%22Excited%22%2C%22currentData%22%3A%7B%22shortHeader%22%3Afalse%2C%22pageName%22%3A%22%5Cu9898%5Cu76ee%5Cu8be6%5Cu60c5%22%7D%2C%22currentMeta%22%3A%7B%22title%22%3A%22%20P2946%20%5BUSACO09MAR%5D%5Cu725b%5Cu98de%5Cu76d8%5Cu961fCow%20Frisbee%20Team%22%7D%7D"));</script>
+<script>window._release = '20190417';</script>
+<script src="https://cdn.luogu.org/fe/loader.js?ver=20190417" charset="utf-8" defer></script>
+</head>
+<body>
+<div id="app-header"></div>
+<nav id="app-sidenav"></nav>
+<div id="app-body"></div>
+<script>
+    function scrollToId (id) {
+        $('html, body').animate({
+            scrollTop: ($('#' + id).offset().top)
+        }, 500);
+    }
+</script>
+<style>
+    .lg-toolbar {
+        display: none;
+    }
+
+    #app-body { /* Unused in fallback FE */
+        display: none;
+    }
+
+    #app-body-new{
+        display: block;
+        margin-bottom: 2em;
+        position: relative;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    @media (min-width: 576px) {
+        #app-body-new {
+            margin-left: 70px;
+        }
+    }
+
+    code {
+        font-family: monospace, "Courier New";
+    }
+
+</style>
+<div id="app-body-new">
+<div class="lg-toolbar" data-am-sticky>
+<h1><a href="/recordnew/lists?uid=&pid=P2946" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a> P2946 [USACO09MAR]牛飞盘队Cow Frisbee Team</h1>
+</div>
+<div class="am-g lg-main-content">
+<div class="am-u-md-4 lg-right" name="problemright">
+<section class="am-panel am-panel-default lg-summary" id="psummary">
+<div class="lg-summary-content">
+<ul class="am-list am-list-static lg-summary-list">
+<li>
+<ul class="am-avg-sm-2"><li><span class="lg-bignum-num">333<small></small></span><span class="lg-bignum-text">通过</span></li><li><span class="lg-bignum-num">942<small></small></span><span class="lg-bignum-text">提交</span></li></ul>
+</li>
+<li>
+<strong>题目提供者</strong>
+<span class="lg-right"><a class='lg-fg-gray' href="/space/show?uid=20" target="_blank">FarmerJohn2</a></span>
+</li>
+<li>
+<strong>评测方式</strong>
+<span class="lg-right"><b>云端评测</b></span>
+</li>
+<li><strong>标签</strong>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="3">动态规划,动规,dp</span>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="139">背包</span>
+<span class="lg-tag am-badge am-radius lg-bg-bluelight" data-tagid="46">USACO</span>
+<span class="lg-tag am-badge am-radius lg-bg-green" data-tagid="26">2009</span>
+<style>.lg-tag { cursor: pointer; }</style>
+<script>
+                                $(".lg-tag").click(function() {
+                                    window.open("/problemnew/lists?tag=" + $(this).attr('data-tagid'));
+                                })
+                            </script>
+</li>
+<li><strong>难度</strong>
+<span class="lg-right"><span class="am-badge am-radius lg-bg-yellow">普及/提高-</span></span>
+</li>
+<li><strong>时空限制</strong>
+<span class="lg-right">1000ms / 128MB</span>
+</li>
+</ul>
+</div>
+<p>
+<button class="am-btn am-btn-danger am-btn-sm" id="submit" pid="P2946">
+<i class="am-icon-paper-plane"></i> 提交
+</button>
+<a target="_blank" href="/problemnew/solution/P2946" class="am-btn am-btn-primary am-btn-sm">
+<i class="am-icon-book"></i> 题解
+</a>
+<a data-pjax href="/recordnew/lists?pid=P2946" class="am-btn am-btn-primary am-btn-sm" title="查看本题提交记录">
+<i class="am-icon-pie-chart"></i>
+</a>
+<button class="am-btn am-btn-primary am-btn-sm lg-pointer" name="showtag" title="显示算法标签">
+<i class="am-icon-tags"></i>
+</button>
+</p>
+<li>提示：收藏到任务计划后，可在首页查看。</li>
+<p>
+<a class="am-btn am-btn-danger am-btn-sm" href="/fe/problem/P2946" target="_blank">体验新版界面</a>
+</p>
+</section>
+<section class="am-panel am-panel-default lg-summary">
+<h2>最新讨论
+<a onclick="$('#discuss-lists').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看本题讨论">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" style="display: none" id="discuss-lists">
+<li><a data-pjax href="/discuss/show?postid=80869" class="am-padding-0">暴力枚举最后三个wa了？？？…</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=22836" class="am-padding-0">题面有误</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=19503" class="am-padding-0">翻译（非本人）</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=18336" class="am-padding-0">投诉</a>
+</li>
+<div style="overflow: auto">
+<a data-pjax href="/discuss/lists?forumname=P2946" class="am-btn am-btn-primary am-btn-sm lg-right">进入讨论版</a>
+</div>
+</ul>
+</section>
+<section class="am-panel am-panel-default lg-summary am-hide-sm">
+<h2>推荐的相关题目
+<a onclick="$('#recommendation-list').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看推荐题目">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" id="recommendation-list" style="display: none">
+<li>
+<a class='colored' href="/problemnew/show/P3853" target="_blank"><b>P3853</b> [TJOI2007]路标设置</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3004" target="_blank"><b>P3004</b> [USACO10DEC]宝箱Treasure Chest</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P1833" target="_blank"><b>P1833</b> 樱花</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P2370" target="_blank"><b>P2370</b> yyy2015c01的U盘</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P1435" target="_blank"><b>P1435</b> 回文字串</a>
+</li>
+</ul>
+</section>
+</div>
+<div class="am-u-md-8 lg-right" name="problemleft">
+<div class="lg-content-left">
+<div class="lg-article am-g">
+<h2>题目背景</h2>
+<p>老唐最近迷上了飞盘，约翰想和他一起玩，于是打算从他家的N头奶牛中选出一支队伍。</p>
+<p>每只奶牛的能力为整数，第i头奶牛的能力为R i 。飞盘队的队员数量不能少于 1、大于N。一</p>
+<p>支队伍的总能力就是所有队员能力的总和。</p>
+<p>约翰比较迷信，他的幸运数字是F，所以他要求队伍的总能力必须是F的倍数。请帮他</p>
+<p>算一下，符合这个要求的队伍组合有多少？由于这个数字很大，只要输出答案除以$10^8$ 的余</p>
+<p>数就可以了。</p>
+<p>输入格式</p>
+<p>第一行：两个用空格分开的整数：N和F，1 ≤ N ≤ 2000，1 ≤ F ≤ 1000</p>
+<p>第二行到N + 1行：第i + 1行有一个整数R i ，表示第i头奶牛的能力，1 ≤ R i ≤ 10 5</p>
+<p>输出格式</p>
+<p> 第一行：单个整数，表示方案数除以$10^8$ 的余数</p>
+<p>样例 fristeam.in fristeam.out</p>
+<p>4 5 1 2 8 2 3 （有两种方案都是8 + 2 = 10，只是选的奶牛）</p>
+<h2>题目描述</h2>
+<p>After Farmer Don took up Frisbee, Farmer John wanted to join in the fun. He wants to form a Frisbee team from his N cows (1 &lt;= N &lt;= 2,000) conveniently numbered 1..N. The cows have been practicing flipping the discs around, and each cow i has a rating R_i (1 &lt;= R_i &lt;= 100,000) denoting her skill playing Frisbee. FJ can form a team by choosing one or more of his cows.</p>
+<p>However, because FJ needs to be very selective when forming Frisbee teams, he has added an additional constraint. Since his favorite number is F (1 &lt;= F &lt;= 1,000), he will only accept a team if the sum of the ratings of each cow in the team is exactly divisible by F.</p>
+<p>Help FJ find out how many different teams he can choose. Since this number can be very large, output the answer modulo 100,000,000.</p>
+<p>Note: about 50% of the test data will have N &lt;= 19. </p>
+<p>农夫顿因开始玩飞盘之后，约翰也打算让奶牛们享受飞盘的乐趣．他要组建一只奶牛飞盘</p>
+<p>队．他的N(1≤N≤2000)只奶牛，每只部有一个飞盘水准指数Ri(1≤Ri≤100000)．约翰要选出1只或多于1只奶牛来参加他的飞盘队．由于约翰的幸运数字是F(1≤F≤1000)，他希望所有奶牛的飞盘水准指数之和是幸运数字的倍数．</p>
+<p>帮约翰算算一共有多少种组队方式．</p>
+<h2>输入输出格式</h2>
+<strong>输入格式：</strong><br>
+<p><p>* Line 1: Two space-separated integers: N and F</p>
+<p>* Lines 2..N+1: Line i+1 contains a single integer: R_i</p></p>
+<strong>输出格式：</strong><br>
+<p><p>* Line 1: A single integer representing the number of teams FJ can choose, modulo 100,000,000.</p></p>
+<h2>输入输出样例</h2>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>4 5 
+1 
+2 
+8 
+2 
+</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>3 
+</pre>
+</div>
+</div>
+<h2>说明</h2>
+<p>FJ has four cows whose ratings are 1, 2, 8, and 2. He will only accept a team whose rating sum is a multiple of 5.</p>
+<p>FJ can pair the 8 and either of the 2's (8 + 2 = 10), or he can use both 2's and the 1 (2 + 2 + 1 = 5).</p>
+</div>
+<div class='lg-article-sub am-g' id="sub"></div>
+</div>
+</div>
+</div>
+<div class="am-modal am-modal-prompt" tabindex="-1" id="confirm">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="memtitle">提示</div>
+<div class="am-modal-bd" id="memadmin">
+标程仅供做题后或实在无思路时参考。<br>
+请自觉、自律地使用该功能并请对自己的学习负责。<br>
+如果发现恶意抄袭标程，将按照I类违反进行处理。<br>
+</div>
+<div class="am-modal-footer">
+<span class="am-modal-btn" data-am-modal-cancel>取消</span>
+<span class="am-modal-btn" data-am-modal-confirm>确定</span>
+</div>
+</div>
+</div>
+<script>
+        $(document).ready(function () {
+            $("#expandstd").click(function () {
+                $('#confirm').modal({
+                    relatedTarget: this,
+                    onConfirm: function (e) {
+                        $("#stdcode").slideDown();
+                        $("#expandstd").hide();
+                    }
+                });
+            });
+            $("#submit").click(
+                function () {
+                    hide_artile();
+                    $(document).scrollTop($(document).scrollTop() - 80);
+                    var pid = $(this).attr("pid");
+                    $.get("/problem/ajax_submit?pid=" + pid, function (data) {
+                        var arr = eval('(' + data + ')');
+                        if (arr['code'] == 201) {
+                            $('.lg-article-sub').html(arr['more']['html']);
+                        }
+                        else if (arr['code'] == 200) {
+
+                        }
+                        else {
+                            if (arr['code'] == 0 || arr['code'] == -3) {
+                                backarticle();
+                            }
+                            show_alert("提交失败", arr['message']);
+                        }
+                    });
+                }
+            );
+            $("button[title].am-btn,a[title].am-btn").poshytip({
+                className: 'tip-twitter',
+                showTimeout: 1,
+                alignTo: 'target',
+                alignX: 'center',
+                alignY: 'bottom'
+            });
+            $('[name=showtag]').click(function () {
+                $('.am-badge.am-hide').removeClass('am-hide');
+            });
+            $(".sample-copy").click(function() {
+                var element = $(this).parents(".copy-region").find("pre");
+                var text = $(element).text();
+                var $temp = $("<textarea>");
+                $("body").append($temp);
+                $temp.val(text).select();
+                document.execCommand("copy");
+                $temp.remove();
+                $(this).text("复制成功").removeClass("lg-bg-orange");
+
+                var e = this;
+                setTimeout(function() {
+                    $(e).text("复制").addClass("lg-bg-orange");
+                }, 500);
+            });
+        });
+    </script>
+</div>
+<footer id="app-footer"></footer>
+<div class="am-modal am-modal-alert" tabindex="-1" id="lg-alert">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="lg-alert-title"></div>
+<div class="am-modal-bd" id="lg-alert-message"></div>
+<div class="am-modal-footer">
+<span class="am-modal-btn">确定</span>
+</div>
+</div>
+</div>
+<script src="/js/ace/ace.js"></script>
+<script src="https://cdn.luogu.org/js/vendor.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/jsmind.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/amazeui.min.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts-more.js"></script>
+<script src="/static/katex/katex.min.js"></script>
+<script src="/static/katex/contrib/auto-render.min.js"></script>
+<script src="https://cdn.luogu.org/markdown-palettes/markdown-palettes.min.js?ver=20190219"></script>
+<script src="https://cdn.luogu.org/js/luogu3.js?ver=20190101"></script>
+</body>
+</html>

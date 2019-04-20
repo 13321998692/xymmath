@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title> P3353 在你窗外闪耀的星星 - 洛谷</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta name="csrf-token" content="1555852822:UAZ0PeQQqeNlqaAFfAzFRLBERQH57vIhjf/gGG9I/A4=">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/amazeui.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/katex.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/luogu3.css?ver=20190102">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/highlight_tomorrow.css">
+<link rel="stylesheet" href="https://cdn.luogu.org/markdown-palettes/markdown-palettes.css?ver=20190219">
+<script src="https://cdn.luogu.org/js/jquery-2.1.1.min.js"></script>
+<script src="https://cdn.luogu.org/js/luogu3_pre.js?ver=20190101"></script>
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn.luogu.org/images/favicon3.ico" media="screen"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/fe/loader.css?ver=20190417">
+<script>window._feInjection = JSON.parse(decodeURIComponent("%7B%22code%22%3A200%2C%22currentUser%22%3Anull%2C%22currentTemplate%22%3A%22Excited%22%2C%22currentData%22%3A%7B%22shortHeader%22%3Afalse%2C%22pageName%22%3A%22%5Cu9898%5Cu76ee%5Cu8be6%5Cu60c5%22%7D%2C%22currentMeta%22%3A%7B%22title%22%3A%22%20P3353%20%5Cu5728%5Cu4f60%5Cu7a97%5Cu5916%5Cu95ea%5Cu8000%5Cu7684%5Cu661f%5Cu661f%22%7D%7D"));</script>
+<script>window._release = '20190417';</script>
+<script src="https://cdn.luogu.org/fe/loader.js?ver=20190417" charset="utf-8" defer></script>
+</head>
+<body>
+<div id="app-header"></div>
+<nav id="app-sidenav"></nav>
+<div id="app-body"></div>
+<script>
+    function scrollToId (id) {
+        $('html, body').animate({
+            scrollTop: ($('#' + id).offset().top)
+        }, 500);
+    }
+</script>
+<style>
+    .lg-toolbar {
+        display: none;
+    }
+
+    #app-body { /* Unused in fallback FE */
+        display: none;
+    }
+
+    #app-body-new{
+        display: block;
+        margin-bottom: 2em;
+        position: relative;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    @media (min-width: 576px) {
+        #app-body-new {
+            margin-left: 70px;
+        }
+    }
+
+    code {
+        font-family: monospace, "Courier New";
+    }
+
+</style>
+<div id="app-body-new">
+<div class="lg-toolbar" data-am-sticky>
+<h1><a href="/recordnew/lists?uid=&pid=P3353" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a> P3353 在你窗外闪耀的星星</h1>
+</div>
+<div class="am-g lg-main-content">
+<div class="am-u-md-4 lg-right" name="problemright">
+<section class="am-panel am-panel-default lg-summary" id="psummary">
+<div class="lg-summary-content">
+<ul class="am-list am-list-static lg-summary-list">
+<li>
+<ul class="am-avg-sm-2"><li><span class="lg-bignum-num">1.1<small>K</small><small></small></span><span class="lg-bignum-text">通过</span></li><li><span class="lg-bignum-num">2.6<small>K</small><small></small></span><span class="lg-bignum-text">提交</span></li></ul>
+</li>
+<li>
+<strong>题目提供者</strong>
+<span class="lg-right"><a class='lg-fg-bluelight' href="/space/show?uid=7738" target="_blank">chenyy</a></span>
+</li>
+<li>
+<strong>评测方式</strong>
+<span class="lg-right"><b>云端评测</b></span>
+</li>
+<li><strong>标签</strong>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="42">线段树</span>
+<style>.lg-tag { cursor: pointer; }</style>
+<script>
+                                $(".lg-tag").click(function() {
+                                    window.open("/problemnew/lists?tag=" + $(this).attr('data-tagid'));
+                                })
+                            </script>
+</li>
+<li><strong>难度</strong>
+<span class="lg-right"><span class="am-badge am-radius lg-bg-yellow">普及/提高-</span></span>
+</li>
+<li><strong>时空限制</strong>
+<span class="lg-right">1000ms / 128MB</span>
+</li>
+</ul>
+</div>
+<p>
+<button class="am-btn am-btn-danger am-btn-sm" id="submit" pid="P3353">
+<i class="am-icon-paper-plane"></i> 提交
+</button>
+<a target="_blank" href="/problemnew/solution/P3353" class="am-btn am-btn-primary am-btn-sm">
+<i class="am-icon-book"></i> 题解
+</a>
+<a data-pjax href="/recordnew/lists?pid=P3353" class="am-btn am-btn-primary am-btn-sm" title="查看本题提交记录">
+<i class="am-icon-pie-chart"></i>
+</a>
+<button class="am-btn am-btn-primary am-btn-sm lg-pointer" name="showtag" title="显示算法标签">
+<i class="am-icon-tags"></i>
+</button>
+</p>
+<li>提示：收藏到任务计划后，可在首页查看。</li>
+<p>
+<a class="am-btn am-btn-danger am-btn-sm" href="/fe/problem/P3353" target="_blank">体验新版界面</a>
+</p>
+</section>
+<section class="am-panel am-panel-default lg-summary">
+<h2>最新讨论
+<a onclick="$('#discuss-lists').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看本题讨论">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" style="display: none" id="discuss-lists">
+<li><a data-pjax href="/discuss/show?postid=82449" class="am-padding-0">这题目描述666</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=79138" class="am-padding-0">我想妈妈了</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=79116" class="am-padding-0">题面的一个小细节……</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=79088" class="am-padding-0">走出来吧，你不可能永远活在…</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=79085" class="am-padding-0">我哭了，你们呢</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=78922" class="am-padding-0">【数据有误？？】</a>
+</li>
+<div style="overflow: auto">
+<a data-pjax href="/discuss/lists?forumname=P3353" class="am-btn am-btn-primary am-btn-sm lg-right">进入讨论版</a>
+</div>
+</ul>
+</section>
+<section class="am-panel am-panel-default lg-summary am-hide-sm">
+<h2>推荐的相关题目
+<a onclick="$('#recommendation-list').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看推荐题目">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" id="recommendation-list" style="display: none">
+<li>
+<a class='colored' href="/problemnew/show/P1531" target="_blank"><b>P1531</b> I Hate It</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3078" target="_blank"><b>P3078</b> [USACO13MAR]扑克牌型Poker Hands</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P1816" target="_blank"><b>P1816</b> 忠诚</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3372" target="_blank"><b>P3372</b> 【模板】线段树 1</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3865" target="_blank"><b>P3865</b> 【模板】ST表</a>
+</li>
+</ul>
+</section>
+</div>
+<div class="am-u-md-8 lg-right" name="problemleft">
+<div class="lg-content-left">
+<div class="lg-article am-g">
+<h2>题目描述</h2>
+<p>飞逝的的时光不会模糊我对你的记忆。难以相信从我第一次见到你以来已经过去了3年。我仍然还生动地记得，3年前，在美丽的集美中学，从我看到你微笑着走出教室，你将头向后仰，柔和的晚霞照耀着你玫瑰色的脸颊。我明白，我已经沉醉于你了。之后，经过几个月的观察和窥探，你的优雅与智慧，你对待生活的态度和你对未来的愿望深切地在我心中留下了印象。你是迷人的阳光女孩，我总是梦想着与你分享余生。唉，实际上你远远超过了我最疯狂的梦想。我不知道如何桥起我与你之间的鸿沟。所以我没有任何计划，仅仅只是等待，等待一个适当的机会到来。直到现在，毕业的到来，我意识到我是个傻瓜，我应该创造机会并且抓住它而不只是等待。</p>
+<p>这些日子里，我和我的朋友、室友、同学一个接一个地分开。我仍无法相信，在挥手之后，这些熟悉的面孔很快就会从我们的生活中消失，仅仅留下回忆。我明天就将离开学校。你已经计划远走高飞，追求你的未来，实现你的梦想。如果没有命运，也许我们不会再次相遇。所以今晚，我正在你的宿舍楼下徘徊，希望能偶然遇见你。但矛盾的是，你的美貌一定会使我心跳加速，我笨拙的舌头也许无法吐出一个字。我不记得我曾多少次经过你的宿舍楼，每次都希望看到你出现在阳台上或是窗台上。我不记得这个想法曾多少次在我的脑海中涌出：打电话叫她一起吃晚饭或是聊聊天。但每次，考虑到你的优秀和我的平凡，胆怯的优势超越勇气驱使我静静地离开。</p>
+<p>毕业，意味着中学生活的终结。这些光荣与浪漫的时代结束。你可爱的微笑是我原来努力学习的动力，这单相思的爱情会被密封，作为一个我心灵深处的记忆。毕业，也意味着新生活的开始，一个到达光明未来的足迹。我真希望你在国外天天开心，一切顺利。同时，我将努力从幼稚中走出来，变得更加成熟。我的理想将是在现实中追求我的爱与幸福，我永远不会放弃。</p>
+<p>再见了，我的公主！</p>
+<p>如果有一天，在某个天涯海角，我们有机会相聚，即使是白发苍苍的男人和女人，在那个时候，我希望我们可以成为好朋友来自豪地分享这个记忆，重温年轻快乐的激情。如果这个机会永远没有到来，我希望我是天空中的星星，在你的窗外闪烁。远远地保佑着你，就像一个朋友，每天晚上陪伴在你左右，一同分享甜美的梦亦或是一同经历可怕的梦。</p>
+<p>现在问题来了：天空可以理解为一条数轴，在这条数轴上分布着许多颗星星，对于每颗星星都有它的位置Xi和自身的亮度Bi。而窗户所能看到的范围是一个给出的参数W，我们看到的星星也包括窗户边缘的星星。现在，要你求出调整窗户位置后能看到星星的亮度之和最大值。</p>
+<h2>输入输出格式</h2>
+<strong>输入格式：</strong><br>
+<p><p>一行N,W，分别代表星星的数量和窗户的宽度</p>
+<p>余下N行，输入Xi和Bi，代表星星的坐标和亮度</p></p>
+<strong>输出格式：</strong><br>
+<p><p>一个数字，代表能看到星星的最大亮度和</p></p>
+<h2>输入输出样例</h2>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>6 3
+1 2
+2 4
+3 8
+4 4
+5 2
+1000 1</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>16</pre>
+</div>
+</div>
+<h2>说明</h2>
+<p>样例说明：</p>
+<p><img src="https://cdn.luogu.org/upload/pic/3818.png" alt="" /> </p>
+<p>对于10%的数据，W=0（没有边缘）</p>
+<p>对于40%的数据，W&lt;=1000</p>
+<p>对于100%的数据，N&lt;=100000，W&lt;=100000，Xi&lt;=100000，1&lt;=Bi&lt;=100</p>
+<p>除W=0的情况外，W均为&gt;=3的奇数</p>
+</div>
+<div class='lg-article-sub am-g' id="sub"></div>
+</div>
+</div>
+</div>
+<div class="am-modal am-modal-prompt" tabindex="-1" id="confirm">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="memtitle">提示</div>
+<div class="am-modal-bd" id="memadmin">
+标程仅供做题后或实在无思路时参考。<br>
+请自觉、自律地使用该功能并请对自己的学习负责。<br>
+如果发现恶意抄袭标程，将按照I类违反进行处理。<br>
+</div>
+<div class="am-modal-footer">
+<span class="am-modal-btn" data-am-modal-cancel>取消</span>
+<span class="am-modal-btn" data-am-modal-confirm>确定</span>
+</div>
+</div>
+</div>
+<script>
+        $(document).ready(function () {
+            $("#expandstd").click(function () {
+                $('#confirm').modal({
+                    relatedTarget: this,
+                    onConfirm: function (e) {
+                        $("#stdcode").slideDown();
+                        $("#expandstd").hide();
+                    }
+                });
+            });
+            $("#submit").click(
+                function () {
+                    hide_artile();
+                    $(document).scrollTop($(document).scrollTop() - 80);
+                    var pid = $(this).attr("pid");
+                    $.get("/problem/ajax_submit?pid=" + pid, function (data) {
+                        var arr = eval('(' + data + ')');
+                        if (arr['code'] == 201) {
+                            $('.lg-article-sub').html(arr['more']['html']);
+                        }
+                        else if (arr['code'] == 200) {
+
+                        }
+                        else {
+                            if (arr['code'] == 0 || arr['code'] == -3) {
+                                backarticle();
+                            }
+                            show_alert("提交失败", arr['message']);
+                        }
+                    });
+                }
+            );
+            $("button[title].am-btn,a[title].am-btn").poshytip({
+                className: 'tip-twitter',
+                showTimeout: 1,
+                alignTo: 'target',
+                alignX: 'center',
+                alignY: 'bottom'
+            });
+            $('[name=showtag]').click(function () {
+                $('.am-badge.am-hide').removeClass('am-hide');
+            });
+            $(".sample-copy").click(function() {
+                var element = $(this).parents(".copy-region").find("pre");
+                var text = $(element).text();
+                var $temp = $("<textarea>");
+                $("body").append($temp);
+                $temp.val(text).select();
+                document.execCommand("copy");
+                $temp.remove();
+                $(this).text("复制成功").removeClass("lg-bg-orange");
+
+                var e = this;
+                setTimeout(function() {
+                    $(e).text("复制").addClass("lg-bg-orange");
+                }, 500);
+            });
+        });
+    </script>
+</div>
+<footer id="app-footer"></footer>
+<div class="am-modal am-modal-alert" tabindex="-1" id="lg-alert">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="lg-alert-title"></div>
+<div class="am-modal-bd" id="lg-alert-message"></div>
+<div class="am-modal-footer">
+<span class="am-modal-btn">确定</span>
+</div>
+</div>
+</div>
+<script src="/js/ace/ace.js"></script>
+<script src="https://cdn.luogu.org/js/vendor.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/jsmind.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/amazeui.min.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts-more.js"></script>
+<script src="/static/katex/katex.min.js"></script>
+<script src="/static/katex/contrib/auto-render.min.js"></script>
+<script src="https://cdn.luogu.org/markdown-palettes/markdown-palettes.min.js?ver=20190219"></script>
+<script src="https://cdn.luogu.org/js/luogu3.js?ver=20190101"></script>
+</body>
+</html>

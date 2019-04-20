@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title> P2942 [USACO09MAR]Moon哞哞叫Moon Mooing - 洛谷</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta name="csrf-token" content="1555852666:r40l9Ov3+8N9NDehVffJxE9KPGYmkCCcFOvgakzipj8=">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/amazeui.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/katex.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/luogu3.css?ver=20190102">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/highlight_tomorrow.css">
+<link rel="stylesheet" href="https://cdn.luogu.org/markdown-palettes/markdown-palettes.css?ver=20190219">
+<script src="https://cdn.luogu.org/js/jquery-2.1.1.min.js"></script>
+<script src="https://cdn.luogu.org/js/luogu3_pre.js?ver=20190101"></script>
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn.luogu.org/images/favicon3.ico" media="screen"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/fe/loader.css?ver=20190417">
+<script>window._feInjection = JSON.parse(decodeURIComponent("%7B%22code%22%3A200%2C%22currentUser%22%3Anull%2C%22currentTemplate%22%3A%22Excited%22%2C%22currentData%22%3A%7B%22shortHeader%22%3Afalse%2C%22pageName%22%3A%22%5Cu9898%5Cu76ee%5Cu8be6%5Cu60c5%22%7D%2C%22currentMeta%22%3A%7B%22title%22%3A%22%20P2942%20%5BUSACO09MAR%5DMoon%5Cu54de%5Cu54de%5Cu53ebMoon%20Mooing%22%7D%7D"));</script>
+<script>window._release = '20190417';</script>
+<script src="https://cdn.luogu.org/fe/loader.js?ver=20190417" charset="utf-8" defer></script>
+</head>
+<body>
+<div id="app-header"></div>
+<nav id="app-sidenav"></nav>
+<div id="app-body"></div>
+<script>
+    function scrollToId (id) {
+        $('html, body').animate({
+            scrollTop: ($('#' + id).offset().top)
+        }, 500);
+    }
+</script>
+<style>
+    .lg-toolbar {
+        display: none;
+    }
+
+    #app-body { /* Unused in fallback FE */
+        display: none;
+    }
+
+    #app-body-new{
+        display: block;
+        margin-bottom: 2em;
+        position: relative;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    @media (min-width: 576px) {
+        #app-body-new {
+            margin-left: 70px;
+        }
+    }
+
+    code {
+        font-family: monospace, "Courier New";
+    }
+
+</style>
+<div id="app-body-new">
+<div class="lg-toolbar" data-am-sticky>
+<h1><a href="/recordnew/lists?uid=&pid=P2942" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a> P2942 [USACO09MAR]Moon哞哞叫Moon Mooing</h1>
+</div>
+<div class="am-g lg-main-content">
+<div class="am-u-md-4 lg-right" name="problemright">
+<section class="am-panel am-panel-default lg-summary" id="psummary">
+<div class="lg-summary-content">
+<ul class="am-list am-list-static lg-summary-list">
+<li>
+<ul class="am-avg-sm-2"><li><span class="lg-bignum-num">77<small></small></span><span class="lg-bignum-text">通过</span></li><li><span class="lg-bignum-num">144<small></small></span><span class="lg-bignum-text">提交</span></li></ul>
+</li>
+<li>
+<strong>题目提供者</strong>
+<span class="lg-right"><a class='lg-fg-gray' href="/space/show?uid=20" target="_blank">FarmerJohn2</a></span>
+</li>
+<li>
+<strong>评测方式</strong>
+<span class="lg-right"><b>云端评测</b></span>
+</li>
+<li><strong>标签</strong>
+<span class="lg-tag am-badge am-radius lg-bg-bluelight" data-tagid="46">USACO</span>
+<span class="lg-tag am-badge am-radius lg-bg-green" data-tagid="26">2009</span>
+<span class="lg-tag am-badge am-radius lg-bg-orange" data-tagid="319">高性能</span>
+<style>.lg-tag { cursor: pointer; }</style>
+<script>
+                                $(".lg-tag").click(function() {
+                                    window.open("/problemnew/lists?tag=" + $(this).attr('data-tagid'));
+                                })
+                            </script>
+</li>
+<li><strong>难度</strong>
+<span class="lg-right"><span class="am-badge am-radius lg-bg-yellow">普及/提高-</span></span>
+</li>
+<li><strong>时空限制</strong>
+<span class="lg-right">1000ms / 128MB</span>
+</li>
+</ul>
+</div>
+<p>
+<button class="am-btn am-btn-danger am-btn-sm" id="submit" pid="P2942">
+<i class="am-icon-paper-plane"></i> 提交
+</button>
+<a target="_blank" href="/problemnew/solution/P2942" class="am-btn am-btn-primary am-btn-sm">
+<i class="am-icon-book"></i> 题解
+</a>
+<a data-pjax href="/recordnew/lists?pid=P2942" class="am-btn am-btn-primary am-btn-sm" title="查看本题提交记录">
+<i class="am-icon-pie-chart"></i>
+</a>
+<button class="am-btn am-btn-primary am-btn-sm lg-pointer" name="showtag" title="显示算法标签">
+<i class="am-icon-tags"></i>
+</button>
+</p>
+<li>提示：收藏到任务计划后，可在首页查看。</li>
+<p>
+<a class="am-btn am-btn-danger am-btn-sm" href="/fe/problem/P2942" target="_blank">体验新版界面</a>
+</p>
+</section>
+<section class="am-panel am-panel-default lg-summary">
+<h2>最新讨论
+<a onclick="$('#discuss-lists').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看本题讨论">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" style="display: none" id="discuss-lists">
+<li>暂时没有讨论</li>
+<div style="overflow: auto">
+<a data-pjax href="/discuss/lists?forumname=P2942" class="am-btn am-btn-primary am-btn-sm lg-right">进入讨论版</a>
+</div>
+</ul>
+</section>
+<section class="am-panel am-panel-default lg-summary am-hide-sm">
+<h2>推荐的相关题目
+<a onclick="$('#recommendation-list').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看推荐题目">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" id="recommendation-list" style="display: none">
+<li>
+<a class='colored' href="/problemnew/show/P2214" target="_blank"><b>P2214</b> [USACO14MAR]哞哞哞Mooo Moo</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P1550" target="_blank"><b>P1550</b> [USACO08OCT]打井Watering Hole</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P2327" target="_blank"><b>P2327</b> [SCOI2005]扫雷</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3371" target="_blank"><b>P3371</b> 【模板】单源最短路径（弱化版）</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3063" target="_blank"><b>P3063</b> [USACO12DEC]牛奶的路由Milk Routing</a>
+</li>
+</ul>
+</section>
+</div>
+<div class="am-u-md-8 lg-right" name="problemleft">
+<div class="lg-content-left">
+<div class="lg-article am-g">
+<h2>题目描述</h2>
+<p>A full moon casts some sort of spell on the cows and, like their cousins the wolves and coyotes, they bay at the moon -- mooing instead of howling, of course.</p>
+<p>Each 'moo' lasts a certain amount of time. A short 'moo' might last time 1; a longer one might last time 24 or even 1,000,000,000 or longer (cows can really moo when they want to). No 'moo' will last more than or equal to 2^63.</p>
+<p>It should come as no surprise that the cows have a pattern to their moos. Bessie will choose an integer c (1 &lt;= c &lt;= 100) that is the initial length of a moo.</p>
+<p>After Bessie moos for length c, the cows calculate times for</p>
+<p>subsequent moos. They apply two formulae to each moo time to yield even more moo times. The two formulae are:</p>
+<pre><code class="language-cpp">f1(c)=a1*c/d1+b1 (integer divide, of course) and 
+f2(c)=a2*c/d2+b2. 
+They then successively use the two new times created by evaluating f1(c) and f2(c) to create even more mooing times. They keep a sorted list of all the possible mooing times (discarding duplicates). 
+They are allowed to moo a total of N times (1 &lt;= N &lt;= 4,000,000). Please determine the length of the longest moo before they must quit. 
+The constants in the formulae have these constraints: 1 &lt;= d1 &lt; a1; d1 &lt; a1 &lt;= 20; 0 &lt;= b1 &lt;= 20; 1 &lt;= d2 &lt; a2; d2 &lt; a2 &lt;= 20; 0 &lt;= b2 &lt;= 20. 
+Consider an example where c=3 and N=10. The constants are: 
+a1=4    b1=3     d1=3 
+a2=17   b2=8     d2=2 </code></pre>
+<p>The first mooing time is 3, given by the value of c. The total list of mooing times is:</p>
+<pre><code class="language-cpp">1. c=3             -&gt;  3       6. f2(3)=17*3/2+8  -&gt; 33 
+2. f1(3)=4*3/3+3   -&gt;  7       7. f1(28)=4*28/3+3 -&gt; 40 
+3. f1(7)=4*7/3+3   -&gt; 12       8. f1(33)=4*33/3+3 -&gt; 47 
+4. f1(12)=4*12/3+3 -&gt; 19       9. f1(40)=4*40/3+3 -&gt; 56 
+5. f1(19)=4*19/3+3 -&gt; 28      10. f1(47)=4*47/3+3 -&gt; 65 
+The tenth time is 65, which would be the proper answer for this set of inputs. </code></pre>
+<p>Partial feedback will be provided on the first 50 submissions.
+MEMORY LIMIT: 64MB</p>
+<p>满月的时候，和狼一样，牛们也在月光下叫.他们从不嚎叫，而是哞叫.</p>
+<p>每次哞叫都有一个时长，可能是1秒，可能是；10^9秒或更久，牛们真的非常能叫.当然，没有 哞叫时长会超过或等于2^63.</p>
+<p>牛们的哞叫可以找到规律，这并不奇怪.贝茜会选择一个整数100)来作为初始时 长.之后，牛们根据两条公式确定更多的时长.这两条公式</p>
+<p>f1(c)=a1*c/d1+b1整除</p>
+<p>f2(c)=a2*c/d2+b2. </p>
+<p>牛们用这两条公式不断地迭代、计算，算得大量的时长.然后她们将这些时长排序，剔除重 复的时长，最后取前N(l&lt;N&lt; 4000000)个整数为她们N次哞叫的时长.请你计算，第N次哞叫 的时长是多少.公式中的常量均为整数，满足下列关系： 1 &lt;= d1 &lt; a1; d1 &lt; a1 &lt;= 20; 0 &lt;= b1 &lt;= 20; 1 &lt;= d2 &lt; a2; d2 &lt; a2 &lt;= 20; 0 &lt;= b2 &lt;= 20.</p>
+<h2>输入输出格式</h2>
+<strong>输入格式：</strong><br>
+<p><p>* Line 1: Two space-separated integers: c and N</p>
+<p>* Line 2: Three space-separated integers: a1, b1, and d1</p>
+<p>* Line 3: Three space-separated integers: a2, b2, and d2</p></p>
+<strong>输出格式：</strong><br>
+<p><p>* Line 1: A single line which contains a single integer which is the length of the Nth moo</p></p>
+<h2>输入输出样例</h2>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>3 10 
+4 3 3 
+17 8 2 
+</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>65 
+</pre>
+</div>
+</div>
+</div>
+<div class='lg-article-sub am-g' id="sub"></div>
+</div>
+</div>
+</div>
+<div class="am-modal am-modal-prompt" tabindex="-1" id="confirm">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="memtitle">提示</div>
+<div class="am-modal-bd" id="memadmin">
+标程仅供做题后或实在无思路时参考。<br>
+请自觉、自律地使用该功能并请对自己的学习负责。<br>
+如果发现恶意抄袭标程，将按照I类违反进行处理。<br>
+</div>
+<div class="am-modal-footer">
+<span class="am-modal-btn" data-am-modal-cancel>取消</span>
+<span class="am-modal-btn" data-am-modal-confirm>确定</span>
+</div>
+</div>
+</div>
+<script>
+        $(document).ready(function () {
+            $("#expandstd").click(function () {
+                $('#confirm').modal({
+                    relatedTarget: this,
+                    onConfirm: function (e) {
+                        $("#stdcode").slideDown();
+                        $("#expandstd").hide();
+                    }
+                });
+            });
+            $("#submit").click(
+                function () {
+                    hide_artile();
+                    $(document).scrollTop($(document).scrollTop() - 80);
+                    var pid = $(this).attr("pid");
+                    $.get("/problem/ajax_submit?pid=" + pid, function (data) {
+                        var arr = eval('(' + data + ')');
+                        if (arr['code'] == 201) {
+                            $('.lg-article-sub').html(arr['more']['html']);
+                        }
+                        else if (arr['code'] == 200) {
+
+                        }
+                        else {
+                            if (arr['code'] == 0 || arr['code'] == -3) {
+                                backarticle();
+                            }
+                            show_alert("提交失败", arr['message']);
+                        }
+                    });
+                }
+            );
+            $("button[title].am-btn,a[title].am-btn").poshytip({
+                className: 'tip-twitter',
+                showTimeout: 1,
+                alignTo: 'target',
+                alignX: 'center',
+                alignY: 'bottom'
+            });
+            $('[name=showtag]').click(function () {
+                $('.am-badge.am-hide').removeClass('am-hide');
+            });
+            $(".sample-copy").click(function() {
+                var element = $(this).parents(".copy-region").find("pre");
+                var text = $(element).text();
+                var $temp = $("<textarea>");
+                $("body").append($temp);
+                $temp.val(text).select();
+                document.execCommand("copy");
+                $temp.remove();
+                $(this).text("复制成功").removeClass("lg-bg-orange");
+
+                var e = this;
+                setTimeout(function() {
+                    $(e).text("复制").addClass("lg-bg-orange");
+                }, 500);
+            });
+        });
+    </script>
+</div>
+<footer id="app-footer"></footer>
+<div class="am-modal am-modal-alert" tabindex="-1" id="lg-alert">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="lg-alert-title"></div>
+<div class="am-modal-bd" id="lg-alert-message"></div>
+<div class="am-modal-footer">
+<span class="am-modal-btn">确定</span>
+</div>
+</div>
+</div>
+<script src="/js/ace/ace.js"></script>
+<script src="https://cdn.luogu.org/js/vendor.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/jsmind.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/amazeui.min.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts-more.js"></script>
+<script src="/static/katex/katex.min.js"></script>
+<script src="/static/katex/contrib/auto-render.min.js"></script>
+<script src="https://cdn.luogu.org/markdown-palettes/markdown-palettes.min.js?ver=20190219"></script>
+<script src="https://cdn.luogu.org/js/luogu3.js?ver=20190101"></script>
+</body>
+</html>

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title> P3820 小D的地下温泉 - 洛谷</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta name="csrf-token" content="1555853110:e4+6RIYp2uboysIobYDEivvpdPamQn2bE058ue+4AfE=">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/amazeui.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/katex.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/luogu3.css?ver=20190102">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/highlight_tomorrow.css">
+<link rel="stylesheet" href="https://cdn.luogu.org/markdown-palettes/markdown-palettes.css?ver=20190219">
+<script src="https://cdn.luogu.org/js/jquery-2.1.1.min.js"></script>
+<script src="https://cdn.luogu.org/js/luogu3_pre.js?ver=20190101"></script>
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn.luogu.org/images/favicon3.ico" media="screen"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/fe/loader.css?ver=20190417">
+<script>window._feInjection = JSON.parse(decodeURIComponent("%7B%22code%22%3A200%2C%22currentUser%22%3Anull%2C%22currentTemplate%22%3A%22Excited%22%2C%22currentData%22%3A%7B%22shortHeader%22%3Afalse%2C%22pageName%22%3A%22%5Cu9898%5Cu76ee%5Cu8be6%5Cu60c5%22%7D%2C%22currentMeta%22%3A%7B%22title%22%3A%22%20P3820%20%5Cu5c0fD%5Cu7684%5Cu5730%5Cu4e0b%5Cu6e29%5Cu6cc9%22%7D%7D"));</script>
+<script>window._release = '20190417';</script>
+<script src="https://cdn.luogu.org/fe/loader.js?ver=20190417" charset="utf-8" defer></script>
+</head>
+<body>
+<div id="app-header"></div>
+<nav id="app-sidenav"></nav>
+<div id="app-body"></div>
+<script>
+    function scrollToId (id) {
+        $('html, body').animate({
+            scrollTop: ($('#' + id).offset().top)
+        }, 500);
+    }
+</script>
+<style>
+    .lg-toolbar {
+        display: none;
+    }
+
+    #app-body { /* Unused in fallback FE */
+        display: none;
+    }
+
+    #app-body-new{
+        display: block;
+        margin-bottom: 2em;
+        position: relative;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    @media (min-width: 576px) {
+        #app-body-new {
+            margin-left: 70px;
+        }
+    }
+
+    code {
+        font-family: monospace, "Courier New";
+    }
+
+</style>
+<div id="app-body-new">
+<div class="lg-toolbar" data-am-sticky>
+<h1><a href="/recordnew/lists?uid=&pid=P3820" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a> P3820 小D的地下温泉</h1>
+</div>
+<div class="am-g lg-main-content">
+<div class="am-u-md-4 lg-right" name="problemright">
+<section class="am-panel am-panel-default lg-summary" id="psummary">
+<div class="lg-summary-content">
+<ul class="am-list am-list-static lg-summary-list">
+<li>
+<ul class="am-avg-sm-2"><li><span class="lg-bignum-num">123<small></small></span><span class="lg-bignum-text">通过</span></li><li><span class="lg-bignum-num">1.2<small>K</small><small></small></span><span class="lg-bignum-text">提交</span></li></ul>
+</li>
+<li>
+<strong>题目提供者</strong>
+<span class="lg-right"><a class='lg-fg-purple lg-bold' href="/space/show?uid=9433" target="_blank">FlierKing</a>&nbsp;<span class="am-badge am-radius lg-bg-purple">管理员</span></span>
+</li>
+<li>
+<strong>评测方式</strong>
+<span class="lg-right"><b>云端评测</b></span>
+</li>
+<li><strong>标签</strong>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="47">并查集</span>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="126">广度优先搜索,BFS</span>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="175">连通块</span>
+<span class="lg-tag am-badge am-radius lg-bg-bluelight" data-tagid="81">洛谷原创</span>
+<style>.lg-tag { cursor: pointer; }</style>
+<script>
+                                $(".lg-tag").click(function() {
+                                    window.open("/problemnew/lists?tag=" + $(this).attr('data-tagid'));
+                                })
+                            </script>
+</li>
+<li><strong>难度</strong>
+<span class="lg-right"><span class="am-badge am-radius lg-bg-bluelight">提高+/省选-</span></span>
+</li>
+<li><strong>时空限制</strong>
+<span class="lg-right">1000ms / 128MB</span>
+</li>
+</ul>
+</div>
+<p>
+<button class="am-btn am-btn-danger am-btn-sm" id="submit" pid="P3820">
+<i class="am-icon-paper-plane"></i> 提交
+</button>
+<a target="_blank" href="/problemnew/solution/P3820" class="am-btn am-btn-primary am-btn-sm">
+<i class="am-icon-book"></i> 题解
+</a>
+<a data-pjax href="/recordnew/lists?pid=P3820" class="am-btn am-btn-primary am-btn-sm" title="查看本题提交记录">
+<i class="am-icon-pie-chart"></i>
+</a>
+<button class="am-btn am-btn-primary am-btn-sm lg-pointer" name="showtag" title="显示算法标签">
+<i class="am-icon-tags"></i>
+</button>
+</p>
+<li>提示：收藏到任务计划后，可在首页查看。</li>
+<p>
+<a class="am-btn am-btn-danger am-btn-sm" href="/fe/problem/P3820" target="_blank">体验新版界面</a>
+</p>
+</section>
+<section class="am-panel am-panel-default lg-summary">
+<h2>最新讨论
+<a onclick="$('#discuss-lists').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看本题讨论">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" style="display: none" id="discuss-lists">
+<li><a data-pjax href="/discuss/show?postid=20931" class="am-padding-0">题目里膜法什么鬼</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=14280" class="am-padding-0">求大佬改错，总是50分，我真…</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=14235" class="am-padding-0">求大佬改错，只对了1,2,10点…</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=14222" class="am-padding-0">蜜汁CE </a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=14204" class="am-padding-0">有人有数据吗</a>
+</li>
+<div style="overflow: auto">
+<a data-pjax href="/discuss/lists?forumname=P3820" class="am-btn am-btn-primary am-btn-sm lg-right">进入讨论版</a>
+</div>
+</ul>
+</section>
+<section class="am-panel am-panel-default lg-summary am-hide-sm">
+<h2>推荐的相关题目
+<a onclick="$('#recommendation-list').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看推荐题目">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" id="recommendation-list" style="display: none">
+<li>
+<a class='colored' href="/problemnew/show/P3694" target="_blank"><b>P3694</b> 邦邦的大合唱站队</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3203" target="_blank"><b>P3203</b> [HNOI2010]弹飞绵羊</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3457" target="_blank"><b>P3457</b> [POI2007]POW-The Flood</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/AT2442" target="_blank"><b>AT2442</b> フェーン現象 (Foehn Phenomena)</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P2486" target="_blank"><b>P2486</b> [SDOI2011]染色</a>
+</li>
+</ul>
+</section>
+</div>
+<div class="am-u-md-8 lg-right" name="problemleft">
+<div class="lg-content-left">
+<div class="lg-article am-g">
+<h2>题目背景</h2>
+<p>小D最喜欢泡温泉了。小D找某奸商租下了一块$N$行$M$列的地，左上角为$(1,1)$，右下角为$(N,M)$。小D本以为这块地里全是温泉，结果这块地极不稳定，曾经发生过一些地形变动，所以其中一些地方全是土。</p>
+<h2>题目描述</h2>
+<p>一开始他会告诉你当前这块地的情况，但是小D有一些假操作，希望你操作给他看：</p>
+<ol>
+<li>
+<p>由小D指定$w$个位置，他希望知道其中哪个位置下水泡温泉的范围最大。泡温泉的范围定义为指定位置通过向上下左右四个方向能到达的位置的个数。若询问的位置为土，则范围为0。如果如果有多个位置均为最大，输出给出顺序较前的那个。位置编号为$1,2,...,w$。</p>
+</li>
+<li>
+<p>由小D指定$w$个位置，他会使用膜法按顺序翻转这$w$个地方的地形。即若原位置是土，则该位置变为温泉；若原位置是温泉，则该位置变为土。因为小D不希望活动范围减少得太快，所以他在将温泉变为土时不会将一个区域分割。</p>
+</li>
+</ol>
+<h2>输入输出格式</h2>
+<strong>输入格式：</strong><br>
+<p><p>第一行输入两个整数，$N,M$，为土地大小。</p>
+<p>接下来的$N$行每行输入$M$个字符，为'.'（代表温泉）或'*'（代表土）（不包括引号）</p>
+<p>第$N+2$行输入一个整数，$Q$，为操作数量。</p>
+<p>接下来的$Q$行，每行先读入两个整数$opt$和$w$，表示操作类型和指定点的数量，在同一行还有$2\times w$个数$x_{1},y_{1},x_{2},y_{2},...,x_{w},y_{w}$，分别表示$w$个操作的位置为$(x_{1},y_{1}),(x_{2},y_{2}),...,(x_{w},y_{w})$。</p></p>
+<strong>输出格式：</strong><br>
+<p><p>对于每个操作1，输出询问的答案并换行</p></p>
+<h2>输入输出样例</h2>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>5 5
+.*...
+.****
+*....
+*****
+.....
+3
+1 2 1 1 1 3
+2 1 3 1
+1 2 1 1 1 3</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>2
+1
+</pre>
+</div>
+</div>
+<h2>说明</h2>
+<p>对于30%的数据，$N,M\le 100,\sum w\le 100$</p>
+<p>对于70%的数据，$N,M\le 1000$</p>
+<p>对于100%的数据，$1\le N\times M,Q\le 10^{6},\sum w\le 10^{6},w\geq 1$</p>
+<p>数据在windows下制作</p>
+<h2>标程<a class="lg-right am-btn am-btn-sm am-btn-primary" id="expandstd">展开</a></h2>
+<div id="stdcode" class="copy-region" style="display:none">
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre><code class="language-cpp line-numbers">/*
+Author : Ditoly
+Language : C++
+*/
+#include&lt;cstdio&gt;
+inline int read()
+{
+    int x;char c;
+    while((c=getchar())&lt;&#039;0&#039;||c&gt;&#039;9&#039;);
+    for(x=c-&#039;0&#039;;(c=getchar())&gt;=&#039;0&#039;&amp;&amp;c&lt;=&#039;9&#039;;)x=x*10+c-&#039;0&#039;;
+    return x;
+}
+#define MN 1000000
+char s[MN+5];
+int n,m,d[MN+5],f[MN*2+5],cnt,sm[MN*2+5];
+int gf(int k){return f[k]?f[k]=gf(f[k]):k;}
+void solve(int x,int y)
+{
+    if(s[x*m+y]!=&#039;.&#039;||d[x*m+y])return;
+    ++sm[d[x*m+y]=cnt];
+    if(x)solve(x-1,y);
+    if(y)solve(x,y-1);
+    if(x+1&lt;n)solve(x+1,y);
+    if(y+1&lt;m)solve(x,y+1);
+}
+void merge(int x,int y,int xx,int yy)
+{
+    if(s[xx*m+yy]!=&#039;.&#039;||gf(d[x*m+y])==gf(d[xx*m+yy]))return;
+    sm[gf(d[xx*m+yy])]+=sm[gf(d[x*m+y])];
+    sm[gf(d[x*m+y])]=0;
+    f[gf(d[x*m+y])]=gf(d[xx*m+yy]);
+}
+int main()
+{
+    int i,j,q,t,w,x,y,ans,mx;
+    n=read();m=read();
+    for(i=0;i&lt;n;++i)scanf(&quot;%s&quot;,s+i*m);
+    for(i=0;i&lt;n;++i)for(j=0;j&lt;m;++j)
+        if(s[i*m+j]==&#039;.&#039;&amp;&amp;!d[i*m+j])++cnt,solve(i,j);
+    for(q=read();q--;)
+    {
+        t=read();w=read();
+        if(t==1)
+        {
+            for(mx=0,i=ans=1;i&lt;=w;++i)
+            {
+                x=read()-1;y=read()-1;
+                if(s[x*m+y]==&#039;.&#039;&amp;&amp;sm[gf(d[x*m+y])]&gt;mx)
+                    mx=sm[gf(d[x*m+y])],ans=i;
+            }
+            printf(&quot;%d\n&quot;,ans);
+        }
+        else while(w--)
+        {
+            x=read()-1;y=read()-1;
+            if(s[x*m+y]==&#039;.&#039;)
+            {
+                --sm[gf(d[x*m+y])];
+                s[x*m+y]=&#039;*&#039;;d[x*m+y]=0;
+            }
+            else
+            {
+                ++sm[d[x*m+y]=++cnt];
+                s[x*m+y]=&#039;.&#039;;
+                if(x)merge(x,y,x-1,y);
+                if(y)merge(x,y,x,y-1);
+                if(x+1&lt;n)merge(x,y,x+1,y);
+                if(y+1&lt;m)merge(x,y,x,y+1);
+            }
+        }
+    }
+}</code></pre>
+</div>
+</div>
+<div class='lg-article-sub am-g' id="sub"></div>
+</div>
+</div>
+</div>
+<div class="am-modal am-modal-prompt" tabindex="-1" id="confirm">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="memtitle">提示</div>
+<div class="am-modal-bd" id="memadmin">
+标程仅供做题后或实在无思路时参考。<br>
+请自觉、自律地使用该功能并请对自己的学习负责。<br>
+如果发现恶意抄袭标程，将按照I类违反进行处理。<br>
+</div>
+<div class="am-modal-footer">
+<span class="am-modal-btn" data-am-modal-cancel>取消</span>
+<span class="am-modal-btn" data-am-modal-confirm>确定</span>
+</div>
+</div>
+</div>
+<script>
+        $(document).ready(function () {
+            $("#expandstd").click(function () {
+                $('#confirm').modal({
+                    relatedTarget: this,
+                    onConfirm: function (e) {
+                        $("#stdcode").slideDown();
+                        $("#expandstd").hide();
+                    }
+                });
+            });
+            $("#submit").click(
+                function () {
+                    hide_artile();
+                    $(document).scrollTop($(document).scrollTop() - 80);
+                    var pid = $(this).attr("pid");
+                    $.get("/problem/ajax_submit?pid=" + pid, function (data) {
+                        var arr = eval('(' + data + ')');
+                        if (arr['code'] == 201) {
+                            $('.lg-article-sub').html(arr['more']['html']);
+                        }
+                        else if (arr['code'] == 200) {
+
+                        }
+                        else {
+                            if (arr['code'] == 0 || arr['code'] == -3) {
+                                backarticle();
+                            }
+                            show_alert("提交失败", arr['message']);
+                        }
+                    });
+                }
+            );
+            $("button[title].am-btn,a[title].am-btn").poshytip({
+                className: 'tip-twitter',
+                showTimeout: 1,
+                alignTo: 'target',
+                alignX: 'center',
+                alignY: 'bottom'
+            });
+            $('[name=showtag]').click(function () {
+                $('.am-badge.am-hide').removeClass('am-hide');
+            });
+            $(".sample-copy").click(function() {
+                var element = $(this).parents(".copy-region").find("pre");
+                var text = $(element).text();
+                var $temp = $("<textarea>");
+                $("body").append($temp);
+                $temp.val(text).select();
+                document.execCommand("copy");
+                $temp.remove();
+                $(this).text("复制成功").removeClass("lg-bg-orange");
+
+                var e = this;
+                setTimeout(function() {
+                    $(e).text("复制").addClass("lg-bg-orange");
+                }, 500);
+            });
+        });
+    </script>
+</div>
+<footer id="app-footer"></footer>
+<div class="am-modal am-modal-alert" tabindex="-1" id="lg-alert">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="lg-alert-title"></div>
+<div class="am-modal-bd" id="lg-alert-message"></div>
+<div class="am-modal-footer">
+<span class="am-modal-btn">确定</span>
+</div>
+</div>
+</div>
+<script src="/js/ace/ace.js"></script>
+<script src="https://cdn.luogu.org/js/vendor.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/jsmind.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/amazeui.min.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts-more.js"></script>
+<script src="/static/katex/katex.min.js"></script>
+<script src="/static/katex/contrib/auto-render.min.js"></script>
+<script src="https://cdn.luogu.org/markdown-palettes/markdown-palettes.min.js?ver=20190219"></script>
+<script src="https://cdn.luogu.org/js/luogu3.js?ver=20190101"></script>
+</body>
+</html>

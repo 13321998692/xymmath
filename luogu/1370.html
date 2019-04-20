@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title> P1370 Charlie的云笔记序列 - 洛谷</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta name="csrf-token" content="1555851991:AfEkLlOyQUZyCIs/IZzX4QX7ZTA+E9F727pl0YdETF8=">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/amazeui.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/katex.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/luogu3.css?ver=20190102">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/highlight_tomorrow.css">
+<link rel="stylesheet" href="https://cdn.luogu.org/markdown-palettes/markdown-palettes.css?ver=20190219">
+<script src="https://cdn.luogu.org/js/jquery-2.1.1.min.js"></script>
+<script src="https://cdn.luogu.org/js/luogu3_pre.js?ver=20190101"></script>
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn.luogu.org/images/favicon3.ico" media="screen"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/fe/loader.css?ver=20190417">
+<script>window._feInjection = JSON.parse(decodeURIComponent("%7B%22code%22%3A200%2C%22currentUser%22%3Anull%2C%22currentTemplate%22%3A%22Excited%22%2C%22currentData%22%3A%7B%22shortHeader%22%3Afalse%2C%22pageName%22%3A%22%5Cu9898%5Cu76ee%5Cu8be6%5Cu60c5%22%7D%2C%22currentMeta%22%3A%7B%22title%22%3A%22%20P1370%20Charlie%5Cu7684%5Cu4e91%5Cu7b14%5Cu8bb0%5Cu5e8f%5Cu5217%22%7D%7D"));</script>
+<script>window._release = '20190417';</script>
+<script src="https://cdn.luogu.org/fe/loader.js?ver=20190417" charset="utf-8" defer></script>
+</head>
+<body>
+<div id="app-header"></div>
+<nav id="app-sidenav"></nav>
+<div id="app-body"></div>
+<script>
+    function scrollToId (id) {
+        $('html, body').animate({
+            scrollTop: ($('#' + id).offset().top)
+        }, 500);
+    }
+</script>
+<style>
+    .lg-toolbar {
+        display: none;
+    }
+
+    #app-body { /* Unused in fallback FE */
+        display: none;
+    }
+
+    #app-body-new{
+        display: block;
+        margin-bottom: 2em;
+        position: relative;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    @media (min-width: 576px) {
+        #app-body-new {
+            margin-left: 70px;
+        }
+    }
+
+    code {
+        font-family: monospace, "Courier New";
+    }
+
+</style>
+<div id="app-body-new">
+<div class="lg-toolbar" data-am-sticky>
+<h1><a href="/recordnew/lists?uid=&pid=P1370" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a> P1370 Charlie的云笔记序列</h1>
+</div>
+<div class="am-g lg-main-content">
+<div class="am-u-md-4 lg-right" name="problemright">
+<section class="am-panel am-panel-default lg-summary" id="psummary">
+<div class="lg-summary-content">
+<ul class="am-list am-list-static lg-summary-list">
+<li>
+<ul class="am-avg-sm-2"><li><span class="lg-bignum-num">57<small></small></span><span class="lg-bignum-text">通过</span></li><li><span class="lg-bignum-num">119<small></small></span><span class="lg-bignum-text">提交</span></li></ul>
+</li>
+<li>
+<strong>题目提供者</strong>
+<span class="lg-right"><a class='lg-fg-bluelight' href="/space/show?uid=749" target="_blank">panyuchong</a></span>
+</li>
+<li>
+<strong>评测方式</strong>
+<span class="lg-right"><b>云端评测</b></span>
+</li>
+<li><strong>标签</strong>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="3">动态规划,动规,dp</span>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="166">生成树</span>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="12">递推</span>
+<style>.lg-tag { cursor: pointer; }</style>
+<script>
+                                $(".lg-tag").click(function() {
+                                    window.open("/problemnew/lists?tag=" + $(this).attr('data-tagid'));
+                                })
+                            </script>
+</li>
+<li><strong>难度</strong>
+<span class="lg-right"><span class="am-badge am-radius lg-bg-bluelight">提高+/省选-</span></span>
+</li>
+<li><strong>时空限制</strong>
+<span class="lg-right">1000ms / 128MB</span>
+</li>
+</ul>
+</div>
+<p>
+<button class="am-btn am-btn-danger am-btn-sm" id="submit" pid="P1370">
+<i class="am-icon-paper-plane"></i> 提交
+</button>
+<a target="_blank" href="/problemnew/solution/P1370" class="am-btn am-btn-primary am-btn-sm">
+<i class="am-icon-book"></i> 题解
+</a>
+<a data-pjax href="/recordnew/lists?pid=P1370" class="am-btn am-btn-primary am-btn-sm" title="查看本题提交记录">
+<i class="am-icon-pie-chart"></i>
+</a>
+<button class="am-btn am-btn-primary am-btn-sm lg-pointer" name="showtag" title="显示算法标签">
+<i class="am-icon-tags"></i>
+</button>
+</p>
+<li>提示：收藏到任务计划后，可在首页查看。</li>
+<p>
+<a class="am-btn am-btn-danger am-btn-sm" href="/fe/problem/P1370" target="_blank">体验新版界面</a>
+</p>
+</section>
+<section class="am-panel am-panel-default lg-summary">
+<h2>最新讨论
+<a onclick="$('#discuss-lists').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看本题讨论">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" style="display: none" id="discuss-lists">
+<li><a data-pjax href="/discuss/show?postid=67241" class="am-padding-0">求解</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=35483" class="am-padding-0">这题数据似乎略弱。。。</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=1300" class="am-padding-0">题目求解释</a>
+</li>
+<div style="overflow: auto">
+<a data-pjax href="/discuss/lists?forumname=P1370" class="am-btn am-btn-primary am-btn-sm lg-right">进入讨论版</a>
+</div>
+</ul>
+</section>
+<section class="am-panel am-panel-default lg-summary am-hide-sm">
+<h2>推荐的相关题目
+<a onclick="$('#recommendation-list').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看推荐题目">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" id="recommendation-list" style="display: none">
+<li>
+<a class='colored' href="/problemnew/show/P1381" target="_blank"><b>P1381</b> 单词背诵</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P1402" target="_blank"><b>P1402</b> 酒店之王</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P4187" target="_blank"><b>P4187</b> [USACO18JAN]Stamp Painting</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P4781" target="_blank"><b>P4781</b> 【模板】拉格朗日插值</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P1371" target="_blank"><b>P1371</b> NOI元丹</a>
+</li>
+</ul>
+</section>
+</div>
+<div class="am-u-md-8 lg-right" name="problemleft">
+<div class="lg-content-left">
+<div class="lg-article am-g">
+<h2>题目背景</h2>
+<p>Charlie是oiinhand的忠实粉丝。他有使用oih云笔记记录自己的题解的习惯。只有一点一滴的积累才能留下自己的足迹。</p>
+<p>oih云笔记有什么特点吗？</p>
+<p>oih的站长soha表示，目前oih2的云笔记功能比较简陋，但是正在开发oih3中的新版云笔记功能将是世界上最适合oier的储藏笔记的工具。</p>
+<p>首先，新版云笔记支持markdown功能，并且可以实时预览，插入公式图片都不是问题。实时自动保存，不用担心突然断电啊文档消失，而且不管在哪里都可以看！</p>
+<p>其次，可以一键生成题解模板摘要，不用各种复制粘贴了，超省事！</p>
+<p>再者，云笔记可以给其他同学分享自己的笔记，共同进步。写完了笔记，还可以一键向洛谷投稿呢！</p>
+<p>然而Charlie最喜欢的功能是oih的题目收藏。现在他收藏了一系列题目，但是觉得不过瘾所以正在玩弄这个功能。</p>
+<h2>题目描述</h2>
+<p>某天，Charlie将收藏的题目抽象为一个序列。a = {a1, a2, a3, …, an-1, an}。</p>
+<p>设a[l : r]表示序列{ai}第l个数到第r个数之间的子串，其中1 &lt;= l &lt;= r &lt;= n。形式化地，a[l : r] = {al, al+1, al+2, …, ar-1, ar}。比如说，a = {9, 8, 0, 3, 2, 1}，那么a[2 : 5] = {8, 0, 3, 2}。</p>
+<p>Charlie对序列{ai}定义了一个函数F(l; r)，表示序列a[l : r]的本质不同的子序列个数。特别地，一个空序列也被当作一个本质不同的子序列。</p>
+<p>序列a[l : r]的子序列定义为{ai1, ai2, ai3, …, aik-1, aik}，其中l &lt;= i1 &lt; i2 &lt; i3 &lt; … &lt; ik-1 &lt; ik &lt;= r。比如说，a = {9, 8, 0, 3, 2, 1}，那么{8, 3, 2}是a[2 : 5] ={8, 0, 3, 2}的一个子序列。</p>
+<p>长度为n的序列a和长度为m的序列b被称作本质不同的，当且仅当n ≠ m，或存在i，使得ai ≠ bi。反之，则称这2个序列是本质相同的。比如说，{9, 8}和{9, 7}是本质不同的，{9, 8}和{9, 8, 7}也是本质不同的，而{9, 8}和{9, 8}是本质相同的。</p>
+<p>举个例子，设a = {1, 9, 9, 8, 0, 3, 2, 1}，那么F(1, 3) = 6，因为a[1 : 3] = {1, 9, 9}有6个子序列：{}，{1}，{9}，{1, 9}， {9, 9}，{1, 9, 9}。</p>
+<p>现在Charlie想知道，Σ(1&lt;=l&lt;=r&lt;=n)F(l, r)的值是多少。由于这个数可能很大，请输</p>
+<p>出它对998244353（7*17*2^23 + 1，一个质数）取模后的结果。</p>
+<h2>输入输出格式</h2>
+<strong>输入格式：</strong><br>
+<p><p>第一行一个整数n，表示序列a的长度。</p>
+<p>第二行包括n个整数，表示a1, a2, a3, …an-1, an。</p></p>
+<strong>输出格式：</strong><br>
+<p><p>一行，一个整数表示Σ(1&lt;=l&lt;=r&lt;=n)F(l, r)的值对998244353取模后的结果。</p></p>
+<h2>输入输出样例</h2>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>8
+1 9 9 8 0 3 2 1</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>814</pre>
+</div>
+</div>
+<h2>说明</h2>
+<p>对于10%的数据，1 &lt;= n &lt;= 10。</p>
+<p>对于30%的数据，1 &lt;= n &lt;= 100。</p>
+<p>对于50%的数据，1 &lt;= n &lt;= 1000, 0 &lt;= ai &lt;= 10^5。</p>
+<p>对于100%的数据，1 &lt;= n &lt;= 10^5, |ai| &lt;= 10^9。</p>
+<p>oiinhand3.0正在开发中。</p>
+<p>这将是oiers都需要的工具，它不仅集合了全网所有大型OJ的资源（题目、题解）而且针对用户还可以将自己在其他oj评测过的代码储存下来，并且有超贴心的云笔记功能，帮助大家最大效率练习。</p>
+<p>soha借此地征求意见，有奖哦！<a href="http://www.wenjuan.com/s/M7fqIv/">http://www.wenjuan.com/s/M7fqIv/</a></p>
+</div>
+<div class='lg-article-sub am-g' id="sub"></div>
+</div>
+</div>
+</div>
+<div class="am-modal am-modal-prompt" tabindex="-1" id="confirm">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="memtitle">提示</div>
+<div class="am-modal-bd" id="memadmin">
+标程仅供做题后或实在无思路时参考。<br>
+请自觉、自律地使用该功能并请对自己的学习负责。<br>
+如果发现恶意抄袭标程，将按照I类违反进行处理。<br>
+</div>
+<div class="am-modal-footer">
+<span class="am-modal-btn" data-am-modal-cancel>取消</span>
+<span class="am-modal-btn" data-am-modal-confirm>确定</span>
+</div>
+</div>
+</div>
+<script>
+        $(document).ready(function () {
+            $("#expandstd").click(function () {
+                $('#confirm').modal({
+                    relatedTarget: this,
+                    onConfirm: function (e) {
+                        $("#stdcode").slideDown();
+                        $("#expandstd").hide();
+                    }
+                });
+            });
+            $("#submit").click(
+                function () {
+                    hide_artile();
+                    $(document).scrollTop($(document).scrollTop() - 80);
+                    var pid = $(this).attr("pid");
+                    $.get("/problem/ajax_submit?pid=" + pid, function (data) {
+                        var arr = eval('(' + data + ')');
+                        if (arr['code'] == 201) {
+                            $('.lg-article-sub').html(arr['more']['html']);
+                        }
+                        else if (arr['code'] == 200) {
+
+                        }
+                        else {
+                            if (arr['code'] == 0 || arr['code'] == -3) {
+                                backarticle();
+                            }
+                            show_alert("提交失败", arr['message']);
+                        }
+                    });
+                }
+            );
+            $("button[title].am-btn,a[title].am-btn").poshytip({
+                className: 'tip-twitter',
+                showTimeout: 1,
+                alignTo: 'target',
+                alignX: 'center',
+                alignY: 'bottom'
+            });
+            $('[name=showtag]').click(function () {
+                $('.am-badge.am-hide').removeClass('am-hide');
+            });
+            $(".sample-copy").click(function() {
+                var element = $(this).parents(".copy-region").find("pre");
+                var text = $(element).text();
+                var $temp = $("<textarea>");
+                $("body").append($temp);
+                $temp.val(text).select();
+                document.execCommand("copy");
+                $temp.remove();
+                $(this).text("复制成功").removeClass("lg-bg-orange");
+
+                var e = this;
+                setTimeout(function() {
+                    $(e).text("复制").addClass("lg-bg-orange");
+                }, 500);
+            });
+        });
+    </script>
+</div>
+<footer id="app-footer"></footer>
+<div class="am-modal am-modal-alert" tabindex="-1" id="lg-alert">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="lg-alert-title"></div>
+<div class="am-modal-bd" id="lg-alert-message"></div>
+<div class="am-modal-footer">
+<span class="am-modal-btn">确定</span>
+</div>
+</div>
+</div>
+<script src="/js/ace/ace.js"></script>
+<script src="https://cdn.luogu.org/js/vendor.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/jsmind.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/amazeui.min.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts-more.js"></script>
+<script src="/static/katex/katex.min.js"></script>
+<script src="/static/katex/contrib/auto-render.min.js"></script>
+<script src="https://cdn.luogu.org/markdown-palettes/markdown-palettes.min.js?ver=20190219"></script>
+<script src="https://cdn.luogu.org/js/luogu3.js?ver=20190101"></script>
+</body>
+</html>

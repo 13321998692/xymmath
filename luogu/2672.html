@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title> P2672 推销员 - 洛谷</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta name="csrf-token" content="1555852547:xRZqHJamKpK0Pi5Mj5pf+4ppI7KgupzixMtz1nV+E/k=">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/amazeui.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/katex.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/luogu3.css?ver=20190102">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/highlight_tomorrow.css">
+<link rel="stylesheet" href="https://cdn.luogu.org/markdown-palettes/markdown-palettes.css?ver=20190219">
+<script src="https://cdn.luogu.org/js/jquery-2.1.1.min.js"></script>
+<script src="https://cdn.luogu.org/js/luogu3_pre.js?ver=20190101"></script>
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn.luogu.org/images/favicon3.ico" media="screen"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/fe/loader.css?ver=20190417">
+<script>window._feInjection = JSON.parse(decodeURIComponent("%7B%22code%22%3A200%2C%22currentUser%22%3Anull%2C%22currentTemplate%22%3A%22Excited%22%2C%22currentData%22%3A%7B%22shortHeader%22%3Afalse%2C%22pageName%22%3A%22%5Cu9898%5Cu76ee%5Cu8be6%5Cu60c5%22%7D%2C%22currentMeta%22%3A%7B%22title%22%3A%22%20P2672%20%5Cu63a8%5Cu9500%5Cu5458%22%7D%7D"));</script>
+<script>window._release = '20190417';</script>
+<script src="https://cdn.luogu.org/fe/loader.js?ver=20190417" charset="utf-8" defer></script>
+</head>
+<body>
+<div id="app-header"></div>
+<nav id="app-sidenav"></nav>
+<div id="app-body"></div>
+<script>
+    function scrollToId (id) {
+        $('html, body').animate({
+            scrollTop: ($('#' + id).offset().top)
+        }, 500);
+    }
+</script>
+<style>
+    .lg-toolbar {
+        display: none;
+    }
+
+    #app-body { /* Unused in fallback FE */
+        display: none;
+    }
+
+    #app-body-new{
+        display: block;
+        margin-bottom: 2em;
+        position: relative;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    @media (min-width: 576px) {
+        #app-body-new {
+            margin-left: 70px;
+        }
+    }
+
+    code {
+        font-family: monospace, "Courier New";
+    }
+
+</style>
+<div id="app-body-new">
+<div class="lg-toolbar" data-am-sticky>
+<h1><a href="/recordnew/lists?uid=&pid=P2672" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a> P2672 推销员</h1>
+</div>
+<div class="am-g lg-main-content">
+<div class="am-u-md-4 lg-right" name="problemright">
+<section class="am-panel am-panel-default lg-summary" id="psummary">
+<div class="lg-summary-content">
+<ul class="am-list am-list-static lg-summary-list">
+<li>
+<ul class="am-avg-sm-2"><li><span class="lg-bignum-num">4<small>K</small><small></small></span><span class="lg-bignum-text">通过</span></li><li><span class="lg-bignum-num">10.3<small>K</small><small></small></span><span class="lg-bignum-text">提交</span></li></ul>
+</li>
+<li>
+<strong>题目提供者</strong>
+<span class="lg-right"><a class='lg-fg-gray' href="/space/show?uid=19" target="_blank">CCF_NOI</a></span>
+</li>
+<li>
+<strong>评测方式</strong>
+<span class="lg-right"><b>云端评测</b></span>
+</li>
+<li><strong>标签</strong>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="53">树状数组</span>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="42">线段树</span>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="7">贪心</span>
+<span class="lg-tag am-badge am-radius lg-bg-bluelight" data-tagid="82">NOIp普及组</span>
+<span class="lg-tag am-badge am-radius lg-bg-green" data-tagid="32">2015</span>
+<span class="lg-tag am-badge am-radius lg-bg-orange" data-tagid="319">高性能</span>
+<style>.lg-tag { cursor: pointer; }</style>
+<script>
+                                $(".lg-tag").click(function() {
+                                    window.open("/problemnew/lists?tag=" + $(this).attr('data-tagid'));
+                                })
+                            </script>
+</li>
+<li><strong>难度</strong>
+<span class="lg-right"><span class="am-badge am-radius lg-bg-green">普及+/提高</span></span>
+</li>
+<li><strong>时空限制</strong>
+<span class="lg-right">1000ms / 128MB</span>
+</li>
+</ul>
+</div>
+<p>
+<button class="am-btn am-btn-danger am-btn-sm" id="submit" pid="P2672">
+<i class="am-icon-paper-plane"></i> 提交
+</button>
+<a target="_blank" href="/problemnew/solution/P2672" class="am-btn am-btn-primary am-btn-sm">
+<i class="am-icon-book"></i> 题解
+</a>
+<a data-pjax href="/recordnew/lists?pid=P2672" class="am-btn am-btn-primary am-btn-sm" title="查看本题提交记录">
+<i class="am-icon-pie-chart"></i>
+</a>
+<button class="am-btn am-btn-primary am-btn-sm lg-pointer" name="showtag" title="显示算法标签">
+<i class="am-icon-tags"></i>
+</button>
+</p>
+<li>提示：收藏到任务计划后，可在首页查看。</li>
+<p>
+<a class="am-btn am-btn-danger am-btn-sm" href="/fe/problem/P2672" target="_blank">体验新版界面</a>
+</p>
+</section>
+<section class="am-panel am-panel-default lg-summary">
+<h2>最新讨论
+<a onclick="$('#discuss-lists').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看本题讨论">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" style="display: none" id="discuss-lists">
+<li><a data-pjax href="/discuss/show?postid=90325" class="am-padding-0">求加强数据</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=86927" class="am-padding-0">绿了</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=82745" class="am-padding-0">线段树第8、9个点TLE怎么办…</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=82506" class="am-padding-0">路过的神仙们，救救孩子吧Q…</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=81186" class="am-padding-0">萌新求助</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=81039" class="am-padding-0">变绿了，可喜可贺</a>
+</li>
+<div style="overflow: auto">
+<a data-pjax href="/discuss/lists?forumname=P2672" class="am-btn am-btn-primary am-btn-sm lg-right">进入讨论版</a>
+</div>
+</ul>
+</section>
+<section class="am-panel am-panel-default lg-summary am-hide-sm">
+<h2>推荐的相关题目
+<a onclick="$('#recommendation-list').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看推荐题目">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" id="recommendation-list" style="display: none">
+<li>
+<a class='colored' href="/problemnew/show/P2671" target="_blank"><b>P2671</b> 求和</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P2258" target="_blank"><b>P2258</b> 子矩阵</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P2119" target="_blank"><b>P2119</b> 魔法阵</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P2058" target="_blank"><b>P2058</b> 海港</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P1983" target="_blank"><b>P1983</b> 车站分级 </a>
+</li>
+</ul>
+</section>
+</div>
+<div class="am-u-md-8 lg-right" name="problemleft">
+<div class="lg-content-left">
+<div class="lg-article am-g">
+<h2>题目描述</h2>
+<p>阿明是一名推销员，他奉命到螺丝街推销他们公司的产品。螺丝街是一条死胡同，出口与入口是同一个，街道的一侧是围墙，另一侧是住户。螺丝街一共有$N$家住户，第$i$家住户到入口的距离为$S_i$米。由于同一栋房子里可以有多家住户，所以可能有多家住户与入口的距离相等。阿明会从入口进入，依次向螺丝街的$X$家住户推销产品，然后再原路走出去。</p>
+<p>阿明每走$1$米就会积累$1$点疲劳值，向第$i$家住户推销产品会积累$A_i$点疲劳值。阿明是工作狂，他想知道，对于不同的$X$，在不走多余的路的前提下，他最多可以积累多少点疲劳值。</p>
+<h2>输入输出格式</h2>
+<strong>输入格式：</strong><br>
+<p><p>第一行有一个正整数$N$，表示螺丝街住户的数量。</p>
+<p>接下来的一行有$N$个正整数，其中第$i$个整数$S_i$表示第$i$家住户到入口的距离。数据保证$S_1≤S_2≤…≤S_n&lt;10^8$。</p>
+<p>接下来的一行有$N$个正整数，其中第$i$个整数$A_i$表示向第$i$户住户推销产品会积累的疲劳值。数据保证$A_i&lt;1000$。</p></p>
+<strong>输出格式：</strong><br>
+<p><p>输出$N$行，每行一个正整数，第i行整数表示当$X=i$时，阿明最多积累的疲劳值。</p></p>
+<h2>输入输出样例</h2>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>5
+1 2 3 4 5
+1 2 3 4 5</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>15
+19
+22
+24
+25</pre>
+</div>
+</div>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#2：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>5
+1 2 2 4 5
+5 4 3 4 1</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#2：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>12
+17
+21
+24
+27</pre>
+</div>
+</div>
+<h2>说明</h2>
+<p>【输入输出样例1说明】</p>
+<p>$X=1$:向住户$5$推销，往返走路的疲劳值为$5+5$，推销的疲劳值为$5$，总疲劳值为$15$。</p>
+<p>$X=2$:向住户$4,5$推销，往返走路的疲劳值为$5+5$，推销的疲劳值为$4+5$，总疲劳值为$5+5+4+5=19$。</p>
+<p>$X=3$:向住户$3,4,5$推销，往返走路的疲劳值为$5+5$，推销的疲劳值$3+4+5$，总疲劳值为$5+5+3+4+5=22$。</p>
+<p>$X=4$:向住户$2,3,4,5$推销，往返走路的疲劳值为$5+5$，推销的疲劳值$2+3+4+5$，总疲劳值$5+5+2+3+4+5=24$。</p>
+<p>$X=5$:向住户$1,2,3,4,5$推销，往返走路的疲劳值为$5+5$，推销的疲劳值$1+2+3+4+5$，总疲劳值$5+5+1+2+3+4+5=25$。</p>
+<p>【输入输出样例2说明】</p>
+<p>$X=1$：向住户$4$推销，往返走路的疲劳值为$4+4$，推销的疲劳值为$4$，总疲劳值$4+4+4=12$。</p>
+<p>$X=2$：向住户$1,4$推销，往返走路的疲劳值为$4+4$，推销的疲劳值为$5+4$，总疲劳值$4+4+5+4=17$。</p>
+<p>$X=3$：向住户$1,2,4$推销，往返走路的疲劳值为$4+4$，推销的疲劳值为$5+4+4$，总疲劳值$4+4+5+4+4=21$。</p>
+<p>$X=4$：向住户$1,2,3,4$推销，往返走路的疲劳值为$4+4$，推销的疲劳值为$5+4+3+4$，总疲劳值$4+4+5+4+3+4=24$。或者向住户$1,2,4,5$推销，往返走路的疲劳值为$5+5$，推销的疲劳值为$5+4+4+1$，总疲劳值$5+5+5+4+4+1=24$。</p>
+<p>$X=5$：向住户$1,2,3,4,5$推销，往返走路的疲劳值为$5+5$，推销的疲劳值为$5+4+3+4+1$，总疲劳值$5+5+5+4+3+4+1=27$。</p>
+<p>【数据说明】</p>
+<p>对于$20\%$的数据，$1≤N≤20$；</p>
+<p>对于$40\%$的数据，$1≤N≤100$；</p>
+<p>对于$60\%$的数据，$1≤N≤1000$；</p>
+<p>对于$100\%$的数据，$1≤N≤100000$。</p>
+</div>
+<div class='lg-article-sub am-g' id="sub"></div>
+</div>
+</div>
+</div>
+<div class="am-modal am-modal-prompt" tabindex="-1" id="confirm">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="memtitle">提示</div>
+<div class="am-modal-bd" id="memadmin">
+标程仅供做题后或实在无思路时参考。<br>
+请自觉、自律地使用该功能并请对自己的学习负责。<br>
+如果发现恶意抄袭标程，将按照I类违反进行处理。<br>
+</div>
+<div class="am-modal-footer">
+<span class="am-modal-btn" data-am-modal-cancel>取消</span>
+<span class="am-modal-btn" data-am-modal-confirm>确定</span>
+</div>
+</div>
+</div>
+<script>
+        $(document).ready(function () {
+            $("#expandstd").click(function () {
+                $('#confirm').modal({
+                    relatedTarget: this,
+                    onConfirm: function (e) {
+                        $("#stdcode").slideDown();
+                        $("#expandstd").hide();
+                    }
+                });
+            });
+            $("#submit").click(
+                function () {
+                    hide_artile();
+                    $(document).scrollTop($(document).scrollTop() - 80);
+                    var pid = $(this).attr("pid");
+                    $.get("/problem/ajax_submit?pid=" + pid, function (data) {
+                        var arr = eval('(' + data + ')');
+                        if (arr['code'] == 201) {
+                            $('.lg-article-sub').html(arr['more']['html']);
+                        }
+                        else if (arr['code'] == 200) {
+
+                        }
+                        else {
+                            if (arr['code'] == 0 || arr['code'] == -3) {
+                                backarticle();
+                            }
+                            show_alert("提交失败", arr['message']);
+                        }
+                    });
+                }
+            );
+            $("button[title].am-btn,a[title].am-btn").poshytip({
+                className: 'tip-twitter',
+                showTimeout: 1,
+                alignTo: 'target',
+                alignX: 'center',
+                alignY: 'bottom'
+            });
+            $('[name=showtag]').click(function () {
+                $('.am-badge.am-hide').removeClass('am-hide');
+            });
+            $(".sample-copy").click(function() {
+                var element = $(this).parents(".copy-region").find("pre");
+                var text = $(element).text();
+                var $temp = $("<textarea>");
+                $("body").append($temp);
+                $temp.val(text).select();
+                document.execCommand("copy");
+                $temp.remove();
+                $(this).text("复制成功").removeClass("lg-bg-orange");
+
+                var e = this;
+                setTimeout(function() {
+                    $(e).text("复制").addClass("lg-bg-orange");
+                }, 500);
+            });
+        });
+    </script>
+</div>
+<footer id="app-footer"></footer>
+<div class="am-modal am-modal-alert" tabindex="-1" id="lg-alert">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="lg-alert-title"></div>
+<div class="am-modal-bd" id="lg-alert-message"></div>
+<div class="am-modal-footer">
+<span class="am-modal-btn">确定</span>
+</div>
+</div>
+</div>
+<script src="/js/ace/ace.js"></script>
+<script src="https://cdn.luogu.org/js/vendor.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/jsmind.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/amazeui.min.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts-more.js"></script>
+<script src="/static/katex/katex.min.js"></script>
+<script src="/static/katex/contrib/auto-render.min.js"></script>
+<script src="https://cdn.luogu.org/markdown-palettes/markdown-palettes.min.js?ver=20190219"></script>
+<script src="https://cdn.luogu.org/js/luogu3.js?ver=20190101"></script>
+</body>
+</html>

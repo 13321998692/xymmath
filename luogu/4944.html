@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title> P4944 PION贪吃蛇 - 洛谷</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta name="csrf-token" content="1555853526:lyldN8RVMctmpRqPu1haQpbdTaiK/dbx20OplFFqzcY=">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/amazeui.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/katex.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/luogu3.css?ver=20190102">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/highlight_tomorrow.css">
+<link rel="stylesheet" href="https://cdn.luogu.org/markdown-palettes/markdown-palettes.css?ver=20190219">
+<script src="https://cdn.luogu.org/js/jquery-2.1.1.min.js"></script>
+<script src="https://cdn.luogu.org/js/luogu3_pre.js?ver=20190101"></script>
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn.luogu.org/images/favicon3.ico" media="screen"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/fe/loader.css?ver=20190417">
+<script>window._feInjection = JSON.parse(decodeURIComponent("%7B%22code%22%3A200%2C%22currentUser%22%3Anull%2C%22currentTemplate%22%3A%22Excited%22%2C%22currentData%22%3A%7B%22shortHeader%22%3Afalse%2C%22pageName%22%3A%22%5Cu9898%5Cu76ee%5Cu8be6%5Cu60c5%22%7D%2C%22currentMeta%22%3A%7B%22title%22%3A%22%20P4944%20PION%5Cu8d2a%5Cu5403%5Cu86c7%22%7D%7D"));</script>
+<script>window._release = '20190417';</script>
+<script src="https://cdn.luogu.org/fe/loader.js?ver=20190417" charset="utf-8" defer></script>
+</head>
+<body>
+<div id="app-header"></div>
+<nav id="app-sidenav"></nav>
+<div id="app-body"></div>
+<script>
+    function scrollToId (id) {
+        $('html, body').animate({
+            scrollTop: ($('#' + id).offset().top)
+        }, 500);
+    }
+</script>
+<style>
+    .lg-toolbar {
+        display: none;
+    }
+
+    #app-body { /* Unused in fallback FE */
+        display: none;
+    }
+
+    #app-body-new{
+        display: block;
+        margin-bottom: 2em;
+        position: relative;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    @media (min-width: 576px) {
+        #app-body-new {
+            margin-left: 70px;
+        }
+    }
+
+    code {
+        font-family: monospace, "Courier New";
+    }
+
+</style>
+<div id="app-body-new">
+<div class="lg-toolbar" data-am-sticky>
+<h1><a href="/recordnew/lists?uid=&pid=P4944" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a> P4944 PION贪吃蛇</h1>
+</div>
+<div class="am-g lg-main-content">
+<div class="am-u-md-4 lg-right" name="problemright">
+<section class="am-panel am-panel-default lg-summary" id="psummary">
+<div class="lg-summary-content">
+<ul class="am-list am-list-static lg-summary-list">
+<li>
+<ul class="am-avg-sm-2"><li><span class="lg-bignum-num">136<small></small></span><span class="lg-bignum-text">通过</span></li><li><span class="lg-bignum-num">764<small></small></span><span class="lg-bignum-text">提交</span></li></ul>
+</li>
+<li>
+<strong>题目提供者</strong>
+<span class="lg-right"><a class='lg-fg-bluelight' href="/space/show?uid=85423" target="_blank">Voldermod</a></span>
+</li>
+<li>
+<strong>评测方式</strong>
+<span class="lg-right"><b>云端评测</b></span>
+</li>
+<li><strong>标签</strong>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="4">搜索</span>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="1">模拟</span>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="288">队列</span>
+<style>.lg-tag { cursor: pointer; }</style>
+<script>
+                                $(".lg-tag").click(function() {
+                                    window.open("/problemnew/lists?tag=" + $(this).attr('data-tagid'));
+                                })
+                            </script>
+</li>
+<li><strong>难度</strong>
+<span class="lg-right"><span class="am-badge am-radius lg-bg-bluelight">提高+/省选-</span></span>
+</li>
+<li><strong>时空限制</strong>
+<span class="lg-right">1000ms / 128MB</span>
+</li>
+</ul>
+</div>
+<p>
+<button class="am-btn am-btn-danger am-btn-sm" id="submit" pid="P4944">
+<i class="am-icon-paper-plane"></i> 提交
+</button>
+<a target="_blank" href="/problemnew/solution/P4944" class="am-btn am-btn-primary am-btn-sm">
+<i class="am-icon-book"></i> 题解
+</a>
+<a data-pjax href="/recordnew/lists?pid=P4944" class="am-btn am-btn-primary am-btn-sm" title="查看本题提交记录">
+<i class="am-icon-pie-chart"></i>
+</a>
+<button class="am-btn am-btn-primary am-btn-sm lg-pointer" name="showtag" title="显示算法标签">
+<i class="am-icon-tags"></i>
+</button>
+</p>
+<li>提示：收藏到任务计划后，可在首页查看。</li>
+<p>
+<a class="am-btn am-btn-danger am-btn-sm" href="/fe/problem/P4944" target="_blank">体验新版界面</a>
+</p>
+</section>
+<section class="am-panel am-panel-default lg-summary">
+<h2>最新讨论
+<a onclick="$('#discuss-lists').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看本题讨论">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" style="display: none" id="discuss-lists">
+<li><a data-pjax href="/discuss/show?postid=80566" class="am-padding-0">可是我还是弄不懂什么是“主…</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=77494" class="am-padding-0">关于这道题数据范围的进一步…</a>
+</li>
+<div style="overflow: auto">
+<a data-pjax href="/discuss/lists?forumname=P4944" class="am-btn am-btn-primary am-btn-sm lg-right">进入讨论版</a>
+</div>
+</ul>
+</section>
+<section class="am-panel am-panel-default lg-summary am-hide-sm">
+<h2>推荐的相关题目
+<a onclick="$('#recommendation-list').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看推荐题目">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" id="recommendation-list" style="display: none">
+<li>
+<a class='colored' href="/problemnew/show/P4888" target="_blank"><b>P4888</b> 三去矩阵</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P4889" target="_blank"><b>P4889</b> kls与flag</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P4316" target="_blank"><b>P4316</b> 绿豆蛙的归宿</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P2754" target="_blank"><b>P2754</b> [CTSC1999]家园</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3577" target="_blank"><b>P3577</b> [POI2014]TUR-Tourism</a>
+</li>
+</ul>
+</section>
+</div>
+<div class="am-u-md-8 lg-right" name="problemleft">
+<div class="lg-content-left">
+<div class="lg-article am-g">
+<h2>题目背景</h2>
+<p>NOIP2018原创模拟题 T3</p>
+<p>NOIP DAY1 T3 or DAY 2 T2 难度</p>
+<p>贪吃蛇大家都玩过吧，当然不同版本有不同规则。下面介绍PION贪吃蛇。</p>
+<p>注意：测试点#4,#5错误已修改，感谢：@EnTaroTassadar,@天道</p>
+<h2>题目描述</h2>
+<p><img src="https://cdn.luogu.org/upload/pic/31298.png" alt="图A" /></p>
+<h3>表示方法：</h3>
+<p>该题中贪吃蛇存在于一个n行m列的矩形中，用 ‘.’ 表示空地，用 '#’ 表示蛇身，用 ‘@’表示蛇头，用‘&amp;’表示食物
+例如：图一表示5*6的矩形，有一条蛇，蛇长度为7，有两个食物</p>
+<h3>基本规则：</h3>
+<p>1.蛇头每一秒就会移动一格，身体自然会跟着移动，用W表示向上，S表示向下，A表示向左，D表示向右</p>
+<p>2.蛇每吃一个食物就长度就会加一，而增加的长度体现在食物所在的地方，你可以把吃食物理解成食物变成了蛇头，之前的蛇头变成了蛇身，这一秒不移动</p>
+<p>例如：图二的三幅图展示了第一秒，第二秒，和第三秒的情况</p>
+<p>3.蛇如果死亡，身体（包括头）一定会全部变成食物</p>
+<p>4.PION贪吃蛇的蛇头碰到自己或别的蛇的身体就会死亡</p>
+<p>例如：图三的三幅图展示了第二条蛇撞在别人身体上死亡的过程</p>
+<p>5.蛇头撞在边界上也会引起死亡，但蛇头刚好现在边界上不会</p>
+<p>例如：图四第二幅图虽然蛇头在边界上，但是只是刚好，如果此时进行D操作蛇就会死亡，如果进行W或S就不会</p>
+<p>6.如果有操作使蛇头向相反方向运动，之后如果与身体重合蛇也会死亡（比如：图二第一幅图使用A操作,蛇就会死亡，此时在原地成为三个食物，你也可以理解为蛇下一秒不行动而自杀了）</p>
+<p>7.两条蛇蛇头相撞，主动撞上的死亡</p>
+<p>8.蛇的移动按编号由小到大进行（编号的含义见下文）</p>
+<h2>输入输出格式</h2>
+<strong>输入格式：</strong><br>
+<p><p>第一行两个数n,m，k表示n*m的矩形，k表示操作次数</p>
+<p>接下来n行每行m个字符，表示地图</p>
+<p>再接下来c行（注意：图中有几条蛇就有几行），每行k个字符，表示有k个操作（如果执行了某个操作蛇死了，就忽略后面的操作）</p>
+<p>我们将蛇编号：按每条蛇蛇头的坐标从小到大编号为1，2，...，c（越靠近上边的坐标越小，如果相同越靠近左边的坐标越小）</p>
+<p>例如：图三第一幅图两条蛇的蛇头坐标分别为（4,3），（3,7）所以较长的蛇编号为2，较短的蛇编号为1</p></p>
+<strong>输出格式：</strong><br>
+<p><p>c+1行，输出k次操作后每一条蛇的长度，编号；每一行第一个为长度，第二个数为编号</p>
+<p>最后一行输出剩下食物的总个数</p>
+<p>注意：输出按长度由大到小排序（长度相同按编号由小到大排序），死亡的蛇长度为0</p></p>
+<h2>输入输出样例</h2>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>5 7 6
+.&amp;...&amp;.
+..##@..
+.&amp;...&amp;.
+..##@..
+.&amp;...&amp;.
+DWAAAA
+WDDDDD</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>5 1
+0 2
+7</pre>
+</div>
+</div>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#2：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>9 9 4
+.........
+.#######.
+.......#.
+.@#.&amp;@.#.
+&amp;.#.&amp;&amp;.#.
+&amp;&amp;######.
+.&amp;.......
+..@####..
+.........
+ASSD
+ASDD
+WASD</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#2：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>22 1
+4 2
+0 3
+6</pre>
+</div>
+</div>
+<h2>说明</h2>
+<h3>样例说明：</h3>
+<p><img src="https://cdn.luogu.org/upload/pic/31357.png" alt="图B" /></p>
+<p>图五，图六展示了从第0秒开始之后每一秒地图的状态，请看图理解（样例二图四有点小错误）</p>
+<h3>数据范围：</h3>
+<p>10%数据满足n,m&lt;=5,c=1,k&lt;=3</p>
+<p>30%数据满足n,m&lt;=10,c&lt;=2,k&lt;=5</p>
+<p>50%数据满足n,m&lt;=50,c&lt;=5,k&lt;=20</p>
+<p>70%数据满足n,m&lt;=100,c&lt;=7,k&lt;=50</p>
+<p>100%数据满足，n,m&lt;=200,c&lt;=20,k&lt;=100，且图中的蛇不会引起混淆（对于任意蛇头，最多只有一块蛇身于其相连）</p>
+<p>输入保证图中没有蛇会像这样难以判断：</p>
+<pre><code>.#.
+##@
+#.#
+@##</code></pre>
+</div>
+<div class='lg-article-sub am-g' id="sub"></div>
+</div>
+</div>
+</div>
+<div class="am-modal am-modal-prompt" tabindex="-1" id="confirm">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="memtitle">提示</div>
+<div class="am-modal-bd" id="memadmin">
+标程仅供做题后或实在无思路时参考。<br>
+请自觉、自律地使用该功能并请对自己的学习负责。<br>
+如果发现恶意抄袭标程，将按照I类违反进行处理。<br>
+</div>
+<div class="am-modal-footer">
+<span class="am-modal-btn" data-am-modal-cancel>取消</span>
+<span class="am-modal-btn" data-am-modal-confirm>确定</span>
+</div>
+</div>
+</div>
+<script>
+        $(document).ready(function () {
+            $("#expandstd").click(function () {
+                $('#confirm').modal({
+                    relatedTarget: this,
+                    onConfirm: function (e) {
+                        $("#stdcode").slideDown();
+                        $("#expandstd").hide();
+                    }
+                });
+            });
+            $("#submit").click(
+                function () {
+                    hide_artile();
+                    $(document).scrollTop($(document).scrollTop() - 80);
+                    var pid = $(this).attr("pid");
+                    $.get("/problem/ajax_submit?pid=" + pid, function (data) {
+                        var arr = eval('(' + data + ')');
+                        if (arr['code'] == 201) {
+                            $('.lg-article-sub').html(arr['more']['html']);
+                        }
+                        else if (arr['code'] == 200) {
+
+                        }
+                        else {
+                            if (arr['code'] == 0 || arr['code'] == -3) {
+                                backarticle();
+                            }
+                            show_alert("提交失败", arr['message']);
+                        }
+                    });
+                }
+            );
+            $("button[title].am-btn,a[title].am-btn").poshytip({
+                className: 'tip-twitter',
+                showTimeout: 1,
+                alignTo: 'target',
+                alignX: 'center',
+                alignY: 'bottom'
+            });
+            $('[name=showtag]').click(function () {
+                $('.am-badge.am-hide').removeClass('am-hide');
+            });
+            $(".sample-copy").click(function() {
+                var element = $(this).parents(".copy-region").find("pre");
+                var text = $(element).text();
+                var $temp = $("<textarea>");
+                $("body").append($temp);
+                $temp.val(text).select();
+                document.execCommand("copy");
+                $temp.remove();
+                $(this).text("复制成功").removeClass("lg-bg-orange");
+
+                var e = this;
+                setTimeout(function() {
+                    $(e).text("复制").addClass("lg-bg-orange");
+                }, 500);
+            });
+        });
+    </script>
+</div>
+<footer id="app-footer"></footer>
+<div class="am-modal am-modal-alert" tabindex="-1" id="lg-alert">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="lg-alert-title"></div>
+<div class="am-modal-bd" id="lg-alert-message"></div>
+<div class="am-modal-footer">
+<span class="am-modal-btn">确定</span>
+</div>
+</div>
+</div>
+<script src="/js/ace/ace.js"></script>
+<script src="https://cdn.luogu.org/js/vendor.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/jsmind.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/amazeui.min.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts-more.js"></script>
+<script src="/static/katex/katex.min.js"></script>
+<script src="/static/katex/contrib/auto-render.min.js"></script>
+<script src="https://cdn.luogu.org/markdown-palettes/markdown-palettes.min.js?ver=20190219"></script>
+<script src="https://cdn.luogu.org/js/luogu3.js?ver=20190101"></script>
+</body>
+</html>

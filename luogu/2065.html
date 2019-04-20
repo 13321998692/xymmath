@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title> P2065 [TJOI2011]卡片 - 洛谷</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta name="csrf-token" content="1555852295:ekhfdswfgBqEPSXBMW5rIqS97daPGQ+o8PW2TxL5BiM=">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/amazeui.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/katex.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/luogu3.css?ver=20190102">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/highlight_tomorrow.css">
+<link rel="stylesheet" href="https://cdn.luogu.org/markdown-palettes/markdown-palettes.css?ver=20190219">
+<script src="https://cdn.luogu.org/js/jquery-2.1.1.min.js"></script>
+<script src="https://cdn.luogu.org/js/luogu3_pre.js?ver=20190101"></script>
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn.luogu.org/images/favicon3.ico" media="screen"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/fe/loader.css?ver=20190417">
+<script>window._feInjection = JSON.parse(decodeURIComponent("%7B%22code%22%3A200%2C%22currentUser%22%3Anull%2C%22currentTemplate%22%3A%22Excited%22%2C%22currentData%22%3A%7B%22shortHeader%22%3Afalse%2C%22pageName%22%3A%22%5Cu9898%5Cu76ee%5Cu8be6%5Cu60c5%22%7D%2C%22currentMeta%22%3A%7B%22title%22%3A%22%20P2065%20%5BTJOI2011%5D%5Cu5361%5Cu7247%22%7D%7D"));</script>
+<script>window._release = '20190417';</script>
+<script src="https://cdn.luogu.org/fe/loader.js?ver=20190417" charset="utf-8" defer></script>
+</head>
+<body>
+<div id="app-header"></div>
+<nav id="app-sidenav"></nav>
+<div id="app-body"></div>
+<script>
+    function scrollToId (id) {
+        $('html, body').animate({
+            scrollTop: ($('#' + id).offset().top)
+        }, 500);
+    }
+</script>
+<style>
+    .lg-toolbar {
+        display: none;
+    }
+
+    #app-body { /* Unused in fallback FE */
+        display: none;
+    }
+
+    #app-body-new{
+        display: block;
+        margin-bottom: 2em;
+        position: relative;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    @media (min-width: 576px) {
+        #app-body-new {
+            margin-left: 70px;
+        }
+    }
+
+    code {
+        font-family: monospace, "Courier New";
+    }
+
+</style>
+<div id="app-body-new">
+<div class="lg-toolbar" data-am-sticky>
+<h1><a href="/recordnew/lists?uid=&pid=P2065" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a> P2065 [TJOI2011]卡片</h1>
+</div>
+<div class="am-g lg-main-content">
+<div class="am-u-md-4 lg-right" name="problemright">
+<section class="am-panel am-panel-default lg-summary" id="psummary">
+<div class="lg-summary-content">
+<ul class="am-list am-list-static lg-summary-list">
+<li>
+<ul class="am-avg-sm-2"><li><span class="lg-bignum-num">442<small></small></span><span class="lg-bignum-text">通过</span></li><li><span class="lg-bignum-num">1.5<small>K</small><small></small></span><span class="lg-bignum-text">提交</span></li></ul>
+</li>
+<li>
+<strong>题目提供者</strong>
+<span class="lg-right"><a class='lg-fg-bluelight' href="/space/show?uid=5037" target="_blank">elijahqi</a></span>
+</li>
+<li>
+<strong>评测方式</strong>
+<span class="lg-right"><b>云端评测</b></span>
+</li>
+<li><strong>标签</strong>
+<span class="lg-tag am-badge am-radius lg-bg-bluelight" data-tagid="48">各省省选</span>
+<span class="lg-tag am-badge am-radius lg-bg-green" data-tagid="28">2011</span>
+<span class="lg-tag am-badge am-radius lg-bg-green" data-tagid="328">天津</span>
+<span class="lg-tag am-badge am-radius lg-bg-orange" data-tagid="319">高性能</span>
+<style>.lg-tag { cursor: pointer; }</style>
+<script>
+                                $(".lg-tag").click(function() {
+                                    window.open("/problemnew/lists?tag=" + $(this).attr('data-tagid'));
+                                })
+                            </script>
+</li>
+<li><strong>难度</strong>
+<span class="lg-right"><span class="am-badge am-radius lg-bg-bluelight">提高+/省选-</span></span>
+</li>
+<li><strong>时空限制</strong>
+<span class="lg-right">1000ms / 128MB</span>
+</li>
+</ul>
+</div>
+<p>
+<button class="am-btn am-btn-danger am-btn-sm" id="submit" pid="P2065">
+<i class="am-icon-paper-plane"></i> 提交
+</button>
+<a target="_blank" href="/problemnew/solution/P2065" class="am-btn am-btn-primary am-btn-sm">
+<i class="am-icon-book"></i> 题解
+</a>
+<a data-pjax href="/recordnew/lists?pid=P2065" class="am-btn am-btn-primary am-btn-sm" title="查看本题提交记录">
+<i class="am-icon-pie-chart"></i>
+</a>
+<button class="am-btn am-btn-primary am-btn-sm lg-pointer" name="showtag" title="显示算法标签">
+<i class="am-icon-tags"></i>
+</button>
+</p>
+<li>提示：收藏到任务计划后，可在首页查看。</li>
+<p>
+<a class="am-btn am-btn-danger am-btn-sm" href="/fe/problem/P2065" target="_blank">体验新版界面</a>
+</p>
+</section>
+<section class="am-panel am-panel-default lg-summary">
+<h2>最新讨论
+<a onclick="$('#discuss-lists').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看本题讨论">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" style="display: none" id="discuss-lists">
+<li><a data-pjax href="/discuss/show?postid=95173" class="am-padding-0">这题问的是组数吧。。。</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=41017" class="am-padding-0">数据感觉有点水</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=40697" class="am-padding-0">没人试试匈牙利嘛</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=24090" class="am-padding-0">哪里有这题题解啊</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=24081" class="am-padding-0">为什么我觉得这题有bug</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=24028" class="am-padding-0">这个题有dalao做一下吗？？</a>
+</li>
+<div style="overflow: auto">
+<a data-pjax href="/discuss/lists?forumname=P2065" class="am-btn am-btn-primary am-btn-sm lg-right">进入讨论版</a>
+</div>
+</ul>
+</section>
+<section class="am-panel am-panel-default lg-summary am-hide-sm">
+<h2>推荐的相关题目
+<a onclick="$('#recommendation-list').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看推荐题目">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" id="recommendation-list" style="display: none">
+<li>
+<a class='colored' href="/problemnew/show/P1627" target="_blank"><b>P1627</b> [CQOI2009]中位数</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3163" target="_blank"><b>P3163</b> [CQOI2014]危桥</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P2120" target="_blank"><b>P2120</b> [ZJOI2007]仓库建设</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P1651" target="_blank"><b>P1651</b> 塔</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P4035" target="_blank"><b>P4035</b> [JSOI2008]球形空间产生器</a>
+</li>
+</ul>
+</section>
+</div>
+<div class="am-u-md-8 lg-right" name="problemleft">
+<div class="lg-content-left">
+<div class="lg-article am-g">
+<h2>题目描述</h2>
+<p>桌子上现在有m张蓝色卡片和n张红色卡片，每张卡片上有一个大于1的整数。现在你要从桌子上拿走一些卡片，分若干次拿。每次只能拿走一组卡片：这组卡片颜色不同，并且两张卡片上面的数字的最大公约数大于1。问：最多可以从桌上拿走多少张卡片。</p>
+<h2>输入输出格式</h2>
+<strong>输入格式：</strong><br>
+<p><p>每个输入文件中包含多组测试数据，每个文件中测试数据的数目不超过100。</p>
+<p>文件的第一行读入一个整数T，为数据组数。</p>
+<p>每组数据的格式如下：</p>
+<p>m n</p>
+<p>b1 b2 … bm</p>
+<p>r1 r2 … rn</p>
+<p>第二行给出每张蓝色卡片上面的数字，第三行给出每张红色卡片上的数字。</p></p>
+<strong>输出格式：</strong><br>
+<p><p>对每组测试数据，输出最多可以拿走多少张卡片。</p></p>
+<h2>输入输出样例</h2>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>7
+4 3
+2 6 6 15
+2 3 5
+2 3
+4 9
+8 16 32
+4 2
+4 9 11 13
+5 7
+5 5
+2 3 5 1001 1001
+7 11 13 30 30
+10 10
+2 3 5 7 9 11 13 15 17 29
+4 6 10 14 18 22 26 30 34 38
+20 20
+195 144 903 63 137 513 44 626 75 473
+876 421 568 519 755 840 374 368 570 872
+363 650 155 265 64 26 426 391 15 421
+373 984 564 54 823 477 565 866 879 638
+100 100
+195 144 903 63 137 513 44 626 75 473
+876 421 568 519 755 840 374 368 570 872
+363 650 155 265 64 26 426 391 15 421
+373 984 564 54 823 477 565 866 879 638
+117 755 835 683 52 369 302 424 513 870
+75 874 299 228 140 361 30 342 750 819
+761 123 804 325 952 405 578 517 49 457
+932 941 988 767 624 41 912 702 241 426
+351 92 300 648 318 216 785 347 556 535
+166 318 434 746 419 386 928 996 680 975
+231 390 916 220 933 319 37 846 797 54
+272 924 145 348 350 239 563 135 362 119
+446 305 213 879 51 631 43 755 405 499
+509 412 887 203 408 821 298 443 445 96
+274 715 796 417 839 147 654 402 280 17
+298 725 98 287 382 923 694 201 679 99
+699 188 288 364 389 694 185 464 138 406
+558 188 897 354 603 737 277 35 139 556
+826 213 59 922 499 217 846 193 416 525
+69 115 489 355 256 654 49 439 118 961</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>3
+1
+0
+4
+9
+18
+85</pre>
+</div>
+</div>
+<h2>说明</h2>
+<p>对100%的数据：1&lt;=t&lt;=100;</p>
+<p>1&lt;=m,n&lt;=500;</p>
+<p>卡片上的数字大于1，小于10 000 000。</p>
+</div>
+<div class='lg-article-sub am-g' id="sub"></div>
+</div>
+</div>
+</div>
+<div class="am-modal am-modal-prompt" tabindex="-1" id="confirm">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="memtitle">提示</div>
+<div class="am-modal-bd" id="memadmin">
+标程仅供做题后或实在无思路时参考。<br>
+请自觉、自律地使用该功能并请对自己的学习负责。<br>
+如果发现恶意抄袭标程，将按照I类违反进行处理。<br>
+</div>
+<div class="am-modal-footer">
+<span class="am-modal-btn" data-am-modal-cancel>取消</span>
+<span class="am-modal-btn" data-am-modal-confirm>确定</span>
+</div>
+</div>
+</div>
+<script>
+        $(document).ready(function () {
+            $("#expandstd").click(function () {
+                $('#confirm').modal({
+                    relatedTarget: this,
+                    onConfirm: function (e) {
+                        $("#stdcode").slideDown();
+                        $("#expandstd").hide();
+                    }
+                });
+            });
+            $("#submit").click(
+                function () {
+                    hide_artile();
+                    $(document).scrollTop($(document).scrollTop() - 80);
+                    var pid = $(this).attr("pid");
+                    $.get("/problem/ajax_submit?pid=" + pid, function (data) {
+                        var arr = eval('(' + data + ')');
+                        if (arr['code'] == 201) {
+                            $('.lg-article-sub').html(arr['more']['html']);
+                        }
+                        else if (arr['code'] == 200) {
+
+                        }
+                        else {
+                            if (arr['code'] == 0 || arr['code'] == -3) {
+                                backarticle();
+                            }
+                            show_alert("提交失败", arr['message']);
+                        }
+                    });
+                }
+            );
+            $("button[title].am-btn,a[title].am-btn").poshytip({
+                className: 'tip-twitter',
+                showTimeout: 1,
+                alignTo: 'target',
+                alignX: 'center',
+                alignY: 'bottom'
+            });
+            $('[name=showtag]').click(function () {
+                $('.am-badge.am-hide').removeClass('am-hide');
+            });
+            $(".sample-copy").click(function() {
+                var element = $(this).parents(".copy-region").find("pre");
+                var text = $(element).text();
+                var $temp = $("<textarea>");
+                $("body").append($temp);
+                $temp.val(text).select();
+                document.execCommand("copy");
+                $temp.remove();
+                $(this).text("复制成功").removeClass("lg-bg-orange");
+
+                var e = this;
+                setTimeout(function() {
+                    $(e).text("复制").addClass("lg-bg-orange");
+                }, 500);
+            });
+        });
+    </script>
+</div>
+<footer id="app-footer"></footer>
+<div class="am-modal am-modal-alert" tabindex="-1" id="lg-alert">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="lg-alert-title"></div>
+<div class="am-modal-bd" id="lg-alert-message"></div>
+<div class="am-modal-footer">
+<span class="am-modal-btn">确定</span>
+</div>
+</div>
+</div>
+<script src="/js/ace/ace.js"></script>
+<script src="https://cdn.luogu.org/js/vendor.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/jsmind.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/amazeui.min.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts-more.js"></script>
+<script src="/static/katex/katex.min.js"></script>
+<script src="/static/katex/contrib/auto-render.min.js"></script>
+<script src="https://cdn.luogu.org/markdown-palettes/markdown-palettes.min.js?ver=20190219"></script>
+<script src="https://cdn.luogu.org/js/luogu3.js?ver=20190101"></script>
+</body>
+</html>

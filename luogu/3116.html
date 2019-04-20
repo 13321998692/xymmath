@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title> P3116 [USACO15JAN]约会时间Meeting Time - 洛谷</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta name="csrf-token" content="1555852747:O+dOD9Sm9Yp774/edLuqsTw0RJEltA1rffjDdyGEtTo=">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/amazeui.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/katex.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/luogu3.css?ver=20190102">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/highlight_tomorrow.css">
+<link rel="stylesheet" href="https://cdn.luogu.org/markdown-palettes/markdown-palettes.css?ver=20190219">
+<script src="https://cdn.luogu.org/js/jquery-2.1.1.min.js"></script>
+<script src="https://cdn.luogu.org/js/luogu3_pre.js?ver=20190101"></script>
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn.luogu.org/images/favicon3.ico" media="screen"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/fe/loader.css?ver=20190417">
+<script>window._feInjection = JSON.parse(decodeURIComponent("%7B%22code%22%3A200%2C%22currentUser%22%3Anull%2C%22currentTemplate%22%3A%22Excited%22%2C%22currentData%22%3A%7B%22shortHeader%22%3Afalse%2C%22pageName%22%3A%22%5Cu9898%5Cu76ee%5Cu8be6%5Cu60c5%22%7D%2C%22currentMeta%22%3A%7B%22title%22%3A%22%20P3116%20%5BUSACO15JAN%5D%5Cu7ea6%5Cu4f1a%5Cu65f6%5Cu95f4Meeting%20Time%22%7D%7D"));</script>
+<script>window._release = '20190417';</script>
+<script src="https://cdn.luogu.org/fe/loader.js?ver=20190417" charset="utf-8" defer></script>
+</head>
+<body>
+<div id="app-header"></div>
+<nav id="app-sidenav"></nav>
+<div id="app-body"></div>
+<script>
+    function scrollToId (id) {
+        $('html, body').animate({
+            scrollTop: ($('#' + id).offset().top)
+        }, 500);
+    }
+</script>
+<style>
+    .lg-toolbar {
+        display: none;
+    }
+
+    #app-body { /* Unused in fallback FE */
+        display: none;
+    }
+
+    #app-body-new{
+        display: block;
+        margin-bottom: 2em;
+        position: relative;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    @media (min-width: 576px) {
+        #app-body-new {
+            margin-left: 70px;
+        }
+    }
+
+    code {
+        font-family: monospace, "Courier New";
+    }
+
+</style>
+<div id="app-body-new">
+<div class="lg-toolbar" data-am-sticky>
+<h1><a href="/recordnew/lists?uid=&pid=P3116" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a> P3116 [USACO15JAN]约会时间Meeting Time</h1>
+</div>
+<div class="am-g lg-main-content">
+<div class="am-u-md-4 lg-right" name="problemright">
+<section class="am-panel am-panel-default lg-summary" id="psummary">
+<div class="lg-summary-content">
+<ul class="am-list am-list-static lg-summary-list">
+<li>
+<ul class="am-avg-sm-2"><li><span class="lg-bignum-num">270<small></small></span><span class="lg-bignum-text">通过</span></li><li><span class="lg-bignum-num">826<small></small></span><span class="lg-bignum-text">提交</span></li></ul>
+</li>
+<li>
+<strong>题目提供者</strong>
+<span class="lg-right"><a class='lg-fg-gray' href="/space/show?uid=20" target="_blank">FarmerJohn2</a></span>
+</li>
+<li>
+<strong>评测方式</strong>
+<span class="lg-right"><b>云端评测</b></span>
+</li>
+<li><strong>标签</strong>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="164">SPFA</span>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="3">动态规划,动规,dp</span>
+<span class="lg-tag am-badge am-radius lg-bg-bluelight" data-tagid="46">USACO</span>
+<span class="lg-tag am-badge am-radius lg-bg-green" data-tagid="32">2015</span>
+<span class="lg-tag am-badge am-radius lg-bg-orange" data-tagid="319">高性能</span>
+<style>.lg-tag { cursor: pointer; }</style>
+<script>
+                                $(".lg-tag").click(function() {
+                                    window.open("/problemnew/lists?tag=" + $(this).attr('data-tagid'));
+                                })
+                            </script>
+</li>
+<li><strong>难度</strong>
+<span class="lg-right"><span class="am-badge am-radius lg-bg-bluelight">提高+/省选-</span></span>
+</li>
+<li><strong>时空限制</strong>
+<span class="lg-right">1000ms / 128MB</span>
+</li>
+</ul>
+</div>
+<p>
+<button class="am-btn am-btn-danger am-btn-sm" id="submit" pid="P3116">
+<i class="am-icon-paper-plane"></i> 提交
+</button>
+<a target="_blank" href="/problemnew/solution/P3116" class="am-btn am-btn-primary am-btn-sm">
+<i class="am-icon-book"></i> 题解
+</a>
+<a data-pjax href="/recordnew/lists?pid=P3116" class="am-btn am-btn-primary am-btn-sm" title="查看本题提交记录">
+<i class="am-icon-pie-chart"></i>
+</a>
+<button class="am-btn am-btn-primary am-btn-sm lg-pointer" name="showtag" title="显示算法标签">
+<i class="am-icon-tags"></i>
+</button>
+</p>
+<li>提示：收藏到任务计划后，可在首页查看。</li>
+<p>
+<a class="am-btn am-btn-danger am-btn-sm" href="/fe/problem/P3116" target="_blank">体验新版界面</a>
+</p>
+</section>
+<section class="am-panel am-panel-default lg-summary">
+<h2>最新讨论
+<a onclick="$('#discuss-lists').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看本题讨论">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" style="display: none" id="discuss-lists">
+<li><a data-pjax href="/discuss/show?postid=26901" class="am-padding-0">TLE27分</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=24800" class="am-padding-0">关于P3116的中文翻译</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=23288" class="am-padding-0">我的程序包括所有题解大概都…</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=23278" class="am-padding-0">中文翻译太简略了吧</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=14864" class="am-padding-0">数据太弱了吧！！！</a>
+</li>
+<div style="overflow: auto">
+<a data-pjax href="/discuss/lists?forumname=P3116" class="am-btn am-btn-primary am-btn-sm lg-right">进入讨论版</a>
+</div>
+</ul>
+</section>
+<section class="am-panel am-panel-default lg-summary am-hide-sm">
+<h2>推荐的相关题目
+<a onclick="$('#recommendation-list').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看推荐题目">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" id="recommendation-list" style="display: none">
+<li>
+<a class='colored' href="/problemnew/show/P1606" target="_blank"><b>P1606</b> [USACO07FEB]白银莲花池Lilypad Pond</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3888" target="_blank"><b>P3888</b> [GDOI2014]拯救莫莉斯</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3052" target="_blank"><b>P3052</b> [USACO12MAR]摩天大楼里的奶牛Cows in a Skyscraper</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P1550" target="_blank"><b>P1550</b> [USACO08OCT]打井Watering Hole</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3119" target="_blank"><b>P3119</b> [USACO15JAN]草鉴定Grass Cownoisseur</a>
+</li>
+</ul>
+</section>
+</div>
+<div class="am-u-md-8 lg-right" name="problemleft">
+<div class="lg-content-left">
+<div class="lg-article am-g">
+<h2>题目描述</h2>
+<p>Bessie and her sister Elsie want to travel from the barn to their favorite field, such that they leave at exactly the same time from the barn, and also arrive at exactly the same time at their favorite field.</p>
+<p>The farm is a collection of N fields (1 &lt;= N &lt;= 100) numbered 1..N, where field 1 contains the barn and field N is the favorite field. The farm is built on the side of a hill, with field X being higher in elevation than field Y if X &lt; Y. An assortment of M paths connect pairs of fields. However, since each path is rather steep, it can only be followed in a downhill direction. For example, a path</p>
+<p>connecting field 5 with field 8 could be followed in the 5 -&gt; 8 direction but not the other way, since this would be uphill. Each pair of fields is connected by at most one path, so M &lt;= N(N-1)/2.</p>
+<p>It might take Bessie and Elsie different amounts of time to follow a path; for example, Bessie might take 10 units of time, and Elsie 20. Moreover, Bessie and Elsie only consume time when traveling on paths between fields -- since they are in a hurry, they always travel through a field in essentially zero time, never waiting around anywhere.</p>
+<p>Please help determine the shortest amount of time Bessie and Elsie must take in order to reach their favorite field at exactly the same moment.</p>
+<p>Bessie和她的妹妹Elsie想从粮仓去她们最喜欢的田地，也就是能够使她们一起从粮仓离开，并且能同一时间到达的田地。</p>
+<p>这个农场是由N块(1 &lt;= N &lt;= 100)编号为1..N的田地构成的，第一块田地就是粮仓，并且第N块田地是她们最喜欢的田地。这个农场建在山的一边，所以，如果 X &lt; Y 的话则满足第X块田地的高度要高于第Y块田地的高度。在这之中，有M条交错纵横的路径将不同的田地连接起来。不过，显而易见的是，因为每条路都太陡了，所以这些小路只能沿着从高到低的方向走。例如，一条连接第5块田地和第8块田地的小路只能沿着 5 -&gt; 8 的方向走，而不能沿着其他方向，因为那样会成为上坡路。每两块田地最多只能有一条路径相连接，所以一定有 M &lt;= N(N-1)/2。</p>
+<p>有可能的是，Bessie和Elsie两个人走同一条小路会耗费不同的时间；比如，通过同一条小路，Bessie可能会耗费10个单位的时间，而Elsie会耗费20个单位的时间。此外，Bessie和Elsie只会在通过连接两块田地的小路时耗费时间——因为她们太匆忙了，在穿过田地时不会耗费任何时间，也从来不在任何地方停下来等待。</p>
+<p>现在，请你判断出，能够满足使Bessie和Elsie同时出发并且同时到达她们喜欢的田地的最短的时间。</p>
+<h2>输入输出格式</h2>
+<strong>输入格式：</strong><br>
+<p><p>INPUT: (file meeting.in) </p>
+<p>The first input line contains N and M, separated by a space.</p>
+<p>Each of the following M lines describes a path using four integers A B C D, where A and B (with A &lt; B) are the fields connected by the path, C is the time required for Bessie to follow the path, and D is the time required for Elsie to follow the path. Both C and D are in the range 1..100.</p>
+<p>第一行输入N和M，中间用空格分开。</p>
+<p>接下来的M行，每行有四个整型A B C D，其中，A和B(A &lt; B)代表着两块用这条小路连接的田地，C代表Bessie通过这条小路的时间，而D代表Elsie通过这条小路的时间。C和D均在 1..100 的范围之内。</p></p>
+<strong>输出格式：</strong><br>
+<p><p>OUTPUT (file meeting.out) </p>
+<p>A single integer, giving the minimum time required for Bessie and </p>
+<p>Elsie to travel to their favorite field and arrive at the same moment.</p>
+<p>If this is impossible, or if there is no way for Bessie or Elsie to reach</p>
+<p>the favorite field at all, output the word IMPOSSIBLE on a single line.</p>
+<p>一个整型，输出的是能够使两人同时出发并且同时到达目的地的最短时间，如果没有满足条件的答案，则输出&quot;IMPOSSIBLE&quot;。</p></p>
+<h2>输入输出样例</h2>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>3 3 
+1 3 1 2 
+1 2 1 2 
+2 3 1 2 
+</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>2 </pre>
+</div>
+</div>
+<h2>说明</h2>
+<p>SOLUTION NOTES:</p>
+<p>Bessie is twice as fast as Elsie on each path, but if Bessie takes the</p>
+<p>path 1-&gt;2-&gt;3 and Elsie takes the path 1-&gt;3 they will arrive at the</p>
+<p>same time.</p>
+</div>
+<div class='lg-article-sub am-g' id="sub"></div>
+</div>
+</div>
+</div>
+<div class="am-modal am-modal-prompt" tabindex="-1" id="confirm">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="memtitle">提示</div>
+<div class="am-modal-bd" id="memadmin">
+标程仅供做题后或实在无思路时参考。<br>
+请自觉、自律地使用该功能并请对自己的学习负责。<br>
+如果发现恶意抄袭标程，将按照I类违反进行处理。<br>
+</div>
+<div class="am-modal-footer">
+<span class="am-modal-btn" data-am-modal-cancel>取消</span>
+<span class="am-modal-btn" data-am-modal-confirm>确定</span>
+</div>
+</div>
+</div>
+<script>
+        $(document).ready(function () {
+            $("#expandstd").click(function () {
+                $('#confirm').modal({
+                    relatedTarget: this,
+                    onConfirm: function (e) {
+                        $("#stdcode").slideDown();
+                        $("#expandstd").hide();
+                    }
+                });
+            });
+            $("#submit").click(
+                function () {
+                    hide_artile();
+                    $(document).scrollTop($(document).scrollTop() - 80);
+                    var pid = $(this).attr("pid");
+                    $.get("/problem/ajax_submit?pid=" + pid, function (data) {
+                        var arr = eval('(' + data + ')');
+                        if (arr['code'] == 201) {
+                            $('.lg-article-sub').html(arr['more']['html']);
+                        }
+                        else if (arr['code'] == 200) {
+
+                        }
+                        else {
+                            if (arr['code'] == 0 || arr['code'] == -3) {
+                                backarticle();
+                            }
+                            show_alert("提交失败", arr['message']);
+                        }
+                    });
+                }
+            );
+            $("button[title].am-btn,a[title].am-btn").poshytip({
+                className: 'tip-twitter',
+                showTimeout: 1,
+                alignTo: 'target',
+                alignX: 'center',
+                alignY: 'bottom'
+            });
+            $('[name=showtag]').click(function () {
+                $('.am-badge.am-hide').removeClass('am-hide');
+            });
+            $(".sample-copy").click(function() {
+                var element = $(this).parents(".copy-region").find("pre");
+                var text = $(element).text();
+                var $temp = $("<textarea>");
+                $("body").append($temp);
+                $temp.val(text).select();
+                document.execCommand("copy");
+                $temp.remove();
+                $(this).text("复制成功").removeClass("lg-bg-orange");
+
+                var e = this;
+                setTimeout(function() {
+                    $(e).text("复制").addClass("lg-bg-orange");
+                }, 500);
+            });
+        });
+    </script>
+</div>
+<footer id="app-footer"></footer>
+<div class="am-modal am-modal-alert" tabindex="-1" id="lg-alert">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="lg-alert-title"></div>
+<div class="am-modal-bd" id="lg-alert-message"></div>
+<div class="am-modal-footer">
+<span class="am-modal-btn">确定</span>
+</div>
+</div>
+</div>
+<script src="/js/ace/ace.js"></script>
+<script src="https://cdn.luogu.org/js/vendor.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/jsmind.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/amazeui.min.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts-more.js"></script>
+<script src="/static/katex/katex.min.js"></script>
+<script src="/static/katex/contrib/auto-render.min.js"></script>
+<script src="https://cdn.luogu.org/markdown-palettes/markdown-palettes.min.js?ver=20190219"></script>
+<script src="https://cdn.luogu.org/js/luogu3.js?ver=20190101"></script>
+</body>
+</html>

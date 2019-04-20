@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title> P3947 肝活动 - 洛谷</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta name="csrf-token" content="1555853168:gRRwywGt/BL+SvQBskcx3and8+NWyFEmHoeoBTx2BRQ=">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/amazeui.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/katex.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/luogu3.css?ver=20190102">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/highlight_tomorrow.css">
+<link rel="stylesheet" href="https://cdn.luogu.org/markdown-palettes/markdown-palettes.css?ver=20190219">
+<script src="https://cdn.luogu.org/js/jquery-2.1.1.min.js"></script>
+<script src="https://cdn.luogu.org/js/luogu3_pre.js?ver=20190101"></script>
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn.luogu.org/images/favicon3.ico" media="screen"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/fe/loader.css?ver=20190417">
+<script>window._feInjection = JSON.parse(decodeURIComponent("%7B%22code%22%3A200%2C%22currentUser%22%3Anull%2C%22currentTemplate%22%3A%22Excited%22%2C%22currentData%22%3A%7B%22shortHeader%22%3Afalse%2C%22pageName%22%3A%22%5Cu9898%5Cu76ee%5Cu8be6%5Cu60c5%22%7D%2C%22currentMeta%22%3A%7B%22title%22%3A%22%20P3947%20%5Cu809d%5Cu6d3b%5Cu52a8%22%7D%7D"));</script>
+<script>window._release = '20190417';</script>
+<script src="https://cdn.luogu.org/fe/loader.js?ver=20190417" charset="utf-8" defer></script>
+</head>
+<body>
+<div id="app-header"></div>
+<nav id="app-sidenav"></nav>
+<div id="app-body"></div>
+<script>
+    function scrollToId (id) {
+        $('html, body').animate({
+            scrollTop: ($('#' + id).offset().top)
+        }, 500);
+    }
+</script>
+<style>
+    .lg-toolbar {
+        display: none;
+    }
+
+    #app-body { /* Unused in fallback FE */
+        display: none;
+    }
+
+    #app-body-new{
+        display: block;
+        margin-bottom: 2em;
+        position: relative;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    @media (min-width: 576px) {
+        #app-body-new {
+            margin-left: 70px;
+        }
+    }
+
+    code {
+        font-family: monospace, "Courier New";
+    }
+
+</style>
+<div id="app-body-new">
+<div class="lg-toolbar" data-am-sticky>
+<h1><a href="/recordnew/lists?uid=&pid=P3947" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a> P3947 肝活动</h1>
+</div>
+<div class="am-g lg-main-content">
+<div class="am-u-md-4 lg-right" name="problemright">
+<section class="am-panel am-panel-default lg-summary" id="psummary">
+<div class="lg-summary-content">
+<ul class="am-list am-list-static lg-summary-list">
+<li>
+<ul class="am-avg-sm-2"><li><span class="lg-bignum-num">109<small></small></span><span class="lg-bignum-text">通过</span></li><li><span class="lg-bignum-num">507<small></small></span><span class="lg-bignum-text">提交</span></li></ul>
+</li>
+<li>
+<strong>题目提供者</strong>
+<span class="lg-right"><a class='lg-fg-green' href="/space/show?uid=21424" target="_blank">yume</a></span>
+</li>
+<li>
+<strong>评测方式</strong>
+<span class="lg-right"><b>云端评测</b></span>
+</li>
+<li><strong>标签</strong>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="128">剪枝</span>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="4">搜索</span>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="151">状态压缩,状压</span>
+<span class="lg-tag am-badge am-radius lg-bg-orange" data-tagid="108">O2优化</span>
+<span class="lg-tag am-badge am-radius lg-bg-orange" data-tagid="319">高性能</span>
+<style>.lg-tag { cursor: pointer; }</style>
+<script>
+                                $(".lg-tag").click(function() {
+                                    window.open("/problemnew/lists?tag=" + $(this).attr('data-tagid'));
+                                })
+                            </script>
+</li>
+<li><strong>难度</strong>
+<span class="lg-right"><span class="am-badge am-radius lg-bg-bluelight">提高+/省选-</span></span>
+</li>
+<li><strong>时空限制</strong>
+<span class="lg-right">1000ms-2000ms / 512MB</span>
+</li>
+</ul>
+</div>
+<p>
+<button class="am-btn am-btn-danger am-btn-sm" id="submit" pid="P3947">
+<i class="am-icon-paper-plane"></i> 提交
+</button>
+<a target="_blank" href="/problemnew/solution/P3947" class="am-btn am-btn-primary am-btn-sm">
+<i class="am-icon-book"></i> 题解
+</a>
+<a data-pjax href="/recordnew/lists?pid=P3947" class="am-btn am-btn-primary am-btn-sm" title="查看本题提交记录">
+<i class="am-icon-pie-chart"></i>
+</a>
+<button class="am-btn am-btn-primary am-btn-sm lg-pointer" name="showtag" title="显示算法标签">
+<i class="am-icon-tags"></i>
+</button>
+</p>
+<li>提示：收藏到任务计划后，可在首页查看。</li>
+<p>
+<a class="am-btn am-btn-danger am-btn-sm" href="/fe/problem/P3947" target="_blank">体验新版界面</a>
+</p>
+</section>
+<section class="am-panel am-panel-default lg-summary">
+<h2>最新讨论
+<a onclick="$('#discuss-lists').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看本题讨论">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" style="display: none" id="discuss-lists">
+<li><a data-pjax href="/discuss/show?postid=92053" class="am-padding-0">小老弟你怎么回事</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=64762" class="am-padding-0">样例歌名翻译</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=27415" class="am-padding-0">测试数据里歌名有没有空格？</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=27106" class="am-padding-0">假装是标题</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=26666" class="am-padding-0">这道题还可以评测吗?</a>
+</li>
+<div style="overflow: auto">
+<a data-pjax href="/discuss/lists?forumname=P3947" class="am-btn am-btn-primary am-btn-sm lg-right">进入讨论版</a>
+</div>
+</ul>
+</section>
+<section class="am-panel am-panel-default lg-summary am-hide-sm">
+<h2>推荐的相关题目
+<a onclick="$('#recommendation-list').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看推荐题目">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" id="recommendation-list" style="display: none">
+<li>
+<a class='colored' href="/problemnew/show/P2704" target="_blank"><b>P2704</b> [NOI2001]炮兵阵地</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P2831" target="_blank"><b>P2831</b> 愤怒的小鸟</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3959" target="_blank"><b>P3959</b> 宝藏</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P4837" target="_blank"><b>P4837</b> 养殖呆河马</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3945" target="_blank"><b>P3945</b> 三体问题</a>
+</li>
+</ul>
+</section>
+</div>
+<div class="am-u-md-8 lg-right" name="problemleft">
+<div class="lg-content-left">
+<div class="lg-article am-g">
+<h2>题目描述</h2>
+<p>Yume 最近在玩一个名为《LoveLive! School idol festival》的音乐游戏。他之所以喜欢上这个游戏，是因为这个游戏对非洲人十分友好，即便你脸黑到抽不出好卡，还可以通过在每个月举办的两次活动中达成一定的目标来获得奖励。</p>
+<p>Yume 很喜欢这一期活动奖励卡的卡面，于是他决定要肝这一期的活动，拿到活动奖励。这一期的活动规则很特殊，玩家需要在活动规定的结束时间前，完成所有指定的歌曲<strong>（每首歌曲只能打一次）</strong>，并获得一定的分数，就可以拿到活动奖励。如果在规定的时间前没有完成所有的歌曲，或者分数不够奖励的分数线，则不能领取活动奖励。每首歌有一个限定的奖励开放时间，玩家如果在这段时间内完成了这首歌，便可以获得一定的分数<strong>（获得的分数 = 开放时间 - 当前已用的总时间）</strong>。如果超出了这段时间之后再完成这首歌，就不能获得分数了。</p>
+<p>这样的规则对 Yume 这样的老玩家来说本应是轻而易举，但不巧的是 Yume 把活动的结束时间记成了活动的开始时间，以至于当他上线跃跃欲试的时候，惊恐地发现活动已经快要结束了。现在他想知道，在剩余的时间之内，他能否完成所有的歌、达成奖励的分数线拿到活动卡。为了节省时间，他把这个问题交给了你来解决。请你根据给定的数据，帮他计算出能否在剩余的时间内达成目标。如果能，请告诉他完成每首歌曲的顺序。</p>
+<h2>输入输出格式</h2>
+<strong>输入格式：</strong><br>
+<p><p>输入的第一行是三个整数 n, m, t，分别表示规定完成的歌曲数目、获得奖励需要达到的最低分数和距离活动结束剩余的时间。</p>
+<p>接下来有 n 行，第 i 行有一个字符串 Si 和两个整数 Ti 和 Mi，表示第 i 首歌的歌名为 Si，完成第 i 首歌所需要的时间为 Ti，第 i 首歌的奖励开放时间剩余 Mi。保证 Ti ≤ Mi. 其中数据已按 Si 的字典序给出。</p></p>
+<strong>输出格式：</strong><br>
+<p><p>如果在活动结束前 Yume 可以完成指定的目标拿到奖励，则在第一行输出一个整数 C，表示在获得奖励的前提下，所能够获得的分数的最大值；接下来的 n 行中，按照完成歌曲的顺序输出第 i 首歌的歌名。如果有多种可能性，则输出字典序最小的情况。</p>
+<p>如果在活动结束前 Yume 不能完成所有的歌曲，输出 No Answer .</p></p>
+<h2>输入输出样例</h2>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>3 2 10
+BokutachiwaHitotsunoHikari 3 8
+Korekara 1 2
+SnowHalation 2 5
+</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>6
+SnowHalation
+BokutachiwaHitotsunoHikari
+Korekara
+</pre>
+</div>
+</div>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#2：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>2 1 2
+AoizoraJumpingHeart 1 2
+TimeLapse 2 4</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#2：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>No Answer</pre>
+</div>
+</div>
+<h2>说明</h2>
+<p>对于 0% 的数据，与测试数据完全相同。</p>
+<p>对于 20% 的数据，满足 n ≤ 5。</p>
+<p>对于 40% 的数据，满足 n ≤ 9。</p>
+<p>对于 70% 的数据，满足 n ≤ 15。</p>
+<p>对于 100% 的数据，满足 n ≤ 22，Si 的长度不超过 50. 保证 m, t 和 Ti, Mi 以及其相加的结果都在 int 的最大范围内。</p>
+<p>另有 10% 的数据满足 Sigma(T1, T2, …, Tn) &lt; t.</p>
+<h2>标程<a class="lg-right am-btn am-btn-sm am-btn-primary" id="expandstd">展开</a></h2>
+<div id="stdcode" class="copy-region" style="display:none">
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre><code class="language-cpp line-numbers">#include &lt;cstdio&gt; 
+#include &lt;cstring&gt;
+#include &lt;stack&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+const int MAXS = (1 &lt;&lt; 24);
+const int MAXN = 25;
+
+struct State {
+    int cur;
+    int prev;
+    int score;
+};
+State dp[MAXS + 20];
+
+int n, m, t;
+int sum;
+int cost[MAXN], rest[MAXN];
+int curTime[MAXS + 20];
+char name[MAXN][110];
+
+int main()
+{
+    memset(curTime, 0, sizeof curTime);
+    memset(dp, 0, sizeof dp);
+    
+    scanf(&quot;%d%d%d&quot;, &amp;n, &amp;m, &amp;t);
+    for (int i = 0; i &lt; n; i++)
+    {
+        scanf(&quot;%s%d%d&quot;, name[i], &amp;cost[i], &amp;rest[i]);
+        sum += cost[i];
+    }
+    
+    if (t &lt; sum) {
+        printf(&quot;No Answer&quot;);
+        return 0;
+    }
+    
+    for (int i = 0; i &lt; (1 &lt;&lt; n); i++)
+    {
+        for (int j = n; j &gt;= 0; j--)
+        {
+            if (i &amp; (1 &lt;&lt; j)) {
+                continue;
+            }
+            int next = i | (1 &lt;&lt; j);
+            curTime[next] = curTime[i] + cost[j];
+        }
+    }
+
+    for (int i = 0; i &lt;= (1 &lt;&lt; n); i++)
+    {
+        for (int j = 0; j &lt; n; j++)
+        {
+            int cur = 1 &lt;&lt; j;
+            if (i &amp; cur) {
+                int prev = i &amp; (~cur);
+                int getscore = rest[j] - curTime[prev] - cost[j];
+                if (getscore &lt; 0) {
+                    getscore = 0;
+                }
+                if (dp[i].score &lt;= dp[prev].score + getscore) {
+                    dp[i].score = dp[prev].score + getscore;
+                    dp[i].cur = j;
+                    dp[i].prev = prev;
+                }
+            }
+        }
+    }
+    
+    int state = (1 &lt;&lt; n) - 1;
+    
+    if (dp[state].score &gt;= m) {
+        printf(&quot;%d\n&quot;, dp[state].score);
+    } else {
+        printf(&quot;No Answer&quot;);
+        return 0;
+    }
+    
+    stack&lt;int&gt; S;
+    while (state != 0)
+    {
+        S.push(dp[state].cur);
+        state = dp[state].prev;
+    }
+    
+    while (!S.empty())
+    {
+        int id = S.top();
+        S.pop();
+        printf(&quot;%s&quot;, name[id]);
+        if (!S.empty()) {
+            printf(&quot;\n&quot;);
+        }
+    }
+    
+    return 0;
+}</code></pre>
+</div>
+</div>
+<div class='lg-article-sub am-g' id="sub"></div>
+</div>
+</div>
+</div>
+<div class="am-modal am-modal-prompt" tabindex="-1" id="confirm">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="memtitle">提示</div>
+<div class="am-modal-bd" id="memadmin">
+标程仅供做题后或实在无思路时参考。<br>
+请自觉、自律地使用该功能并请对自己的学习负责。<br>
+如果发现恶意抄袭标程，将按照I类违反进行处理。<br>
+</div>
+<div class="am-modal-footer">
+<span class="am-modal-btn" data-am-modal-cancel>取消</span>
+<span class="am-modal-btn" data-am-modal-confirm>确定</span>
+</div>
+</div>
+</div>
+<script>
+        $(document).ready(function () {
+            $("#expandstd").click(function () {
+                $('#confirm').modal({
+                    relatedTarget: this,
+                    onConfirm: function (e) {
+                        $("#stdcode").slideDown();
+                        $("#expandstd").hide();
+                    }
+                });
+            });
+            $("#submit").click(
+                function () {
+                    hide_artile();
+                    $(document).scrollTop($(document).scrollTop() - 80);
+                    var pid = $(this).attr("pid");
+                    $.get("/problem/ajax_submit?pid=" + pid, function (data) {
+                        var arr = eval('(' + data + ')');
+                        if (arr['code'] == 201) {
+                            $('.lg-article-sub').html(arr['more']['html']);
+                        }
+                        else if (arr['code'] == 200) {
+
+                        }
+                        else {
+                            if (arr['code'] == 0 || arr['code'] == -3) {
+                                backarticle();
+                            }
+                            show_alert("提交失败", arr['message']);
+                        }
+                    });
+                }
+            );
+            $("button[title].am-btn,a[title].am-btn").poshytip({
+                className: 'tip-twitter',
+                showTimeout: 1,
+                alignTo: 'target',
+                alignX: 'center',
+                alignY: 'bottom'
+            });
+            $('[name=showtag]').click(function () {
+                $('.am-badge.am-hide').removeClass('am-hide');
+            });
+            $(".sample-copy").click(function() {
+                var element = $(this).parents(".copy-region").find("pre");
+                var text = $(element).text();
+                var $temp = $("<textarea>");
+                $("body").append($temp);
+                $temp.val(text).select();
+                document.execCommand("copy");
+                $temp.remove();
+                $(this).text("复制成功").removeClass("lg-bg-orange");
+
+                var e = this;
+                setTimeout(function() {
+                    $(e).text("复制").addClass("lg-bg-orange");
+                }, 500);
+            });
+        });
+    </script>
+</div>
+<footer id="app-footer"></footer>
+<div class="am-modal am-modal-alert" tabindex="-1" id="lg-alert">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="lg-alert-title"></div>
+<div class="am-modal-bd" id="lg-alert-message"></div>
+<div class="am-modal-footer">
+<span class="am-modal-btn">确定</span>
+</div>
+</div>
+</div>
+<script src="/js/ace/ace.js"></script>
+<script src="https://cdn.luogu.org/js/vendor.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/jsmind.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/amazeui.min.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts-more.js"></script>
+<script src="/static/katex/katex.min.js"></script>
+<script src="/static/katex/contrib/auto-render.min.js"></script>
+<script src="https://cdn.luogu.org/markdown-palettes/markdown-palettes.min.js?ver=20190219"></script>
+<script src="https://cdn.luogu.org/js/luogu3.js?ver=20190101"></script>
+</body>
+</html>

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title> P5140 树枝修剪 - 洛谷</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta name="csrf-token" content="1555853599:z/9jc7BCpGSSoFtjYhdBeMokFRxTraiMwLb9Kbju2OA=">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/amazeui.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/katex.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/luogu3.css?ver=20190102">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/highlight_tomorrow.css">
+<link rel="stylesheet" href="https://cdn.luogu.org/markdown-palettes/markdown-palettes.css?ver=20190219">
+<script src="https://cdn.luogu.org/js/jquery-2.1.1.min.js"></script>
+<script src="https://cdn.luogu.org/js/luogu3_pre.js?ver=20190101"></script>
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn.luogu.org/images/favicon3.ico" media="screen"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/fe/loader.css?ver=20190417">
+<script>window._feInjection = JSON.parse(decodeURIComponent("%7B%22code%22%3A200%2C%22currentUser%22%3Anull%2C%22currentTemplate%22%3A%22Excited%22%2C%22currentData%22%3A%7B%22shortHeader%22%3Afalse%2C%22pageName%22%3A%22%5Cu9898%5Cu76ee%5Cu8be6%5Cu60c5%22%7D%2C%22currentMeta%22%3A%7B%22title%22%3A%22%20P5140%20%5Cu6811%5Cu679d%5Cu4fee%5Cu526a%22%7D%7D"));</script>
+<script>window._release = '20190417';</script>
+<script src="https://cdn.luogu.org/fe/loader.js?ver=20190417" charset="utf-8" defer></script>
+</head>
+<body>
+<div id="app-header"></div>
+<nav id="app-sidenav"></nav>
+<div id="app-body"></div>
+<script>
+    function scrollToId (id) {
+        $('html, body').animate({
+            scrollTop: ($('#' + id).offset().top)
+        }, 500);
+    }
+</script>
+<style>
+    .lg-toolbar {
+        display: none;
+    }
+
+    #app-body { /* Unused in fallback FE */
+        display: none;
+    }
+
+    #app-body-new{
+        display: block;
+        margin-bottom: 2em;
+        position: relative;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    @media (min-width: 576px) {
+        #app-body-new {
+            margin-left: 70px;
+        }
+    }
+
+    code {
+        font-family: monospace, "Courier New";
+    }
+
+</style>
+<div id="app-body-new">
+<div class="lg-toolbar" data-am-sticky>
+<h1><a href="/recordnew/lists?uid=&pid=P5140" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a> P5140 树枝修剪</h1>
+</div>
+<div class="am-g lg-main-content">
+<div class="am-u-md-4 lg-right" name="problemright">
+<section class="am-panel am-panel-default lg-summary" id="psummary">
+<div class="lg-summary-content">
+<ul class="am-list am-list-static lg-summary-list">
+<li>
+<ul class="am-avg-sm-2"><li><span class="lg-bignum-num">8<small></small></span><span class="lg-bignum-text">通过</span></li><li><span class="lg-bignum-num">231<small></small></span><span class="lg-bignum-text">提交</span></li></ul>
+</li>
+<li>
+<strong>题目提供者</strong>
+<span class="lg-right"><a class='lg-fg-bluelight' href="/space/show?uid=49719" target="_blank">蒟蒻二叉树</a></span>
+</li>
+<li>
+<strong>评测方式</strong>
+<span class="lg-right"><b>云端评测</b></span>
+</li>
+<li><strong>标签</strong>
+<style>.lg-tag { cursor: pointer; }</style>
+<script>
+                                $(".lg-tag").click(function() {
+                                    window.open("/problemnew/lists?tag=" + $(this).attr('data-tagid'));
+                                })
+                            </script>
+</li>
+<li><strong>难度</strong>
+<span class="lg-right"><span class="am-badge am-radius lg-bg-bluelight">提高+/省选-</span></span>
+</li>
+<li><strong>时空限制</strong>
+<span class="lg-right">1500ms / 128MB</span>
+</li>
+</ul>
+</div>
+<p>
+<button class="am-btn am-btn-danger am-btn-sm" id="submit" pid="P5140">
+<i class="am-icon-paper-plane"></i> 提交
+</button>
+<a target="_blank" href="/problemnew/solution/P5140" class="am-btn am-btn-primary am-btn-sm">
+<i class="am-icon-book"></i> 题解
+</a>
+<a data-pjax href="/recordnew/lists?pid=P5140" class="am-btn am-btn-primary am-btn-sm" title="查看本题提交记录">
+<i class="am-icon-pie-chart"></i>
+</a>
+<button class="am-btn am-btn-primary am-btn-sm lg-pointer" name="showtag" title="显示算法标签">
+<i class="am-icon-tags"></i>
+</button>
+</p>
+<li>提示：收藏到任务计划后，可在首页查看。</li>
+<p>
+<a class="am-btn am-btn-danger am-btn-sm" href="/fe/problem/P5140" target="_blank">体验新版界面</a>
+</p>
+</section>
+<section class="am-panel am-panel-default lg-summary">
+<h2>最新讨论
+<a onclick="$('#discuss-lists').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看本题讨论">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" style="display: none" id="discuss-lists">
+<li>暂时没有讨论</li>
+<div style="overflow: auto">
+<a data-pjax href="/discuss/lists?forumname=P5140" class="am-btn am-btn-primary am-btn-sm lg-right">进入讨论版</a>
+</div>
+</ul>
+</section>
+<section class="am-panel am-panel-default lg-summary am-hide-sm">
+<h2>推荐的相关题目
+<a onclick="$('#recommendation-list').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看推荐题目">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" id="recommendation-list" style="display: none">
+<li>
+<a class='colored' href="/problemnew/show/P2051" target="_blank"><b>P2051</b> [AHOI2009]中国象棋</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3385" target="_blank"><b>P3385</b> 【模板】负环</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3369" target="_blank"><b>P3369</b> 【模板】普通平衡树</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P5139" target="_blank"><b>P5139</b> z小f的函数</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P2114" target="_blank"><b>P2114</b> [NOI2014]起床困难综合症</a>
+</li>
+</ul>
+</section>
+</div>
+<div class="am-u-md-8 lg-right" name="problemleft">
+<div class="lg-content-left">
+<div class="lg-article am-g">
+<h2>题目背景</h2>
+<p>$Daleva$ $Geoge$是一个热爱生活的园艺工。</p>
+<h2>题目描述</h2>
+<p>$Daleva$ $Geoge$的花园里有一颗常年没有修剪的树，这一天，$Daleva$ $Geoge$家里来了客人，为了给客人一个好印象，他需要整理这个花园，但是那一颗树显得太碍眼了，他必须要给他好好地修剪一下。</p>
+<p>这是一颗以$root$为根的有根树，有$n$个节点。$Daleva$ $Geoge$在根节点，$Daleva$ $Geoge$对某些叶子的形态感到不满，需要剪去多余的枝条。</p>
+<p>有$S$个需要修剪的叶子节点,这些叶子节点有一些多余的枝条，这些叶子节点有着自己的权值$a_{i}$,表示这个节点上有多少个$Daleva$ $Geoge$不需要的枝条。同时，因为花园里没法容下这些枝条（否则就变得不和谐了），$Daleva$ $Geoge$需要把这些枝条安装到某些节点上。</p>
+<p>$Daleva$ $Geoge$有一个神奇的胶水和一把神奇的剪刀，因此你不需考虑每个树枝的固定形态，根据$Daleva$ $Geoge$的推测，一共有$T$个叶子节点需要安装这些枝条，这些节点有各自的权值$b_{i}$，表示需要$b_{i}$个枝条才能把这棵树变得很好看。</p>
+<p>为了修剪好这棵树，$Daleva$ $Geoge$不得不在树上跑边，把每个叶子节点中多余的枝条剪下，并用胶水粘在其他的有需要的叶子节点上。每条边都有不同的长度，现在，由于树太过庞大，$Daleva$ $Geoge$需要知道，他最少需要跑多远的路才能使这棵树被修剪好，$Daleva$ $Geoge$也要回到树根上下来。</p>
+<p>虽然$Daleva$ $Geoge$有这些神奇的工具，但他的口袋是有限的，容量为$G$,$Daleva$ $Geoge$不能一次带太多枝条，即不能超过$G$,这更使他懒于考虑这些繁琐的问题。$Daleva$ $Geoge$当然会算啦，他那么巨，但他为了养足精力去剪枝条，这一艰巨的任务就落在你身上了。</p>
+<p>$Daleva$ $Geoge$已经把心中树的形状告诉你了，他要躺在椅子上看你怎么算这些问题。</p>
+<h2>输入输出格式</h2>
+<strong>输入格式：</strong><br>
+<p><p>输入的第一行$3$个整数：$n,G,root$.</p>
+<p>接下来$n-1$行描述每个树边，每行$3$个整数：$u,v,w$表示$u$与$v$有一条长度为$w$的边。</p>
+<p>接下来一行$2$个整数：$S,T$;</p>
+<p>接下来$S$行，每行两个整数：$x,a_{i}$,表示在第$x$个节点有$a_{i}$个多余枝条，数据保证$x$为叶子节点。</p>
+<p>接下来$T$行，每行两个整数：$x,b_{i}$,表示在第$x$个节点需要$b_{i}$个枝条，数据保证$x$为叶子节点。</p>
+<p>数据保证$$\sum_{i=1}^{S}a_{i}=\sum_{i=1}^{T}b_{i}$$</p></p>
+<strong>输出格式：</strong><br>
+<p><p>一行，一个整数，表示$Daleva$ $Geoge$最少需要跑多长的路才能把树修剪好并回到树根爬下树。</p></p>
+<h2>输入输出样例</h2>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>4 2 1
+2 1 4
+4 1 2
+3 1 2
+1 2
+2 6
+3 3
+4 3</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>40</pre>
+</div>
+</div>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#2：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>5 1 1
+1 2 2
+3 2 2
+4 1 2
+5 4 2
+1 1
+3 1
+5 1
+</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#2：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>16</pre>
+</div>
+</div>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#3：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>20 10 18
+1 17 86406
+17 16 94583
+19 10 28177
+16 18 31981
+10 14 36241
+1 7 28919
+2 1 94673
+5 6 2801
+7 11 81927
+11 13 7779
+17 5 71948
+19 7 20264
+1 8 17736
+13 20 97181
+17 9 16807
+11 15 93705
+17 3 29601
+1 12 43829
+13 4 27537
+1 6
+20 23585
+9 8376
+12 3128
+15 5417
+8 4011
+3 1156
+6 1497
+</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#3：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>1289613990</pre>
+</div>
+</div>
+<h2>说明</h2>
+<p>样例1解释：</p>
+<p><img src="https://cdn.luogu.org/upload/pic/37354.png" alt="" /></p>
+<p>蓝色数字表示有多少多余枝条，黄色数字表示需要的枝条数。</p>
+<p>则最优方案为：$1→2→1→3→1→2→1→3→1→4→1→2→1→4→1$，答案为$40$;</p>
+<p>对于$5\%$的数据，为样例1。</p>
+<p>对于$40\%$的数据，$n\leq 10,G\leq 10;w \leq 1000$</p>
+<p>对于$100\%$的数据，$n\leq 40,0000,G\leq 1000;S+T\leq n;a_{i},b_{i}\leq 10^{9};w\leq 10^{9}$</p>
+<p>数据保证不会有任意一个叶子节点既需要枝条又有多余枝条。</p>
+</div>
+<div class='lg-article-sub am-g' id="sub"></div>
+</div>
+</div>
+</div>
+<div class="am-modal am-modal-prompt" tabindex="-1" id="confirm">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="memtitle">提示</div>
+<div class="am-modal-bd" id="memadmin">
+标程仅供做题后或实在无思路时参考。<br>
+请自觉、自律地使用该功能并请对自己的学习负责。<br>
+如果发现恶意抄袭标程，将按照I类违反进行处理。<br>
+</div>
+<div class="am-modal-footer">
+<span class="am-modal-btn" data-am-modal-cancel>取消</span>
+<span class="am-modal-btn" data-am-modal-confirm>确定</span>
+</div>
+</div>
+</div>
+<script>
+        $(document).ready(function () {
+            $("#expandstd").click(function () {
+                $('#confirm').modal({
+                    relatedTarget: this,
+                    onConfirm: function (e) {
+                        $("#stdcode").slideDown();
+                        $("#expandstd").hide();
+                    }
+                });
+            });
+            $("#submit").click(
+                function () {
+                    hide_artile();
+                    $(document).scrollTop($(document).scrollTop() - 80);
+                    var pid = $(this).attr("pid");
+                    $.get("/problem/ajax_submit?pid=" + pid, function (data) {
+                        var arr = eval('(' + data + ')');
+                        if (arr['code'] == 201) {
+                            $('.lg-article-sub').html(arr['more']['html']);
+                        }
+                        else if (arr['code'] == 200) {
+
+                        }
+                        else {
+                            if (arr['code'] == 0 || arr['code'] == -3) {
+                                backarticle();
+                            }
+                            show_alert("提交失败", arr['message']);
+                        }
+                    });
+                }
+            );
+            $("button[title].am-btn,a[title].am-btn").poshytip({
+                className: 'tip-twitter',
+                showTimeout: 1,
+                alignTo: 'target',
+                alignX: 'center',
+                alignY: 'bottom'
+            });
+            $('[name=showtag]').click(function () {
+                $('.am-badge.am-hide').removeClass('am-hide');
+            });
+            $(".sample-copy").click(function() {
+                var element = $(this).parents(".copy-region").find("pre");
+                var text = $(element).text();
+                var $temp = $("<textarea>");
+                $("body").append($temp);
+                $temp.val(text).select();
+                document.execCommand("copy");
+                $temp.remove();
+                $(this).text("复制成功").removeClass("lg-bg-orange");
+
+                var e = this;
+                setTimeout(function() {
+                    $(e).text("复制").addClass("lg-bg-orange");
+                }, 500);
+            });
+        });
+    </script>
+</div>
+<footer id="app-footer"></footer>
+<div class="am-modal am-modal-alert" tabindex="-1" id="lg-alert">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="lg-alert-title"></div>
+<div class="am-modal-bd" id="lg-alert-message"></div>
+<div class="am-modal-footer">
+<span class="am-modal-btn">确定</span>
+</div>
+</div>
+</div>
+<script src="/js/ace/ace.js"></script>
+<script src="https://cdn.luogu.org/js/vendor.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/jsmind.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/amazeui.min.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts-more.js"></script>
+<script src="/static/katex/katex.min.js"></script>
+<script src="/static/katex/contrib/auto-render.min.js"></script>
+<script src="https://cdn.luogu.org/markdown-palettes/markdown-palettes.min.js?ver=20190219"></script>
+<script src="https://cdn.luogu.org/js/luogu3.js?ver=20190101"></script>
+</body>
+</html>

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title> P5032 经验 - 洛谷</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta name="csrf-token" content="1555853560:LqHbIgZXCYj7luMhvsoMcuyZu4OjY+1+RG+o++7Ova8=">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/amazeui.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/katex.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/luogu3.css?ver=20190102">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/highlight_tomorrow.css">
+<link rel="stylesheet" href="https://cdn.luogu.org/markdown-palettes/markdown-palettes.css?ver=20190219">
+<script src="https://cdn.luogu.org/js/jquery-2.1.1.min.js"></script>
+<script src="https://cdn.luogu.org/js/luogu3_pre.js?ver=20190101"></script>
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn.luogu.org/images/favicon3.ico" media="screen"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/fe/loader.css?ver=20190417">
+<script>window._feInjection = JSON.parse(decodeURIComponent("%7B%22code%22%3A200%2C%22currentUser%22%3Anull%2C%22currentTemplate%22%3A%22Excited%22%2C%22currentData%22%3A%7B%22shortHeader%22%3Afalse%2C%22pageName%22%3A%22%5Cu9898%5Cu76ee%5Cu8be6%5Cu60c5%22%7D%2C%22currentMeta%22%3A%7B%22title%22%3A%22%20P5032%20%5Cu7ecf%5Cu9a8c%22%7D%7D"));</script>
+<script>window._release = '20190417';</script>
+<script src="https://cdn.luogu.org/fe/loader.js?ver=20190417" charset="utf-8" defer></script>
+</head>
+<body>
+<div id="app-header"></div>
+<nav id="app-sidenav"></nav>
+<div id="app-body"></div>
+<script>
+    function scrollToId (id) {
+        $('html, body').animate({
+            scrollTop: ($('#' + id).offset().top)
+        }, 500);
+    }
+</script>
+<style>
+    .lg-toolbar {
+        display: none;
+    }
+
+    #app-body { /* Unused in fallback FE */
+        display: none;
+    }
+
+    #app-body-new{
+        display: block;
+        margin-bottom: 2em;
+        position: relative;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    @media (min-width: 576px) {
+        #app-body-new {
+            margin-left: 70px;
+        }
+    }
+
+    code {
+        font-family: monospace, "Courier New";
+    }
+
+</style>
+<div id="app-body-new">
+<div class="lg-toolbar" data-am-sticky>
+<h1><a href="/recordnew/lists?uid=&pid=P5032" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a> P5032 经验</h1>
+</div>
+<div class="am-g lg-main-content">
+<div class="am-u-md-4 lg-right" name="problemright">
+<section class="am-panel am-panel-default lg-summary" id="psummary">
+<div class="lg-summary-content">
+<ul class="am-list am-list-static lg-summary-list">
+<li>
+<ul class="am-avg-sm-2"><li><span class="lg-bignum-num">31<small></small></span><span class="lg-bignum-text">通过</span></li><li><span class="lg-bignum-num">888<small></small></span><span class="lg-bignum-text">提交</span></li></ul>
+</li>
+<li>
+<strong>题目提供者</strong>
+<span class="lg-right"><a class='lg-fg-red lg-bold' href="/space/show?uid=20780" target="_blank">南城忆潇湘</a></span>
+</li>
+<li>
+<strong>评测方式</strong>
+<span class="lg-right"><b>云端评测</b></span>
+</li>
+<li><strong>标签</strong>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="148">优先队列</span>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="54">递归</span>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="288">队列</span>
+<span class="lg-tag am-badge am-radius lg-bg-orange" data-tagid="108">O2优化</span>
+<span class="lg-tag am-badge am-radius lg-bg-orange" data-tagid="319">高性能</span>
+<style>.lg-tag { cursor: pointer; }</style>
+<script>
+                                $(".lg-tag").click(function() {
+                                    window.open("/problemnew/lists?tag=" + $(this).attr('data-tagid'));
+                                })
+                            </script>
+</li>
+<li><strong>难度</strong>
+<span class="lg-right"><span class="am-badge am-radius lg-bg-bluelight">提高+/省选-</span></span>
+</li>
+<li><strong>时空限制</strong>
+<span class="lg-right">500ms / 128MB</span>
+</li>
+</ul>
+</div>
+<p>
+<button class="am-btn am-btn-danger am-btn-sm" id="submit" pid="P5032">
+<i class="am-icon-paper-plane"></i> 提交
+</button>
+<a target="_blank" href="/problemnew/solution/P5032" class="am-btn am-btn-primary am-btn-sm">
+<i class="am-icon-book"></i> 题解
+</a>
+<a data-pjax href="/recordnew/lists?pid=P5032" class="am-btn am-btn-primary am-btn-sm" title="查看本题提交记录">
+<i class="am-icon-pie-chart"></i>
+</a>
+<button class="am-btn am-btn-primary am-btn-sm lg-pointer" name="showtag" title="显示算法标签">
+<i class="am-icon-tags"></i>
+</button>
+</p>
+<li>提示：收藏到任务计划后，可在首页查看。</li>
+<p>
+<a class="am-btn am-btn-danger am-btn-sm" href="/fe/problem/P5032" target="_blank">体验新版界面</a>
+</p>
+</section>
+<section class="am-panel am-panel-default lg-summary">
+<h2>最新讨论
+<a onclick="$('#discuss-lists').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看本题讨论">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" style="display: none" id="discuss-lists">
+<li>暂时没有讨论</li>
+<div style="overflow: auto">
+<a data-pjax href="/discuss/lists?forumname=P5032" class="am-btn am-btn-primary am-btn-sm lg-right">进入讨论版</a>
+</div>
+</ul>
+</section>
+<section class="am-panel am-panel-default lg-summary am-hide-sm">
+<h2>推荐的相关题目
+<a onclick="$('#recommendation-list').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看推荐题目">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" id="recommendation-list" style="display: none">
+<li>
+<a class='colored' href="/problemnew/show/P5142" target="_blank"><b>P5142</b> 区间方差</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P5143" target="_blank"><b>P5143</b> 攀爬者</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3731" target="_blank"><b>P3731</b> [HAOI2017]新型城市化</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P1430" target="_blank"><b>P1430</b> 序列取数</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P2750" target="_blank"><b>P2750</b> [USACO5.5]贰五语言Two Five</a>
+</li>
+</ul>
+</section>
+</div>
+<div class="am-u-md-8 lg-right" name="problemleft">
+<div class="lg-content-left">
+<div class="lg-article am-g">
+<h2>题目背景</h2>
+<p><a href="https://www.luogu.org/discuss/show/80694">赛时答疑</a> </p>
+<p><strong>简略版已经更新，时限改为500ms</strong></p>
+<p>攒够经验附魔去~~</p>
+<p>Steve在minecraft中总是会遇上难题：
+他想要修理n本附魔书，每本附魔书的等级为ai，他总是不知道铁砧修理和经验值的机制。他便在mcwiki上搜索到了一些资料：
+<img src="https://d1u5p3l4wpay3k.cloudfront.net/minecraft_zh_gamepedia/pChart4mw/e8160a1cad02998149d79c65237dc775.png" alt="" /></p>
+<p>----图为经验值与等级的关系，摘自mcwiki </p>
+<p>他看到这个图，就想：我等级升的越高，我所需要的经验值便越多，那么如果我等级刚好够铁砧修理的话，那我所耗费的经验不就越少了吗？他便继续搜索了下去，并将铁砧机制附在了下面,让你帮他解决问题：</p>
+<h2>题目描述</h2>
+<p><strong>累积惩罚：</strong></p>
+<p>无论是重命名、修复、还是合并操作，其经验花费都会因其物品先前在铁砧上的操作而增加，这些额外增加的花费被称作“累积惩罚”。对于一件从未放上铁砧的物品，累积惩罚为0。</p>
+<p>一个物品每次在铁砧上操作过后（不包括重命名），其累积惩罚都会先乘2再加1。如此一来，一个物品在操作过N次后累积惩罚是2^N-1。6次操作之后，累积惩罚是63级，此时生存模式下无法再作进一步的修复和附魔工作。31次操作后，惩罚等级是2147483647级，此时在任何模式下都不能再进行操作。</p>
+<p>当合并两个物品时，玩家会同时受到两件物品的累积惩罚。合并后物品的累积惩罚根据先前两个物品中较高者计算。例如，合并两个累积惩罚分别是3级和15级的物品会额外花费18级的惩罚经验，而合并后的物品惩罚是31级（15*2+1）。</p>
+<p>累积惩罚甚至会作用在不会磨损的物品上，譬如附魔书。因此，合并4本时运 I 的附魔书，会得到一本累积惩罚为3的时运 III 附魔书。</p>
+<pre><code> 累计操作数        惩罚
+
+     0             0
+
+     1             1
+
+     2             3
+
+     3             7
+
+     4             15
+
+     5             31</code></pre>
+<p>使用合成方格进行的物品修复操作会移除所有累积惩罚，但也会丢失所有的魔咒。</p>
+<p><strong>合并物品：</strong></p>
+<p>铁砧界面中第一格/左边的物品称为目标物品；第二格/右边的物品称为牺牲物品——合并后会消失。如果牺牲物品附有魔咒，铁砧会同时试图将牺牲物品的附魔合并至目标物品上。无论目标物品上的魔咒是否产生实际变化，铁砧都将根据目标物品与牺牲物品上的魔咒收取玩家的等级耗费。</p>
+<p>对于牺牲物品上的每个魔咒来说：如果目标物品也拥有相同的魔咒：</p>
+<p>当牺牲物品的魔咒等级较高时，目标物品魔咒的等级将上升至牺牲物品上的等级。</p>
+<p>当牺牲物品的魔咒等级相同时，目标物品上魔咒的等级将提升1级，除非其等级已为最高。 </p>
+<p>当牺牲物品的魔咒等级较低时，目标物品上该魔咒的等级不变。</p>
+<p>合并物品的总花费将是下列费用之和：</p>
+<p>1.目标物品和牺牲物品的累积惩罚之和。</p>
+<p>2.如果同时进行重命名，则额外产生重命名的费用。</p>
+<p>3.如果目标物品耐久度未满，则耗费2级用于维修。</p>
+<p>4.如果牺牲物品拥有魔咒，则产生附魔费用。</p>
+<p>5.如果牺牲物品是一本附魔书，则不会产生维修费用，铁砧会尝试将书本上的魔咒合并至目标物品上。亦可同时对目标物品进行重命名。此时的附魔花费一般会少于合并两个类似物品的费用。</p>
+<p>-----摘自mc wiki，稍作删改</p>
+<p><strong>简略版：</strong><br />
+给出附魔书，只有同等等级的才能合并。合并的代价为两本书的累计代价之和。合成后的书的累计代价为合成前最大代价的2倍加上1。求最高等级和最小花费（要求最高等级为第一关键字）,Steve因为开了挂，所以最高等级不限</p>
+<p>现给出$n$本附魔书，每本附魔书有它的等级$ai$,问如何才能得到附魔书的最大等级$x$，在此基础上，请计算合成它消耗的最小等级$y$。（我们假设每本附魔书初始的累积惩罚为1）。</p>
+<p>Steve很懒，他不想看上面的话，他只想要让你编写出一个程序计算出$x$与$y$。但Steve为了不外传，他只要求你输出$x$在模$y$意义下的乘法逆元$k$即可。如果没有，请输出$-1$.</p>
+<h2>输入输出格式</h2>
+<strong>输入格式：</strong><br>
+<p><p>第一行为一个整数$n$</p>
+<p>接下来$n$行，每行均有一个整数$ai$，表示每本附魔书的初始等级，不保证数据有序.</p></p>
+<strong>输出格式：</strong><br>
+<p><p>一个整数$k$,表示$x$在模$y$意义下的乘法逆元,如果没有，请输出$-1$.<br />
+PS：乘法逆元$k$也可以这样理解: $k$是使得 $kx\equiv1(mod$ $y)$的最小正整数</p></p>
+<h2>输入输出样例</h2>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>5
+1 1 2 3 4</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>-1</pre>
+</div>
+</div>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#2：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>4
+1 1 1 1</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#2：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>7</pre>
+</div>
+</div>
+<h2>说明</h2>
+<p><strong>样例解释</strong></p>
+<p>第一个样例：<br />
+合并两个第一等级的，合并花费2经验，代价升为3<br />
+再合并两个第二等级的，花费3+1=4经验，代价升为7<br />
+再合并两个第三等级的，花费7+1=8经验，代价升为15<br />
+最后合并两个第四等级的，花费15+1=16经验，代价升为31 </p>
+<p>经验总花费：2+4+8+16=30，最大等级：5</p>
+<p>对于第一个样例: $x=5$,$y=30$;</p>
+<p>对于第二个样例: $x=3$,$y=10$;</p>
+<p><strong>数据范围</strong></p>
+<p><img src="https://cdn.luogu.org/upload/pic/41547.png" alt="" /></p>
+<p>保证数据随机，$x$,$y$,$k$在long int范围内</p>
+<p><strong>温馨提示</strong></p>
+<p>本题读入量较大，请使用较快的读入方法，在此，提供一种快速读入的样式：(需包含头文件&lt;cctype&gt;)</p>
+<pre><code>#include&lt;cctype&gt;
+inline void read(int &amp;x){
+     char ch=getchar();x=0;
+     while(!isdigit(ch))   ch=getchar();
+     while(isdigit(ch))   x=x*10+ch-'0',ch=getchar();
+}</code></pre>
+</div>
+<div class='lg-article-sub am-g' id="sub"></div>
+</div>
+</div>
+</div>
+<div class="am-modal am-modal-prompt" tabindex="-1" id="confirm">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="memtitle">提示</div>
+<div class="am-modal-bd" id="memadmin">
+标程仅供做题后或实在无思路时参考。<br>
+请自觉、自律地使用该功能并请对自己的学习负责。<br>
+如果发现恶意抄袭标程，将按照I类违反进行处理。<br>
+</div>
+<div class="am-modal-footer">
+<span class="am-modal-btn" data-am-modal-cancel>取消</span>
+<span class="am-modal-btn" data-am-modal-confirm>确定</span>
+</div>
+</div>
+</div>
+<script>
+        $(document).ready(function () {
+            $("#expandstd").click(function () {
+                $('#confirm').modal({
+                    relatedTarget: this,
+                    onConfirm: function (e) {
+                        $("#stdcode").slideDown();
+                        $("#expandstd").hide();
+                    }
+                });
+            });
+            $("#submit").click(
+                function () {
+                    hide_artile();
+                    $(document).scrollTop($(document).scrollTop() - 80);
+                    var pid = $(this).attr("pid");
+                    $.get("/problem/ajax_submit?pid=" + pid, function (data) {
+                        var arr = eval('(' + data + ')');
+                        if (arr['code'] == 201) {
+                            $('.lg-article-sub').html(arr['more']['html']);
+                        }
+                        else if (arr['code'] == 200) {
+
+                        }
+                        else {
+                            if (arr['code'] == 0 || arr['code'] == -3) {
+                                backarticle();
+                            }
+                            show_alert("提交失败", arr['message']);
+                        }
+                    });
+                }
+            );
+            $("button[title].am-btn,a[title].am-btn").poshytip({
+                className: 'tip-twitter',
+                showTimeout: 1,
+                alignTo: 'target',
+                alignX: 'center',
+                alignY: 'bottom'
+            });
+            $('[name=showtag]').click(function () {
+                $('.am-badge.am-hide').removeClass('am-hide');
+            });
+            $(".sample-copy").click(function() {
+                var element = $(this).parents(".copy-region").find("pre");
+                var text = $(element).text();
+                var $temp = $("<textarea>");
+                $("body").append($temp);
+                $temp.val(text).select();
+                document.execCommand("copy");
+                $temp.remove();
+                $(this).text("复制成功").removeClass("lg-bg-orange");
+
+                var e = this;
+                setTimeout(function() {
+                    $(e).text("复制").addClass("lg-bg-orange");
+                }, 500);
+            });
+        });
+    </script>
+</div>
+<footer id="app-footer"></footer>
+<div class="am-modal am-modal-alert" tabindex="-1" id="lg-alert">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="lg-alert-title"></div>
+<div class="am-modal-bd" id="lg-alert-message"></div>
+<div class="am-modal-footer">
+<span class="am-modal-btn">确定</span>
+</div>
+</div>
+</div>
+<script src="/js/ace/ace.js"></script>
+<script src="https://cdn.luogu.org/js/vendor.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/jsmind.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/amazeui.min.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts-more.js"></script>
+<script src="/static/katex/katex.min.js"></script>
+<script src="/static/katex/contrib/auto-render.min.js"></script>
+<script src="https://cdn.luogu.org/markdown-palettes/markdown-palettes.min.js?ver=20190219"></script>
+<script src="https://cdn.luogu.org/js/luogu3.js?ver=20190101"></script>
+</body>
+</html>

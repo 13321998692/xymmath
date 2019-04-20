@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title> P4874 [USACO14DEC] Piggyback_Silver 背负式运输(银) - 洛谷</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta name="csrf-token" content="1555853492:RC7fQSA7tZPe4FPIxVYyA0kOuHIiVkoqkmdPNipi6n0=">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/amazeui.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/katex.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/luogu3.css?ver=20190102">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/highlight_tomorrow.css">
+<link rel="stylesheet" href="https://cdn.luogu.org/markdown-palettes/markdown-palettes.css?ver=20190219">
+<script src="https://cdn.luogu.org/js/jquery-2.1.1.min.js"></script>
+<script src="https://cdn.luogu.org/js/luogu3_pre.js?ver=20190101"></script>
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn.luogu.org/images/favicon3.ico" media="screen"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/fe/loader.css?ver=20190417">
+<script>window._feInjection = JSON.parse(decodeURIComponent("%7B%22code%22%3A200%2C%22currentUser%22%3Anull%2C%22currentTemplate%22%3A%22Excited%22%2C%22currentData%22%3A%7B%22shortHeader%22%3Afalse%2C%22pageName%22%3A%22%5Cu9898%5Cu76ee%5Cu8be6%5Cu60c5%22%7D%2C%22currentMeta%22%3A%7B%22title%22%3A%22%20P4874%20%5BUSACO14DEC%5D%20Piggyback_Silver%20%5Cu80cc%5Cu8d1f%5Cu5f0f%5Cu8fd0%5Cu8f93%28%5Cu94f6%29%22%7D%7D"));</script>
+<script>window._release = '20190417';</script>
+<script src="https://cdn.luogu.org/fe/loader.js?ver=20190417" charset="utf-8" defer></script>
+</head>
+<body>
+<div id="app-header"></div>
+<nav id="app-sidenav"></nav>
+<div id="app-body"></div>
+<script>
+    function scrollToId (id) {
+        $('html, body').animate({
+            scrollTop: ($('#' + id).offset().top)
+        }, 500);
+    }
+</script>
+<style>
+    .lg-toolbar {
+        display: none;
+    }
+
+    #app-body { /* Unused in fallback FE */
+        display: none;
+    }
+
+    #app-body-new{
+        display: block;
+        margin-bottom: 2em;
+        position: relative;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    @media (min-width: 576px) {
+        #app-body-new {
+            margin-left: 70px;
+        }
+    }
+
+    code {
+        font-family: monospace, "Courier New";
+    }
+
+</style>
+<div id="app-body-new">
+<div class="lg-toolbar" data-am-sticky>
+<h1><a href="/recordnew/lists?uid=&pid=P4874" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a> P4874 [USACO14DEC] Piggyback_Silver 背负式运输(银)</h1>
+</div>
+<div class="am-g lg-main-content">
+<div class="am-u-md-4 lg-right" name="problemright">
+<section class="am-panel am-panel-default lg-summary" id="psummary">
+<div class="lg-summary-content">
+<ul class="am-list am-list-static lg-summary-list">
+<li>
+<ul class="am-avg-sm-2"><li><span class="lg-bignum-num">24<small></small></span><span class="lg-bignum-text">通过</span></li><li><span class="lg-bignum-num">37<small></small></span><span class="lg-bignum-text">提交</span></li></ul>
+</li>
+<li>
+<strong>题目提供者</strong>
+<span class="lg-right"><a class='lg-fg-green' href="/space/show?uid=57705" target="_blank">俺是小程</a></span>
+</li>
+<li>
+<strong>评测方式</strong>
+<span class="lg-right"><b>云端评测</b></span>
+</li>
+<li><strong>标签</strong>
+<span class="lg-tag am-badge am-radius lg-bg-bluelight" data-tagid="46">USACO</span>
+<span class="lg-tag am-badge am-radius lg-bg-green" data-tagid="31">2014</span>
+<style>.lg-tag { cursor: pointer; }</style>
+<script>
+                                $(".lg-tag").click(function() {
+                                    window.open("/problemnew/lists?tag=" + $(this).attr('data-tagid'));
+                                })
+                            </script>
+</li>
+<li><strong>难度</strong>
+<span class="lg-right"><span class="am-badge am-radius lg-bg-bluelight">提高+/省选-</span></span>
+</li>
+<li><strong>时空限制</strong>
+<span class="lg-right">1000ms / 128MB</span>
+</li>
+</ul>
+</div>
+<p>
+<button class="am-btn am-btn-danger am-btn-sm" id="submit" pid="P4874">
+<i class="am-icon-paper-plane"></i> 提交
+</button>
+<a target="_blank" href="/problemnew/solution/P4874" class="am-btn am-btn-primary am-btn-sm">
+<i class="am-icon-book"></i> 题解
+</a>
+<a data-pjax href="/recordnew/lists?pid=P4874" class="am-btn am-btn-primary am-btn-sm" title="查看本题提交记录">
+<i class="am-icon-pie-chart"></i>
+</a>
+<button class="am-btn am-btn-primary am-btn-sm lg-pointer" name="showtag" title="显示算法标签">
+<i class="am-icon-tags"></i>
+</button>
+</p>
+<li>提示：收藏到任务计划后，可在首页查看。</li>
+<p>
+<a class="am-btn am-btn-danger am-btn-sm" href="/fe/problem/P4874" target="_blank">体验新版界面</a>
+</p>
+</section>
+<section class="am-panel am-panel-default lg-summary">
+<h2>最新讨论
+<a onclick="$('#discuss-lists').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看本题讨论">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" style="display: none" id="discuss-lists">
+<li><a data-pjax href="/discuss/show?postid=65867" class="am-padding-0">翻译</a>
+</li>
+<div style="overflow: auto">
+<a data-pjax href="/discuss/lists?forumname=P4874" class="am-btn am-btn-primary am-btn-sm lg-right">进入讨论版</a>
+</div>
+</ul>
+</section>
+<section class="am-panel am-panel-default lg-summary am-hide-sm">
+<h2>推荐的相关题目
+<a onclick="$('#recommendation-list').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看推荐题目">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" id="recommendation-list" style="display: none">
+<li>暂无</li>
+</ul>
+</section>
+</div>
+<div class="am-u-md-8 lg-right" name="problemleft">
+<div class="lg-content-left">
+<div class="lg-article am-g">
+<h2>题意翻译</h2>
+<p>题目背景</p>
+<p>贝茜和妹妹埃尔西白天在不同的地方吃草，晚上他们都想走回谷仓休息。 作为聪明的母牛，他们想出了一个计划，尽量减少他们走路时消耗的能量总量。</p>
+<p>题目描述</p>
+<p>贝茜从田野走到相邻的田野时，消耗了 b 单位的能量，而 Elsie 走到邻近的田地时，会消耗 e 单位的能量。 然而，如果贝茜和艾尔西在同一块地里，贝茜可以把艾尔西扛在肩上，两人都可以搬到邻近的田里去，同时只需要消耗 p 单位的能量(p 可能比 b + e 要少得多，Bessie 和 Elsie 就可以独自走向相邻的田地)。 如果 p 非常小，最节能的解决方案可能包括贝茜和埃尔西去一个公共会议场，然后一起旅行，在剩下的旅程中一起去谷仓。 当然，如果 p 很大，那么 Bessie 和 Elsie 分开旅行仍然是最有意义的。 另一方面，贝西和艾尔西都不喜欢&quot;背负&quot;这个词，因为他们不明白为什么农场上的猪应该为这种不同寻常的交通工具而获得所有的赞誉。</p>
+<p>考虑到 b、 e 和 p，以及农场的布局，请计算 Bessie 和 Elsie 到达谷仓所需的最小能量。</p>
+<p>输入输出格式</p>
+<p>输入格式：</p>
+<p>第一行输入包含正整数 b、 e、 p、 n 和 m，这些数字最多为40,000。 B，e 和 p 是上面描述的。 N 是农场中的田野数(编号为1... n，其中 n 大于等于3) ，m 是田野间连接的数目。 贝西和艾尔西分别从第一和第二个场地开始。 谷仓在田野里。</p>
+<p>输入中的下一个 m 行各自描述两个田野之间的连接，这两个田野的整数指数指定了这两个田野之间的连接。 连接是双向的。 沿着一系列这样的连接，总是有可能从第1个场景到 n 田野，然后从2田野到 n 田野，沿着一系列这样的连接。</p>
+<p>输出格式：</p>
+<p>一个单独的整数，指定 Bessie 和 Elsie 总共需要花费多少能量才能到达谷仓。</p>
+<p>输入输出样例</p>
+<p>输入样例#1：</p>
+<p>4 4 5 8 8</p>
+<p>1 4</p>
+<p>2 3</p>
+<p>3 4</p>
+<p>4 7</p>
+<p>2 5</p>
+<p>5 6</p>
+<p>6 8</p>
+<p>7 8</p>
+<p>输出样例#1：</p>
+<p>22</p>
+<p>说明</p>
+<p>在这个例子中，Bessie 从1旅行到4，Elsie 从2旅行到3到4。 然后，他们一起旅行从4到7到8。</p>
+<h2>题目背景</h2>
+<p>Bessie and her sister Elsie graze in different fields during the day, and in the evening they both want to walk back to the barn to rest.
+Being clever bovines, they come up with a plan to minimize the total amount of energy they both spend while walking.</p>
+<h2>题目描述</h2>
+<p>Bessie spends $B$ units of energy when walking from a field to an adjacent field, and Elsie spends $E$ units of energy when she walks to an adjacent field. However, if Bessie and Elsie are together in the same field, Bessie can carry Elsie on her shoulders and both can move to an adjacent field while spending only $P$ units of energy (where $P$ might be considerably less than $B+E$, the amount Bessie and Elsie would have spent individually walking to the adjacent field). If $P$ is very small, the most energy-efficient solution may involve Bessie and Elsie traveling to a common meeting field, then traveling together piggyback for the rest of the journey to the barn. Of course, if $P$ is large, it
+may still make the most sense for Bessie and Elsie to travel separately. On a side note, Bessie and Elsie are both unhappy with the term &quot;piggyback&quot;, as they don't see why the pigs on the farm should deserve all the credit for this remarkable form of transportation.</p>
+<p>Given $B, E,$ and $P$, as well as the layout of the farm, please compute
+the minimum amount of energy required for Bessie and Elsie to reach
+the barn.</p>
+<h2>输入输出格式</h2>
+<strong>输入格式：</strong><br>
+<p><p>The first line of input contains the positive integers $B, E, P, N,$ and $M$. All of these are at most $40,000.$ $B, E,$ and $P$ are described above.
+$N$ is the number of fields in the farm (numbered $1..N,$ where $N &gt;= 3$),
+and $M$ is the number of connections between fields. Bessie and Elsie
+start in fields 1 and 2, respectively. The barn resides in field $N$.</p>
+<p>The next $M$ lines in the input each describe a connection between a pair of different fields, specified by the integer indices of the two fields. Connections are bi-directional. It is always possible to travel from field $1$ to field $N$, and field $2$ to field $N$, along a series of such connections. </p></p>
+<strong>输出格式：</strong><br>
+<p><p>A single integer specifying the minimum amount of energy Bessie and Elsie collectively need to spend to reach the barn.</p></p>
+<h2>输入输出样例</h2>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>4 4 5 8 8
+1 4
+2 3
+3 4
+4 7
+2 5
+5 6
+6 8
+7 8</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>22</pre>
+</div>
+</div>
+<h2>说明</h2>
+<p>In the example shown here, Bessie travels from 1 to 4 and Elsie travels from 2 to 3
+to 4. Then, they travel together from 4 to 7 to 8.</p>
+</div>
+<div class='lg-article-sub am-g' id="sub"></div>
+</div>
+</div>
+</div>
+<div class="am-modal am-modal-prompt" tabindex="-1" id="confirm">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="memtitle">提示</div>
+<div class="am-modal-bd" id="memadmin">
+标程仅供做题后或实在无思路时参考。<br>
+请自觉、自律地使用该功能并请对自己的学习负责。<br>
+如果发现恶意抄袭标程，将按照I类违反进行处理。<br>
+</div>
+<div class="am-modal-footer">
+<span class="am-modal-btn" data-am-modal-cancel>取消</span>
+<span class="am-modal-btn" data-am-modal-confirm>确定</span>
+</div>
+</div>
+</div>
+<script>
+        $(document).ready(function () {
+            $("#expandstd").click(function () {
+                $('#confirm').modal({
+                    relatedTarget: this,
+                    onConfirm: function (e) {
+                        $("#stdcode").slideDown();
+                        $("#expandstd").hide();
+                    }
+                });
+            });
+            $("#submit").click(
+                function () {
+                    hide_artile();
+                    $(document).scrollTop($(document).scrollTop() - 80);
+                    var pid = $(this).attr("pid");
+                    $.get("/problem/ajax_submit?pid=" + pid, function (data) {
+                        var arr = eval('(' + data + ')');
+                        if (arr['code'] == 201) {
+                            $('.lg-article-sub').html(arr['more']['html']);
+                        }
+                        else if (arr['code'] == 200) {
+
+                        }
+                        else {
+                            if (arr['code'] == 0 || arr['code'] == -3) {
+                                backarticle();
+                            }
+                            show_alert("提交失败", arr['message']);
+                        }
+                    });
+                }
+            );
+            $("button[title].am-btn,a[title].am-btn").poshytip({
+                className: 'tip-twitter',
+                showTimeout: 1,
+                alignTo: 'target',
+                alignX: 'center',
+                alignY: 'bottom'
+            });
+            $('[name=showtag]').click(function () {
+                $('.am-badge.am-hide').removeClass('am-hide');
+            });
+            $(".sample-copy").click(function() {
+                var element = $(this).parents(".copy-region").find("pre");
+                var text = $(element).text();
+                var $temp = $("<textarea>");
+                $("body").append($temp);
+                $temp.val(text).select();
+                document.execCommand("copy");
+                $temp.remove();
+                $(this).text("复制成功").removeClass("lg-bg-orange");
+
+                var e = this;
+                setTimeout(function() {
+                    $(e).text("复制").addClass("lg-bg-orange");
+                }, 500);
+            });
+        });
+    </script>
+</div>
+<footer id="app-footer"></footer>
+<div class="am-modal am-modal-alert" tabindex="-1" id="lg-alert">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="lg-alert-title"></div>
+<div class="am-modal-bd" id="lg-alert-message"></div>
+<div class="am-modal-footer">
+<span class="am-modal-btn">确定</span>
+</div>
+</div>
+</div>
+<script src="/js/ace/ace.js"></script>
+<script src="https://cdn.luogu.org/js/vendor.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/jsmind.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/amazeui.min.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts-more.js"></script>
+<script src="/static/katex/katex.min.js"></script>
+<script src="/static/katex/contrib/auto-render.min.js"></script>
+<script src="https://cdn.luogu.org/markdown-palettes/markdown-palettes.min.js?ver=20190219"></script>
+<script src="https://cdn.luogu.org/js/luogu3.js?ver=20190101"></script>
+</body>
+</html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title> P1580 yyy loves Easter_Egg I - 洛谷</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta name="csrf-token" content="1555852099:s7x23c4ej1crwIdcICbVDQ4StxABJuX2ORywSOWcziE=">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/amazeui.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/katex.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/luogu3.css?ver=20190102">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/highlight_tomorrow.css">
+<link rel="stylesheet" href="https://cdn.luogu.org/markdown-palettes/markdown-palettes.css?ver=20190219">
+<script src="https://cdn.luogu.org/js/jquery-2.1.1.min.js"></script>
+<script src="https://cdn.luogu.org/js/luogu3_pre.js?ver=20190101"></script>
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn.luogu.org/images/favicon3.ico" media="screen"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/fe/loader.css?ver=20190417">
+<script>window._feInjection = JSON.parse(decodeURIComponent("%7B%22code%22%3A200%2C%22currentUser%22%3Anull%2C%22currentTemplate%22%3A%22Excited%22%2C%22currentData%22%3A%7B%22shortHeader%22%3Afalse%2C%22pageName%22%3A%22%5Cu9898%5Cu76ee%5Cu8be6%5Cu60c5%22%7D%2C%22currentMeta%22%3A%7B%22title%22%3A%22%20P1580%20yyy%20loves%20Easter_Egg%20I%22%7D%7D"));</script>
+<script>window._release = '20190417';</script>
+<script src="https://cdn.luogu.org/fe/loader.js?ver=20190417" charset="utf-8" defer></script>
+</head>
+<body>
+<div id="app-header"></div>
+<nav id="app-sidenav"></nav>
+<div id="app-body"></div>
+<script>
+    function scrollToId (id) {
+        $('html, body').animate({
+            scrollTop: ($('#' + id).offset().top)
+        }, 500);
+    }
+</script>
+<style>
+    .lg-toolbar {
+        display: none;
+    }
+
+    #app-body { /* Unused in fallback FE */
+        display: none;
+    }
+
+    #app-body-new{
+        display: block;
+        margin-bottom: 2em;
+        position: relative;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    @media (min-width: 576px) {
+        #app-body-new {
+            margin-left: 70px;
+        }
+    }
+
+    code {
+        font-family: monospace, "Courier New";
+    }
+
+</style>
+<div id="app-body-new">
+<div class="lg-toolbar" data-am-sticky>
+<h1><a href="/recordnew/lists?uid=&pid=P1580" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a> P1580 yyy loves Easter_Egg I</h1>
+</div>
+<div class="am-g lg-main-content">
+<div class="am-u-md-4 lg-right" name="problemright">
+<section class="am-panel am-panel-default lg-summary" id="psummary">
+<div class="lg-summary-content">
+<ul class="am-list am-list-static lg-summary-list">
+<li>
+<ul class="am-avg-sm-2"><li><span class="lg-bignum-num">910<small></small></span><span class="lg-bignum-text">通过</span></li><li><span class="lg-bignum-num">3.7<small>K</small><small></small></span><span class="lg-bignum-text">提交</span></li></ul>
+</li>
+<li>
+<strong>题目提供者</strong>
+<span class="lg-right"><a class='lg-fg-purple lg-bold' href="/space/show?uid=2674" target="_blank">「QQ红包」</a>&nbsp;<span class="am-badge am-radius lg-bg-purple">发红包了</span></span>
+</li>
+<li>
+<strong>评测方式</strong>
+<span class="lg-right"><b>云端评测</b></span>
+</li>
+<li><strong>标签</strong>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="2">字符串</span>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="1">模拟</span>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="288">队列</span>
+<span class="lg-tag am-badge am-radius lg-bg-bluelight" data-tagid="81">洛谷原创</span>
+<style>.lg-tag { cursor: pointer; }</style>
+<script>
+                                $(".lg-tag").click(function() {
+                                    window.open("/problemnew/lists?tag=" + $(this).attr('data-tagid'));
+                                })
+                            </script>
+</li>
+<li><strong>难度</strong>
+<span class="lg-right"><span class="am-badge am-radius lg-bg-bluelight">提高+/省选-</span></span>
+</li>
+<li><strong>时空限制</strong>
+<span class="lg-right">1000ms / 128MB</span>
+</li>
+</ul>
+</div>
+<p>
+<button class="am-btn am-btn-danger am-btn-sm" id="submit" pid="P1580">
+<i class="am-icon-paper-plane"></i> 提交
+</button>
+<a target="_blank" href="/problemnew/solution/P1580" class="am-btn am-btn-primary am-btn-sm">
+<i class="am-icon-book"></i> 题解
+</a>
+<a data-pjax href="/recordnew/lists?pid=P1580" class="am-btn am-btn-primary am-btn-sm" title="查看本题提交记录">
+<i class="am-icon-pie-chart"></i>
+</a>
+<button class="am-btn am-btn-primary am-btn-sm lg-pointer" name="showtag" title="显示算法标签">
+<i class="am-icon-tags"></i>
+</button>
+</p>
+<li>提示：收藏到任务计划后，可在首页查看。</li>
+<p>
+<a class="am-btn am-btn-danger am-btn-sm" href="/fe/problem/P1580" target="_blank">体验新版界面</a>
+</p>
+</section>
+<section class="am-panel am-panel-default lg-summary">
+<h2>最新讨论
+<a onclick="$('#discuss-lists').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看本题讨论">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" style="display: none" id="discuss-lists">
+<li><a data-pjax href="/discuss/show?postid=86924" class="am-padding-0">说句闲话：研究队形的最好方…</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=82050" class="am-padding-0">wa的注意一下换行符</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=81138" class="am-padding-0">真是坑</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=79923" class="am-padding-0">70 WA，求大佬查看</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=56551" class="am-padding-0">为什么在第五个点错了？</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=48117" class="am-padding-0">这题目的空行是指空格吗……</a>
+</li>
+<div style="overflow: auto">
+<a data-pjax href="/discuss/lists?forumname=P1580" class="am-btn am-btn-primary am-btn-sm lg-right">进入讨论版</a>
+</div>
+</ul>
+</section>
+<section class="am-panel am-panel-default lg-summary am-hide-sm">
+<h2>推荐的相关题目
+<a onclick="$('#recommendation-list').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看推荐题目">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" id="recommendation-list" style="display: none">
+<li>
+<a class='colored' href="/problemnew/show/P2393" target="_blank"><b>P2393</b> yyy loves Maths II</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P2394" target="_blank"><b>P2394</b> yyy loves Chemistry I</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P2396" target="_blank"><b>P2396</b> yyy loves Maths VII</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P2114" target="_blank"><b>P2114</b> [NOI2014]起床困难综合症</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P2397" target="_blank"><b>P2397</b> yyy loves Maths VI (mode)</a>
+</li>
+</ul>
+</section>
+</div>
+<div class="am-u-md-8 lg-right" name="problemleft">
+<div class="lg-content-left">
+<div class="lg-article am-g">
+<h2>题目背景</h2>
+<p>Soha的出题效率着实让人大吃一惊。OI，数学，化学的题目都出好了，物理的题还没有一道。于是，Huntfire，absi2011，redbag对soha进行轮番炸，准备炸到soha出来，不料，人群中冲出了个kkksc03……</p>
+<h2>题目描述</h2>
+<p><img src="https://cdn.luogu.org/upload/pic/1456.png" alt="" /> </p>
+<p><img src="https://cdn.luogu.org/upload/pic/1455.png" alt="" /> </p>
+<p>yyy loves OI（Huntfire），yyy loves Maths（redbag），yyy loves Chemistry（absi2011）对yyy loves Physics（soha）进行轮番炸，轰炸按照顺序进行，顺序为Huntfire，redbag，absi2011。</p>
+<p>现在这一题中吗，我们不考虑太复杂的队形形式。我们认为只要这一句内含有且恰好含有一次@，@的人和上一句话一样就算为队形。</p>
+<p>比如以下也视为队形</p>
+<p>yyy loves OI : @yyy loves Microelectronic</p>
+<p>yyy loves Maths : @yyy loves Microelectronic 我佩服soha的出题效率</p>
+<p>yyy loves OI : @yyy loves Microelectronic +1</p>
+<p>yyy loves Chemistry : +1 @yyy loves Microelectronic</p>
+<p>若艾特的人与第一个人不同，就算队形被打破。若这个人在队形被打破之前出来吱声了，或者就是他打破队形了，就算（油）炸成功了。若（油）炸成功，输出“<em>Successful @某某某 attempt</em>”，若队形被破坏先输出“<em>Unsuccessful @某某某 attempt</em>”，再输出队形第一次被破坏的行数与第一次破坏队形的人的id。如果队形一直没被打破，就先输出“<em>Unsuccessful @某某某 attempt</em>”，<em>再输出队形的长度</em>，最后输出&quot;<em>Good Queue Shape</em>&quot;/* yyy loves Microelectronic 是kkksc03*/</p>
+<h2>输入输出格式</h2>
+<strong>输入格式：</strong><br>
+<p><p>N行，为轰炸开始后的一段消息记录，每行一条消息。消息格式：“消息发送者 + ‘ : ’+消息内容”，每行消息长度不超过1000。（中文用拼音代替了）</p></p>
+<strong>输出格式：</strong><br>
+<p><p>若（油）炸成功，输出“Successful @某某某 attempt”，若队形被破坏第一行输出“Unsuccessful @某某某 attempt”，接下来一行输出队形第一次被破坏的行数，第三行输出第一次破坏队形的人的id，如果队形一直没被打破，就先输出“Unsuccessful @某某某 attempt”，再输出队形的长度，最后输出&quot;Good Queue Shape&quot;</p></p>
+<h2>输入输出样例</h2>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>yyy loves OI : @yyy loves Physics wo pei fu ni de chu ti xiao lv
+yyy loves Maths : @yyy loves Physics wo pei fu ni de chu ti xiao lv
+yyy loves Chemistry : @yyy loves Physics wo pei fu ni de chu ti xiao lv
+yyy loves Microelectronic : ni men wu liao me 
+yyy loves OI : @yyy loves Physics wo pei fu ni de chu ti xiao lv
+
+</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>Unsuccessful @yyy loves Physics attempt
+4
+yyy loves Microelectronic
+</pre>
+</div>
+</div>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#2：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>yyy loves OI : @yyy loves Physics wo pei fu ni de chu ti xiao lv
+yyy loves Maths : @yyy loves Physics wo pei fu ni de chu ti xiao lv
+yyy loves Chemistry : @yyy loves Physics wo pei fu ni de chu ti xiao lv
+yyy loves OI : @yyy loves Physics wo pei fu ni de chu ti xiao lv
+yyy loves Maths : @yyy loves Physics wo pei fu ni de chu ti xiao lv
+yyy loves Chemistry : @yyy loves Physics wo pei fu ni de chu ti xiao lv
+yyy loves OI : @yyy loves Physics wo pei fu ni de chu ti xiao lv
+yyy loves Maths : @yyy loves Physics wo pei fu ni de chu ti xiao lv
+yyy loves Chemistry : @yyy loves Physics wo pei fu ni de chu ti xiao lv
+yyy loves Physics : ni men gou le 
+
+</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#2：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>Successful @yyy loves Physics attempt
+</pre>
+</div>
+</div>
+<h2>说明</h2>
+<p>[b]@yyy loves Physics 我佩服你的出题效率[/b]</p>
+<p>此题仅吐槽soha，纪念出题者的队形，此队形长达91行。</p>
+<p>对于100%的数据,每行消息长度&lt;=1000</p>
+<p>保证行数不超过50000</p>
+<p>保证输入文件大小不超过4M</p>
+<p>保证第一个说话的一定在艾特某人</p>
+<p>保证大家的名字都是yyy loves ____ 的格式</p>
+<p>保证每个人说的话中没有&quot;:&quot;</p>
+<p>保证第一个说话的一定艾特了一个人且只@了一个人</p>
+<p>保证第一个说话的一定不会艾特自己</p>
+<p>保证文件结束一定有一行空行 方便你判定文件结束</p>
+<p>并不保证后面说话的艾特了几个人 然而艾特人数不为一个人视为破坏队形</p>
+<p>并不保证后面说话是否会反复艾特同一个人</p>
+<p>并不保证被炸的人一定破坏队形</p>
+<p>并不保证这一题是或不是压轴题</p>
+<p>并不保证这一套比赛存在压轴题</p>
+<p>并不保证下一套比赛和这一套比赛一样水</p>
+<p>并不保证群里除了这4个人和kkksc以外没有别人了</p>
+<p>并不保证你没AC这题的情况下吐槽soha不会出事儿</p>
+<p>AC了可以吐槽soha一句，soha不会介意。</p>
+</div>
+<div class='lg-article-sub am-g' id="sub"></div>
+</div>
+</div>
+</div>
+<div class="am-modal am-modal-prompt" tabindex="-1" id="confirm">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="memtitle">提示</div>
+<div class="am-modal-bd" id="memadmin">
+标程仅供做题后或实在无思路时参考。<br>
+请自觉、自律地使用该功能并请对自己的学习负责。<br>
+如果发现恶意抄袭标程，将按照I类违反进行处理。<br>
+</div>
+<div class="am-modal-footer">
+<span class="am-modal-btn" data-am-modal-cancel>取消</span>
+<span class="am-modal-btn" data-am-modal-confirm>确定</span>
+</div>
+</div>
+</div>
+<script>
+        $(document).ready(function () {
+            $("#expandstd").click(function () {
+                $('#confirm').modal({
+                    relatedTarget: this,
+                    onConfirm: function (e) {
+                        $("#stdcode").slideDown();
+                        $("#expandstd").hide();
+                    }
+                });
+            });
+            $("#submit").click(
+                function () {
+                    hide_artile();
+                    $(document).scrollTop($(document).scrollTop() - 80);
+                    var pid = $(this).attr("pid");
+                    $.get("/problem/ajax_submit?pid=" + pid, function (data) {
+                        var arr = eval('(' + data + ')');
+                        if (arr['code'] == 201) {
+                            $('.lg-article-sub').html(arr['more']['html']);
+                        }
+                        else if (arr['code'] == 200) {
+
+                        }
+                        else {
+                            if (arr['code'] == 0 || arr['code'] == -3) {
+                                backarticle();
+                            }
+                            show_alert("提交失败", arr['message']);
+                        }
+                    });
+                }
+            );
+            $("button[title].am-btn,a[title].am-btn").poshytip({
+                className: 'tip-twitter',
+                showTimeout: 1,
+                alignTo: 'target',
+                alignX: 'center',
+                alignY: 'bottom'
+            });
+            $('[name=showtag]').click(function () {
+                $('.am-badge.am-hide').removeClass('am-hide');
+            });
+            $(".sample-copy").click(function() {
+                var element = $(this).parents(".copy-region").find("pre");
+                var text = $(element).text();
+                var $temp = $("<textarea>");
+                $("body").append($temp);
+                $temp.val(text).select();
+                document.execCommand("copy");
+                $temp.remove();
+                $(this).text("复制成功").removeClass("lg-bg-orange");
+
+                var e = this;
+                setTimeout(function() {
+                    $(e).text("复制").addClass("lg-bg-orange");
+                }, 500);
+            });
+        });
+    </script>
+</div>
+<footer id="app-footer"></footer>
+<div class="am-modal am-modal-alert" tabindex="-1" id="lg-alert">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="lg-alert-title"></div>
+<div class="am-modal-bd" id="lg-alert-message"></div>
+<div class="am-modal-footer">
+<span class="am-modal-btn">确定</span>
+</div>
+</div>
+</div>
+<script src="/js/ace/ace.js"></script>
+<script src="https://cdn.luogu.org/js/vendor.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/jsmind.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/amazeui.min.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts-more.js"></script>
+<script src="/static/katex/katex.min.js"></script>
+<script src="/static/katex/contrib/auto-render.min.js"></script>
+<script src="https://cdn.luogu.org/markdown-palettes/markdown-palettes.min.js?ver=20190219"></script>
+<script src="https://cdn.luogu.org/js/luogu3.js?ver=20190101"></script>
+</body>
+</html>

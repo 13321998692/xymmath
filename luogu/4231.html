@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title> P4231 三步必杀 - 洛谷</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta name="csrf-token" content="1555853265:InajJ+XR5F1wP5gpFj6AtkYOnByC8g19m+ubii+Fk34=">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/amazeui.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/katex.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/luogu3.css?ver=20190102">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/highlight_tomorrow.css">
+<link rel="stylesheet" href="https://cdn.luogu.org/markdown-palettes/markdown-palettes.css?ver=20190219">
+<script src="https://cdn.luogu.org/js/jquery-2.1.1.min.js"></script>
+<script src="https://cdn.luogu.org/js/luogu3_pre.js?ver=20190101"></script>
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn.luogu.org/images/favicon3.ico" media="screen"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/fe/loader.css?ver=20190417">
+<script>window._feInjection = JSON.parse(decodeURIComponent("%7B%22code%22%3A200%2C%22currentUser%22%3Anull%2C%22currentTemplate%22%3A%22Excited%22%2C%22currentData%22%3A%7B%22shortHeader%22%3Afalse%2C%22pageName%22%3A%22%5Cu9898%5Cu76ee%5Cu8be6%5Cu60c5%22%7D%2C%22currentMeta%22%3A%7B%22title%22%3A%22%20P4231%20%5Cu4e09%5Cu6b65%5Cu5fc5%5Cu6740%22%7D%7D"));</script>
+<script>window._release = '20190417';</script>
+<script src="https://cdn.luogu.org/fe/loader.js?ver=20190417" charset="utf-8" defer></script>
+</head>
+<body>
+<div id="app-header"></div>
+<nav id="app-sidenav"></nav>
+<div id="app-body"></div>
+<script>
+    function scrollToId (id) {
+        $('html, body').animate({
+            scrollTop: ($('#' + id).offset().top)
+        }, 500);
+    }
+</script>
+<style>
+    .lg-toolbar {
+        display: none;
+    }
+
+    #app-body { /* Unused in fallback FE */
+        display: none;
+    }
+
+    #app-body-new{
+        display: block;
+        margin-bottom: 2em;
+        position: relative;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    @media (min-width: 576px) {
+        #app-body-new {
+            margin-left: 70px;
+        }
+    }
+
+    code {
+        font-family: monospace, "Courier New";
+    }
+
+</style>
+<div id="app-body-new">
+<div class="lg-toolbar" data-am-sticky>
+<h1><a href="/recordnew/lists?uid=&pid=P4231" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a> P4231 三步必杀</h1>
+</div>
+<div class="am-g lg-main-content">
+<div class="am-u-md-4 lg-right" name="problemright">
+<section class="am-panel am-panel-default lg-summary" id="psummary">
+<div class="lg-summary-content">
+<ul class="am-list am-list-static lg-summary-list">
+<li>
+<ul class="am-avg-sm-2"><li><span class="lg-bignum-num">444<small></small></span><span class="lg-bignum-text">通过</span></li><li><span class="lg-bignum-num">1.6<small>K</small><small></small></span><span class="lg-bignum-text">提交</span></li></ul>
+</li>
+<li>
+<strong>题目提供者</strong>
+<span class="lg-right"><a class='lg-fg-bluelight' href="/space/show?uid=3346" target="_blank">oscar</a></span>
+</li>
+<li>
+<strong>评测方式</strong>
+<span class="lg-right"><b>云端评测</b></span>
+</li>
+<li><strong>标签</strong>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="254">前缀和</span>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="330">差分</span>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="53">树状数组</span>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="42">线段树</span>
+<style>.lg-tag { cursor: pointer; }</style>
+<script>
+                                $(".lg-tag").click(function() {
+                                    window.open("/problemnew/lists?tag=" + $(this).attr('data-tagid'));
+                                })
+                            </script>
+</li>
+<li><strong>难度</strong>
+<span class="lg-right"><span class="am-badge am-radius lg-bg-bluelight">提高+/省选-</span></span>
+</li>
+<li><strong>时空限制</strong>
+<span class="lg-right">500ms / 256MB</span>
+</li>
+</ul>
+</div>
+<p>
+<button class="am-btn am-btn-danger am-btn-sm" id="submit" pid="P4231">
+<i class="am-icon-paper-plane"></i> 提交
+</button>
+<a target="_blank" href="/problemnew/solution/P4231" class="am-btn am-btn-primary am-btn-sm">
+<i class="am-icon-book"></i> 题解
+</a>
+<a data-pjax href="/recordnew/lists?pid=P4231" class="am-btn am-btn-primary am-btn-sm" title="查看本题提交记录">
+<i class="am-icon-pie-chart"></i>
+</a>
+<button class="am-btn am-btn-primary am-btn-sm lg-pointer" name="showtag" title="显示算法标签">
+<i class="am-icon-tags"></i>
+</button>
+</p>
+<li>提示：收藏到任务计划后，可在首页查看。</li>
+<p>
+<a class="am-btn am-btn-danger am-btn-sm" href="/fe/problem/P4231" target="_blank">体验新版界面</a>
+</p>
+</section>
+<section class="am-panel am-panel-default lg-summary">
+<h2>最新讨论
+<a onclick="$('#discuss-lists').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看本题讨论">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" style="display: none" id="discuss-lists">
+<li><a data-pjax href="/discuss/show?postid=76088" class="am-padding-0">能不能给一个大样例！！！！…</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=73732" class="am-padding-0">为啥最后一个点tle了？</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=65273" class="am-padding-0">氧气的作用</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=57707" class="am-padding-0">过样例0分求解释</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=34240" class="am-padding-0">这道题用线段树维护区间加等…</a>
+</li>
+<div style="overflow: auto">
+<a data-pjax href="/discuss/lists?forumname=P4231" class="am-btn am-btn-primary am-btn-sm lg-right">进入讨论版</a>
+</div>
+</ul>
+</section>
+<section class="am-panel am-panel-default lg-summary am-hide-sm">
+<h2>推荐的相关题目
+<a onclick="$('#recommendation-list').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看推荐题目">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" id="recommendation-list" style="display: none">
+<li>
+<a class='colored' href="/problemnew/show/P4230" target="_blank"><b>P4230</b> 连环病原体</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P1438" target="_blank"><b>P1438</b> 无聊的数列</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3258" target="_blank"><b>P3258</b> [JLOI2014]松鼠的新家</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P2633" target="_blank"><b>P2633</b> Count on a tree</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P4342" target="_blank"><b>P4342</b> [IOI1998]Polygon</a>
+</li>
+</ul>
+</section>
+</div>
+<div class="am-u-md-8 lg-right" name="problemleft">
+<div class="lg-content-left">
+<div class="lg-article am-g">
+<h2>题目背景</h2>
+<h3>（三）旧都</h3>
+<p>离开狭窄的洞穴，眼前豁然开朗。</p>
+<p>天空飘着不寻常的雪花。</p>
+<p>一反之前的幽闭，现在面对的，是繁华的街市，可以听见酒碗碰撞的声音。</p>
+<p>这是由被人们厌恶的鬼族和其他妖怪们组成的小社会，一片其乐融融的景象。</p>
+<p>诶，不远处突然出现了一些密密麻麻的小点，好像大颗粒扬尘一样。</p>
+<p>离得近了点，终于看清楚了。</p>
+<p>长着角的鬼们聚在一起，围观着另一只鬼的表演。</p>
+<p>那”扬尘”，其实都是弹幕。</p>
+<p>勇仪的招数之一，三步之内，所到之处弹幕云集，几乎没有生存可能。</p>
+<p>为了强化这一技能，勇仪将对着一排柱子进行攻击。</p>
+<p>旧地狱的柱子虽然无比坚固，但保险起见还是先要了解一下这样一套攻击对柱子有多少损伤，顺带也能检验练习的效果。</p>
+<p>勇仪决定和其它鬼们商量商量...</p>
+<p>“我知道妖怪之山的河童一族有一种叫做计算机的神奇道具，说不定可以借来用用”，萃香说道。</p>
+<p>于是旧地狱的鬼族就决定请河城荷取来帮忙了。</p>
+<p>“要记录【所有柱子的损伤程度】吗”，荷取问道。</p>
+<p>经过进一步的询问，荷取发现他们仅仅需要【所有攻击都完成后】柱子的损伤程度。</p>
+<p>任务了解地差不多了，荷取将其中的重要部分提取了出来，记录在了她的工作笔记本上：</p>
+<p>(记录的内容见题目描述)</p>
+<p>那么实验就这样开始了。</p>
+<p>在惊天动地的碰撞声中，勇仪每完成一轮攻击，荷取都忠实地记录下对每根柱子产生的伤害。而此时勇仪就在旁边等待着记录完成，然后再进行下一轮的攻击。</p>
+<p>地面上，天色渐晚。</p>
+<p>“不想在这里留到深夜啊，不然就回不了家了”，荷取这样想着，手中依然在重复地向计算机中输入新产生的信息。</p>
+<p>“真的必须一次一次地记录下每轮攻击对每个柱子产生的伤害吗？有没有更高效的方法？”这一念头在荷取的心中闪过...</p>
+<p>（后续剧情在题解中，接下来请看T3）</p>
+<h2>题目描述</h2>
+<h3>问题摘要：</h3>
+<p>$N$个柱子排成一排，一开始每个柱子损伤度为0。</p>
+<p>接下来勇仪会进行$M$次攻击，每次攻击可以用4个参数$l$,$r$,$s$,$e$来描述：</p>
+<p>表示这次攻击作用范围为第$l$个到第$r$个之间所有的柱子(包含$l$,$r$)，对第一个柱子的伤害为$s$，对最后一个柱子的伤害为$e$。</p>
+<p>攻击产生的伤害值是一个等差数列。若$l=1$,$r=5$,$s=2$,$e=10$，则对第1~5个柱子分别产生2,4,6,8,10的伤害。</p>
+<p>鬼族们需要的是所有攻击完成之后每个柱子的损伤度。</p>
+<h2>输入输出格式</h2>
+<strong>输入格式：</strong><br>
+<p><p>第一行2个整数$N$,$M$，用空格隔开，下同。</p>
+<p>接下来$M$行，每行4个整数$l$,$r$,$s$,$e$，含义见题目描述。</p>
+<p>数据保证对每个柱子产生的每次伤害值都是整数。</p></p>
+<strong>输出格式：</strong><br>
+<p><p>由于输出数据可能过大无法全部输出，为了确保你真的能维护所有柱子的损伤度，只要输出它们的异或和与最大值即可。</p>
+<p>（异或和就是所有数字按位异或起来的值）</p>
+<p>（异或运算符在c++里为^）</p></p>
+<h2>输入输出样例</h2>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>5 2
+1 5 2 10
+2 4 1 1
+</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>3 10</pre>
+</div>
+</div>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#2：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>6 2
+1 5 2 10
+2 4 1 1</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#2：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>3 10</pre>
+</div>
+</div>
+<h2>说明</h2>
+<h3>样例解释：</h3>
+<p>样例1：</p>
+<p>第一次攻击产生的伤害:2 4 6 8 10</p>
+<p>第二次攻击产生的伤害:0 1 1 1 0</p>
+<p>所有攻击结束后每个柱子的损伤程度:2 5 7 9 10。</p>
+<p>输出异或和与最大值，就是3 10。</p>
+<p>样例2：</p>
+<p>没有打到第六根柱子，答案不变</p>
+<h3>数据范围：</h3>
+<p>本题满分为100分，下面是4个子任务。(x/y)表示(得分/测试点数量)</p>
+<p>妖精级(18/3):$1\leqslant n$,$m\leqslant1000$。这种工作即使像妖精一样玩玩闹闹也能完成吧？</p>
+<p>河童级(10/1):$s=e$,这可以代替我工作吗？</p>
+<p>天狗级(20/4):$1\leqslant n\leqslant10^5$,$1\leqslant m\leqslant10^5$。小打小闹不再可行了呢。</p>
+<p>鬼神级(52/2):没有特殊限制。要真正开始思考了。</p>
+<p>以上四部分数据不相交。</p>
+<p>对于全部的数据:$1\leqslant n\leqslant10^7$,$1\leqslant m\leqslant3\times 10^5$，$1\leqslant l&lt;r\leqslant n$.</p>
+<p>所有输入输出数据以及柱子受损伤程度始终在$[0,9\times 10^{18}]$范围内。</p>
+<h3>提示：</h3>
+<p>由于种种原因，时间限制可能会比较紧，C++选手请不要使用cin读入数据。</p>
+<p>by orangebird</p>
+</div>
+<div class='lg-article-sub am-g' id="sub"></div>
+</div>
+</div>
+</div>
+<div class="am-modal am-modal-prompt" tabindex="-1" id="confirm">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="memtitle">提示</div>
+<div class="am-modal-bd" id="memadmin">
+标程仅供做题后或实在无思路时参考。<br>
+请自觉、自律地使用该功能并请对自己的学习负责。<br>
+如果发现恶意抄袭标程，将按照I类违反进行处理。<br>
+</div>
+<div class="am-modal-footer">
+<span class="am-modal-btn" data-am-modal-cancel>取消</span>
+<span class="am-modal-btn" data-am-modal-confirm>确定</span>
+</div>
+</div>
+</div>
+<script>
+        $(document).ready(function () {
+            $("#expandstd").click(function () {
+                $('#confirm').modal({
+                    relatedTarget: this,
+                    onConfirm: function (e) {
+                        $("#stdcode").slideDown();
+                        $("#expandstd").hide();
+                    }
+                });
+            });
+            $("#submit").click(
+                function () {
+                    hide_artile();
+                    $(document).scrollTop($(document).scrollTop() - 80);
+                    var pid = $(this).attr("pid");
+                    $.get("/problem/ajax_submit?pid=" + pid, function (data) {
+                        var arr = eval('(' + data + ')');
+                        if (arr['code'] == 201) {
+                            $('.lg-article-sub').html(arr['more']['html']);
+                        }
+                        else if (arr['code'] == 200) {
+
+                        }
+                        else {
+                            if (arr['code'] == 0 || arr['code'] == -3) {
+                                backarticle();
+                            }
+                            show_alert("提交失败", arr['message']);
+                        }
+                    });
+                }
+            );
+            $("button[title].am-btn,a[title].am-btn").poshytip({
+                className: 'tip-twitter',
+                showTimeout: 1,
+                alignTo: 'target',
+                alignX: 'center',
+                alignY: 'bottom'
+            });
+            $('[name=showtag]').click(function () {
+                $('.am-badge.am-hide').removeClass('am-hide');
+            });
+            $(".sample-copy").click(function() {
+                var element = $(this).parents(".copy-region").find("pre");
+                var text = $(element).text();
+                var $temp = $("<textarea>");
+                $("body").append($temp);
+                $temp.val(text).select();
+                document.execCommand("copy");
+                $temp.remove();
+                $(this).text("复制成功").removeClass("lg-bg-orange");
+
+                var e = this;
+                setTimeout(function() {
+                    $(e).text("复制").addClass("lg-bg-orange");
+                }, 500);
+            });
+        });
+    </script>
+</div>
+<footer id="app-footer"></footer>
+<div class="am-modal am-modal-alert" tabindex="-1" id="lg-alert">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="lg-alert-title"></div>
+<div class="am-modal-bd" id="lg-alert-message"></div>
+<div class="am-modal-footer">
+<span class="am-modal-btn">确定</span>
+</div>
+</div>
+</div>
+<script src="/js/ace/ace.js"></script>
+<script src="https://cdn.luogu.org/js/vendor.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/jsmind.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/amazeui.min.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts-more.js"></script>
+<script src="/static/katex/katex.min.js"></script>
+<script src="/static/katex/contrib/auto-render.min.js"></script>
+<script src="https://cdn.luogu.org/markdown-palettes/markdown-palettes.min.js?ver=20190219"></script>
+<script src="https://cdn.luogu.org/js/luogu3.js?ver=20190101"></script>
+</body>
+</html>

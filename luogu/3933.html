@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title> P3933 Chtholly Nota Seniorious - 洛谷</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta name="csrf-token" content="1555853161:GenYeTrsK7PCg3vLcaig2TAc4+89ozQDEjMF6icCYTY=">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/amazeui.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/katex.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/luogu3.css?ver=20190102">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/highlight_tomorrow.css">
+<link rel="stylesheet" href="https://cdn.luogu.org/markdown-palettes/markdown-palettes.css?ver=20190219">
+<script src="https://cdn.luogu.org/js/jquery-2.1.1.min.js"></script>
+<script src="https://cdn.luogu.org/js/luogu3_pre.js?ver=20190101"></script>
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn.luogu.org/images/favicon3.ico" media="screen"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/fe/loader.css?ver=20190417">
+<script>window._feInjection = JSON.parse(decodeURIComponent("%7B%22code%22%3A200%2C%22currentUser%22%3Anull%2C%22currentTemplate%22%3A%22Excited%22%2C%22currentData%22%3A%7B%22shortHeader%22%3Afalse%2C%22pageName%22%3A%22%5Cu9898%5Cu76ee%5Cu8be6%5Cu60c5%22%7D%2C%22currentMeta%22%3A%7B%22title%22%3A%22%20P3933%20Chtholly%20Nota%20Seniorious%22%7D%7D"));</script>
+<script>window._release = '20190417';</script>
+<script src="https://cdn.luogu.org/fe/loader.js?ver=20190417" charset="utf-8" defer></script>
+</head>
+<body>
+<div id="app-header"></div>
+<nav id="app-sidenav"></nav>
+<div id="app-body"></div>
+<script>
+    function scrollToId (id) {
+        $('html, body').animate({
+            scrollTop: ($('#' + id).offset().top)
+        }, 500);
+    }
+</script>
+<style>
+    .lg-toolbar {
+        display: none;
+    }
+
+    #app-body { /* Unused in fallback FE */
+        display: none;
+    }
+
+    #app-body-new{
+        display: block;
+        margin-bottom: 2em;
+        position: relative;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    @media (min-width: 576px) {
+        #app-body-new {
+            margin-left: 70px;
+        }
+    }
+
+    code {
+        font-family: monospace, "Courier New";
+    }
+
+</style>
+<div id="app-body-new">
+<div class="lg-toolbar" data-am-sticky>
+<h1><a href="/recordnew/lists?uid=&pid=P3933" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a> P3933 Chtholly Nota Seniorious</h1>
+</div>
+<div class="am-g lg-main-content">
+<div class="am-u-md-4 lg-right" name="problemright">
+<section class="am-panel am-panel-default lg-summary" id="psummary">
+<div class="lg-summary-content">
+<ul class="am-list am-list-static lg-summary-list">
+<li>
+<ul class="am-avg-sm-2"><li><span class="lg-bignum-num">379<small></small></span><span class="lg-bignum-text">通过</span></li><li><span class="lg-bignum-num">1.5<small>K</small><small></small></span><span class="lg-bignum-text">提交</span></li></ul>
+</li>
+<li>
+<strong>题目提供者</strong>
+<span class="lg-right"><a class='lg-fg-purple lg-bold' href="/space/show?uid=3" target="_blank">洛谷</a></span>
+</li>
+<li>
+<strong>评测方式</strong>
+<span class="lg-right"><b>云端评测</b></span>
+</li>
+<li><strong>标签</strong>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="45">二分答案</span>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="286">向量</span>
+<span class="lg-tag am-badge am-radius lg-bg-pink am-hide" data-tagid="7">贪心</span>
+<span class="lg-tag am-badge am-radius lg-bg-orange" data-tagid="108">O2优化</span>
+<span class="lg-tag am-badge am-radius lg-bg-orange" data-tagid="319">高性能</span>
+<style>.lg-tag { cursor: pointer; }</style>
+<script>
+                                $(".lg-tag").click(function() {
+                                    window.open("/problemnew/lists?tag=" + $(this).attr('data-tagid'));
+                                })
+                            </script>
+</li>
+<li><strong>难度</strong>
+<span class="lg-right"><span class="am-badge am-radius lg-bg-bluelight">提高+/省选-</span></span>
+</li>
+<li><strong>时空限制</strong>
+<span class="lg-right">1000ms-3000ms / 128MB</span>
+</li>
+</ul>
+</div>
+<p>
+<button class="am-btn am-btn-danger am-btn-sm" id="submit" pid="P3933">
+<i class="am-icon-paper-plane"></i> 提交
+</button>
+<a target="_blank" href="/problemnew/solution/P3933" class="am-btn am-btn-primary am-btn-sm">
+<i class="am-icon-book"></i> 题解
+</a>
+<a data-pjax href="/recordnew/lists?pid=P3933" class="am-btn am-btn-primary am-btn-sm" title="查看本题提交记录">
+<i class="am-icon-pie-chart"></i>
+</a>
+<button class="am-btn am-btn-primary am-btn-sm lg-pointer" name="showtag" title="显示算法标签">
+<i class="am-icon-tags"></i>
+</button>
+</p>
+<li>提示：收藏到任务计划后，可在首页查看。</li>
+<p>
+<a class="am-btn am-btn-danger am-btn-sm" href="/fe/problem/P3933" target="_blank">体验新版界面</a>
+</p>
+</section>
+<section class="am-panel am-panel-default lg-summary">
+<h2>最新讨论
+<a onclick="$('#discuss-lists').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看本题讨论">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" style="display: none" id="discuss-lists">
+<li><a data-pjax href="/discuss/show?postid=63427" class="am-padding-0">说句闲话：研究珂学的最好方…</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=63426" class="am-padding-0">这题居然是洛谷官方的题。。…</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=28269" class="am-padding-0">这题……好像不是原创题……</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=26535" class="am-padding-0">提问：关于旋转</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=25259" class="am-padding-0">关于我交的那个题解</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=25163" class="am-padding-0">时间限制128s？？？</a>
+</li>
+<div style="overflow: auto">
+<a data-pjax href="/discuss/lists?forumname=P3933" class="am-btn am-btn-primary am-btn-sm lg-right">进入讨论版</a>
+</div>
+</ul>
+</section>
+<section class="am-panel am-panel-default lg-summary am-hide-sm">
+<h2>推荐的相关题目
+<a onclick="$('#recommendation-list').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看推荐题目">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" id="recommendation-list" style="display: none">
+<li>
+<a class='colored' href="/problemnew/show/P4649" target="_blank"><b>P4649</b> [IOI2007] training 训练路径 </a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3944" target="_blank"><b>P3944</b> 肮脏的牧师</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3934" target="_blank"><b>P3934</b> Nephren Ruq Insania</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3953" target="_blank"><b>P3953</b> 逛公园</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3932" target="_blank"><b>P3932</b> 浮游大陆的68号岛</a>
+</li>
+</ul>
+</section>
+</div>
+<div class="am-u-md-8 lg-right" name="problemleft">
+<div class="lg-content-left">
+<div class="lg-article am-g">
+<h2>题目背景</h2>
+<p>经查，本题是原题，非常抱歉。</p>
+<p>大样例下发链接: <a href="https://pan.baidu.com/s/1nuVpRS1">https://pan.baidu.com/s/1nuVpRS1</a> 密码: sfxg</p>
+<p><strong>こんなにも、たくさんの幸せをあの人に分けてもらった</strong></p>
+<p><strong>だから、きっと</strong></p>
+<p><strong>今の、私は</strong></p>
+<p><strong>谁が何と言おうと</strong></p>
+<h2>世界一、幸せな女の子だ</h2>
+<p><img src="https://cdn.luogu.org/upload/pic/9193.png" alt="" /></p>
+<h2>题目描述</h2>
+<p>——“假如……我是说假如喔。</p>
+<p>万一我再过五天就会死，你能不能对我温柔一点？”</p>
+<p>巨大的六号兽五天后将袭击浮游大陆。</p>
+<p>无数次计算得到的残酷数据表明，只有圣剑瑟尼欧尼斯的适格精灵——珂朵莉·诺塔·瑟尼欧尼斯(Chtholly Nota Seniorious)开启妖精乡之门，才可以以生命为代价守住浮游岛。</p>
+<p><img src="https://cdn.luogu.org/upload/pic/9228.png" alt="" /> </p>
+<p>“至少，我也希望自己不用消失，也想让别人记住。我也想留下羁绊啊。”</p>
+<p>留给妖精少女珂朵莉的时间似乎已经不多了。</p>
+<p><img src="https://cdn.luogu.org/upload/pic/9229.png" alt="" /> </p>
+<p>年轻的二等技官，妖精仓库的管理员，世界上最后一个人类——威廉·克梅<strong>修</strong>，数百年前曾经是一名准勇者，掌握着成为一名勇者所需要的所有知识。</p>
+<p>大战在即，调整圣剑的状态成为了一项重要的任务。</p>
+<pre><code class="language-cpp">瑟尼欧里斯（セニオリス）
+圣剑的其中之一，在现存的遗迹兵装中，拥有最强大的力量。
+拥有非常特殊的资质，只有极少一部分的人才能使用。
+由四十一个护符组成。能将所有事物包含不死者都回归「死亡」。</code></pre>
+<p>威廉需要调整圣剑的状态，因此他将瑟尼欧尼斯拆分护符，组成了一个$n$行$m$列的矩阵。</p>
+<p>每一个护符都有自己的魔力值。现在为了测试圣剑，你需要将这些护符分成 A,B两部分。</p>
+<p>要求如下：</p>
+<ol>
+<li>
+<p>圣剑的所有护符，恰好都属于两部分中的一部分。</p>
+</li>
+<li>
+<p>每个部分内部的方块之间，可以通过上下左右相互到达，而且每个内部的方块之间互相到达，最多允许拐一次弯。</p>
+</li>
+</ol>
+<p>例如</p>
+<pre><code class="language-cpp">ＡＡＡＡＡ　　ＡＡＡＡＡ　　ＡＡＡＡＡ
+ＡＡＢＡＡ　　ＢａＡＡＡ　　ＡＡＡＢＢ
+ＡＢＢＢＡ　　ＢＢＡＡＡ　　ＡＡＡＢＢ
+ＡＡＢＡＡ　　ＢａＡＡＡ　　ＡＢＢＢＢ
+ＡＡＡＡＡ　　ＡＡＡＡＡ　　ＢＢＢＢＢ
+
+　　(1)　　　　　(2)　　　　　(3)　　　　　　</code></pre>
+<p>其中(1)(2)是不允许的分法，(3)是允许的分法。在(2)中，a属于A区域，这两个a元素之间互相到达，没有办法最多只拐一次弯。</p>
+<p>现在要问，所有合法的分法中，A区域的极差与B区域的极差 中间较大的一个的 <strong>最小值</strong> 是多少？</p>
+<p>好心而可爱的在一旁默默观察奈芙莲悄悄地告诉你，极差就是区域内最大值减去最小值。</p>
+<p><img src="https://cdn.luogu.org/upload/pic/9230.png" alt="" /> </p>
+<p>夜晚的风吹拂着，68号岛上的景色竟与地上的森林无异。转念又想，黄金妖精本身就是与森林之中出现，成长，消亡的神秘存在啊。</p>
+<p>时间不早了，早上训练中落败的珂朵莉即将回来了。您要尽快和威廉一起调整好圣剑，千万不能迟哟。</p>
+<h2>输入输出格式</h2>
+<strong>输入格式：</strong><br>
+<p><p>第一行两个自然数$n,m$</p>
+<p>接下来$n$行，每行$m$个自然数$A_{i,j}$表示权值</p></p>
+<strong>输出格式：</strong><br>
+<p><p>一个整数表示答案。</p></p>
+<h2>输入输出样例</h2>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>4 4
+1 12 6 11
+11 4 2 14
+10 1 9 20
+4 17 13 10</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>11</pre>
+</div>
+</div>
+<h2>说明</h2>
+<p>样例解释</p>
+<pre><code class="language-cpp">1  12 6        11
+11 4  2        14
+10 1  9        20
+4        17 13 10</code></pre>
+<p>分法不唯一，如图是一种合法的分法。左边部分极差12-1=11，右边一块极差20-10=10，所以答案取这两个中较大者11。没有别的分法，可以使答案更小。</p>
+<p><strong>数据范围与约定</strong></p>
+<table>
+<thead>
+<tr>
+<th>测试点　　</th>
+<th>n　　　　</th>
+<th>m　　　　</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>#1-2</td>
+<td>$\le 10$</td>
+<td>$\le 10$</td>
+</tr>
+<tr>
+<td>#3-4</td>
+<td>1</td>
+<td>$\le 2000$</td>
+</tr>
+<tr>
+<td>#5-7</td>
+<td>$\le 200$</td>
+<td>$\le 200$</td>
+</tr>
+<tr>
+<td>#8-10</td>
+<td>$\le 2000$</td>
+<td>$\le 2000$</td>
+</tr>
+</tbody>
+</table>
+<p>对于所有的权值$1\le A_{i,j} \le 10^9$</p>
+<p>《末日时在做什么？有没有空？可以来拯救吗？》</p>
+<p><img src="https://cdn.luogu.org/upload/pic/9235.png" alt="" /></p>
+<h2>标程<a class="lg-right am-btn am-btn-sm am-btn-primary" id="expandstd">展开</a></h2>
+<div id="stdcode" class="copy-region" style="display:none">
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre><code class="language-cpp line-numbers">#include &lt;cstdio&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+int H, W, A[2020][2020];
+int gmin, gmax;
+
+bool check(int th)
+{
+	int sep = 0;
+	for (int i = 0; i &lt; H; ++i) {
+		for (int j = 0; j &lt; W; ++j) {
+			if (A[i][j] &lt; gmax - th) {
+				sep = max(sep, j + 1);
+			}
+		}
+		for (int j = 0; j &lt; W; ++j) {
+			if (gmin + th &lt; A[i][j]) {
+				if (j &lt; sep) return false;
+			}
+		}
+	}
+	return true;
+}
+void flip_row()
+{
+	for (int i = 0; i &lt; H / 2; ++i) {
+		for (int j = 0; j &lt; W; ++j) {
+			swap(A[i][j], A[H - 1 - i][j]);
+		}
+	}
+}
+void flip_col()
+{
+	for (int i = 0; i &lt; H; ++i) {
+		for (int j = 0; j &lt; W / 2; ++j) {
+			swap(A[i][j], A[i][W - 1 - j]);
+		}
+	}
+}
+int solve()
+{
+	int lo = 0, hi = gmax - gmin;
+	while (lo &lt; hi) {
+		int mid = (lo + hi) / 2;
+		if (check(mid)) {
+			hi = mid;
+		} else {
+			lo = mid + 1;
+		}
+	}
+	return lo;
+}
+int main()
+{
+	scanf(&quot;%d%d&quot;, &amp;H, &amp;W);
+	for (int i = 0; i &lt; H; ++i) {
+		for (int j = 0; j &lt; W; ++j) {
+			scanf(&quot;%d&quot;, &amp;(A[i][j]));
+		}
+	}
+
+	gmin = gmax = A[0][0];
+	for (int i = 0; i &lt; H; ++i) {
+		for (int j = 0; j &lt; W; ++j) {
+			gmin = min(gmin, A[i][j]);
+			gmax = max(gmax, A[i][j]);
+		}
+	}
+
+	int ret = solve();
+	flip_row();
+	ret = min(ret, solve());
+	flip_col();
+	ret = min(ret, solve());
+	flip_row();
+	ret = min(ret, solve());
+	printf(&quot;%d\n&quot;, ret);
+	return 0;
+}</code></pre>
+</div>
+</div>
+<div class='lg-article-sub am-g' id="sub"></div>
+</div>
+</div>
+</div>
+<div class="am-modal am-modal-prompt" tabindex="-1" id="confirm">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="memtitle">提示</div>
+<div class="am-modal-bd" id="memadmin">
+标程仅供做题后或实在无思路时参考。<br>
+请自觉、自律地使用该功能并请对自己的学习负责。<br>
+如果发现恶意抄袭标程，将按照I类违反进行处理。<br>
+</div>
+<div class="am-modal-footer">
+<span class="am-modal-btn" data-am-modal-cancel>取消</span>
+<span class="am-modal-btn" data-am-modal-confirm>确定</span>
+</div>
+</div>
+</div>
+<script>
+        $(document).ready(function () {
+            $("#expandstd").click(function () {
+                $('#confirm').modal({
+                    relatedTarget: this,
+                    onConfirm: function (e) {
+                        $("#stdcode").slideDown();
+                        $("#expandstd").hide();
+                    }
+                });
+            });
+            $("#submit").click(
+                function () {
+                    hide_artile();
+                    $(document).scrollTop($(document).scrollTop() - 80);
+                    var pid = $(this).attr("pid");
+                    $.get("/problem/ajax_submit?pid=" + pid, function (data) {
+                        var arr = eval('(' + data + ')');
+                        if (arr['code'] == 201) {
+                            $('.lg-article-sub').html(arr['more']['html']);
+                        }
+                        else if (arr['code'] == 200) {
+
+                        }
+                        else {
+                            if (arr['code'] == 0 || arr['code'] == -3) {
+                                backarticle();
+                            }
+                            show_alert("提交失败", arr['message']);
+                        }
+                    });
+                }
+            );
+            $("button[title].am-btn,a[title].am-btn").poshytip({
+                className: 'tip-twitter',
+                showTimeout: 1,
+                alignTo: 'target',
+                alignX: 'center',
+                alignY: 'bottom'
+            });
+            $('[name=showtag]').click(function () {
+                $('.am-badge.am-hide').removeClass('am-hide');
+            });
+            $(".sample-copy").click(function() {
+                var element = $(this).parents(".copy-region").find("pre");
+                var text = $(element).text();
+                var $temp = $("<textarea>");
+                $("body").append($temp);
+                $temp.val(text).select();
+                document.execCommand("copy");
+                $temp.remove();
+                $(this).text("复制成功").removeClass("lg-bg-orange");
+
+                var e = this;
+                setTimeout(function() {
+                    $(e).text("复制").addClass("lg-bg-orange");
+                }, 500);
+            });
+        });
+    </script>
+</div>
+<footer id="app-footer"></footer>
+<div class="am-modal am-modal-alert" tabindex="-1" id="lg-alert">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="lg-alert-title"></div>
+<div class="am-modal-bd" id="lg-alert-message"></div>
+<div class="am-modal-footer">
+<span class="am-modal-btn">确定</span>
+</div>
+</div>
+</div>
+<script src="/js/ace/ace.js"></script>
+<script src="https://cdn.luogu.org/js/vendor.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/jsmind.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/amazeui.min.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts-more.js"></script>
+<script src="/static/katex/katex.min.js"></script>
+<script src="/static/katex/contrib/auto-render.min.js"></script>
+<script src="https://cdn.luogu.org/markdown-palettes/markdown-palettes.min.js?ver=20190219"></script>
+<script src="https://cdn.luogu.org/js/luogu3.js?ver=20190101"></script>
+</body>
+</html>

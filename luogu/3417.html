@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title> P3417 [POI2005]BANK-Cash Dispenser - 洛谷</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta name="csrf-token" content="1555852849:zImp/TbpoDHHO0m62Vs7IQjmIcBROfAzYHdZlT2V5Yk=">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/amazeui.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/katex.min.css"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/css/luogu3.css?ver=20190102">
+<link rel="stylesheet" href="https://cdn.luogu.org/css/highlight_tomorrow.css">
+<link rel="stylesheet" href="https://cdn.luogu.org/markdown-palettes/markdown-palettes.css?ver=20190219">
+<script src="https://cdn.luogu.org/js/jquery-2.1.1.min.js"></script>
+<script src="https://cdn.luogu.org/js/luogu3_pre.js?ver=20190101"></script>
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn.luogu.org/images/favicon3.ico" media="screen"/>
+<link rel="stylesheet" href="https://cdn.luogu.org/fe/loader.css?ver=20190417">
+<script>window._feInjection = JSON.parse(decodeURIComponent("%7B%22code%22%3A200%2C%22currentUser%22%3Anull%2C%22currentTemplate%22%3A%22Excited%22%2C%22currentData%22%3A%7B%22shortHeader%22%3Afalse%2C%22pageName%22%3A%22%5Cu9898%5Cu76ee%5Cu8be6%5Cu60c5%22%7D%2C%22currentMeta%22%3A%7B%22title%22%3A%22%20P3417%20%5BPOI2005%5DBANK-Cash%20Dispenser%22%7D%7D"));</script>
+<script>window._release = '20190417';</script>
+<script src="https://cdn.luogu.org/fe/loader.js?ver=20190417" charset="utf-8" defer></script>
+</head>
+<body>
+<div id="app-header"></div>
+<nav id="app-sidenav"></nav>
+<div id="app-body"></div>
+<script>
+    function scrollToId (id) {
+        $('html, body').animate({
+            scrollTop: ($('#' + id).offset().top)
+        }, 500);
+    }
+</script>
+<style>
+    .lg-toolbar {
+        display: none;
+    }
+
+    #app-body { /* Unused in fallback FE */
+        display: none;
+    }
+
+    #app-body-new{
+        display: block;
+        margin-bottom: 2em;
+        position: relative;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    @media (min-width: 576px) {
+        #app-body-new {
+            margin-left: 70px;
+        }
+    }
+
+    code {
+        font-family: monospace, "Courier New";
+    }
+
+</style>
+<div id="app-body-new">
+<div class="lg-toolbar" data-am-sticky>
+<h1><a href="/recordnew/lists?uid=&pid=P3417" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a> P3417 [POI2005]BANK-Cash Dispenser</h1>
+</div>
+<div class="am-g lg-main-content">
+<div class="am-u-md-4 lg-right" name="problemright">
+<section class="am-panel am-panel-default lg-summary" id="psummary">
+<div class="lg-summary-content">
+<ul class="am-list am-list-static lg-summary-list">
+<li>
+<ul class="am-avg-sm-2"><li><span class="lg-bignum-num">110<small></small></span><span class="lg-bignum-text">通过</span></li><li><span class="lg-bignum-num">257<small></small></span><span class="lg-bignum-text">提交</span></li></ul>
+</li>
+<li>
+<strong>题目提供者</strong>
+<span class="lg-right"><a class='lg-fg-red lg-bold' href="/space/show?uid=45443" target="_blank">codesonic</a></span>
+</li>
+<li>
+<strong>评测方式</strong>
+<span class="lg-right"><b>云端评测</b></span>
+</li>
+<li><strong>标签</strong>
+<span class="lg-tag am-badge am-radius lg-bg-bluelight" data-tagid="57">POI</span>
+<span class="lg-tag am-badge am-radius lg-bg-green" data-tagid="22">2005</span>
+<span class="lg-tag am-badge am-radius lg-bg-orange" data-tagid="319">高性能</span>
+<style>.lg-tag { cursor: pointer; }</style>
+<script>
+                                $(".lg-tag").click(function() {
+                                    window.open("/problemnew/lists?tag=" + $(this).attr('data-tagid'));
+                                })
+                            </script>
+</li>
+<li><strong>难度</strong>
+<span class="lg-right"><span class="am-badge am-radius lg-bg-bluelight">提高+/省选-</span></span>
+</li>
+<li><strong>时空限制</strong>
+<span class="lg-right">1000ms / 128MB</span>
+</li>
+</ul>
+</div>
+<p>
+<button class="am-btn am-btn-danger am-btn-sm" id="submit" pid="P3417">
+<i class="am-icon-paper-plane"></i> 提交
+</button>
+<a target="_blank" href="/problemnew/solution/P3417" class="am-btn am-btn-primary am-btn-sm">
+<i class="am-icon-book"></i> 题解
+</a>
+<a data-pjax href="/recordnew/lists?pid=P3417" class="am-btn am-btn-primary am-btn-sm" title="查看本题提交记录">
+<i class="am-icon-pie-chart"></i>
+</a>
+<button class="am-btn am-btn-primary am-btn-sm lg-pointer" name="showtag" title="显示算法标签">
+<i class="am-icon-tags"></i>
+</button>
+</p>
+<li>提示：收藏到任务计划后，可在首页查看。</li>
+<p>
+<a class="am-btn am-btn-danger am-btn-sm" href="/fe/problem/P3417" target="_blank">体验新版界面</a>
+</p>
+</section>
+<section class="am-panel am-panel-default lg-summary">
+<h2>最新讨论
+<a onclick="$('#discuss-lists').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看本题讨论">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" style="display: none" id="discuss-lists">
+<li><a data-pjax href="/discuss/show?postid=97037" class="am-padding-0">洛咕网课的题目...</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=25320" class="am-padding-0">关于数字范围</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=20274" class="am-padding-0">翻译</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=6426" class="am-padding-0">真是</a>
+</li>
+<li><a data-pjax href="/discuss/show?postid=6421" class="am-padding-0">为毛动规一年比一年难</a>
+</li>
+<div style="overflow: auto">
+<a data-pjax href="/discuss/lists?forumname=P3417" class="am-btn am-btn-primary am-btn-sm lg-right">进入讨论版</a>
+</div>
+</ul>
+</section>
+<section class="am-panel am-panel-default lg-summary am-hide-sm">
+<h2>推荐的相关题目
+<a onclick="$('#recommendation-list').show();$(this).hide();" class="am-btn am-btn-primary am-btn-sm lg-right" title="查看推荐题目">
+显示
+</a>
+</h2>
+<ul class="am-list am-list-static lg-summary-list" id="recommendation-list" style="display: none">
+<li>
+<a class='colored' href="/problemnew/show/P2425" target="_blank"><b>P2425</b> 小红帽的回文数</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/CF660C" target="_blank"><b>CF660C</b> Hard Process</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3627" target="_blank"><b>P3627</b> [APIO2009]抢掠计划</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3419" target="_blank"><b>P3419</b> [POI2005]SAM-Toy Cars</a>
+</li>
+<li>
+<a class='colored' href="/problemnew/show/P3423" target="_blank"><b>P3423</b> [POI2005]BAN-Bank Notes</a>
+</li>
+</ul>
+</section>
+</div>
+<div class="am-u-md-8 lg-right" name="problemleft">
+<div class="lg-content-left">
+<div class="lg-article am-g">
+<h2>题目描述</h2>
+<p>The BBB (short for Byteotian Bit Bank) owns the largest net of cash dispensers in Byteotia. The clients of the BBB can draw their money from the cash dispensers on the basis of a cash card and a 4-digit PIN code. Lately, in order to increase their clients' security, the BBB has had a camera installed by each cash dispenser. The cameras transmit the recorded image to the BBB using radio signals. Unfortunately, the signals are being intercepted by a gang of computer thieves. The thieves attempt to discover the 4-digit PIN codes of the BBB clients, whose cash cards they subsequently steal. Being aware of this fact, the BBB clients try to perform redundant movements over the keyboard while entering the PIN. The camera is not able to pick out the keystrokes, it only records the finger movements. Consequently, it is usually not possible to determine the PIN unambiguously. For instance, the client moving his finger over the key 1 and then over the key 5 could have entered the following PIN codes: 1111, 1115, 1155, 1555, 5555. Desperate thieves glean the camera recordings, counting on being able to determine the PIN of a client or at least limiting the number of possible codes on the basis of multiple recordings of his transactions. Having accumulated sequences entered by a particular wealthy client of the BBB, they made you an &quot;unnegotiable proposition&quot;.</p>
+<p>TaskWrite a programme which:</p>
+<p>reads from the standard input a description of the recorded sequences of finger movements, which the client has performed whilst entering his PIN,determines the number of distinct PIN codes, which the client can have (i.e. the number of those 4-digit PIN codes, which could have been entered by performing the given finger movement sequences),writes the outcome to the standard output.</p>
+<p>BBB（Byteotian Bit Bank的缩写）拥有Byteotia最大的自动提款机网络。 BBB的客户可以根据现金卡和4位数的PIN码从自动柜员机中提取款项。最近，为了提高客户的安全性，BBB已经给每台自动提款机安装了相机。摄像机使用无线电信号将记录的图像发送到BBB。不幸的是，这些信号正被一群电脑盗贼拦截。盗贼试图发现BBB用户的4位PIN码，他们随后窃取了他们的现金卡。意识到这一事实，BBB用户尝试在输入PIN时执行键盘上的冗余动作。相机只能记录手指的动作。因此，通常不可能明确地确定PIN码。例如，用户将手指移动到键1上，然后移动到键5可以输入以下PIN码：1111,1115,1155,1555,5555。绝望的盗贼们收集相机记录，现在盗贼们给你一个手指移动序列，要求你确定用户可以具有的不同PIN码的数量。</p>
+<p>写一个程序：</p>
+<p>从标准输入读取记录的手指移动序列的描述，用户在输入PIN码时执行的手指移动序列，确定客户端可以具有的不同PIN码的数量（即，这些4位PIN码的数量，这可以通过执行给定的手指移动顺序进入），将结果写入标准输出。</p>
+<h2>输入输出格式</h2>
+<strong>输入格式：</strong><br>
+<p><p>The first line of the standard input contains a single integer $n$ denoting the number of recorded scenes depicting the action of entering the PIN by the client, $1\le n\le 1\ 000$. In the following $n$ lines there are descriptions of these scenes, a single one per line. The description of each scene consists of two positive integers separated by a single space. The first of those numbers, $t$, denotes the length of the sequence of movements, $1\le t\le 10\ 000$. The other is a $t$-digit number, whose consecutive digits denote consecutive keys, over which the client has moved his finger. The total length of all sequences does not exceed $1\ 000\ 000$.</p>
+<p>标准输入的第一行包含一个整数n，表示用户输入PIN的动作数，$1\le n\le 1\ 000$。 在以下n行中，对这些动作进行了描述，每行描述一个动作。每个动作的描述由两个由单个空格分开的正整数组成。 这些数中的第一个数字t表示运动序列的长度，$1\le t\le 10\ 000$。另一个是一个t位的正整数，其连续的数字表示连续的键，表示用户移动他的手指到的目标。保证$\sum t\le 1\ 000\ 000$。</p></p>
+<strong>输出格式：</strong><br>
+<p><p>The first and only line of the output should contain a single positive integer - the number of possible PIN codes of the client.</p>
+<p>输出有一行，应包含一个正整数，用户可能的PIN码的数量。</p></p>
+<h2>输入输出样例</h2>
+<div class="am-g">
+<div class="am-u-md-6 copy-region">
+<strong>输入样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>2
+3 123
+3 234</pre>
+</div>
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>5</pre>
+</div>
+</div>
+</div>
+<div class='lg-article-sub am-g' id="sub"></div>
+</div>
+</div>
+</div>
+<div class="am-modal am-modal-prompt" tabindex="-1" id="confirm">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="memtitle">提示</div>
+<div class="am-modal-bd" id="memadmin">
+标程仅供做题后或实在无思路时参考。<br>
+请自觉、自律地使用该功能并请对自己的学习负责。<br>
+如果发现恶意抄袭标程，将按照I类违反进行处理。<br>
+</div>
+<div class="am-modal-footer">
+<span class="am-modal-btn" data-am-modal-cancel>取消</span>
+<span class="am-modal-btn" data-am-modal-confirm>确定</span>
+</div>
+</div>
+</div>
+<script>
+        $(document).ready(function () {
+            $("#expandstd").click(function () {
+                $('#confirm').modal({
+                    relatedTarget: this,
+                    onConfirm: function (e) {
+                        $("#stdcode").slideDown();
+                        $("#expandstd").hide();
+                    }
+                });
+            });
+            $("#submit").click(
+                function () {
+                    hide_artile();
+                    $(document).scrollTop($(document).scrollTop() - 80);
+                    var pid = $(this).attr("pid");
+                    $.get("/problem/ajax_submit?pid=" + pid, function (data) {
+                        var arr = eval('(' + data + ')');
+                        if (arr['code'] == 201) {
+                            $('.lg-article-sub').html(arr['more']['html']);
+                        }
+                        else if (arr['code'] == 200) {
+
+                        }
+                        else {
+                            if (arr['code'] == 0 || arr['code'] == -3) {
+                                backarticle();
+                            }
+                            show_alert("提交失败", arr['message']);
+                        }
+                    });
+                }
+            );
+            $("button[title].am-btn,a[title].am-btn").poshytip({
+                className: 'tip-twitter',
+                showTimeout: 1,
+                alignTo: 'target',
+                alignX: 'center',
+                alignY: 'bottom'
+            });
+            $('[name=showtag]').click(function () {
+                $('.am-badge.am-hide').removeClass('am-hide');
+            });
+            $(".sample-copy").click(function() {
+                var element = $(this).parents(".copy-region").find("pre");
+                var text = $(element).text();
+                var $temp = $("<textarea>");
+                $("body").append($temp);
+                $temp.val(text).select();
+                document.execCommand("copy");
+                $temp.remove();
+                $(this).text("复制成功").removeClass("lg-bg-orange");
+
+                var e = this;
+                setTimeout(function() {
+                    $(e).text("复制").addClass("lg-bg-orange");
+                }, 500);
+            });
+        });
+    </script>
+</div>
+<footer id="app-footer"></footer>
+<div class="am-modal am-modal-alert" tabindex="-1" id="lg-alert">
+<div class="am-modal-dialog">
+<div class="am-modal-hd" id="lg-alert-title"></div>
+<div class="am-modal-bd" id="lg-alert-message"></div>
+<div class="am-modal-footer">
+<span class="am-modal-btn">确定</span>
+</div>
+</div>
+</div>
+<script src="/js/ace/ace.js"></script>
+<script src="https://cdn.luogu.org/js/vendor.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/jsmind.js" data-manual></script>
+<script src="https://cdn.luogu.org/js/amazeui.min.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts.js"></script>
+<script src="https://cdn.luogu.org/js/highcharts-more.js"></script>
+<script src="/static/katex/katex.min.js"></script>
+<script src="/static/katex/contrib/auto-render.min.js"></script>
+<script src="https://cdn.luogu.org/markdown-palettes/markdown-palettes.min.js?ver=20190219"></script>
+<script src="https://cdn.luogu.org/js/luogu3.js?ver=20190101"></script>
+</body>
+</html>
